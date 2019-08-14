@@ -1,0 +1,421 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D409150A2304A942008AF085 /* RVS_Base_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_Base_PersistentPrefs.swift */; };
+		D48833E423033303003080E8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E323033303003080E8 /* main.swift */; };
+		D48833ED230333A8003080E8 /* RVS_Base_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_Base_PersistentPrefs.swift */; };
+		D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7CBC0984C2C1B56C8B429592 /* libPods-RVS_Persistent_Prefs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RVS_Persistent_Prefs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C18CA9B30A482491D0726E46 /* Pods-RVS_Persistent_Prefs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVS_Persistent_Prefs.release.xcconfig"; path = "Target Support Files/Pods-RVS_Persistent_Prefs/Pods-RVS_Persistent_Prefs.release.xcconfig"; sourceTree = "<group>"; };
+		D40915092304A7F2008AF085 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
+		D48833E123033303003080E8 /* RVS_Persistent_Prefs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RVS_Persistent_Prefs; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48833E323033303003080E8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D48833E9230333A8003080E8 /* RVS_Base_PersistentPrefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Base_PersistentPrefs.swift; sourceTree = "<group>"; };
+		D48833F8230334E8003080E8 /* RVS_Persistent_Prefs_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Persistent_Prefs_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Simple_Tests.swift; sourceTree = "<group>"; };
+		D48833FC230334E9003080E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCBA1CA898BB5BADC0CF87E6 /* Pods-RVS_Persistent_Prefs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVS_Persistent_Prefs.debug.xcconfig"; path = "Target Support Files/Pods-RVS_Persistent_Prefs/Pods-RVS_Persistent_Prefs.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1F442E3B48BB0157727C4841 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FCBA1CA898BB5BADC0CF87E6 /* Pods-RVS_Persistent_Prefs.debug.xcconfig */,
+				C18CA9B30A482491D0726E46 /* Pods-RVS_Persistent_Prefs.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D48833B1230332C4003080E8 = {
+			isa = PBXGroup;
+			children = (
+				D48833E223033303003080E8 /* RVS_Persistent_Prefs */,
+				D48833F9230334E9003080E8 /* RVS_Persistent_Prefs_Tests */,
+				D40915092304A7F2008AF085 /* Warnings.xcconfig */,
+				D48833BB230332C4003080E8 /* Products */,
+				1F442E3B48BB0157727C4841 /* Pods */,
+				F7CF0C8271F688DECE3EFD69 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D48833BB230332C4003080E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D48833E123033303003080E8 /* RVS_Persistent_Prefs */,
+				D48833F8230334E8003080E8 /* RVS_Persistent_Prefs_Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D48833E223033303003080E8 /* RVS_Persistent_Prefs */ = {
+			isa = PBXGroup;
+			children = (
+				D48833E323033303003080E8 /* main.swift */,
+				D48833E9230333A8003080E8 /* RVS_Base_PersistentPrefs.swift */,
+			);
+			path = RVS_Persistent_Prefs;
+			sourceTree = "<group>";
+		};
+		D48833F9230334E9003080E8 /* RVS_Persistent_Prefs_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */,
+				D48833FC230334E9003080E8 /* Info.plist */,
+			);
+			path = RVS_Persistent_Prefs_Tests;
+			sourceTree = "<group>";
+		};
+		F7CF0C8271F688DECE3EFD69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7CBC0984C2C1B56C8B429592 /* libPods-RVS_Persistent_Prefs.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D48833E023033303003080E8 /* RVS_Persistent_Prefs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D48833E523033303003080E8 /* Build configuration list for PBXNativeTarget "RVS_Persistent_Prefs" */;
+			buildPhases = (
+				D435555523033B560010E9E8 /* SwiftLint */,
+				D48833DD23033303003080E8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RVS_Persistent_Prefs;
+			productName = RVS_Persistent_Prefs;
+			productReference = D48833E123033303003080E8 /* RVS_Persistent_Prefs */;
+			productType = "com.apple.product-type.tool";
+		};
+		D48833F7230334E8003080E8 /* RVS_Persistent_Prefs_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D48833FD230334E9003080E8 /* Build configuration list for PBXNativeTarget "RVS_Persistent_Prefs_Tests" */;
+			buildPhases = (
+				D48833F4230334E8003080E8 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RVS_Persistent_Prefs_Tests;
+			productName = RVS_Persistent_Prefs_Tests;
+			productReference = D48833F8230334E8003080E8 /* RVS_Persistent_Prefs_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D48833B2230332C4003080E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
+				TargetAttributes = {
+					D48833E023033303003080E8 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					D48833F7230334E8003080E8 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+				};
+			};
+			buildConfigurationList = D48833B5230332C4003080E8 /* Build configuration list for PBXProject "RVS_Persistent_Prefs" */;
+			compatibilityVersion = "Xcode 10.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D48833B1230332C4003080E8;
+			productRefGroup = D48833BB230332C4003080E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D48833E023033303003080E8 /* RVS_Persistent_Prefs */,
+				D48833F7230334E8003080E8 /* RVS_Persistent_Prefs_Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D435555523033B560010E9E8 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n    \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D48833DD23033303003080E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D48833ED230333A8003080E8 /* RVS_Base_PersistentPrefs.swift in Sources */,
+				D48833E423033303003080E8 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D48833F4230334E8003080E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D409150A2304A942008AF085 /* RVS_Base_PersistentPrefs.swift in Sources */,
+				D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		D48833D5230332C5003080E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D40915092304A7F2008AF085 /* Warnings.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D48833D6230332C5003080E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D40915092304A7F2008AF085 /* Warnings.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D48833E623033303003080E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D48833E723033303003080E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D48833FE230334E9003080E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				INFOPLIST_FILE = RVS_Persistent_Prefs_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Persistent-Prefs-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D48833FF230334E9003080E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				INFOPLIST_FILE = RVS_Persistent_Prefs_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-Persistent-Prefs-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D48833B5230332C4003080E8 /* Build configuration list for PBXProject "RVS_Persistent_Prefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48833D5230332C5003080E8 /* Debug */,
+				D48833D6230332C5003080E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D48833E523033303003080E8 /* Build configuration list for PBXNativeTarget "RVS_Persistent_Prefs" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48833E623033303003080E8 /* Debug */,
+				D48833E723033303003080E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D48833FD230334E9003080E8 /* Build configuration list for PBXNativeTarget "RVS_Persistent_Prefs_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D48833FE230334E9003080E8 /* Debug */,
+				D48833FF230334E9003080E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D48833B2230332C4003080E8 /* Project object */;
+}
