@@ -48,29 +48,82 @@ public class RVS_Base_PersistentPrefs: NSObject {
     /* ################################################################## */
     /**
      This is a private method that saves the current contents of the _values Dictionary to persistent storage, keyed by the value of the "key" property.
+     
+     - throws: An error, if the values are not all codable.
      */
-    private func _save() {
+    private func _save() throws {
         #if DEBUG
             print("Saving Prefs: \(String(describing: _values))")
         #endif
         
-        UserDefaults.standard.set(_values, forKey: key)
+        // What we do here, is "scrub" the values of anything that was added against what is expected.
+        var temporaryDict: [String: Any] = [:]
+        keys.forEach {
+            temporaryDict[$0] = _values[$0]
+        }
+        _values = temporaryDict
+        
+        if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
+            UserDefaults.standard.set(_values, forKey: key)
+        } else {
+            #if DEBUG
+                print("Attempt to set non-codable values!")
+            #endif
+            
+            // What we do here, is look through our values list, and record the keys of the elements that are not considered Codable. We return those in the error that we throw.
+            var valueElementList: [String] = []
+            _values.forEach {
+                if PropertyListSerialization.propertyList($0.value, isValidFor: .xml) {
+                    #if DEBUG
+                        print("\($0.key) is OK")
+                    #endif
+                } else {
+                    #if DEBUG
+                        print("\($0.key) is not Codable")
+                    #endif
+                    valueElementList.append($0.key)
+                }
+            }
+            throw PrefsError.valuesNotCodable(invalidElements: valueElementList)
+        }
     }
     
     /* ################################################################## */
     /**
      This is a private method that reads in the data from persistent storage for this instance (using the "key" property), and loads the _values Dictionary property.
+     
+     - throws: An error, if there were no stored prefs for the given key.
      */
-    private func _load() {
+    private func _load() throws {
         let standardDefaultsObject = UserDefaults.standard
         
         if let loadedPrefs = standardDefaultsObject.object(forKey: key) as? [String: Any] {
             #if DEBUG
                 print("Loaded Prefs: \(String(describing: loadedPrefs))")
             #endif
-            
             _values = loadedPrefs
+        } else {
+            #if DEBUG
+                print("Unable to Load Prefs for \(key)")
+            #endif
+            throw PrefsError.noStoredPrefsForKey(key: key)
         }
+    }
+    
+    /* ############################################################################################################################## */
+    // MARK: - Public Enums
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     Errors that Can be thrown from methods in this class
+     */
+    public enum PrefsError: Error {
+        /// Not all of the elements in the _values Dictionary are Codable. The associated value is an Array of the failing keys.
+        case valuesNotCodable(invalidElements: [String])
+        /// We were not able to find a stored pref for the given key. The associated value is the key we are looking for.
+        case noStoredPrefsForKey(key: String)
+        /// Unknown thrown error.
+        case unknownError(error: Error)
     }
     
     /* ############################################################################################################################## */
@@ -81,6 +134,12 @@ public class RVS_Base_PersistentPrefs: NSObject {
      This is the key that is used to store and fetch the collection of data to be used to populate the _values Dictionary.
      */
     public var key: String = ""
+    
+    /* ################################################################## */
+    /**
+     This is any error that was thrown during a save or a load.
+     */
+    public var lastError: PrefsError!
     
     /* ############################################################################################################################## */
     // MARK: - Public Calculated Properties
@@ -103,13 +162,30 @@ public class RVS_Base_PersistentPrefs: NSObject {
      */
     public var values: [String: Any] {
         get {
-            _load()
+            lastError = nil
+            do {
+                try _load()
+            } catch PrefsError.noStoredPrefsForKey(let unknownKey) {
+                lastError = PrefsError.noStoredPrefsForKey(key: unknownKey)
+            } catch {
+                lastError = PrefsError.unknownError(error: error)
+            }
             return _values
         }
         
         set {
+            lastError = nil
+            let oldValues = _values
             _values = newValue
-            _save()
+            do {
+                try _save()
+            } catch PrefsError.valuesNotCodable(let unCodableKeys) {
+                _values = oldValues
+                lastError = PrefsError.valuesNotCodable(invalidElements: unCodableKeys)
+            } catch {
+                _values = oldValues
+                lastError = PrefsError.unknownError(error: error)
+            }
         }
     }
     
@@ -122,8 +198,14 @@ public class RVS_Base_PersistentPrefs: NSObject {
      */
     public override init() {
         super.init()
-        key = type(of: self).className()
-        _load()
+        key = String(describing: type(of: self).self)  // This gives us a simple classname as our key.
+        do {
+            try _load()
+        } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
+            lastError = nil
+        } catch {
+            lastError = PrefsError.unknownError(error: error)
+        }
     }
     
     /* ################################################################## */
@@ -136,13 +218,39 @@ public class RVS_Base_PersistentPrefs: NSObject {
         If not provided, then the instance is populated by any persistent prefs.
         If provided, then the persistent prefs are updated with the new values.
      */
-    public init(key inKey: String! = nil, values inValues: [String: Any]! = nil) {
+    public init(key inKey: String! = nil, values inValues: [String: Any]! = [:]) {
         super.init()
-        key = inKey ?? type(of: self).className()
-        if nil != inValues {
-            values = inValues
-        } else {
-            _load()
+        key = inKey ?? String(describing: type(of: self).self)  // This gives us a simple classname as our key.
+        
+        // First, we load any currently stored prefs.
+        do {
+            try _load()
+        } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
+            lastError = nil
+        } catch {
+            lastError = PrefsError.unknownError(error: error)
+        }
+        
+        #if DEBUG
+            print("Initial Values \(_values)")
+        #endif
+
+        if nil == lastError {   // Make sure we didn't barf.
+            let oldValues = _values
+            // We do it this way, so that we can provide a partial Dictionary of values, and only affect certain ones, while leaving the others alone.
+            _values.merge(inValues, uniquingKeysWith: { (_, new) in
+                new
+            })
+            // Save our values.
+            do {
+                try _save()
+            } catch PrefsError.valuesNotCodable(let unCodableKeys) {
+                _values = oldValues
+                lastError = PrefsError.valuesNotCodable(invalidElements: unCodableKeys)
+            } catch {
+                _values = oldValues
+                lastError = PrefsError.unknownError(error: error)
+            }
         }
     }
 }
