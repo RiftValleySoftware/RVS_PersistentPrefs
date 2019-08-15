@@ -50,7 +50,8 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
          The first value is an Int.
          */
         var first: Int {
-            return (values["First"] as? Int) ?? 0
+            let ret = values["First"] as? Int
+            return ret ?? 0
         }
         
         /* ################################################################## */
@@ -58,7 +59,8 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
          The second value is a String
          */
         var next: String {
-            return (values["Next"] as? String) ?? ""
+            let ret = values["Next"] as? String
+            return ret ?? ""
         }
         
         /* ################################################################## */
@@ -66,7 +68,8 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
          The third value is a Bool
          */
         var test: Bool {
-            return (values["Test"] as? Bool) ?? false
+            let ret = values["Test"] as? Bool
+            return ret ?? false
         }
         
         /* ################################################################## */
@@ -74,7 +77,8 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
          The last value is a Double.
          */
         var last: Double {
-            return (values["Last"] as? Double) ?? 0.0
+            let ret = values["Last"] as? Double
+            return ret ?? 0.0
         }
     }
 

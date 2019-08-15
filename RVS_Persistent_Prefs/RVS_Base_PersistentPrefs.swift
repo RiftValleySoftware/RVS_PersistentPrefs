@@ -53,17 +53,27 @@ public class RVS_Base_PersistentPrefs: NSObject {
      */
     private func _save() throws {
         #if DEBUG
-            print("Saving Prefs: \(String(describing: _values))")
+            print("Saving Prefs for \"\(key)\": \(String(describing: _values))")
         #endif
         
-        // What we do here, is "scrub" the values of anything that was added against what is expected.
-        var temporaryDict: [String: Any] = [:]
-        keys.forEach {
-            temporaryDict[$0] = _values[$0]
-        }
-        _values = temporaryDict
+        var illegalKeys: [String] = []
         
-        if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
+        // What we do here, is "scrub" the values of anything that was added against what is expected.
+        let filteredDictionary = _values.filter { (arg0) -> Bool in
+            let (key, _) = arg0
+            if keys.contains(key) {
+                return true
+            } else {
+                illegalKeys.append(key)
+                return false
+            }
+        }
+        
+        _values = filteredDictionary
+        
+        if !illegalKeys.isEmpty {
+            throw PrefsError.incorrectKeys(invalidElements: illegalKeys)
+        } else if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
             UserDefaults.standard.set(_values, forKey: key)
         } else {
             #if DEBUG
@@ -99,12 +109,12 @@ public class RVS_Base_PersistentPrefs: NSObject {
         
         if let loadedPrefs = standardDefaultsObject.object(forKey: key) as? [String: Any] {
             #if DEBUG
-                print("Loaded Prefs: \(String(describing: loadedPrefs))")
+                print("Loaded Prefs for \"\(key)\": \(String(describing: loadedPrefs))")
             #endif
             _values = loadedPrefs
         } else {
             #if DEBUG
-                print("Unable to Load Prefs for \(key)")
+                print("Unable to Load Prefs for \"\(key)\"")
             #endif
             throw PrefsError.noStoredPrefsForKey(key: key)
         }
@@ -118,6 +128,8 @@ public class RVS_Base_PersistentPrefs: NSObject {
      Errors that Can be thrown from methods in this class
      */
     public enum PrefsError: Error {
+        /// Some elements were presented that do not fit our keys. The associated value is an Array of the failing keys.
+        case incorrectKeys(invalidElements: [String])
         /// Not all of the elements in the _values Dictionary are Codable. The associated value is an Array of the failing keys.
         case valuesNotCodable(invalidElements: [String])
         /// We were not able to find a stored pref for the given key. The associated value is the key we are looking for.
@@ -203,6 +215,8 @@ public class RVS_Base_PersistentPrefs: NSObject {
             try _load()
         } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
             lastError = nil
+        } catch PrefsError.incorrectKeys(let unknownKey) {
+            lastError = PrefsError.incorrectKeys(invalidElements: unknownKey)
         } catch {
             lastError = PrefsError.unknownError(error: error)
         }
@@ -222,7 +236,7 @@ public class RVS_Base_PersistentPrefs: NSObject {
         super.init()
         key = inKey ?? String(describing: type(of: self).self)  // This gives us a simple classname as our key.
         
-        // First, we load any currently stored prefs.
+        // First, we load any currently stored prefs. This makes sure that we have a solid starting place.
         do {
             try _load()
         } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
@@ -232,25 +246,11 @@ public class RVS_Base_PersistentPrefs: NSObject {
         }
         
         #if DEBUG
-            print("Initial Values \(_values)")
+            print("Initial Values for \"\(key)\": \(_values)")
         #endif
 
-        if nil == lastError {   // Make sure we didn't barf.
-            let oldValues = _values
-            // We do it this way, so that we can provide a partial Dictionary of values, and only affect certain ones, while leaving the others alone.
-            _values.merge(inValues, uniquingKeysWith: { (_, new) in
-                new
-            })
-            // Save our values.
-            do {
-                try _save()
-            } catch PrefsError.valuesNotCodable(let unCodableKeys) {
-                _values = oldValues
-                lastError = PrefsError.valuesNotCodable(invalidElements: unCodableKeys)
-            } catch {
-                _values = oldValues
-                lastError = PrefsError.unknownError(error: error)
-            }
+        if nil == lastError, !inValues.isEmpty {   // Make sure we didn't barf.
+            values = _values.merging(inValues, uniquingKeysWith: { (_, new) in new })
         }
     }
 }

@@ -76,7 +76,8 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
          */
         var int: Int {
             get {
-                return (values["Int"] as? Int) ?? 0
+                let ret = values["Int"] as? Int
+                return ret ?? 0
             }
             
             set {
@@ -90,7 +91,8 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
          */
         var string: String {
             get {
-                return (values["String"] as? String) ?? ""
+                let ret = values["String"] as? String
+                return ret ?? ""
             }
             
             set {
@@ -104,7 +106,9 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
          */
         var float: Float {
             get {
-                return (values["Float"] as? Float) ?? Float.nan
+                print("Values for \"\(key)\": \(String(describing: values))")
+                let ret = values["Float"] as? Float
+                return ret ?? Float.nan
             }
             
             set {
@@ -118,7 +122,8 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
          */
         var double: Double {
             get {
-                return (values["Double"] as? Double) ?? Double.nan
+                let ret = values["Double"] as? Double
+                return ret ?? Double.nan
             }
             
             set {
@@ -132,7 +137,8 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
          */
         var bool: Bool {
             get {
-                return (values["Bool"] as? Bool) ?? false
+                let ret = values["Bool"] as? Bool
+                return ret ?? false
             }
             
             set {
@@ -146,7 +152,8 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
          */
         var codableArray: [Int] {
             get {
-                return (values["CodableArray"] as? [Int]) ?? []
+                let ret = values["CodableArray"] as? [Int]
+                return ret ?? []
             }
             
             set {
@@ -160,7 +167,8 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
          */
         var codableDictionary: [String: Int] {
             get {
-                return (values["CodableDictionary"] as? [String: Int]) ?? [:]
+                let ret = values["CodableDictionary"] as? [String: Int]
+                return ret ?? [:]
             }
             
             set {
@@ -433,5 +441,60 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         XCTAssertEqual(false, testTarget2.bool)
         XCTAssertEqual([3, 4, 5], testTarget2.codableArray)
         XCTAssertEqual([:], testTarget2.codableDictionary)
+    }
+    
+    /* ################################################################## */
+    /**
+     In this test, we add some objects that are at different keys from the ones that we allow.
+     */
+    func testWithIllegalKeys() {
+        let testKey = "testWithIllegalKeys-1"   // The prefs key that we'll be using for this test.
+        
+        // What we do here, is create a throwaway instance that exists only to make sure that some defaults are set.
+        let initialSet: [String: Any] = ["Int": 1, "String": "One", "Double": Double(2.0), "Float": Float(10.0), "Bool": false, "CodableArray": [3, 4, 5], "CodableDictionary": ["One": 1, "Two": 2, "3": 3]]
+        _ = MixedSimpleTypeTestClass(key: testKey, values: initialSet)
+        
+        // Set up a new instance. It should have all the ones in the initial set.
+        let testTarget0 = MixedSimpleTypeTestClass(key: testKey)
+        XCTAssertNil(testTarget0.lastError)
+        XCTAssertEqual(1, testTarget0.int)
+        XCTAssertEqual("One", testTarget0.string)
+        XCTAssertEqual(Double(2.0), testTarget0.double)
+        XCTAssertEqual(Float(10.0), testTarget0.float)
+        XCTAssertEqual(false, testTarget0.bool)
+        XCTAssertEqual([3, 4, 5], testTarget0.codableArray)
+        XCTAssertEqual(["One": 1, "Two": 2, "3": 3], testTarget0.codableDictionary)
+        
+        testTarget0.values["IllegalValue"] = "I would have gotten away with it, if it hadn't been for those darned..."
+        XCTAssertNotNil(testTarget0.lastError)
+        if let lastError = testTarget0.lastError, case let RVS_Base_PersistentPrefs.PrefsError.incorrectKeys(valueList) = lastError {
+            XCTAssertEqual(["IllegalValue"], valueList)
+        }
+        
+        // Make sure the bad value didn't pee in the pool.
+        XCTAssertNil(testTarget0.values["IllegalValue"])
+        // And that all the rest of the values are fine.
+        XCTAssertEqual(1, testTarget0.int)
+        XCTAssertEqual("One", testTarget0.string)
+        XCTAssertEqual(Double(2.0), testTarget0.double)
+        XCTAssertEqual(Float(10.0), testTarget0.float)
+        XCTAssertEqual(false, testTarget0.bool)
+        XCTAssertEqual([3, 4, 5], testTarget0.codableArray)
+        XCTAssertEqual(["One": 1, "Two": 2, "3": 3], testTarget0.codableDictionary)
+        
+        // Try with multiple illegal entries.
+        let testTarget1 = MixedSimpleTypeTestClass(key: testKey, values: ["Illegal1": "BANG", "Illegal2": "CRASH", "Illegal3": "POW"])
+        XCTAssertNotNil(testTarget1.lastError)
+        if let lastError = testTarget1.lastError, case let RVS_Base_PersistentPrefs.PrefsError.incorrectKeys(valueList) = lastError {
+            XCTAssertEqual(["Illegal1", "Illegal2", "Illegal3"], valueList.sorted())
+        }
+        // We should still have the old correct entries.
+        XCTAssertEqual(1, testTarget1.int)
+        XCTAssertEqual("One", testTarget1.string)
+        XCTAssertEqual(Double(2.0), testTarget1.double)
+        XCTAssertEqual(Float(10.0), testTarget1.float)
+        XCTAssertEqual(false, testTarget1.bool)
+        XCTAssertEqual([3, 4, 5], testTarget1.codableArray)
+        XCTAssertEqual(["One": 1, "Two": 2, "3": 3], testTarget1.codableDictionary)
     }
 }

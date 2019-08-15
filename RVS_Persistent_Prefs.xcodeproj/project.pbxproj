@@ -71,8 +71,8 @@
 		D48833F9230334E9003080E8 /* RVS_Persistent_Prefs_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */,
 				D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */,
+				D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */,
 				D48833FC230334E9003080E8 /* Info.plist */,
 			);
 			path = RVS_Persistent_Prefs_Tests;
