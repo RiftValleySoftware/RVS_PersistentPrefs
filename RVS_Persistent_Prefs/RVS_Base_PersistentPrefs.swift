@@ -32,7 +32,7 @@ import Foundation
  It is meant as a simple "bucket" for things like application preferences.
  Subclasses could declare their accessors as KV observable, thus, providing a direct way to influence persistent state.
  */
-open class RVS_Base_PersistentPrefs: NSObject {
+public class RVS_Base_PersistentPrefs: NSObject {
     /* ############################################################################################################################## */
     // MARK: - Private Properties
     /* ############################################################################################################################## */
@@ -87,7 +87,8 @@ open class RVS_Base_PersistentPrefs: NSObject {
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
-     This calculated property MUST be overridden by subclasses. It is an Array of String, containing the keys used to store and retrieve the values from persistent storage.
+     This calculated property MUST be overridden by subclasses.
+     It is an Array of String, containing the keys used to store and retrieve the values from persistent storage.
      */
     public var keys: [String] {
         preconditionFailure("YOU MUST OVERRIDE THIS METHOD")
@@ -95,8 +96,10 @@ open class RVS_Base_PersistentPrefs: NSObject {
     
     /* ################################################################## */
     /**
-     This is an accessor for the _values Dictionary. Before it returns the Dictionary, it loads data from persistent storage. After it sets the Dictionary, it saves the resulting Dictionary to persistent storage.
-     This is meant to make persistent storage completely transparent. You simple read and write the Dictionary, using these accessors. The saving and retrieving happens in the background.
+     This is an accessor for the _values Dictionary. Before it returns the Dictionary, it loads data from persistent storage.
+     After it sets the Dictionary, it saves the resulting Dictionary to persistent storage.
+     This is meant to make persistent storage completely transparent.
+     You simply read and write the Dictionary, using these accessors. The saving and retrieving happens in the background.
      */
     public var values: [String: Any] {
         get {
@@ -125,7 +128,7 @@ open class RVS_Base_PersistentPrefs: NSObject {
     
     /* ################################################################## */
     /**
-     You can also initialize it with a key and some initial data values.
+     You can initialize instances with a key and some initial data values.
      
      - parameter key: Optional (default is nil). A String, with a key to be used to associate the persistent state of this object to storage in the bundle.
         If not provided, the subclass classname is used as the key.

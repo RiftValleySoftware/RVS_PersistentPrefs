@@ -23,59 +23,61 @@
 import XCTest
 
 /* ################################################################################################################################## */
-// MARK: - Concrete Subclass For Testing
-/* ################################################################################################################################## */
-/**
- */
-class TestClass: RVS_Base_PersistentPrefs {
-    /* ################################################################## */
-    /**
-     These are the keys for our saved data.
-     */
-    override public var keys: [String] {
-        return ["First", "Next", "Test", "Last"]
-    }
-    
-    /* ################################################################## */
-    /**
-     The first value is an Int.
-     */
-    var first: Int {
-        return (values["First"] as? Int) ?? 0
-    }
-    
-    /* ################################################################## */
-    /**
-     The second value is a String
-     */
-    var next: String {
-        return (values["Next"] as? String) ?? ""
-    }
-    
-    /* ################################################################## */
-    /**
-     The third value is a Bool
-     */
-    var test: Bool {
-        return (values["Test"] as? Bool) ?? false
-    }
-    
-    /* ################################################################## */
-    /**
-     The last value is a Double.
-     */
-    var last: Double {
-        return (values["Last"] as? Double) ?? 0.0
-    }
-}
-
-/* ################################################################################################################################## */
-// MARK: - Tests for the Persistent Prefs.
+// MARK: - Simple Instantiation and Persistence Tests for the Persistent Prefs Class.
 /* ################################################################################################################################## */
 /**
  Just some simple tests, to make sure that our persistent prefs are in good shape.
  */
 class RVS_Persistent_Prefs_Tests: XCTestCase {
+    /* ############################################################################################################################## */
+    // MARK: - Concrete Subclass For Testing
+    /* ############################################################################################################################## */
+    /**
+     This is a special simple subclass of the persistent prefs. It declares four keys, and provides simple accessors for the data.
+     It has simple mixed data types that are all scalar and Codable.
+     */
+    class TestClass: RVS_Base_PersistentPrefs {
+        /* ################################################################## */
+        /**
+         These are the keys for our saved data.
+         */
+        override public var keys: [String] {
+            return ["First", "Next", "Test", "Last"]
+        }
+        
+        /* ################################################################## */
+        /**
+         The first value is an Int.
+         */
+        var first: Int {
+            return (values["First"] as? Int) ?? 0
+        }
+        
+        /* ################################################################## */
+        /**
+         The second value is a String
+         */
+        var next: String {
+            return (values["Next"] as? String) ?? ""
+        }
+        
+        /* ################################################################## */
+        /**
+         The third value is a Bool
+         */
+        var test: Bool {
+            return (values["Test"] as? Bool) ?? false
+        }
+        
+        /* ################################################################## */
+        /**
+         The last value is a Double.
+         */
+        var last: Double {
+            return (values["Last"] as? Double) ?? 0.0
+        }
+    }
+
     /* ################################################################## */
     /**
      Test the default instantiation, to make sure that the prefs propagate everywhere.
