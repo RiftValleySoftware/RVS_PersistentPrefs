@@ -11,6 +11,7 @@
 		D48833E423033303003080E8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E323033303003080E8 /* main.swift */; };
 		D48833ED230333A8003080E8 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */; };
+		D4E7423E2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */; };
 		D4EE6C882304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		D48833F8230334E8003080E8 /* RVS_Persistent_Prefs_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Persistent_Prefs_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Simple_Tests.swift; sourceTree = "<group>"; };
 		D48833FC230334E9003080E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Thread_Tests.swift; sourceTree = "<group>"; };
 		D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_MixedType_Tests.swift; sourceTree = "<group>"; };
 		FCBA1CA898BB5BADC0CF87E6 /* Pods-RVS_Persistent_Prefs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVS_Persistent_Prefs.debug.xcconfig"; path = "Target Support Files/Pods-RVS_Persistent_Prefs/Pods-RVS_Persistent_Prefs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 			children = (
 				D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */,
 				D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */,
+				D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */,
 				D48833FC230334E9003080E8 /* Info.plist */,
 			);
 			path = RVS_Persistent_Prefs_Tests;
@@ -193,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D409150A2304A942008AF085 /* RVS_PersistentPrefs.swift in Sources */,
+				D4E7423E2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */,
 				D4EE6C882304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift in Sources */,
 				D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */,
 			);

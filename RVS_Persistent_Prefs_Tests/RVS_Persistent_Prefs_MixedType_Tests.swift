@@ -515,6 +515,7 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         XCTAssertEqual([3, 4, 5], testTarget1.codableArray)
         XCTAssertEqual(["One": 1, "Two": 2, "3": 3], testTarget1.codableDictionary)
     }
+    
     /* ################################################################## */
     /**
      Test the subscript functionality.
