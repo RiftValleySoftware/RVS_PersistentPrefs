@@ -4,7 +4,9 @@ RVS_PersistentPrefs
 =
 A general-purpose [Swift](https://apple.com/swift) class for making storing persistent preferences incredibly easy and transparent.
 
-[Here is the Technical Documentation for this class.](https://riftvalleysoftware.github.io/RVS_PersistentPrefs/)
+[Here is the technical documentation for this class.](https://riftvalleysoftware.github.io/RVS_PersistentPrefs/)
+
+[Here is the  GitHub repo for this class.](https://github.com/RiftValleySoftware/RVS_PersistentPrefs).
 
 OVERVIEW
 -
@@ -34,7 +36,7 @@ This class will "vet" the preferences before attempting to store them (otherwise
 
 Subclasses will also establish "allowed" keys, and can do things like translate the stored values into [Key-Value Observer](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift) properties, so you can set up a completely "codeless" connection between user interface and stored preferences.
 
-It also allows you to have an "implicit" global state that is accessed by simply instantiating an instance of a subclass of RVS_PersistentPrefs. You can also associate a "top-level key" to instances, and maintain multiple sets of persistent preferences.
+This class you to have an "implicit" global state that is accessed by simply instantiating a subclass, and you can associate "top-level keys" to instances, to maintain multiple sets of persistent preferences.
 
 REQUIREMENTS
 -
@@ -50,3 +52,4 @@ Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPref
 
 USAGE
 -
+
