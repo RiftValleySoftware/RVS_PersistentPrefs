@@ -52,10 +52,6 @@ public class RVS_PersistentPrefs: NSObject {
      - throws: An error, if the values are not all codable.
      */
     private func _save() throws {
-        #if DEBUG
-            print("Saving Prefs for \"\(key)\": \(String(describing: _values))")
-        #endif
-        
         var illegalKeys: [String] = []
         
         // What we do here, is "scrub" the values of anything that was added against what is expected.
@@ -108,9 +104,6 @@ public class RVS_PersistentPrefs: NSObject {
         let standardDefaultsObject = UserDefaults.standard
         
         if let loadedPrefs = standardDefaultsObject.object(forKey: key) as? [String: Any] {
-            #if DEBUG
-                print("Loaded Prefs for \"\(key)\": \(String(describing: loadedPrefs))")
-            #endif
             _values = loadedPrefs
         } else {
             #if DEBUG
@@ -252,12 +245,15 @@ public class RVS_PersistentPrefs: NSObject {
         key = inKey ?? String(describing: type(of: self).self)  // This gives us a simple classname as our key.
         
         // First, we load any currently stored prefs. This makes sure that we have a solid starting place.
-        do {
-            try _load()
-        } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
-            lastError = nil
-        } catch {
-            lastError = PrefsError.unknownError(error: error)
+        let _mutex = DispatchQueue(label: "INIT-LOAD-MUTEX")
+        _mutex.sync {
+            do {
+                try _load()
+            } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
+                lastError = nil
+            } catch {
+                lastError = PrefsError.unknownError(error: error)
+            }
         }
         
         #if DEBUG

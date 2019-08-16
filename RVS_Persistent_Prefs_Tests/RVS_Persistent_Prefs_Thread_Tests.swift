@@ -332,9 +332,10 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
 
     /* ################################################################## */
     /**
-     Test with a couple of NSOperations. Bit hairier.
+     Test with a bunch of NSOperations. Bit hairier.
      */
     func testOperationThreading() {
+        let taskCount = 200
         let testKey = "testOperationThreading-1"   // The prefs key that we'll be using for this test.
         
         // What we do here, is create a throwaway instance that exists only to make sure that some defaults are set.
@@ -354,31 +355,32 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
         
         let expectationsArePremeditatedResenments = XCTestExpectation(description: "Wait For All Threads to Complete")
         
-        expectationsArePremeditatedResenments.expectedFulfillmentCount = 40
+        expectationsArePremeditatedResenments.expectedFulfillmentCount = taskCount * 2
         
         class SetIntegers: Operation {
-            var index: Int
+            let threadName: String
+            let index: Int
             let list: [Int]
             let target: MixedSimpleTypeTestClass
             let expectation: XCTestExpectation
             
-            init(_ inList: [Int], index inIndex: Int = 0, target inTarget: MixedSimpleTypeTestClass, expectation inExpectation: XCTestExpectation) {
+            init(_ inList: [Int], index inIndex: Int = 0, target inTarget: MixedSimpleTypeTestClass, expectation inExpectation: XCTestExpectation, threadName inName: String) {
                 list = inList
                 index = inIndex
                 target = inTarget
                 expectation = inExpectation
+                threadName = inName
             }
             
             override func main() {
                 guard 0 < list.count else { return }
                 guard !isCancelled else { return }
-                let value = list[index % list.count]
-                print("Setting the Int member to \(value) (Operation \(index + 1))")
+                let indexVal = index % list.count
+                let value = list[indexVal]
                 target["Int"] = value
-                print("Set the Int member to \(value) (Operation \(index + 1))")
                 expectation.fulfill()
                 guard !isCancelled else { return }
-                _ = SetIntegers(list, index: index, target: target, expectation: expectation)
+                _ = SetIntegers(list, index: index, target: target, expectation: expectation, threadName: threadName)
             }
         }
 
@@ -387,26 +389,24 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
             lazy var currentOperations: [IndexPath: Operation] = [:]
             lazy var testSet0Queue: OperationQueue = {
                 var queue = OperationQueue()
-                queue.name = "testSet0Queue"
                 return queue
             }()
             
             lazy var testSet1Queue: OperationQueue = {
                 var queue = OperationQueue()
-                queue.name = "testSet1Queue"
                 return queue
             }()
         }
         
         let runningOperations = RunningOperations()
         
-        for index in 0..<20 {
-            runningOperations.testSet0Queue.addOperation(SetIntegers([0, 1, 2, 3, 4], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments))
-            runningOperations.testSet0Queue.addOperation(SetIntegers([5, 6, 7, 8, 9], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments))
+        for index in 0..<taskCount {
+            runningOperations.testSet0Queue.addOperation(SetIntegers([0, 1, 2, 3, 4], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments, threadName: "0"))
+            runningOperations.testSet1Queue.addOperation(SetIntegers([5, 6, 7, 8, 9], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments, threadName: "1"))
         }
   
         wait(for: [expectationsArePremeditatedResenments], timeout: 1)
         
         runningOperations.testSet0Queue.cancelAllOperations()
- }
+    }
 }
