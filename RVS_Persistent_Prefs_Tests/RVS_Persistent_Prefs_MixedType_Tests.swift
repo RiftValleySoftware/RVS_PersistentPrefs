@@ -555,13 +555,13 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         
         // Test changing the integer value directly, but coerce it into a String.
         testTarget0["Int"] = "10"
+        // This will now fail.
+        XCTAssertEqual(0, testTarget0.int)
         XCTAssertEqual(0, (testTarget0["Int"] as? Int) ?? 0)
         XCTAssertEqual("10", (testTarget0["Int"] as? String) ?? "")
-        XCTAssertEqual(0, testTarget0.int)
         
         // Change it back into an Int.
         testTarget0["Int"] = 10
-        XCTAssertEqual(10, (testTarget0["Int"] as? Int) ?? 0)
         XCTAssertEqual(10, testTarget0.int)
     }
 }
