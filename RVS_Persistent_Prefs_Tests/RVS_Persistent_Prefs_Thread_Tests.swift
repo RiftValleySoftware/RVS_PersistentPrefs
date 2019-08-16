@@ -241,23 +241,172 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
 
     /* ################################################################## */
     /**
+     Test a simple, one-after-the-other timer set in the run loop.
      */
-    func testThreading() {
-        let testKey = "testThreading-1"   // The prefs key that we'll be using for this test.
+    func testSimpleLinearRunLoopThreading() {
+        let testKey = "testSimpleLinearRunLoopThreading-1"   // The prefs key that we'll be using for this test.
         
         // What we do here, is create a throwaway instance that exists only to make sure that some defaults are set.
-        let initialSet: [String: Any] = ["Int": 1, "String": "One", "Double": Double(2.0), "Float": Float(10.0), "Bool": false, "CodableArray": [3, 4, 5], "CodableDictionary": ["One": 1, "Two": 2, "3": 3]]
+        let initialSet: [String: Any] = ["Int": 10, "String": "Ten", "Double": Double(10.0), "Float": Float(10.0), "Bool": false, "CodableArray": [10], "CodableDictionary": ["Ten": 10]]
         _ = MixedSimpleTypeTestClass(key: testKey, values: initialSet)
         
         // Set up a new instance. It should have all the ones in the initial set.
         let testTarget0 = MixedSimpleTypeTestClass(key: testKey)
         XCTAssertNil(testTarget0.lastError)
-        XCTAssertEqual(1, testTarget0.int)
-        XCTAssertEqual("One", testTarget0.string)
-        XCTAssertEqual(Double(2.0), testTarget0.double)
+        XCTAssertEqual(10, testTarget0.int)
+        XCTAssertEqual("Ten", testTarget0.string)
+        XCTAssertEqual(Double(10.0), testTarget0.double)
         XCTAssertEqual(Float(10.0), testTarget0.float)
         XCTAssertEqual(false, testTarget0.bool)
-        XCTAssertEqual([3, 4, 5], testTarget0.codableArray)
-        XCTAssertEqual(["One": 1, "Two": 2, "3": 3], testTarget0.codableDictionary)
+        XCTAssertEqual([10], testTarget0.codableArray)
+        XCTAssertEqual(["Ten": 10], testTarget0.codableDictionary)
+        
+        let expectationsArePremeditatedResenments = XCTestExpectation(description: "Wait For All Threads to Complete")
+        
+        expectationsArePremeditatedResenments.expectedFulfillmentCount = 2
+
+        /* ############################################################# */
+        /**
+         This will set the variables for the next iteration, then kick that off.
+         */
+        func timer1CallBack(_ inTimer: Timer) {
+            print("Timer 1 Callback!")
+            XCTAssertNil(testTarget0.lastError)
+            XCTAssertEqual(10, testTarget0.int)
+            XCTAssertEqual("Ten", testTarget0.string)
+            XCTAssertEqual(Double(10.0), testTarget0.double)
+            XCTAssertEqual(Float(10.0), testTarget0.float)
+            XCTAssertEqual(false, testTarget0.bool)
+            XCTAssertEqual([10], testTarget0.codableArray)
+            XCTAssertEqual(["Ten": 10], testTarget0.codableDictionary)
+
+            testTarget0.int = 1
+            testTarget0.bool = true
+            testTarget0.string = "One"
+            testTarget0.double = Double(1.0)
+            testTarget0.float = Float(1.0)
+            testTarget0.codableArray = [1]
+            testTarget0.codableDictionary = ["One": 1]
+            expectationsArePremeditatedResenments.fulfill()
+            _ = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false, block: timer2CallBack)
+        }
+        
+        /* ############################################################# */
+        /**
+         This will set the final state.
+         */
+        func timer2CallBack(_ inTimer: Timer) {
+            print("Timer 2 Callback!")
+            XCTAssertNil(testTarget0.lastError)
+            XCTAssertEqual(1, testTarget0.int)
+            XCTAssertEqual("One", testTarget0.string)
+            XCTAssertEqual(Double(1.0), testTarget0.double)
+            XCTAssertEqual(Float(1.0), testTarget0.float)
+            XCTAssertEqual(true, testTarget0.bool)
+            XCTAssertEqual([1], testTarget0.codableArray)
+            XCTAssertEqual(["One": 1], testTarget0.codableDictionary)
+
+            testTarget0.int = 2
+            testTarget0.bool = false
+            testTarget0.string = "Two"
+            testTarget0.double = Double(2.0)
+            testTarget0.float = Float(2.0)
+            testTarget0.codableArray = [2]
+            testTarget0.codableDictionary = ["Two": 2]
+            expectationsArePremeditatedResenments.fulfill()
+        }
+        
+        _ = Timer.scheduledTimer(withTimeInterval: 0.25, repeats: false, block: timer1CallBack)
+
+        wait(for: [expectationsArePremeditatedResenments], timeout: 1)
+        
+        XCTAssertNil(testTarget0.lastError)
+        XCTAssertEqual(2, testTarget0.int)
+        XCTAssertEqual("Two", testTarget0.string)
+        XCTAssertEqual(Double(2.0), testTarget0.double)
+        XCTAssertEqual(Float(2.0), testTarget0.float)
+        XCTAssertEqual(false, testTarget0.bool)
+        XCTAssertEqual([2], testTarget0.codableArray)
+        XCTAssertEqual(["Two": 2], testTarget0.codableDictionary)
     }
+
+    /* ################################################################## */
+    /**
+     Test with a couple of NSOperations. Bit hairier.
+     */
+    func testOperationThreading() {
+        let testKey = "testOperationThreading-1"   // The prefs key that we'll be using for this test.
+        
+        // What we do here, is create a throwaway instance that exists only to make sure that some defaults are set.
+        let initialSet: [String: Any] = ["Int": 10, "String": "Ten", "Double": Double(10.0), "Float": Float(10.0), "Bool": false, "CodableArray": [10], "CodableDictionary": ["Ten": 10]]
+        _ = MixedSimpleTypeTestClass(key: testKey, values: initialSet)
+        
+        // Set up a new instance. It should have all the ones in the initial set.
+        let testTarget0 = MixedSimpleTypeTestClass(key: testKey)
+        XCTAssertNil(testTarget0.lastError)
+        XCTAssertEqual(10, testTarget0.int)
+        XCTAssertEqual("Ten", testTarget0.string)
+        XCTAssertEqual(Double(10.0), testTarget0.double)
+        XCTAssertEqual(Float(10.0), testTarget0.float)
+        XCTAssertEqual(false, testTarget0.bool)
+        XCTAssertEqual([10], testTarget0.codableArray)
+        XCTAssertEqual(["Ten": 10], testTarget0.codableDictionary)
+        
+        let expectationsArePremeditatedResenments = XCTestExpectation(description: "Wait For All Threads to Complete")
+        
+        expectationsArePremeditatedResenments.expectedFulfillmentCount = 40
+        
+        class SetIntegers: Operation {
+            var index: Int
+            let list: [Int]
+            let target: MixedSimpleTypeTestClass
+            let expectation: XCTestExpectation
+            
+            init(_ inList: [Int], index inIndex: Int = 0, target inTarget: MixedSimpleTypeTestClass, expectation inExpectation: XCTestExpectation) {
+                list = inList
+                index = inIndex
+                target = inTarget
+                expectation = inExpectation
+            }
+            
+            override func main() {
+                guard 0 < list.count else { return }
+                guard !isCancelled else { return }
+                let value = list[index % list.count]
+                print("Setting the Int member to \(value) (Operation \(index + 1))")
+                target["Int"] = value
+                print("Set the Int member to \(value) (Operation \(index + 1))")
+                expectation.fulfill()
+                guard !isCancelled else { return }
+                _ = SetIntegers(list, index: index, target: target, expectation: expectation)
+            }
+        }
+
+        // Set up a couple of NSOperations for the testing.
+        class RunningOperations {
+            lazy var currentOperations: [IndexPath: Operation] = [:]
+            lazy var testSet0Queue: OperationQueue = {
+                var queue = OperationQueue()
+                queue.name = "testSet0Queue"
+                return queue
+            }()
+            
+            lazy var testSet1Queue: OperationQueue = {
+                var queue = OperationQueue()
+                queue.name = "testSet1Queue"
+                return queue
+            }()
+        }
+        
+        let runningOperations = RunningOperations()
+        
+        for index in 0..<20 {
+            runningOperations.testSet0Queue.addOperation(SetIntegers([0, 1, 2, 3, 4], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments))
+            runningOperations.testSet0Queue.addOperation(SetIntegers([5, 6, 7, 8, 9], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments))
+        }
+  
+        wait(for: [expectationsArePremeditatedResenments], timeout: 1)
+        
+        runningOperations.testSet0Queue.cancelAllOperations()
+ }
 }
