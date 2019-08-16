@@ -97,11 +97,11 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This class is designed to act as an <q>abstract</q> base class, providing a simple Dictionary datastore.
-The Dictionary would be a String-keyed Dictionary of Any (flexible types). It s up to subclasses to specialize the typeless data.
+                        <p>This class is designed to act as an <q>abstract</q> base class, providing a simple <code>Dictionary</code> datastore that is stored in the <a href="https://developer.apple.com/documentation/foundation/userdefaults"><code>UserDefaults</code></a> in the Application Bundle. It is designed to be reliable, and extremely simple to use.
+The stored <code>Dictionary</code> would be a String-keyed Dictionary of <code>Any</code> (flexible types). It s up to subclasses to specialize the typeless data.
 THIS IS NOT EFFICIENT OR ROBUST!
-It is meant as a simple <q>bucket</q> for things like application preferences.
-Subclasses could declare their accessors as KV observable, thus, providing a direct way to influence persistent state.</p>
+It is meant as a simple <q>bucket</q> for things like application preferences. It is not an industrial data storage solution. You have been warned.
+Subclasses could declare their accessors as <a href="https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift"><code>KVO</code></a>-style, thus, providing a direct way to influence persistent state.</p>
 
                         <a href="Classes/RVS_Base_PersistentPrefs.html" class="slightly-smaller">See more</a>
                       </div>
