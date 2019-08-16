@@ -53,10 +53,10 @@
             <a class="nav-group-name-link" href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/RVS_Base_PersistentPrefs.html">RVS_Base_PersistentPrefs</a>
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs.html">RVS_PersistentPrefs</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/RVS_Base_PersistentPrefs/PrefsError.html">– PrefsError</a>
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs/PrefsError.html">– PrefsError</a>
               </li>
             </ul>
           </li>
@@ -70,12 +70,12 @@
             <p><img src="./icon.png" alt="Icon"></p>
 <h1 id='rvs_persistentprefs' class='heading'>RVS_PersistentPrefs</h1>
 
-<p>A general-purpose class for storing persistent preferences in the application bundle.</p>
+<p>A general-purpose <a href="https://apple.com/swift">Swift</a> class for making storing persistent preferences incredibly easy and transparent.</p>
 
 <p><a href="https://riftvalleysoftware.github.io/RVS_PersistentPrefs/">Here is the Technical Documentation for this class.</a></p>
 <h2 id='overview' class='heading'>OVERVIEW</h2>
 
-<p>RVS_PersistentPrefs is an <q>abstract</q> base class, designed to be subclassed <em>(yes, I know. There&rsquo;s no such thing as an <q>abstract</q> class in Swift, but the class is designed to crash, if you instantiate it standalone)</em>.</p>
+<p>RVS_PersistentPrefs is an <q>abstract</q> base class, designed to be subclassed <em>(Yes, I know. There&rsquo;s no such thing as an <q>abstract</q> class in Swift, but the class is designed to crash, if you instantiate it standalone)</em>.</p>
 
 <p>Instances based on the class will have a simple, flexible <a href="https://developer.apple.com/documentation/swift/dictionary"><code>Dictionary&lt;String, Any&gt;</code></a> property. This will contain a set of values, stored on behalf of the derived subclass.</p>
 
@@ -85,14 +85,33 @@
 
 <p>This means that multiple instances of subclasses, based on RVS_PersistentPrefs, can track multiple sets of persistent data.</p>
 
-<p>RVS_PersistentPrefs is designed for robustness and reliability. It is <strong>NOT</strong> a class that is meant to store missin-critical data, or large volumes of data. It is merely a convenient way to maintain persistent data, such as app preferences.</p>
+<p>RVS_PersistentPrefs is designed for ease of use and reliability. It is <strong>NOT</strong> a class that is meant to store mission-critical, or large volumes, of data. It is merely a convenient way to maintain small amounts of persistent data, such as app preferences.</p>
+<h2 id='what-problem-does-this-solve' class='heading'>WHAT PROBLEM DOES THIS SOLVE?</h2>
+
+<p>Storing persistent data (data that survives an app being started and stopped, or even, in some cases, transfers between apps) has always been a somewhat fraught process in app development.</p>
+
+<p>Luckily, Apple has provided an excellent mechanism for this, called <a href="https://developer.apple.com/documentation/foundation/userdefaults"><code>UserDefaults</code></a>, which is part of the <a href="https://developer.apple.com/documentation/foundation">Foundation</a> framework; meaning that it is supported by ALL Apple operating systems.</p>
+
+<p>Saving and retrieving from <a href="https://developer.apple.com/documentation/foundation/userdefaults"><code>UserDefaults</code></a> is quite simple. You save and retrieve values in the same manner as you would a <code>String</code>-keyed <code>Dictionary</code>.</p>
+
+<p>There is one major limitation, though: ALL stored data needs to be <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/PropertyLists/Introduction/Introduction.html#//apple_ref/doc/uid/10000048i">XML plist-compatible</a>. This is usually not much of an issue, as there are plenty of types that work fine. The actual storage happens inside an <a href="https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html">XML Plist</a> file, so there needs to be support for stored types.</p>
+
+<p>This class will <q>vet</q> the preferences before attempting to store them (otherwise, the system simply crashes), and will let you know if there&rsquo;s a problem. It also completely abstracts the actual interface with <a href="https://developer.apple.com/documentation/foundation/userdefaults"><code>UserDefaults</code></a>, so all you need to worry about is interacting with a <code>Dictionary&lt;String, Any&gt;</code>.</p>
+
+<p>Subclasses will also establish <q>allowed</q> keys, and can do things like translate the stored values into <a href="https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift">Key-Value Observer</a> properties, so you can set up a completely <q>codeless</q> connection between user interface and stored preferences.</p>
+
+<p>It also allows you to have an <q>implicit</q> global state that is accessed by simply instantiating an instance of a subclass of RVS_PersistentPrefs. You can also associate a <q>top-level key</q> to instances, and maintain multiple sets of persistent preferences.</p>
+<h2 id='requirements' class='heading'>REQUIREMENTS</h2>
+
+<p>RVS_PersistentPrefs is an <a href="https://developer.apple.com/documentation/foundation">Apple Foundation</a>-based resource. It will work equally well on all Apple development platforms (<a href="https://www.apple.com/ios">iOS</a>, <a href="https://www.apple.com/ipados">iPadOS</a>, <a href="https://www.apple.com/macos">macOS</a>, <a href="https://www.apple.com/tvos">tvOS</a>, <a href="https://www.apple.com/watchos">watchOS</a>). It will not work on non-Apple platforms, and is not designed to support anything other than native <a href="https://apple.com/swift">Swift</a> development.</p>
 <h2 id='installation' class='heading'>INSTALLATION</h2>
 
 <p>You can fetch the latest version of RVS_PersistentPrefs from <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs">its GitHub repo</a>.</p>
 
-<p>The class consists of <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_Base_PersistentPrefs.swift">one single Swift source file</a>. All the other stuff in the project is for project support and testing.</p>
+<p>The class consists of <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift">one single <a href="https://apple.com/swift">Swift</a> source file</a>. All the other stuff in the project is for project support and testing.</p>
 
-<p>Simply copy this file into your project, and add it to your current target.</p>
+<p>Simply copy <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift">this file</a> into your project, and add it to your current <a href="https://apple.com/swift">Swift</a> native target.</p>
+<h2 id='usage' class='heading'>USAGE</h2>
 
           </div>
         </section>
@@ -101,7 +120,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2019 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2019-08-15)</p>
+      <p>&copy; 2019 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2019-08-16)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

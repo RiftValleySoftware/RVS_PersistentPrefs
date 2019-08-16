@@ -36,7 +36,7 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
      This is a special simple subclass of the persistent prefs. It declares four keys, and provides simple accessors for the data.
      It has simple mixed data types that are all scalar and Codable.
      */
-    class TestClass: RVS_Base_PersistentPrefs {
+    class TestClass: RVS_PersistentPrefs {
         /* ################################################################## */
         /**
          These are the keys for our saved data.

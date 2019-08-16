@@ -32,7 +32,7 @@ import Foundation
  It is meant as a simple "bucket" for things like application preferences. It is not an industrial data storage solution. You have been warned.
  Subclasses could declare their accessors as [`KVO`](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)-style, thus, providing a direct way to influence persistent state.
  */
-public class RVS_Base_PersistentPrefs: NSObject {
+public class RVS_PersistentPrefs: NSObject {
     /* ############################################################################################################################## */
     // MARK: - Private Properties
     /* ############################################################################################################################## */
