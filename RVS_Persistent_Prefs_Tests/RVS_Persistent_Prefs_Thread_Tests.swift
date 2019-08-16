@@ -335,7 +335,7 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
      Test with a bunch of NSOperations. Bit hairier.
      */
     func testOperationThreading() {
-        let taskCount = 200
+        let taskCount = 250
         let testKey = "testOperationThreading-1"   // The prefs key that we'll be using for this test.
         
         // What we do here, is create a throwaway instance that exists only to make sure that some defaults are set.
@@ -355,7 +355,7 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
         
         let expectationsArePremeditatedResenments = XCTestExpectation(description: "Wait For All Threads to Complete")
         
-        expectationsArePremeditatedResenments.expectedFulfillmentCount = taskCount * 2
+        expectationsArePremeditatedResenments.expectedFulfillmentCount = taskCount * 4
         
         class SetIntegers: Operation {
             let threadName: String
@@ -373,14 +373,45 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
             }
             
             override func main() {
-                guard 0 < list.count else { return }
+                guard 0 < list.count else {
+                    XCTFail("No Data!")
+                    return
+                }
                 guard !isCancelled else { return }
                 let indexVal = index % list.count
                 let value = list[indexVal]
                 target["Int"] = value
                 expectation.fulfill()
                 guard !isCancelled else { return }
-                _ = SetIntegers(list, index: index, target: target, expectation: expectation, threadName: threadName)
+            }
+        }
+        
+        class SetStrings: Operation {
+            let threadName: String
+            let index: Int
+            let list: [String]
+            let target: MixedSimpleTypeTestClass
+            let expectation: XCTestExpectation
+            
+            init(_ inList: [String], index inIndex: Int = 0, target inTarget: MixedSimpleTypeTestClass, expectation inExpectation: XCTestExpectation, threadName inName: String) {
+                list = inList
+                index = inIndex
+                target = inTarget
+                expectation = inExpectation
+                threadName = inName
+            }
+            
+            override func main() {
+                guard 0 < list.count else {
+                    XCTFail("No Data!")
+                    return
+                }
+                guard !isCancelled else { return }
+                let indexVal = index % list.count
+                let value = "My name is \(list[indexVal])"
+                target["String"] = value
+                expectation.fulfill()
+                guard !isCancelled else { return }
             }
         }
 
@@ -401,8 +432,10 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
         let runningOperations = RunningOperations()
         
         for index in 0..<taskCount {
-            runningOperations.testSet0Queue.addOperation(SetIntegers([0, 1, 2, 3, 4], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments, threadName: "0"))
-            runningOperations.testSet1Queue.addOperation(SetIntegers([5, 6, 7, 8, 9], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments, threadName: "1"))
+            runningOperations.testSet0Queue.addOperation(SetIntegers([0, 1, 2, 3, 4], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments, threadName: "Int 0"))
+            runningOperations.testSet0Queue.addOperation(SetStrings(["Fred", "Marsha", "Inigo Montaya", "Bilbo", "Bond, James Bond"], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments, threadName: "String 0"))
+            runningOperations.testSet1Queue.addOperation(SetIntegers([5, 6, 7, 8, 9], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments, threadName: "Int 1"))
+            runningOperations.testSet1Queue.addOperation(SetStrings(["Barbra", "Helen", "Starr", "Annie", "Debbie"], index: index, target: testTarget0, expectation: expectationsArePremeditatedResenments, threadName: "String 1"))
         }
   
         wait(for: [expectationsArePremeditatedResenments], timeout: 1)
