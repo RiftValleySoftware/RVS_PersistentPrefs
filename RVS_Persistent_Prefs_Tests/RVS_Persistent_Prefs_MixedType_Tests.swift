@@ -515,4 +515,30 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         XCTAssertEqual([3, 4, 5], testTarget1.codableArray)
         XCTAssertEqual(["One": 1, "Two": 2, "3": 3], testTarget1.codableDictionary)
     }
+    /* ################################################################## */
+    /**
+     Test the subscript functionality.
+     */
+    func testSubscript() {
+        let testKey = "testSubscript-1"   // The prefs key that we'll be using for this test.
+        
+        // What we do here, is create a throwaway instance that exists only to make sure that some defaults are set.
+        let initialSet: [String: Any] = ["Int": 1, "String": "One", "Double": Double(2.0), "Float": Float(10.0), "Bool": false, "CodableArray": [3, 4, 5], "CodableDictionary": ["One": 1, "Two": 2, "3": 3]]
+        _ = MixedSimpleTypeTestClass(key: testKey, values: initialSet)
+        
+        // Set up a new instance. It should have all the ones in the initial set.
+        let testTarget0 = MixedSimpleTypeTestClass(key: testKey)
+        XCTAssertNil(testTarget0.lastError)
+        XCTAssertEqual(1, testTarget0.int)
+        XCTAssertEqual("One", testTarget0.string)
+        XCTAssertEqual(Double(2.0), testTarget0.double)
+        XCTAssertEqual(Float(10.0), testTarget0.float)
+        XCTAssertEqual(false, testTarget0.bool)
+        XCTAssertEqual([3, 4, 5], testTarget0.codableArray)
+        XCTAssertEqual(["One": 1, "Two": 2, "3": 3], testTarget0.codableDictionary)
+        
+        testTarget0["Int"] = 10
+        XCTAssertEqual(10, (testTarget0["Int"] as? Int) ?? 0)
+        XCTAssertEqual(10, testTarget0.int)
+    }
 }

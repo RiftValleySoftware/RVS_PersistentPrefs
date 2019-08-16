@@ -32,12 +32,7 @@ import Foundation
  It is meant as a simple "bucket" for things like application preferences. It is not an industrial data storage solution. You have been warned.
  Subclasses could declare their accessors as [`KVO`](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)-style, thus, providing a direct way to influence persistent state.
  */
-public class RVS_PersistentPrefs: NSObject, ExpressibleByDictionaryLiteral {
-    /// This is the key type (for ExpressibleByDictionaryLiteral)
-    public typealias Key = String
-    /// This is the element type (for ExpressibleByDictionaryLiteral)
-    public typealias Value = Any
-
+public class RVS_PersistentPrefs: NSObject {
     /* ############################################################################################################################## */
     // MARK: - Private Properties
     /* ############################################################################################################################## */
@@ -207,6 +202,21 @@ public class RVS_PersistentPrefs: NSObject, ExpressibleByDictionaryLiteral {
     }
     
     /* ############################################################################################################################## */
+    // MARK: - Public Subscript
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    subscript(_ inKey: String) -> Any? {
+        get {
+            return values[inKey]
+        }
+        
+        set {
+            values[inKey] = newValue
+        }
+    }
+    /* ############################################################################################################################## */
     // MARK: - Initializers
     /* ############################################################################################################################## */
     /* ################################################################## */
@@ -256,28 +266,6 @@ public class RVS_PersistentPrefs: NSObject, ExpressibleByDictionaryLiteral {
 
         if nil == lastError, !inValues.isEmpty {   // Make sure we didn't barf.
             values = _values.merging(inValues, uniquingKeysWith: { (_, new) in new })
-        }
-    }
-    
-    /* ################################################################## */
-    /**
-     This is the initializer for ExpressibleByDictionaryLiteral. It will always use the default main key, unless one of the elements passed in uses the reserved key "RVS_PersistentPrefs.key".
-     
-     - parameter dictionaryLiteral: A Dictionary<String, Any> of elements to initialize as values.
-        In order to specify a new main key, then the input needs to include ["RVS_PersistentPrefs.key"] set to a String. This value will not be saved in prefs.
-     */
-    required convenience public init(dictionaryLiteral inElements: (Key, Value)...) {
-        self.init()
-        
-        var newValues = _values.merging(inElements, uniquingKeysWith: { (_, new) in new })
-        
-        if let newKey = newValues["RVS_PersistentPrefs.key"] as? String {
-            key = newKey
-            newValues.removeValue(forKey: "RVS_PersistentPrefs.key")
-        }
-        
-        if nil == lastError, !inElements.isEmpty {   // Make sure we didn't barf.
-            values = newValues
         }
     }
 }
