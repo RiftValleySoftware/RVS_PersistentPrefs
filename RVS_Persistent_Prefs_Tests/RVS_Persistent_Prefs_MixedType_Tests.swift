@@ -537,6 +537,29 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         XCTAssertEqual([3, 4, 5], testTarget0.codableArray)
         XCTAssertEqual(["One": 1, "Two": 2, "3": 3], testTarget0.codableDictionary)
         
+        // Simply test changing the integer value directly.
+        testTarget0["Int"] = 10
+        XCTAssertEqual(10, (testTarget0["Int"] as? Int) ?? 0)
+        XCTAssertEqual(10, testTarget0.int)
+        // And go directly to the values.
+        testTarget0.values["Int"] = 20
+        XCTAssertEqual(20, (testTarget0["Int"] as? Int) ?? 0)
+        XCTAssertEqual(20, testTarget0.int)
+
+        // This is evil, but allowed. Since it's a Dictionary of Any, we can assign a different type.
+        testTarget0["CodableDictionary"] = "Hello, World!"
+        XCTAssertEqual("Hello, World!", (testTarget0["CodableDictionary"] as? String) ?? "")
+        // And here, we go directly into the values calculated property, and change it to an Int.
+        testTarget0.values["CodableDictionary"] = 24
+        XCTAssertEqual(24, (testTarget0["CodableDictionary"] as? Int) ?? 0)
+        
+        // Test changing the integer value directly, but coerce it into a String.
+        testTarget0["Int"] = "10"
+        XCTAssertEqual(0, (testTarget0["Int"] as? Int) ?? 0)
+        XCTAssertEqual("10", (testTarget0["Int"] as? String) ?? "")
+        XCTAssertEqual(0, testTarget0.int)
+        
+        // Change it back into an Int.
         testTarget0["Int"] = 10
         XCTAssertEqual(10, (testTarget0["Int"] as? Int) ?? 0)
         XCTAssertEqual(10, testTarget0.int)
