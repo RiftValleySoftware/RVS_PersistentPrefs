@@ -67,7 +67,7 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
          */
         override public var keys: [String] {
             // These are all the types that we will be testing against.
-            return ["Int", "String", "Float", "Double", "Bool", "CodableArray", "CodableDictionary", "NonCodableClass", "NonCodableStruct", "NonCodableEnum"]
+            return ["Int", "String", "Float", "Double", "Bool", "CodableArray", "CodableDictionary", "NonCodableClass", "NonCodableStruct", "NonCodableEnum", "IllegalBuriedHere"]
         }
         
         /* ################################################################## */
@@ -441,6 +441,23 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         XCTAssertEqual(false, testTarget2.bool)
         XCTAssertEqual([3, 4, 5], testTarget2.codableArray)
         XCTAssertEqual([:], testTarget2.codableDictionary)
+        
+        // Now, we get a bit tricky. We nest illegal values inside of legal ones.
+        let nestedIllegalValue: [String: [String: Any]] = ["IllegalBuriedHere": ["ThisIsALegalValue": 10, "ThisContainsLegalValues": ["ThisOnesLegal": 10, "AndSoIsThisOne": "Ten"], "ThisContainsAnIllegalValue": ["JKThisOnesLegal": 10, "ButThisOnesIllegal": NonCodableEnum.value]]]
+        let testTarget3 = MixedSimpleTypeTestClass(key: testKey, values: nestedIllegalValue)
+        XCTAssertNotNil(testTarget3.lastError)
+        if let lastError = testTarget3.lastError, case let RVS_Base_PersistentPrefs.PrefsError.valuesNotCodable(valueList) = lastError {
+            XCTAssertEqual(["IllegalBuriedHere"], valueList.sorted())
+        }
+        XCTAssertNotNil(testTarget3.lastError) // This is still around, because it has not been cleared.
+        XCTAssertEqual(1, testTarget3.int)
+        XCTAssertNil(testTarget3.lastError) // This should be cleared after the first access.
+        XCTAssertEqual("One", testTarget3.string)
+        XCTAssertEqual(2.0, testTarget3.double)
+        XCTAssertEqual(Float(10.0), testTarget3.float)
+        XCTAssertEqual(false, testTarget3.bool)
+        XCTAssertEqual([3, 4, 5], testTarget3.codableArray)
+        XCTAssertEqual([:], testTarget3.codableDictionary)
     }
     
     /* ################################################################## */
