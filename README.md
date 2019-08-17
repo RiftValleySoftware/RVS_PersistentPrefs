@@ -52,9 +52,10 @@ Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPref
 
 USAGE
 -
-
 **Thread Safety**
 
 There is none. Deal with it and move on. I'll be looking to fix that (if I can) in the future, but it isn't a critical enough requirement at the moment to justify preventing release of the utility.
 
-Because of the nature of the utility (a "quick and dirty" persistent save for small amounts of -usually- user-interface-linked data), thread safety is not a critical need.
+Because of the nature of the utility (a "quick and dirty" persistent save for small amounts of -usually- user-interface-linked data), thread safety is not a critical need. I am making a point of mentioning it, though, so you don't spend too much time searching under the cushions, if you come across inconsistend dealloc crashes. There is a commented-out test in the [RVS_Persistent_Prefs_Thread_Tests](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs_Tests/RVS_Persistent_Prefs_Thread_Tests.swift#L158) file. If you uncomment it, and run it repeatedly, you will eventually run into the issue. You can also jack up the number of tests to increase the likelihood of running into the issue.
+
+It doesn't need to be on the main thread, but it shouldn't be called from different threads.

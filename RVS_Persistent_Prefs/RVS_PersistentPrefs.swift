@@ -59,7 +59,7 @@ public class RVS_PersistentPrefs: NSObject {
                 print("Attempt to set non-plist values!")
             #endif
             
-            // What we do here, is look through our values list, and record the keys of the elements that are not considered Codable. We return those in the error that we throw.
+            // What we do here, is look through our values list, and record the keys of the elements that are not considered plist-compatible (for XML plists). We return those in the error that we throw.
             var valueElementList: [String] = []
             _values.forEach {
                 if PropertyListSerialization.propertyList($0.value, isValidFor: .xml) {
@@ -73,7 +73,7 @@ public class RVS_PersistentPrefs: NSObject {
                     valueElementList.append($0.key)
                 }
             }
-            throw PrefsError.valuesNotCodable(invalidElements: valueElementList)
+            throw PrefsError.valuesNotPlistCompatible(invalidElements: valueElementList)
         }
     }
     
@@ -107,7 +107,7 @@ public class RVS_PersistentPrefs: NSObject {
         /// Some elements were presented that do not fit our keys. The associated value is an Array of the failing keys.
         case incorrectKeys(invalidElements: [String])
         /// Not all of the elements in the _values Dictionary are Codable. The associated value is an Array of the failing keys.
-        case valuesNotCodable(invalidElements: [String])
+        case valuesNotPlistCompatible(invalidElements: [String])
         /// We were not able to find a stored pref for the given key. The associated value is the key we are looking for.
         case noStoredPrefsForKey(key: String)
         /// Unknown thrown error.
@@ -188,8 +188,8 @@ public class RVS_PersistentPrefs: NSObject {
             } else {
                 do {
                     try _save()
-                } catch PrefsError.valuesNotCodable(let unCodableKeys) {
-                    lastError = PrefsError.valuesNotCodable(invalidElements: unCodableKeys)
+                } catch PrefsError.valuesNotPlistCompatible(let unCodableKeys) {
+                    lastError = PrefsError.valuesNotPlistCompatible(invalidElements: unCodableKeys)
                     _values = oldValues
                 } catch {
                     lastError = PrefsError.unknownError(error: error)

@@ -396,7 +396,7 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         
         let testTarget0 = MixedSimpleTypeTestClass(key: testKey, values: initialTestSet)
         XCTAssertNotNil(testTarget0.lastError)
-        if let lastError = testTarget0.lastError, case let RVS_PersistentPrefs.PrefsError.valuesNotCodable(valueList) = lastError {
+        if let lastError = testTarget0.lastError, case let RVS_PersistentPrefs.PrefsError.valuesNotPlistCompatible(valueList) = lastError {
             XCTAssertEqual(["NonCodableClass"], valueList)
         }
         
@@ -412,7 +412,7 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         
         let testTarget1 = MixedSimpleTypeTestClass(key: testKey, values: ["NonCodableStruct": NonCodableStruct()])
         XCTAssertNotNil(testTarget1.lastError)
-        if let lastError = testTarget1.lastError, case let RVS_PersistentPrefs.PrefsError.valuesNotCodable(valueList) = lastError {
+        if let lastError = testTarget1.lastError, case let RVS_PersistentPrefs.PrefsError.valuesNotPlistCompatible(valueList) = lastError {
             XCTAssertEqual(["NonCodableStruct"], valueList)
         }
         
@@ -428,7 +428,7 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         
         let testTarget2 = MixedSimpleTypeTestClass(key: testKey, values: ["NonCodableEnum": NonCodableEnum.value])
         XCTAssertNotNil(testTarget2.lastError)
-        if let lastError = testTarget2.lastError, case let RVS_PersistentPrefs.PrefsError.valuesNotCodable(valueList) = lastError {
+        if let lastError = testTarget2.lastError, case let RVS_PersistentPrefs.PrefsError.valuesNotPlistCompatible(valueList) = lastError {
             XCTAssertEqual(["NonCodableEnum"], valueList)
         }
         
@@ -446,7 +446,7 @@ class RVS_Persistent_Prefs_MixedType_Tests: XCTestCase {
         let nestedIllegalValue: [String: [String: Any]] = ["IllegalBuriedHere": ["ThisIsALegalValue": 10, "ThisContainsLegalValues": ["ThisOnesLegal": 10, "AndSoIsThisOne": "Ten"], "ThisContainsAnIllegalValue": ["JKThisOnesLegal": 10, "ButThisOnesIllegal": NonCodableEnum.value]]]
         let testTarget3 = MixedSimpleTypeTestClass(key: testKey, values: nestedIllegalValue)
         XCTAssertNotNil(testTarget3.lastError)
-        if let lastError = testTarget3.lastError, case let RVS_PersistentPrefs.PrefsError.valuesNotCodable(valueList) = lastError {
+        if let lastError = testTarget3.lastError, case let RVS_PersistentPrefs.PrefsError.valuesNotPlistCompatible(valueList) = lastError {
             XCTAssertEqual(["IllegalBuriedHere"], valueList.sorted())
         }
         // And make sure that we got the proper values from our initial load.
