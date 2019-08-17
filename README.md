@@ -53,3 +53,8 @@ Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPref
 USAGE
 -
 
+**Thread Safety**
+
+There is none. Deal with it and move on. I'll be looking to fix that (if I can) in the future, but it isn't a critical enough requirement at the moment to justify preventing release of the utility.
+
+Because of the nature of the utility (a "quick and dirty" persistent save for small amounts of -usually- user-interface-linked data), thread safety is not a critical need.
