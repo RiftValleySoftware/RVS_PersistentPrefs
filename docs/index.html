@@ -102,7 +102,7 @@
 
 <p>Subclasses will also establish <q>allowed</q> keys, and can do things like translate the stored values into <a href="https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift">Key-Value Observer</a> properties, so you can set up a completely <q>codeless</q> connection between user interface and stored preferences.</p>
 
-<p>This class you to have an <q>implicit</q> global state that is accessed by simply instantiating a subclass, and you can associate <q>top-level keys</q> to instances, to maintain multiple sets of persistent preferences.</p>
+<p>This class allows you to have an <q>implicit</q> global state that is accessed by simply instantiating a subclass, and you can associate <q>top-level keys</q> to instances, to maintain multiple sets of persistent preferences.</p>
 <h2 id='requirements' class='heading'>REQUIREMENTS</h2>
 
 <p>RVS_PersistentPrefs is an <a href="https://developer.apple.com/documentation/foundation">Apple Foundation</a>-based resource. It will work equally well on all Apple development platforms (<a href="https://www.apple.com/ios">iOS</a>, <a href="https://www.apple.com/ipados">iPadOS</a>, <a href="https://www.apple.com/macos">macOS</a>, <a href="https://www.apple.com/tvos">tvOS</a>, <a href="https://www.apple.com/watchos">watchOS</a>). It will not work on non-Apple platforms, and is not designed to support anything other than native <a href="https://apple.com/swift">Swift</a> development.</p>
