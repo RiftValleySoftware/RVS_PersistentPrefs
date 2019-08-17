@@ -46,7 +46,7 @@ INSTALLATION
 -
 You can fetch the latest version of RVS_PersistentPrefs from [its GitHub repo](https://github.com/RiftValleySoftware/RVS_PersistentPrefs).
 
-The class consists of [one single [Swift](https://apple.com/swift) source file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift). All the other stuff in the project is for project support and testing.
+The class consists of [one single Swift source file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift). All the other stuff in the project is for project support and testing.
 
 Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift) into your project, and add it to your current [Swift](https://apple.com/swift) native target.
 
