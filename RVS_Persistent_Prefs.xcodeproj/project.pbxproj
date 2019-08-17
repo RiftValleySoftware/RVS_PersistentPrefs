@@ -26,6 +26,16 @@
 		D48833E423033303003080E8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E323033303003080E8 /* main.swift */; };
 		D48833ED230333A8003080E8 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */; };
+		D4940F2D2308647C00F1B8E4 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
+		D4940F35230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F34230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */; };
+		D4940F37230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F36230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */; };
+		D4940F3A230864AB00F1B8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4940F38230864AB00F1B8E4 /* Main.storyboard */; };
+		D4940F3C230864AC00F1B8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4940F3B230864AC00F1B8E4 /* Assets.xcassets */; };
+		D4940F42230864D700F1B8E4 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
+		D4940F4A230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F49230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */; };
+		D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */; };
+		D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4D230865C700F1B8E4 /* Assets.xcassets */; };
+		D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4F230865C700F1B8E4 /* Main.storyboard */; };
 		D4E7423E2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */; };
 		D4EE6C882304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */; };
 /* End PBXBuildFile section */
@@ -73,8 +83,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7CBC0984C2C1B56C8B429592 /* libPods-RVS_Persistent_Prefs.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RVS_Persistent_Prefs.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C18CA9B30A482491D0726E46 /* Pods-RVS_Persistent_Prefs.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVS_Persistent_Prefs.release.xcconfig"; path = "Target Support Files/Pods-RVS_Persistent_Prefs/Pods-RVS_Persistent_Prefs.release.xcconfig"; sourceTree = "<group>"; };
 		D40915092304A7F2008AF085 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		D4162B3823085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_PersistentPrefs_iOS_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4162B3A23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
@@ -100,9 +108,21 @@
 		D48833F8230334E8003080E8 /* RVS_Persistent_Prefs_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Persistent_Prefs_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Simple_Tests.swift; sourceTree = "<group>"; };
 		D48833FC230334E9003080E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4940F32230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_PersistentPrefs_tvOS_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4940F34230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
+		D4940F36230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift; sourceTree = "<group>"; };
+		D4940F39230864AB00F1B8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4940F3B230864AC00F1B8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4940F3D230864AC00F1B8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4940F47230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_PersistentPrefs_macOS_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4940F49230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
+		D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift; sourceTree = "<group>"; };
+		D4940F4D230865C700F1B8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4940F50230865C700F1B8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D4940F52230865C700F1B8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RVS_PersistentPrefs_macOS_TestHarness.entitlements; sourceTree = "<group>"; };
 		D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Thread_Tests.swift; sourceTree = "<group>"; };
 		D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_MixedType_Tests.swift; sourceTree = "<group>"; };
-		FCBA1CA898BB5BADC0CF87E6 /* Pods-RVS_Persistent_Prefs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RVS_Persistent_Prefs.debug.xcconfig"; path = "Target Support Files/Pods-RVS_Persistent_Prefs/Pods-RVS_Persistent_Prefs.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,18 +133,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D4940F2F230864AB00F1B8E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4940F44230865C600F1B8E4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F442E3B48BB0157727C4841 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				FCBA1CA898BB5BADC0CF87E6 /* Pods-RVS_Persistent_Prefs.debug.xcconfig */,
-				C18CA9B30A482491D0726E46 /* Pods-RVS_Persistent_Prefs.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 		D4162B3923085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,15 +189,15 @@
 		D48833B1230332C4003080E8 = {
 			isa = PBXGroup;
 			children = (
+				D40915092304A7F2008AF085 /* Warnings.xcconfig */,
 				D48833E223033303003080E8 /* RVS_Persistent_Prefs */,
 				D48833F9230334E9003080E8 /* RVS_Persistent_Prefs_Tests */,
-				D40915092304A7F2008AF085 /* Warnings.xcconfig */,
 				D4162B3923085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
 				D44481D1230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D44481E0230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
+				D4940F33230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
+				D4940F48230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */,
 				D48833BB230332C4003080E8 /* Products */,
-				1F442E3B48BB0157727C4841 /* Pods */,
-				F7CF0C8271F688DECE3EFD69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +209,8 @@
 				D4162B3823085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness.app */,
 				D44481D0230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app */,
 				D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension.appex */,
+				D4940F32230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness.app */,
+				D4940F47230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -208,12 +235,29 @@
 			path = RVS_Persistent_Prefs_Tests;
 			sourceTree = "<group>";
 		};
-		F7CF0C8271F688DECE3EFD69 /* Frameworks */ = {
+		D4940F33230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */ = {
 			isa = PBXGroup;
 			children = (
-				7CBC0984C2C1B56C8B429592 /* libPods-RVS_Persistent_Prefs.a */,
+				D4940F34230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */,
+				D4940F36230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */,
+				D4940F38230864AB00F1B8E4 /* Main.storyboard */,
+				D4940F3B230864AC00F1B8E4 /* Assets.xcassets */,
+				D4940F3D230864AC00F1B8E4 /* Info.plist */,
 			);
-			name = Frameworks;
+			path = RVS_PersistentPrefs_tvOS_TestHarness;
+			sourceTree = "<group>";
+		};
+		D4940F48230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */ = {
+			isa = PBXGroup;
+			children = (
+				D4940F49230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */,
+				D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */,
+				D4940F4D230865C700F1B8E4 /* Assets.xcassets */,
+				D4940F4F230865C700F1B8E4 /* Main.storyboard */,
+				D4940F52230865C700F1B8E4 /* Info.plist */,
+				D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */,
+			);
+			path = RVS_PersistentPrefs_macOS_TestHarness;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +348,41 @@
 			productReference = D48833F8230334E8003080E8 /* RVS_Persistent_Prefs_Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D4940F31230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4940F3E230864AC00F1B8E4 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_tvOS_TestHarness" */;
+			buildPhases = (
+				D4940F41230864BE00F1B8E4 /* SwiftLint */,
+				D4940F2E230864AB00F1B8E4 /* Sources */,
+				D4940F2F230864AB00F1B8E4 /* Frameworks */,
+				D4940F30230864AB00F1B8E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RVS_PersistentPrefs_tvOS_TestHarness;
+			productName = RVS_PersistentPrefs_tvOS_TestHarness;
+			productReference = D4940F32230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4940F46230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4940F54230865C700F1B8E4 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_macOS_TestHarness" */;
+			buildPhases = (
+				D4940F43230865C600F1B8E4 /* Sources */,
+				D4940F44230865C600F1B8E4 /* Frameworks */,
+				D4940F45230865C600F1B8E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RVS_PersistentPrefs_macOS_TestHarness;
+			productName = RVS_PersistentPrefs_macOS_TestHarness;
+			productReference = D4940F47230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -329,6 +408,12 @@
 					D48833F7230334E8003080E8 = {
 						CreatedOnToolsVersion = 10.3;
 					};
+					D4940F31230864AB00F1B8E4 = {
+						CreatedOnToolsVersion = 10.3;
+					};
+					D4940F46230865C600F1B8E4 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 				};
 			};
 			buildConfigurationList = D48833B5230332C4003080E8 /* Build configuration list for PBXProject "RVS_Persistent_Prefs" */;
@@ -349,6 +434,8 @@
 				D4162B3723085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
 				D44481CF230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
+				D4940F31230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
+				D4940F46230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */,
 			);
 		};
 /* End PBXProject section */
@@ -379,6 +466,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44481E8230858BE00C8E526 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4940F30230864AB00F1B8E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4940F3C230864AC00F1B8E4 /* Assets.xcassets in Resources */,
+				D4940F3A230864AB00F1B8E4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4940F45230865C600F1B8E4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */,
+				D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +544,24 @@
 			shellPath = /bin/sh;
 			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n\"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
 		};
+		D4940F41230864BE00F1B8E4 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n\"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -459,6 +582,7 @@
 				D44481E6230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift in Sources */,
 				D44481E4230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */,
 				D44481E2230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */,
+				D4940F2D2308647C00F1B8E4 /* RVS_PersistentPrefs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +603,25 @@
 				D4E7423E2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */,
 				D4EE6C882304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift in Sources */,
 				D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4940F2E230864AB00F1B8E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4940F42230864D700F1B8E4 /* RVS_PersistentPrefs.swift in Sources */,
+				D4940F37230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift in Sources */,
+				D4940F35230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4940F43230865C600F1B8E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */,
+				D4940F4A230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,6 +663,22 @@
 				D44481D3230858BC00C8E526 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		D4940F38230864AB00F1B8E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4940F39230864AB00F1B8E4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D4940F4F230865C700F1B8E4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4940F50230865C700F1B8E4 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -832,6 +991,92 @@
 			};
 			name = Release;
 		};
+		D4940F3F230864AC00F1B8E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				INFOPLIST_FILE = RVS_PersistentPrefs_tvOS_TestHarness/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-tvOS-TestHarness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.4;
+			};
+			name = Debug;
+		};
+		D4940F40230864AC00F1B8E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				INFOPLIST_FILE = RVS_PersistentPrefs_tvOS_TestHarness/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-tvOS-TestHarness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 12.4;
+			};
+			name = Release;
+		};
+		D4940F55230865C700F1B8E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RVS_PersistentPrefs_macOS_TestHarness/RVS_PersistentPrefs_macOS_TestHarness.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				INFOPLIST_FILE = RVS_PersistentPrefs_macOS_TestHarness/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-macOS-TestHarness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D4940F56230865C700F1B8E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RVS_PersistentPrefs_macOS_TestHarness/RVS_PersistentPrefs_macOS_TestHarness.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				INFOPLIST_FILE = RVS_PersistentPrefs_macOS_TestHarness/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-macOS-TestHarness";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -885,6 +1130,24 @@
 			buildConfigurations = (
 				D48833FE230334E9003080E8 /* Debug */,
 				D48833FF230334E9003080E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4940F3E230864AC00F1B8E4 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_tvOS_TestHarness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4940F3F230864AC00F1B8E4 /* Debug */,
+				D4940F40230864AC00F1B8E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4940F54230865C700F1B8E4 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_macOS_TestHarness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4940F55230865C700F1B8E4 /* Debug */,
+				D4940F56230865C700F1B8E4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
