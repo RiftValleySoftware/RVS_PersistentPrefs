@@ -8,6 +8,7 @@ jazzy   --github_url https://github.com/RiftValleySoftware/RVS_PersistentPrefs\
         --theme fullwidth \
         --author The\ Great\ Rift\ Valley\ Software\ Company \
         --author_url https://riftvalleysoftware.com \
+        --module RVS_Persistent_Prefs \
         --min-acl public
 cp icon.png docs/icon.png
 cd "${CWD}"

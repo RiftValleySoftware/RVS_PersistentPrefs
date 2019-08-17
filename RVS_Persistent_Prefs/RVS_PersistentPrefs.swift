@@ -106,12 +106,12 @@ public class RVS_PersistentPrefs: NSObject {
     public enum PrefsError: Error {
         /// Some elements were presented that do not fit our keys. The associated value is an Array of the failing keys.
         case incorrectKeys(invalidElements: [String])
-        /// Not all of the elements in the _values Dictionary are Codable. The associated value is an Array of the failing keys.
+        /// Not all of the elements in the _values Dictionary are Plist-Compatible. The associated value is an Array of the failing keys.
         case valuesNotPlistCompatible(invalidElements: [String])
         /// We were not able to find a stored pref for the given key. The associated value is the key we are looking for.
         case noStoredPrefsForKey(key: String)
-        /// Unknown thrown error.
-        case unknownError(error: Error)
+        /// Unknown thrown error. The associated value is the error (if any).
+        case unknownError(error: Error?)
     }
     
     /* ############################################################################################################################## */
