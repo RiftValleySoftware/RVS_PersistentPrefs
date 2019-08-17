@@ -92,7 +92,7 @@ You should check `lastError` for problems. It will be nil, if there are none.
 
 Although not required, it's a good idea to make the subclass [Key-Value Observant](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift). You do this by writing accessor calculated properties, and declaring them `@objc dynamic`. RVS_PersistentPrefs derives from [NSObject](https://developer.apple.com/documentation/objectivec/nsobject), so there should be no issues.
 
-In all of the included test harness apps, we will use KVO.
+In some of the included test harness apps, we will use KVO.
 
 USAGE
 -
