@@ -52,28 +52,11 @@ public class RVS_PersistentPrefs: NSObject {
      - throws: An error, if the values are not all codable.
      */
     private func _save() throws {
-        var illegalKeys: [String] = []
-        
-        // What we do here, is "scrub" the values of anything that was added against what is expected.
-        let filteredDictionary = _values.filter { (arg0) -> Bool in
-            let (key, _) = arg0
-            if keys.contains(key) {
-                return true
-            } else {
-                illegalKeys.append(key)
-                return false
-            }
-        }
-        
-        _values = filteredDictionary
-        
-        if !illegalKeys.isEmpty {
-            throw PrefsError.incorrectKeys(invalidElements: illegalKeys)
-        } else if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
+        if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
             UserDefaults.standard.set(_values, forKey: key)
         } else {
             #if DEBUG
-                print("Attempt to set non-codable values!")
+                print("Attempt to set non-plist values!")
             #endif
             
             // What we do here, is look through our values list, and record the keys of the elements that are not considered Codable. We return those in the error that we throw.
@@ -85,7 +68,7 @@ public class RVS_PersistentPrefs: NSObject {
                     #endif
                 } else {
                     #if DEBUG
-                        print("\($0.key) is not Codable")
+                        print("\($0.key) is not plist-compliant")
                     #endif
                     valueElementList.append($0.key)
                 }
@@ -182,14 +165,36 @@ public class RVS_PersistentPrefs: NSObject {
             lastError = nil
             let oldValues = _values
             _values = newValue
-            do {
-                try _save()
-            } catch PrefsError.valuesNotCodable(let unCodableKeys) {
-                _values = oldValues
-                lastError = PrefsError.valuesNotCodable(invalidElements: unCodableKeys)
-            } catch {
-                _values = oldValues
-                lastError = PrefsError.unknownError(error: error)
+            var illegalKeys: [String] = []
+            
+            // What we do here, is "scrub" the values of anything that was added against what is expected.
+            let filteredDictionary = newValue.filter { (arg0) -> Bool in
+                let (key, _) = arg0
+                if keys.contains(key) {
+                    return true
+                } else {
+                    illegalKeys.append(key)
+                    return false
+                }
+            }
+            
+            _values = filteredDictionary
+            
+            if !illegalKeys.isEmpty {
+                #if DEBUG
+                    print("Illegal Keys!")
+                #endif
+                lastError = PrefsError.incorrectKeys(invalidElements: illegalKeys)
+            } else {
+                do {
+                    try _save()
+                } catch PrefsError.valuesNotCodable(let unCodableKeys) {
+                    lastError = PrefsError.valuesNotCodable(invalidElements: unCodableKeys)
+                    _values = oldValues
+                } catch {
+                    lastError = PrefsError.unknownError(error: error)
+                    _values = oldValues
+                }
             }
         }
     }
@@ -245,15 +250,12 @@ public class RVS_PersistentPrefs: NSObject {
         key = inKey ?? String(describing: type(of: self).self)  // This gives us a simple classname as our key.
         
         // First, we load any currently stored prefs. This makes sure that we have a solid starting place.
-        let _mutex = DispatchQueue(label: "INIT-LOAD-MUTEX")
-        _mutex.sync {
-            do {
-                try _load()
-            } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
-                lastError = nil
-            } catch {
-                lastError = PrefsError.unknownError(error: error)
-            }
+        do {
+            try _load()
+        } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
+            lastError = nil
+        } catch {
+            lastError = PrefsError.unknownError(error: error)
         }
         
         #if DEBUG
