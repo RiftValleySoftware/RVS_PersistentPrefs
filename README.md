@@ -50,12 +50,49 @@ The class consists of [one single Swift source file](https://github.com/RiftVall
 
 Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift) into your project, and add it to your current [Swift](https://apple.com/swift) native target.
 
-USAGE
+IMPORTANT IMPLEMENTATION NOTES
 -
 **Thread Safety**
 
 There is none. Deal with it and move on. I'll be looking to fix that (if I can) in the future, but it isn't a critical enough requirement at the moment to justify preventing release of the utility.
 
-Because of the nature of the utility (a "quick and dirty" persistent save for small amounts of -usually- user-interface-linked data), thread safety is not a critical need. I am making a point of mentioning it, though, so you don't spend too much time searching under the cushions, if you come across inconsistend dealloc crashes. There is a commented-out test in the [RVS_Persistent_Prefs_Thread_Tests](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs_Tests/RVS_Persistent_Prefs_Thread_Tests.swift#L158) file. If you uncomment it, and run it repeatedly, you will eventually run into the issue. You can also jack up the number of tests to increase the likelihood of running into the issue.
+Because of the nature of the utility (a "quick and dirty" persistent save for small amounts of -usually- user-interface-linked data), thread safety is not a critical need. I am making a point of mentioning it, though, so you don't spend too much time searching under the cushions, if you come across inconsistend dealloc crashes. There is a commented-out test in the [RVS_Persistent_Prefs_Thread_Tests.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs_Tests/RVS_Persistent_Prefs_Thread_Tests.swift#L158) file. If you uncomment it, and run it repeatedly, you will eventually run into the issue. You can also jack up the number of tests to increase the likelihood of running into the issue.
 
 It doesn't need to be on the main thread, but it shouldn't be called from different threads.
+
+**Must Be Subclassed**
+
+The implementation needs to be a concrete subclass of RVS_PersistentPrefs. At bare minimum, you need to override the `keys: [String]` calculated property, to return an `Array` of `String`, containing the internal keys. You might also override the `key` stored property, but it's probably easier to just set the base class one in an `init`.
+
+**Data Stored Is Typeless**
+
+Remember that the internal storage of the data is a `Dictionary<String, Any>`. That means that the storage almost acts like a loosely-typed language. You can change the data type of a stored `Dictionary` value, simply by changing the type you give to it.
+
+If you are a PHP programmer, that's great. Not so great, if you are a Swift programmer.
+
+One of the jobs of a subclass is to hide this typelessness behind accessors that cast the stored data into consistent types.
+
+**All Stored Data Must Be XML-Plist-Compatible**
+
+Since the ultimate storage "bucket" for our persistent data is in [a plist](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html#//apple_ref/doc/uid/TP40009254-SW1), all data types, anywhere in the hierarchy of stored data nees to be in a form that can be serialized into an XML form. Most ObjC (NS and CF) classes can be stored in a plist, and you can usually store opaque types by redering them into a [`Data`](https://developer.apple.com/documentation/foundation/data) value, and returning that via an [`NSCoding`](https://developer.apple.com/documentation/foundation/nscoding) implementation.
+
+The RVS_PersistentPrefs class wil "vet" your data before attempting to save it. If it detects any plist-incompatible data, it will not save the data, and will set the `lastError` property to `valuesNotPlistCompatible`, which will have associated data. That data will be an `Array` of `String`, containing the top-level keys of the offending elements (remember that you can store a hierarchy, but the error will only report the top level of the hierarchy).
+
+**You Must Use the Keys Provided by the `keys: [String]` Calculated Property**
+
+You cannot submit data using a key that is not listed in the `keys: [String]` calculated property. If you attempt to do so the `lastError` property will be set to `incorrectKeys`, which will have associated data. That data will be an `Array` of `String`, containing the incorrect top-level keys.
+
+**Does Not Throw**
+
+The RVS_PersistentPrefs class does not throw. However, internally, it does. It also provides [an error enum](https://riftvalleysoftware.github.io/RVS_PersistentPrefs/Classes/RVS_PersistentPrefs/PrefsError.html), containing the erros that it will put into the `lastError` property, if there was an error.
+
+You should check `lastError` for problems. It will be nil, if there are none.
+
+**KVO**
+
+Although not required, it's a good idea to make the subclass [Key-Value Observant](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift). You do this by writing accessor calculated properties, and declaring them `@objc dynamic`. RVS_PersistentPrefs derives from [NSObject](https://developer.apple.com/documentation/objectivec/nsobject), so there should be no issues.
+
+In all of the included test harness apps, we will use KVO.
+
+USAGE
+-
