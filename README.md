@@ -84,7 +84,7 @@ You cannot submit data using a key that is not listed in the `keys: [String]` ca
 
 **Does Not Throw**
 
-The RVS_PersistentPrefs class does not throw. However, internally, it does. It also provides [an error enum](https://riftvalleysoftware.github.io/RVS_PersistentPrefs/Classes/RVS_PersistentPrefs/PrefsError.html), containing the erros that it will put into the `lastError` property, if there was an error.
+The RVS_PersistentPrefs class does not throw. However, internally, it does. It also provides [an error enum](https://riftvalleysoftware.github.io/RVS_PersistentPrefs/Classes/RVS_PersistentPrefs/PrefsError.html), containing the errors that it will put into the `lastError` property, if there was an error.
 
 You should check `lastError` for problems. It will be nil, if there are none.
 
