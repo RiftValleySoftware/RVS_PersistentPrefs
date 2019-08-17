@@ -1,13 +1,25 @@
 {
+  "properties" : {
+    "canvasSize" : {
+      "height" : 240,
+      "width" : 400
+    }
+  },
   "layers" : [
     {
-      "filename" : "Front.imagestacklayer"
+      "filename" : "16To9AppIcon.imagestacklayer"
     },
     {
-      "filename" : "Middle.imagestacklayer"
+      "filename" : "3To1AppIcon copy.imagestacklayer"
     },
     {
-      "filename" : "Back.imagestacklayer"
+      "filename" : "3To1AppIcon.imagestacklayer"
+    },
+    {
+      "filename" : "SquareAppIcon.imagestacklayer"
+    },
+    {
+      "filename" : "6To19AppIcon.imagestacklayer"
     }
   ],
   "info" : {

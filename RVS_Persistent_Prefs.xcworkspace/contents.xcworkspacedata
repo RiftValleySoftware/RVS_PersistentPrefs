@@ -23,7 +23,4 @@
    <FileRef
       location = "group:RVS_Persistent_Prefs.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
-   </FileRef>
 </Workspace>

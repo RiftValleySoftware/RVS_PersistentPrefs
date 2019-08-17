@@ -34,4 +34,3 @@ class RVS_PersistentPrefs_tvOS_TestHarness_ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 }
-

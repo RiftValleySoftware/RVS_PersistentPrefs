@@ -23,6 +23,19 @@
 		D44481E6230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44481E5230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift */; };
 		D44481E8230858BE00C8E526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44481E7230858BE00C8E526 /* Assets.xcassets */; };
 		D44481ED230858BE00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D44481D0230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app */; };
+		D468766D230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
+		D468766E230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
+		D468766F230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
+		D4687670230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
+		D468768023088A61004958D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
+		D468768123088A61004958D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
+		D468768223088A61004958D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
+		D468768323088A61004958D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
+		D468768423088A61004958D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
+		D468768823089A3D004958D0 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468768723089A3D004958D0 /* RVS_String_Extensions.swift */; };
+		D468768923089A3D004958D0 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468768723089A3D004958D0 /* RVS_String_Extensions.swift */; };
+		D468768A23089A3D004958D0 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468768723089A3D004958D0 /* RVS_String_Extensions.swift */; };
+		D468768B23089A3D004958D0 /* RVS_String_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468768723089A3D004958D0 /* RVS_String_Extensions.swift */; };
 		D48833E423033303003080E8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E323033303003080E8 /* main.swift */; };
 		D48833ED230333A8003080E8 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */; };
@@ -102,6 +115,9 @@
 		D44481E7230858BE00C8E526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D44481E9230858BE00C8E526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D44481EA230858BE00C8E526 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_TestSet.swift; sourceTree = "<group>"; };
+		D468768523088A61004958D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D468768723089A3D004958D0 /* RVS_String_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RVS_String_Extensions.swift; path = RVS_PersistentPrefs_Common_Files/RVS_String_Extensions.swift; sourceTree = SOURCE_ROOT; };
 		D48833E123033303003080E8 /* RVS_Persistent_Prefs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RVS_Persistent_Prefs; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48833E323033303003080E8 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs.swift; sourceTree = "<group>"; };
@@ -186,12 +202,23 @@
 			path = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
 			sourceTree = "<group>";
 		};
+		D468766B230883A3004958D0 /* RVS_PersistentPrefs_Common_Files */ = {
+			isa = PBXGroup;
+			children = (
+				D468768623088A61004958D0 /* Localizable.strings */,
+				D468768723089A3D004958D0 /* RVS_String_Extensions.swift */,
+				D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */,
+			);
+			path = RVS_PersistentPrefs_Common_Files;
+			sourceTree = "<group>";
+		};
 		D48833B1230332C4003080E8 = {
 			isa = PBXGroup;
 			children = (
 				D40915092304A7F2008AF085 /* Warnings.xcconfig */,
 				D48833E223033303003080E8 /* RVS_Persistent_Prefs */,
 				D48833F9230334E9003080E8 /* RVS_Persistent_Prefs_Tests */,
+				D468766B230883A3004958D0 /* RVS_PersistentPrefs_Common_Files */,
 				D4162B3923085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
 				D44481D1230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D44481E0230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
@@ -445,6 +472,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D468768023088A61004958D0 /* Localizable.strings in Resources */,
 				D4162B4523085322000F4845 /* LaunchScreen.storyboard in Resources */,
 				D44481CB2308552700C8E526 /* Warnings.xcconfig in Resources */,
 				D4162B4223085322000F4845 /* Assets.xcassets in Resources */,
@@ -457,6 +485,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44481D6230858BD00C8E526 /* Assets.xcassets in Resources */,
+				D468768123088A61004958D0 /* Localizable.strings in Resources */,
 				D44481D4230858BC00C8E526 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D44481E8230858BE00C8E526 /* Assets.xcassets in Resources */,
+				D468768223088A61004958D0 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4940F3C230864AC00F1B8E4 /* Assets.xcassets in Resources */,
+				D468768323088A61004958D0 /* Localizable.strings in Resources */,
 				D4940F3A230864AB00F1B8E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -483,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */,
+				D468768423088A61004958D0 /* Localizable.strings in Resources */,
 				D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,6 +603,8 @@
 			files = (
 				D44481CD230856FB00C8E526 /* RVS_PersistentPrefs.swift in Sources */,
 				D4162B3D23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift in Sources */,
+				D468766D230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
+				D468768823089A3D004958D0 /* RVS_String_Extensions.swift in Sources */,
 				D4162B3B23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -579,6 +613,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D468768923089A3D004958D0 /* RVS_String_Extensions.swift in Sources */,
+				D468766E230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
 				D44481E6230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift in Sources */,
 				D44481E4230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */,
 				D44481E2230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */,
@@ -612,6 +648,8 @@
 			files = (
 				D4940F42230864D700F1B8E4 /* RVS_PersistentPrefs.swift in Sources */,
 				D4940F37230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift in Sources */,
+				D468766F230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
+				D468768A23089A3D004958D0 /* RVS_String_Extensions.swift in Sources */,
 				D4940F35230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -622,6 +660,8 @@
 			files = (
 				D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */,
 				D4940F4A230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift in Sources */,
+				D468768B23089A3D004958D0 /* RVS_String_Extensions.swift in Sources */,
+				D4687670230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +703,14 @@
 				D44481D3230858BC00C8E526 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		D468768623088A61004958D0 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D468768523088A61004958D0 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 		D4940F38230864AB00F1B8E4 /* Main.storyboard */ = {

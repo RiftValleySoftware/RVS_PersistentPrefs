@@ -96,3 +96,7 @@ In all of the included test harness apps, we will use KVO.
 
 USAGE
 -
+
+TEST HARNESS PROJECTS
+-
+There are a number of included test harness applications. These cover iOS/iPadOS, macOS, watchOS and tvOS.

@@ -2,27 +2,27 @@
   "assets" : [
     {
       "size" : "1280x768",
-      "idiom" : "tv",
+      "role" : "primary-app-icon",
       "filename" : "App Icon - App Store.imagestack",
-      "role" : "primary-app-icon"
+      "idiom" : "tv"
     },
     {
-      "size" : "400x240",
+      "role" : "primary-app-icon",
       "idiom" : "tv",
-      "filename" : "App Icon.imagestack",
-      "role" : "primary-app-icon"
+      "size" : "400x240",
+      "filename" : "App Icon.imagestack"
     },
     {
-      "size" : "2320x720",
+      "idiom" : "tv",
+      "size" : "1920x720",
+      "role" : "top-shelf-image",
+      "filename" : "Top Shelf Image.imageset"
+    },
+    {
+      "role" : "top-shelf-image-wide",
       "idiom" : "tv",
       "filename" : "Top Shelf Image Wide.imageset",
-      "role" : "top-shelf-image-wide"
-    },
-    {
-      "size" : "1920x720",
-      "idiom" : "tv",
-      "filename" : "Top Shelf Image.imageset",
-      "role" : "top-shelf-image"
+      "size" : "2320x720"
     }
   ],
   "info" : {

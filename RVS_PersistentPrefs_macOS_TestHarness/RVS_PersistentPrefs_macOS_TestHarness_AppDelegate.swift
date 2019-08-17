@@ -37,4 +37,3 @@ class RVS_PersistentPrefs_macOS_TestHarness_AppDelegate: NSObject, NSApplication
         // Insert code here to tear down your application
     }
 }
-

@@ -26,6 +26,205 @@ import UIKit
 // MARK: - Main View Controller Class
 /* ################################################################################################################################## */
 /**
+ In iOS, we don't have good support for KVO, so we rely on good old-fashioned IBAction handlers and setup.
  */
-class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController {
+class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    /// This is the preferences object. It is instantiated at runtime, and left on its own.
+    var prefs = RVS_PersistentPrefs_TestSet(key: "RVS_PersistentPrefs_iOS_TestHarness_Prefs")
+    /// The Label for the Integer Text Entry.
+    @IBOutlet weak var intLabel: UILabel!
+    /// The Integer Text Entry.
+    @IBOutlet weak var intTextEntry: UITextField!
+    /// The Label for the String Text Entry.
+    @IBOutlet weak var stringLabel: UILabel!
+    /// The String Text Entry.
+    @IBOutlet weak var stringTextEntry: UITextField!
+    /// The Label for the Array Group.
+    @IBOutlet weak var arrayLabel: UILabel!
+    /// The Array Selection Picker.
+    @IBOutlet weak var arrayPickerView: UIPickerView!
+    /// The Array Editor.
+    @IBOutlet weak var arrayTextEntry: UITextField!
+    /// The Label for the Dictionary Group.
+    @IBOutlet weak var dictionaryLabel: UILabel!
+    /// The Dictionary Selection Picker.
+    @IBOutlet weak var dictionaryPickerView: UIPickerView!
+    /// The Dictionary Editor.
+    @IBOutlet weak var dictionaryTextEntry: UITextField!
+    /// The Label for the Date Picker.
+    @IBOutlet weak var dateLabel: UILabel!
+    /// The Date Picker
+    @IBOutlet weak var datePicker: UIDatePicker!
+
+    /* ############################################################################################################################## */
+    // MARK: - Instance Calculated Properties
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     The keys for the Dictionary, as a sorted Array of String
+     */
+    var dictionaryKeys: [String] {
+        return prefs.dictionary.keys.compactMap { $0 }.sorted {
+            let desiredOrder = ["One".localizedVariant, "Two".localizedVariant, "Three".localizedVariant, "Four".localizedVariant, "Five".localizedVariant]
+            let indexofA = desiredOrder.firstIndex(of: $0.localizedVariant) ?? 0
+            let indexofB = desiredOrder.firstIndex(of: $1.localizedVariant) ?? 0
+            
+            return indexofA < indexofB
+        }
+    }
+
+    /* ############################################################################################################################## */
+    // MARK: - IBAction Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     Called when text changes in the Integer Text Entry Text Field.
+     
+     - parameter: Ignored
+     */
+    @IBAction func integerTextEntryChanged(_: UITextField! = nil) {
+        prefs.int = Int(intTextEntry?.text ?? "0") ?? 0
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when text changes in the String Text Entry Text Field.
+     
+     - parameter: Ignored
+     */
+    @IBAction func stringTextEntryChanged(_: UITextField! = nil) {
+        prefs.string = stringTextEntry?.text ?? ""
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when text changes in the Selected Array Element Text Entry Text Field.
+     
+     - parameter: Ignored
+     */
+    @IBAction func arrayTextEntryChanged(_: UITextField! = nil) {
+        let selectedElement = arrayPickerView.selectedRow(inComponent: 0)
+        prefs.array[selectedElement] = arrayTextEntry.text ?? ""
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when text changes in the Selected Dictionary Element Text Entry Text Field.
+     
+     - parameter: Ignored
+     */
+    @IBAction func dictionaryTextEntryChanged(_: UITextField! = nil) {
+        prefs.dictionary[dictionaryKeys[dictionaryPickerView.selectedRow(inComponent: 0)]] = dictionaryTextEntry.text ?? ""
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when the Date Picker changes.
+     
+     - parameter: Ignored
+     */
+    @IBAction func dateChanged(_: UIDatePicker! = nil) {
+        prefs.date = datePicker.date
+    }
+
+    /* ############################################################################################################################## */
+    // MARK: - Base Class Override Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     Called when the view has completely loaded.
+     */
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Set up the initial state of the Integer label and text entry value.
+        intLabel?.text = prefs.intKey.localizedVariant
+        intTextEntry?.text = String(prefs.int)
+        
+        // Set up the initial state of the String label and text entry value.
+        stringLabel?.text = prefs.stringKey.localizedVariant
+        stringTextEntry?.text = prefs.string
+        
+        // Set up the initial state of the Array label.
+        arrayLabel?.text = prefs.arrayKey.localizedVariant
+        
+        // Set up the initial state of the Dictionary label.
+        dictionaryLabel?.text = prefs.dictionaryKey.localizedVariant
+        
+        // Select the first row of each.
+        arrayPickerView?.selectRow(0, inComponent: 0, animated: false)
+        dictionaryPickerView?.selectRow(0, inComponent: 0, animated: false)
+        
+        // Make sure the text field gets updated.
+        pickerView(arrayPickerView, didSelectRow: 0, inComponent: 0)
+        pickerView(dictionaryPickerView, didSelectRow: 0, inComponent: 0)
+        
+        // Set up the initial state of the Date label and picker.
+        dateLabel?.text = prefs.dateKey.localizedVariant
+        datePicker?.date = prefs.date
+    }
+    
+    /* ############################################################################################################################## */
+    // MARK: - UIPickerViewDataSource Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This is the call to tell the Picker View how many components (always 1)
+     
+     - parameter inPickerView: The PickerView that is making the call (Ignored).
+     
+     - returns: 1 (always)
+     */
+    func numberOfComponents(in inPickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    /* ################################################################## */
+    /**
+     This is the call to tell the Picker View how many components (always 1)
+     
+     - parameter inPickerView: The PickerView that is making the call (Ignored).
+     - parameter numberOfRowsInComponent: The Selected Component (Ignored).
+     
+     - returns: 5 (always)
+     */
+    func pickerView(_ inPickerView: UIPickerView, numberOfRowsInComponent inComponent: Int) -> Int {
+        return 5
+    }
+    
+    /* ############################################################################################################################## */
+    // MARK: - UIPickerViewDelegate Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This is called to get the PickerView to return a Title.
+     
+     - parameter inPickerView: The PickerView that is making the call.
+     - parameter titleForRow: The Selected Row.
+     - parameter forComponent: The Selected Component.
+
+     - returns: The title for the selected row, in the selected component of the selected picker.
+     */
+    func pickerView(_ inPickerView: UIPickerView, titleForRow inRow: Int, forComponent inComponent: Int) -> String? {
+        if inPickerView == arrayPickerView {
+            return String(inRow + 1)
+        } else {
+            return dictionaryKeys[inRow]
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     This is called when a new row is selected in a picker. It sets up the text entry field.
+     
+     - parameter inPickerView: The PickerView that is making the call.
+     - parameter titleForRow: The Selected Row.
+     - parameter inComponent: The Selected Component (ignored).
+     */
+    func pickerView(_ inPickerView: UIPickerView, didSelectRow inRow: Int, inComponent: Int) {
+        if inPickerView == arrayPickerView {
+            arrayTextEntry?.text = String(prefs.array[inRow])
+        } else {
+            dictionaryTextEntry?.text = prefs.dictionary[dictionaryKeys[inRow]]
+        }
+    }
 }
