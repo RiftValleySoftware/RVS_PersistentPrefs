@@ -76,7 +76,7 @@ One of the jobs of a subclass is to hide this typelessness behind accessors that
 
 Since the ultimate storage "bucket" for our persistent data is in [a plist](https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/AboutInformationPropertyListFiles.html#//apple_ref/doc/uid/TP40009254-SW1), all data types, anywhere in the hierarchy of stored data nees to be in a form that can be serialized into an XML form. Most ObjC (NS and CF) classes can be stored in a plist, and you can usually store opaque types by rendering them into a [`Data`](https://developer.apple.com/documentation/foundation/data) value, and returning that via an [`NSCoding`](https://developer.apple.com/documentation/foundation/nscoding) implementation.
 
-The RVS_PersistentPrefs class wil "vet" your data before attempting to save it. If it detects any plist-incompatible data, it will not save the data, and will set the `lastError` property to `valuesNotPlistCompatible`, which will have associated data. That data will be an `Array` of `String`, containing the top-level keys of the offending elements (remember that you can store a hierarchy, but the error will only report the top level of the hierarchy).
+The RVS_PersistentPrefs class will "vet" your data before attempting to save it. If it detects any plist-incompatible data, it will not save the data, and will set the `lastError` property to `valuesNotPlistCompatible`, which will have associated data. That data will be an `Array` of `String`, containing the top-level keys of the offending elements (remember that you can store a hierarchy, but the error will only report the top level of the hierarchy).
 
 **You Must Use the Keys Provided by the `keys: [String]` Calculated Property**
 
