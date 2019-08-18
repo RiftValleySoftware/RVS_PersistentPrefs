@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>PrefsError Enumeration Reference</title>
+    <title>_Indexes Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
     <meta charset="utf-8">
@@ -14,9 +14,9 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Enum/PrefsError" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Enum/_Indexes" class="dashAnchor"></a>
 
-    <a title="PrefsError Enumeration Reference"></a>
+    <a title="_Indexes Enumeration Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -44,7 +44,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../../index.html">RVS_PersistentPrefs_iOS_TestHarness Reference</a>
       <img class="carat" src="../../img/carat.png" />
-      PrefsError Enumeration Reference
+      _Indexes Enumeration Reference
     </p>
 
     <div class="content-wrapper">
@@ -87,14 +87,14 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>PrefsError</h1>
+            <h1>_Indexes</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">PrefsError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">enum</span> <span class="nv">_Indexes</span> <span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                 </div>
               </div>
-            <p>Errors that Can be thrown from methods in this class</p>
+            <p>These are indexes, into the main keys Array. They represent different types of stored properties.</p>
 
           </div>
         </section>
@@ -106,9 +106,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bC0C0C5ErrorO13incorrectKeysyAESaySSG_tcAEmF"></a>
-                    <a name="//apple_ref/swift/Element/incorrectKeys(invalidElements:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bC0C0C5ErrorO13incorrectKeysyAESaySSG_tcAEmF">incorrectKeys(invalidElements:)</a>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO3intyA2FmF"></a>
+                    <a name="//apple_ref/swift/Element/int" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO3intyA2FmF">int</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -116,14 +116,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Some elements were presented that do not fit our keys. The associated value is an Array of the failing keys.</p>
+                        <p>Simple arbitrary Integer value</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">incorrectKeys</span><span class="p">(</span><span class="nv">invalidElements</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">int</span></code></pre>
 
                         </div>
                       </div>
@@ -133,9 +133,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bC0C0C5ErrorO24valuesNotPlistCompatibleyAESaySSG_tcAEmF"></a>
-                    <a name="//apple_ref/swift/Element/valuesNotPlistCompatible(invalidElements:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bC0C0C5ErrorO24valuesNotPlistCompatibleyAESaySSG_tcAEmF">valuesNotPlistCompatible(invalidElements:)</a>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO6stringyA2FmF"></a>
+                    <a name="//apple_ref/swift/Element/string" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO6stringyA2FmF">string</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -143,14 +143,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Not all of the elements in the _values Dictionary are Plist-Compatible. The associated value is an Array of the failing keys.</p>
+                        <p>Simple arbitrary String value</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">valuesNotPlistCompatible</span><span class="p">(</span><span class="nv">invalidElements</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">])</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">string</span></code></pre>
 
                         </div>
                       </div>
@@ -160,9 +160,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bC0C0C5ErrorO08noStoredC6ForKeyyAESS_tcAEmF"></a>
-                    <a name="//apple_ref/swift/Element/noStoredPrefsForKey(key:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bC0C0C5ErrorO08noStoredC6ForKeyyAESS_tcAEmF">noStoredPrefsForKey(key:)</a>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO5arrayyA2FmF"></a>
+                    <a name="//apple_ref/swift/Element/array" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO5arrayyA2FmF">array</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -170,14 +170,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>We were not able to find a stored pref for the given key. The associated value is the key we are looking for.</p>
+                        <p>An Array of String</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">noStoredPrefsForKey</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">array</span></code></pre>
 
                         </div>
                       </div>
@@ -187,9 +187,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bC0C0C5ErrorO07unknownG0yAEs0G0_pSg_tcAEmF"></a>
-                    <a name="//apple_ref/swift/Element/unknownError(error:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bC0C0C5ErrorO07unknownG0yAEs0G0_pSg_tcAEmF">unknownError(error:)</a>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO10dictionaryyA2FmF"></a>
+                    <a name="//apple_ref/swift/Element/dictionary" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO10dictionaryyA2FmF">dictionary</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -197,14 +197,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Unknown thrown error. The associated value is the error (if any).</p>
+                        <p>A Dictionary of String, keyed by String</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="nf">unknownError</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">dictionary</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO4dateyA2FmF"></a>
+                    <a name="//apple_ref/swift/Element/date" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc1_E3SetC8_Indexes33_93569B9037B7A513BDB9D5B0798757F1LLO4dateyA2FmF">date</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Date object</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">date</span></code></pre>
 
                         </div>
                       </div>

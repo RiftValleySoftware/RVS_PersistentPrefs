@@ -100,3 +100,29 @@ USAGE
 TEST HARNESS PROJECTS
 -
 There are a number of included test harness applications. These cover iOS/iPadOS, macOS, watchOS and tvOS.
+
+**All Apps Are Localizable**
+
+The test harness apps are all complete, production-quality apps, designed to demonstrate release-quality implementation of the preferences class. They are localizable, and written as "ship-quality" apps.
+
+**Common Preferences File**
+
+All the test harnesses will share [the same Preferences Subclass](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift). This is a fairly simple variant that has the following data types:
+
+* An Integer *(key: "Integer Value")*.
+
+* A String *(key: "String Value")*.
+
+* An Arry of String *(key: "Array Value")*.
+
+* A Dictionary of String-keyed Any *(key: "Dictionary Value")*.
+
+* A [Date](https://developer.apple.com/documentation/foundation/date) Object *(key: "Date Object")*.
+
+It presents [Key-Value Observable](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift) accessors for all of these values, which are directly used in the macOS test harness.
+
+**The iOS Test Harness**
+
+[The iOS Test Harness App](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness) is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a [Settings Bundle](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html) to show a "Preferences Pane" in the Settings App.
+
+The iOS test harness also integrates a watchOS test harness that shares the preferences instance with the device app.

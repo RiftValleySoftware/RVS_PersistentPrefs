@@ -8,9 +8,6 @@
       location = "container:"
       name = "Meta">
       <FileRef
-         location = "group:.jazzy.yaml">
-      </FileRef>
-      <FileRef
          location = "group:.swiftlint.yml">
       </FileRef>
       <FileRef

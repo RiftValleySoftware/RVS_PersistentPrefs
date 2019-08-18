@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>RVS_PersistentPrefs_iOS_TestHarness_ViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/RVS_PersistentPrefs_iOS_TestHarness_ViewController" class="dashAnchor"></a>
+
+    <a title="RVS_PersistentPrefs_iOS_TestHarness_ViewController Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          RVS_PersistentPrefs_iOS_TestHarness Docs
+        </a>
+         (100% documented)
+      </p>
+    
+      <p class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </p>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs">
+            <img class="header-icon" src="../img/gh.png"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">RVS_PersistentPrefs_iOS_TestHarness Reference</a>
+      <img class="carat" src="../img/carat.png" />
+      RVS_PersistentPrefs_iOS_TestHarness_ViewController Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RVS_PersistentPrefs.html">RVS_PersistentPrefs</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RVS_PersistentPrefs/PrefsError.html">– PrefsError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RVS_PersistentPrefs_TestSet.html">RVS_PersistentPrefs_TestSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RVS_PersistentPrefs_TestSet/_Indexes.html">– _Indexes</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.html">RVS_PersistentPrefs_iOS_TestHarness_AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RVS_PersistentPrefs_iOS_TestHarness_ViewController.html">RVS_PersistentPrefs_iOS_TestHarness_ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/StringProtocol.html">StringProtocol</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content">
+            <h1>RVS_PersistentPrefs_iOS_TestHarness_ViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RVS_PersistentPrefs_iOS_TestHarness_ViewController</span> <span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">UIPickerViewDelegate</span><span class="p">,</span> <span class="kt">UIPickerViewDataSource</span></code></pre>
+
+                </div>
+              </div>
+            <p>In iOS, we don&rsquo;t have good support for KVO, so we rely on good old-fashioned IBAction handlers and setup.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Instance%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Instance Properties" class="dashAnchor"></a>
+                <a href="#/Instance%20Properties">
+                  <h3 class="section-name">Instance Properties</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc2_id1_eF15_ViewControllerC5prefsAA0a1_bc1_E3SetCvp"></a>
+                    <a name="//apple_ref/swift/Property/prefs" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc2_id1_eF15_ViewControllerC5prefsAA0a1_bc1_E3SetCvp">prefs</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is the preferences object. It is instantiated at runtime, and left on its own.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">prefs</span><span class="p">:</span> <span class="kt"><a href="../Classes/RVS_PersistentPrefs_TestSet.html">RVS_PersistentPrefs_TestSet</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)intLabel"></a>
+                    <a name="//apple_ref/swift/Property/intLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)intLabel">intLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Label for the Integer Text Entry.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">intLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)intTextEntry"></a>
+                    <a name="//apple_ref/swift/Property/intTextEntry" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)intTextEntry">intTextEntry</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Integer Text Entry.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">intTextEntry</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)stringLabel"></a>
+                    <a name="//apple_ref/swift/Property/stringLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)stringLabel">stringLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Label for the String Text Entry.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">stringLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)stringTextEntry"></a>
+                    <a name="//apple_ref/swift/Property/stringTextEntry" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)stringTextEntry">stringTextEntry</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The String Text Entry.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">stringTextEntry</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)arrayLabel"></a>
+                    <a name="//apple_ref/swift/Property/arrayLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)arrayLabel">arrayLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Label for the Array Group.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">arrayLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)arrayPickerView"></a>
+                    <a name="//apple_ref/swift/Property/arrayPickerView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)arrayPickerView">arrayPickerView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Array Selection Picker.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">arrayPickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)arrayTextEntry"></a>
+                    <a name="//apple_ref/swift/Property/arrayTextEntry" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)arrayTextEntry">arrayTextEntry</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Array Editor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">arrayTextEntry</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)dictionaryLabel"></a>
+                    <a name="//apple_ref/swift/Property/dictionaryLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)dictionaryLabel">dictionaryLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Label for the Dictionary Group.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">dictionaryLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)dictionaryPickerView"></a>
+                    <a name="//apple_ref/swift/Property/dictionaryPickerView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)dictionaryPickerView">dictionaryPickerView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Dictionary Selection Picker.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">dictionaryPickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)dictionaryTextEntry"></a>
+                    <a name="//apple_ref/swift/Property/dictionaryTextEntry" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)dictionaryTextEntry">dictionaryTextEntry</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Dictionary Editor.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">dictionaryTextEntry</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)dateLabel"></a>
+                    <a name="//apple_ref/swift/Property/dateLabel" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)dateLabel">dateLabel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Label for the Date Picker.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">dateLabel</span><span class="p">:</span> <span class="kt">UILabel</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)datePicker"></a>
+                    <a name="//apple_ref/swift/Property/datePicker" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)datePicker">datePicker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Date Picker</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">datePicker</span><span class="p">:</span> <span class="kt">UIDatePicker</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)resetButton"></a>
+                    <a name="//apple_ref/swift/Property/resetButton" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(py)resetButton">resetButton</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Reset Button</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span>
+<span class="k">weak</span> <span class="k">var</span> <span class="nv">resetButton</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Instance%20Calculated%20Properties"></a>
+                <a name="//apple_ref/swift/Section/Instance Calculated Properties" class="dashAnchor"></a>
+                <a href="#/Instance%20Calculated%20Properties">
+                  <h3 class="section-name">Instance Calculated Properties</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc2_id1_eF15_ViewControllerC14dictionaryKeysSaySSGvp"></a>
+                    <a name="//apple_ref/swift/Property/dictionaryKeys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc2_id1_eF15_ViewControllerC14dictionaryKeysSaySSGvp">dictionaryKeys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The keys for the Dictionary, as a sorted Array of String</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">dictionaryKeys</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/IBAction%20Methods"></a>
+                <a name="//apple_ref/swift/Section/IBAction Methods" class="dashAnchor"></a>
+                <a href="#/IBAction%20Methods">
+                  <h3 class="section-name">IBAction Methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)resetButtonHit:"></a>
+                    <a name="//apple_ref/swift/Method/resetButtonHit(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)resetButtonHit:">resetButtonHit(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the reset button is hit.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">resetButtonHit</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)integerTextEntryChanged:"></a>
+                    <a name="//apple_ref/swift/Method/integerTextEntryChanged(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)integerTextEntryChanged:">integerTextEntryChanged(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when text changes in the Integer Text Entry Text Field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">integerTextEntryChanged</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)stringTextEntryChanged:"></a>
+                    <a name="//apple_ref/swift/Method/stringTextEntryChanged(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)stringTextEntryChanged:">stringTextEntryChanged(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when text changes in the String Text Entry Text Field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">stringTextEntryChanged</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)arrayTextEntryChanged:"></a>
+                    <a name="//apple_ref/swift/Method/arrayTextEntryChanged(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)arrayTextEntryChanged:">arrayTextEntryChanged(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when text changes in the Selected Array Element Text Entry Text Field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">arrayTextEntryChanged</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)dictionaryTextEntryChanged:"></a>
+                    <a name="//apple_ref/swift/Method/dictionaryTextEntryChanged(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)dictionaryTextEntryChanged:">dictionaryTextEntryChanged(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when text changes in the Selected Dictionary Element Text Entry Text Field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">dictionaryTextEntryChanged</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">UITextField</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)dateChanged:"></a>
+                    <a name="//apple_ref/swift/Method/dateChanged(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)dateChanged:">dateChanged(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the Date Picker changes.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span>
+<span class="kd">func</span> <span class="nf">dateChanged</span><span class="p">(</span><span class="nv">_</span><span class="p">:</span> <span class="kt">UIDatePicker</span><span class="o">!</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Instance Methods" class="dashAnchor"></a>
+                <a href="#/Instance%20Methods">
+                  <h3 class="section-name">Instance Methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc2_id1_eF15_ViewControllerC24loadDefaultsFromSettingsyyF"></a>
+                    <a name="//apple_ref/swift/Method/loadDefaultsFromSettings()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc2_id1_eF15_ViewControllerC24loadDefaultsFromSettingsyyF">loadDefaultsFromSettings()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This loads the values from the main defaults, and sets them into our stored prefs.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">loadDefaultsFromSettings</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc2_id1_eF15_ViewControllerC22saveDefaultsToSettingsyyF"></a>
+                    <a name="//apple_ref/swift/Method/saveDefaultsToSettings()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:35RVS_PersistentPrefs_iOS_TestHarness0a1_bc2_id1_eF15_ViewControllerC22saveDefaultsToSettingsyyF">saveDefaultsToSettings()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This takes what&rsquo;s in our stored prefs, and saves them to the main defaults.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">saveDefaultsToSettings</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Base%20Class%20Override%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Base Class Override Methods" class="dashAnchor"></a>
+                <a href="#/Base%20Class%20Override%20Methods">
+                  <h3 class="section-name">Base Class Override Methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)viewDidLoad"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)viewDidLoad">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the view initially loads.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidLoad</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)viewWillLayoutSubviews"></a>
+                    <a name="//apple_ref/swift/Method/viewWillLayoutSubviews()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)viewWillLayoutSubviews">viewWillLayoutSubviews()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called when the view will lay out its subviews.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">override</span> <span class="kd">func</span> <span class="nf">viewWillLayoutSubviews</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIPickerViewDataSource%20Methods"></a>
+                <a name="//apple_ref/swift/Section/UIPickerViewDataSource Methods" class="dashAnchor"></a>
+                <a href="#/UIPickerViewDataSource%20Methods">
+                  <h3 class="section-name">UIPickerViewDataSource Methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)numberOfComponentsInPickerView:"></a>
+                    <a name="//apple_ref/swift/Method/numberOfComponents(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)numberOfComponentsInPickerView:">numberOfComponents(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is the call to tell the Picker View how many components (always 1)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">numberOfComponents</span><span class="p">(</span><span class="k">in</span> <span class="nv">inPickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inPickerView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The PickerView that is making the call (Ignored).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>1 (always)</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)pickerView:numberOfRowsInComponent:"></a>
+                    <a name="//apple_ref/swift/Method/pickerView(_:numberOfRowsInComponent:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)pickerView:numberOfRowsInComponent:">pickerView(_:numberOfRowsInComponent:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is the call to tell the Picker View how many components (always 1)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">inPickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">numberOfRowsInComponent</span> <span class="nv">inComponent</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inPickerView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The PickerView that is making the call (Ignored).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>numberOfRowsInComponent</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Selected Component (Ignored).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>5 (always)</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/UIPickerViewDelegate%20Methods"></a>
+                <a name="//apple_ref/swift/Section/UIPickerViewDelegate Methods" class="dashAnchor"></a>
+                <a href="#/UIPickerViewDelegate%20Methods">
+                  <h3 class="section-name">UIPickerViewDelegate Methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)pickerView:titleForRow:forComponent:"></a>
+                    <a name="//apple_ref/swift/Method/pickerView(_:titleForRow:forComponent:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)pickerView:titleForRow:forComponent:">pickerView(_:titleForRow:forComponent:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is called to get the PickerView to return a Title.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">inPickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">titleForRow</span> <span class="nv">inRow</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">forComponent</span> <span class="nv">inComponent</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inPickerView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The PickerView that is making the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>titleForRow</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Selected Row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>forComponent</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Selected Component.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The title for the selected row, in the selected component of the selected picker.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)pickerView:didSelectRow:inComponent:"></a>
+                    <a name="//apple_ref/swift/Method/pickerView(_:didSelectRow:inComponent:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_iOS_TestHarness@objc(cs)RVS_PersistentPrefs_iOS_TestHarness_ViewController(im)pickerView:didSelectRow:inComponent:">pickerView(_:didSelectRow:inComponent:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is called when a new row is selected in a picker. It sets up the text entry field.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">pickerView</span><span class="p">(</span><span class="n">_</span> <span class="nv">inPickerView</span><span class="p">:</span> <span class="kt">UIPickerView</span><span class="p">,</span> <span class="n">didSelectRow</span> <span class="nv">inRow</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">inComponent</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inPickerView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The PickerView that is making the call.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>titleForRow</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Selected Row.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inComponent</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Selected Component (ignored).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2019 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2019-08-18)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+    </section>
+  </body>
+</div>
+</html>

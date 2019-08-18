@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Classes  Reference</title>
+    <title>Extensions  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -14,14 +14,14 @@
   </head>
   <body>
 
-    <a name="//apple_ref/swift/Section/Classes" class="dashAnchor"></a>
+    <a name="//apple_ref/swift/Section/Extensions" class="dashAnchor"></a>
 
-    <a title="Classes  Reference"></a>
+    <a title="Extensions  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          RVS_Persistent_Prefs Docs
+          RVS_PersistentPrefs_iOS_TestHarness Docs
         </a>
          (100% documented)
       </p>
@@ -42,9 +42,9 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="index.html">RVS_Persistent_Prefs Reference</a>
+      <a class="breadcrumb" href="index.html">RVS_PersistentPrefs_iOS_TestHarness Reference</a>
       <img class="carat" src="img/carat.png" />
-      Classes  Reference
+      Extensions  Reference
     </p>
 
     <div class="content-wrapper">
@@ -59,6 +59,26 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs/PrefsError.html">– PrefsError</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_TestSet.html">RVS_PersistentPrefs_TestSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_TestSet/_Indexes.html">– _Indexes</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.html">RVS_PersistentPrefs_iOS_TestHarness_AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_iOS_TestHarness_ViewController.html">RVS_PersistentPrefs_iOS_TestHarness_ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/StringProtocol.html">StringProtocol</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -67,8 +87,8 @@
 
         <section class="section">
           <div class="section-content">
-            <h1>Classes</h1>
-            <p>The following classes are available globally.</p>
+            <h1>Extensions</h1>
+            <p>The following extensions are available globally.</p>
 
           </div>
         </section>
@@ -76,20 +96,13 @@
         <section class="section">
           <div class="section-content">
             <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Main%20Preferences%20Base%20Class"></a>
-                <a name="//apple_ref/swift/Section/Main Preferences Base Class" class="dashAnchor"></a>
-                <a href="#/Main%20Preferences%20Base%20Class">
-                  <h3 class="section-name">Main Preferences Base Class</h3>
-                </a>
-              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@RVS_Persistent_Prefs@objc(cs)RVS_PersistentPrefs"></a>
-                    <a name="//apple_ref/swift/Class/RVS_PersistentPrefs" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RVS_Persistent_Prefs@objc(cs)RVS_PersistentPrefs">RVS_PersistentPrefs</a>
+                    <a name="/s:Sy"></a>
+                    <a name="//apple_ref/swift/Extension/StringProtocol" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Sy">StringProtocol</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -97,19 +110,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>This class is designed to act as an <q>abstract</q> base class, providing a simple <code>Dictionary</code> datastore that is stored in the <a href="https://developer.apple.com/documentation/foundation/userdefaults"><code>UserDefaults</code></a> in the Application Bundle. It is designed to be reliable, and extremely simple to use.
-The stored <code>Dictionary</code> would be a String-keyed Dictionary of <code>Any</code> (flexible types). It s up to subclasses to specialize the typeless data.
-THIS IS NOT EFFICIENT OR ROBUST!
-It is meant as a simple <q>bucket</q> for things like application preferences. It is not an industrial data storage solution. You have been warned.
-Subclasses could declare their accessors as <a href="https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift"><code>KVO</code></a>-style, thus, providing a direct way to influence persistent state.</p>
+                        <p>These are a variety of cool String extensions that add some great extra cheese on the pizza.</p>
 
-                        <a href="Classes/RVS_PersistentPrefs.html" class="slightly-smaller">See more</a>
+                        <a href="Extensions/StringProtocol.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RVS_PersistentPrefs</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">protocol</span> <span class="kt">StringProtocol</span> <span class="p">:</span> <span class="kt">BidirectionalCollection</span><span class="p">,</span> <span class="kt">Comparable</span><span class="p">,</span> <span class="kt">ExpressibleByStringInterpolation</span><span class="p">,</span> <span class="kt">Hashable</span><span class="p">,</span> <span class="kt">LosslessStringConvertible</span><span class="p">,</span> <span class="kt">TextOutputStream</span><span class="p">,</span> <span class="kt">TextOutputStreamable</span> <span class="k">where</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Element</span> <span class="o">==</span> <span class="kt">Character</span><span class="p">,</span> <span class="k">Self</span><span class="o">.</span><span class="kt">Index</span> <span class="o">==</span> <span class="kt">String</span><span class="o">.</span><span class="kt">Index</span><span class="p">,</span> <span class="k">Self</span><span class="o">.</span><span class="kt">StringInterpolation</span> <span class="o">==</span> <span class="kt">DefaultStringInterpolation</span><span class="p">,</span> <span class="k">Self</span><span class="o">.</span><span class="kt">SubSequence</span> <span class="p">:</span> <span class="kt">StringProtocol</span></code></pre>
 
                         </div>
                       </div>

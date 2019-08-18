@@ -1,6 +1,0 @@
-xcodebuild_arguments:
-    - "-project"
-    - "RVS_Persistent_Prefs.xcodeproj"
-    - "-scheme"
-    - "RVS_Persistent_Prefs"
-    

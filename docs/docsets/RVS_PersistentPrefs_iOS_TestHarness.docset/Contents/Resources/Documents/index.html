@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>RVS_Persistent_Prefs  Reference</title>
+    <title>RVS_PersistentPrefs_iOS_TestHarness  Reference</title>
     <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="css/highlight.css" />
     <meta charset="utf-8">
@@ -15,12 +15,12 @@
   <body>
 
 
-    <a title="RVS_Persistent_Prefs  Reference"></a>
+    <a title="RVS_PersistentPrefs_iOS_TestHarness  Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
         <a class="header-link" href="index.html">
-          RVS_Persistent_Prefs Docs
+          RVS_PersistentPrefs_iOS_TestHarness Docs
         </a>
          (100% documented)
       </p>
@@ -41,9 +41,9 @@
     </header>
 
     <p class="breadcrumbs">
-      <a class="breadcrumb" href="index.html">RVS_Persistent_Prefs Reference</a>
+      <a class="breadcrumb" href="index.html">RVS_PersistentPrefs_iOS_TestHarness Reference</a>
       <img class="carat" src="img/carat.png" />
-      RVS_Persistent_Prefs  Reference
+      RVS_PersistentPrefs_iOS_TestHarness  Reference
     </p>
 
     <div class="content-wrapper">
@@ -57,6 +57,26 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs/PrefsError.html">– PrefsError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_TestSet.html">RVS_PersistentPrefs_TestSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_TestSet/_Indexes.html">– _Indexes</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.html">RVS_PersistentPrefs_iOS_TestHarness_AppDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_iOS_TestHarness_ViewController.html">RVS_PersistentPrefs_iOS_TestHarness_ViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/StringProtocol.html">StringProtocol</a>
               </li>
             </ul>
           </li>
@@ -160,6 +180,30 @@
 <h2 id='test-harness-projects' class='heading'>TEST HARNESS PROJECTS</h2>
 
 <p>There are a number of included test harness applications. These cover iOS/iPadOS, macOS, watchOS and tvOS.</p>
+
+<p><strong>All Apps Are Localizable</strong></p>
+
+<p>The test harness apps are all complete, production-quality apps, designed to demonstrate release-quality implementation of the preferences class. They are localizable, and written as <q>ship-quality</q> apps.</p>
+
+<p><strong>Common Preferences File</strong></p>
+
+<p>All the test harnesses will share <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift">the same Preferences Subclass</a>. This is a fairly simple variant that has the following data types:</p>
+
+<ul>
+<li><p>An Integer <em>(key: <q>Integer Value</q>)</em>.</p></li>
+<li><p>A String <em>(key: <q>String Value</q>)</em>.</p></li>
+<li><p>An Arry of String <em>(key: <q>Array Value</q>)</em>.</p></li>
+<li><p>A Dictionary of String-keyed Any <em>(key: <q>Dictionary Value</q>)</em>.</p></li>
+<li><p>A <a href="https://developer.apple.com/documentation/foundation/date">Date</a> Object <em>(key: <q>Date Object</q>)</em>.</p></li>
+</ul>
+
+<p>It presents <a href="https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift">Key-Value Observable</a> accessors for all of these values, which are directly used in the macOS test harness.</p>
+
+<p><strong>The iOS Test Harness</strong></p>
+
+<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness">The iOS Test Harness App</a> is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html">Settings Bundle</a> to show a <q>Preferences Pane</q> in the Settings App.</p>
+
+<p>The iOS test harness also integrates a watchOS test harness that shares the preferences instance with the device app.</p>
 
           </div>
         </section>
