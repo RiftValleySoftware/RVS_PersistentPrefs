@@ -55,6 +55,8 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     @IBOutlet weak var dateLabel: UILabel!
     /// The Date Picker
     @IBOutlet weak var datePicker: UIDatePicker!
+    /// The Reset Button
+    @IBOutlet weak var resetButton: UIButton!
 
     /* ############################################################################################################################## */
     // MARK: - Instance Calculated Properties
@@ -76,6 +78,17 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /* ############################################################################################################################## */
     // MARK: - IBAction Methods
     /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     Called when the reset button is hit.
+     
+     - parameter: Ignored
+     */
+    @IBAction func resetButtonHit(_: UIButton! = nil) {
+        prefs.reset()
+        view.setNeedsLayout()
+    }
+    
     /* ################################################################## */
     /**
      Called when text changes in the Integer Text Entry Text Field.
@@ -132,10 +145,10 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
-     Called when the view has completely loaded.
+     Called when the view will lay out its subviews.
      */
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         // Set up the initial state of the Integer label and text entry value.
         intLabel?.text = prefs.intKey.localizedVariant
         intTextEntry?.text = String(prefs.int)
@@ -161,6 +174,9 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         // Set up the initial state of the Date label and picker.
         dateLabel?.text = prefs.dateKey.localizedVariant
         datePicker?.date = prefs.date
+        
+        // Set up the localized title of the reset button.
+        resetButton?.setTitle(resetButton?.title(for: .normal), for: .normal)
     }
     
     /* ############################################################################################################################## */

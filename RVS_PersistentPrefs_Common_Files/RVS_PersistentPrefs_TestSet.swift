@@ -66,6 +66,18 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     }
     
     /* ############################################################################################################################## */
+    // MARK: Public Class Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This registers the defaults for our prefs, and makes them available to the settings bundle.
+     */
+    public class func registerDefaults() {
+        NSKeyedArchiver.setClassName("RVS_PersistentPrefs_TestSet", for: self)
+        UserDefaults.standard.register(defaults: _myValues)
+    }
+    
+    /* ############################################################################################################################## */
     // MARK: - Public Calculated Properties (Override)
     /* ############################################################################################################################## */
     /* ################################################################## */
@@ -83,7 +95,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Integer Value. READ-WRITE
      */
-    @objc dynamic var int: Int {
+    @objc dynamic public var int: Int {
         get {
             return values[keys[_Indexes.int.rawValue]] as? Int ?? 0
         }
@@ -97,7 +109,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Key (the Label) for the Integer Value. READ-ONLY
      */
-    @objc dynamic var intKey: String {
+    @objc dynamic public var intKey: String {
         return keys[_Indexes.int.rawValue]
     }
     
@@ -105,7 +117,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The String Value. READ-WRITE
      */
-    @objc dynamic var string: String {
+    @objc dynamic public var string: String {
         get {
             return values[keys[_Indexes.string.rawValue]] as? String ?? ""
         }
@@ -119,7 +131,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Key (the Label) for the String Value. READ-ONLY
      */
-    @objc dynamic var stringKey: String {
+    @objc dynamic public var stringKey: String {
         return keys[_Indexes.string.rawValue]
     }
 
@@ -127,7 +139,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Array<String> Value. READ-WRITE
      */
-    @objc dynamic var array: [String] {
+    @objc dynamic public var array: [String] {
         get {
             return values[keys[_Indexes.array.rawValue]] as? [String] ?? []
         }
@@ -141,7 +153,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Key (the Label) for the Array Value. READ-ONLY
      */
-    @objc dynamic var arrayKey: String {
+    @objc dynamic public var arrayKey: String {
         return keys[_Indexes.array.rawValue]
     }
 
@@ -149,7 +161,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Dictionary<String, String> Value. READ-WRITE
      */
-    @objc dynamic var dictionary: [String: String] {
+    @objc dynamic public var dictionary: [String: String] {
         get {
             return values[keys[_Indexes.dictionary.rawValue]] as? [String: String] ?? [:]
         }
@@ -163,7 +175,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Key (the Label) for the Dictionary Value. READ-ONLY
      */
-    @objc dynamic var dictionaryKey: String {
+    @objc dynamic public var dictionaryKey: String {
         return keys[_Indexes.dictionary.rawValue]
     }
 
@@ -171,7 +183,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Date Value. READ-WRITE
      */
-    @objc dynamic var date: Date {
+    @objc dynamic public var date: Date {
         get {
             return values[keys[_Indexes.date.rawValue]] as? Date ?? Date()
         }
@@ -185,18 +197,29 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      The Key (the Label) for the Date Value. READ-ONLY
      */
-    @objc dynamic var dateKey: String {
+    @objc dynamic public var dateKey: String {
         return keys[_Indexes.date.rawValue]
     }
     
     /* ############################################################################################################################## */
-    // MARK: - Public Calculated Properties
+    // MARK: - Public Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This resets everything to the default settings.
+     */
+    public func reset() {
+        values = type(of: self)._myValues
+    }
+
+    /* ############################################################################################################################## */
+    // MARK: - Public Init
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
      The keyed initializer. It sends in our default values, if there were no previous ones. Bit primitive, but this is for test harnesses.
      */
-    init(key inKey: String) {
+    public init(key inKey: String) {
         super.init(key: inKey)  // Start by initializing with the key. This will load any asved values.
         if values.isEmpty { // If we didn't already have something, we send in our defaults.
             values = type(of: self)._myValues

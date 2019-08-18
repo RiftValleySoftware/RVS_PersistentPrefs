@@ -26,8 +26,26 @@ import UIKit
 // MARK: - Main Application Delegate Class
 /* ################################################################################################################################## */
 /**
+ The main application delegate class. It simply give the window a place to hang its hat, and registers the app defaults.
  */
 @UIApplicationMain
 class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicationDelegate {
+    /* ############################################################################################################################## */
+    // MARK: - Instance Properties
+    /* ############################################################################################################################## */
+    /// The app window.
     var window: UIWindow?
+    
+    /* ############################################################################################################################## */
+    // MARK: - UIApplicationDelegate Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This is called when the app has finished launching. We use this to register the defaults.
+     
+     - parameter: ignored
+     */
+    func applicationDidFinishLaunching(_: UIApplication) {
+        RVS_PersistentPrefs_TestSet.registerDefaults()
+    }
 }
