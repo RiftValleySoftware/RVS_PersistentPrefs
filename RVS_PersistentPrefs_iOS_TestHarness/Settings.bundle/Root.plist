@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>StringsTable</key>
-	<string>Root</string>
+	<string>Localizable</string>
 	<key>PreferenceSpecifiers</key>
 	<array>
 		<dict>
@@ -16,45 +16,27 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Name</string>
+			<string>Integer Value</string>
 			<key>Key</key>
-			<string>name_preference</string>
+			<string>Integer Value</string>
+            <key>KeyboardType</key>
+            <string>NumbersAndPunctuation</string>
 			<key>DefaultValue</key>
-			<string></string>
+			<string>123</string>
 			<key>IsSecure</key>
 			<false/>
-			<key>KeyboardType</key>
-			<string>Alphabet</string>
-			<key>AutocapitalizationType</key>
-			<string>None</string>
-			<key>AutocorrectionType</key>
-			<string>No</string>
 		</dict>
 		<dict>
 			<key>Type</key>
-			<string>PSToggleSwitchSpecifier</string>
+			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>Enabled</string>
+			<string>String Value</string>
 			<key>Key</key>
-			<string>enabled_preference</string>
+			<string>String Value</string>
 			<key>DefaultValue</key>
-			<true/>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSSliderSpecifier</string>
-			<key>Key</key>
-			<string>slider_preference</string>
-			<key>DefaultValue</key>
-			<real>0.5</real>
-			<key>MinimumValue</key>
-			<integer>0</integer>
-			<key>MaximumValue</key>
-			<integer>1</integer>
-			<key>MinimumValueImage</key>
-			<string></string>
-			<key>MaximumValueImage</key>
-			<string></string>
+			<string>Any String</string>
+			<key>IsSecure</key>
+			<false/>
 		</dict>
 	</array>
 </dict>

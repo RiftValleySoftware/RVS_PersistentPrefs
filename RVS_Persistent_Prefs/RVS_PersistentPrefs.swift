@@ -153,6 +153,9 @@ public class RVS_PersistentPrefs: NSObject {
             lastError = nil
             do {
                 try _load()
+                #if DEBUG
+                    print("Successfully Loaded \(_values)")
+                #endif
             } catch PrefsError.noStoredPrefsForKey(let unknownKey) {
                 lastError = PrefsError.noStoredPrefsForKey(key: unknownKey)
             } catch {
@@ -188,6 +191,9 @@ public class RVS_PersistentPrefs: NSObject {
             } else {
                 do {
                     try _save()
+                    #if DEBUG
+                        print("Successfully Saved \(_values)")
+                    #endif
                 } catch PrefsError.valuesNotPlistCompatible(let unCodableKeys) {
                     lastError = PrefsError.valuesNotPlistCompatible(invalidElements: unCodableKeys)
                     _values = oldValues

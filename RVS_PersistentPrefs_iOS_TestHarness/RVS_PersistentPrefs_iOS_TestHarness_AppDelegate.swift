@@ -35,17 +35,4 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     /* ############################################################################################################################## */
     /// The app window.
     var window: UIWindow?
-    
-    /* ############################################################################################################################## */
-    // MARK: - UIApplicationDelegate Methods
-    /* ############################################################################################################################## */
-    /* ################################################################## */
-    /**
-     This is called when the app has finished launching. We use this to register the defaults.
-     
-     - parameter: ignored
-     */
-    func applicationDidFinishLaunching(_: UIApplication) {
-        RVS_PersistentPrefs_TestSet.registerDefaults()
-    }
 }

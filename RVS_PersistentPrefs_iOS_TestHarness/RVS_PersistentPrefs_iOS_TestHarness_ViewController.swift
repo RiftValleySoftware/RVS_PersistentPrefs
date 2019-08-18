@@ -29,6 +29,9 @@ import UIKit
  In iOS, we don't have good support for KVO, so we rely on good old-fashioned IBAction handlers and setup.
  */
 class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    /* ############################################################################################################################## */
+    // MARK: - Instance Properties
+    /* ############################################################################################################################## */
     /// This is the preferences object. It is instantiated at runtime, and left on its own.
     var prefs = RVS_PersistentPrefs_TestSet(key: "RVS_PersistentPrefs_iOS_TestHarness_Prefs")
     /// The Label for the Integer Text Entry.
@@ -86,6 +89,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
      */
     @IBAction func resetButtonHit(_: UIButton! = nil) {
         prefs.reset()
+        saveDefaultsToSettings()
         view.setNeedsLayout()
     }
     
@@ -97,6 +101,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
      */
     @IBAction func integerTextEntryChanged(_: UITextField! = nil) {
         prefs.int = Int(intTextEntry?.text ?? "0") ?? 0
+        saveDefaultsToSettings()
     }
     
     /* ################################################################## */
@@ -107,6 +112,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
      */
     @IBAction func stringTextEntryChanged(_: UITextField! = nil) {
         prefs.string = stringTextEntry?.text ?? ""
+        saveDefaultsToSettings()
     }
     
     /* ################################################################## */
@@ -118,6 +124,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     @IBAction func arrayTextEntryChanged(_: UITextField! = nil) {
         let selectedElement = arrayPickerView.selectedRow(inComponent: 0)
         prefs.array[selectedElement] = arrayTextEntry.text ?? ""
+        saveDefaultsToSettings()
     }
     
     /* ################################################################## */
@@ -128,6 +135,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
      */
     @IBAction func dictionaryTextEntryChanged(_: UITextField! = nil) {
         prefs.dictionary[dictionaryKeys[dictionaryPickerView.selectedRow(inComponent: 0)]] = dictionaryTextEntry.text ?? ""
+        saveDefaultsToSettings()
     }
     
     /* ################################################################## */
@@ -138,30 +146,109 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
      */
     @IBAction func dateChanged(_: UIDatePicker! = nil) {
         prefs.date = datePicker.date
+        saveDefaultsToSettings()
     }
 
+    /* ############################################################################################################################## */
+    // MARK: - Instance Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This loads the values from the main defaults, and sets them into our stored prefs.
+     */
+    func loadDefaultsFromSettings() {
+        #if DEBUG
+            print("Loading Defaults from Settings")
+        #endif
+        prefs.keys.forEach {
+            if let value = UserDefaults.standard.object(forKey: $0) {
+                #if DEBUG
+                    print("\t\($0) is Being Set to \(value)")
+                #endif
+                switch $0 {
+                case "Integer Value":
+                    if let valTmp = value as? String, let value = Int(valTmp) {
+                        prefs[$0] = value
+                    }
+                    
+                case "String Value":
+                    if let value = value as? String {
+                        prefs[$0] = value
+                    }
+
+                default:
+                    ()
+                }
+            }
+        }
+        view.setNeedsLayout()
+    }
+    
+    /* ################################################################## */
+    /**
+     This takes what's in our stored prefs, and saves them to the main defaults.
+     */
+    func saveDefaultsToSettings() {
+        prefs.keys.forEach {
+            switch $0 {
+            case "Integer Value":
+                if let value = prefs[$0] as? Int {
+                    UserDefaults.standard.set(String(value), forKey: $0)
+                }
+                
+            case "String Value":
+                if let value = prefs[$0] as? String {
+                    UserDefaults.standard.set(value, forKey: $0)
+                }
+
+            default:
+                ()
+            }
+            UserDefaults.standard.set(prefs[$0], forKey: $0)
+        }
+    }
+    
     /* ############################################################################################################################## */
     // MARK: - Base Class Override Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
-     Called when the view will lay out its subviews.
+     Called when the view initially loads.
      */
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Get whatever is in settings, in case the user changed them while we were out.
+        loadDefaultsFromSettings()
         // Set up the initial state of the Integer label and text entry value.
         intLabel?.text = prefs.intKey.localizedVariant
-        intTextEntry?.text = String(prefs.int)
         
         // Set up the initial state of the String label and text entry value.
         stringLabel?.text = prefs.stringKey.localizedVariant
-        stringTextEntry?.text = prefs.string
         
         // Set up the initial state of the Array label.
         arrayLabel?.text = prefs.arrayKey.localizedVariant
         
         // Set up the initial state of the Dictionary label.
         dictionaryLabel?.text = prefs.dictionaryKey.localizedVariant
+        
+        // Set up the initial state of the Date label and picker.
+        dateLabel?.text = prefs.dateKey.localizedVariant
+        
+        // Set up the localized title of the reset button.
+        resetButton?.setTitle(resetButton?.title(for: .normal), for: .normal)
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when the view will lay out its subviews.
+     */
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        // Set up the initial state of the Integer text entry value.
+        intTextEntry?.text = String(prefs.int)
+        
+        // Set up the initial state of the String text entry value.
+        stringTextEntry?.text = prefs.string
         
         // Select the first row of each.
         arrayPickerView?.selectRow(0, inComponent: 0, animated: false)
@@ -172,11 +259,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         pickerView(dictionaryPickerView, didSelectRow: 0, inComponent: 0)
         
         // Set up the initial state of the Date label and picker.
-        dateLabel?.text = prefs.dateKey.localizedVariant
         datePicker?.date = prefs.date
-        
-        // Set up the localized title of the reset button.
-        resetButton?.setTitle(resetButton?.title(for: .normal), for: .normal)
     }
     
     /* ############################################################################################################################## */

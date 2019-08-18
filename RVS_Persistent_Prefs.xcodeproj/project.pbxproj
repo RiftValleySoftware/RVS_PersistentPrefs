@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4011BD62309DD7700C0803D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4011BD52309DD7700C0803D /* Settings.bundle */; };
+		D4011BD82309E95300C0803D /* Localizable.strings in Copy Localizable For Settings Bundle */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
 		D409150A2304A942008AF085 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D4162B3B23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4162B3A23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */; };
 		D4162B3D23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4162B3C23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift */; };
@@ -49,7 +51,6 @@
 		D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */; };
 		D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4D230865C700F1B8E4 /* Assets.xcassets */; };
 		D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4F230865C700F1B8E4 /* Main.storyboard */; };
-		D4E38E5A2308B2F500C698C1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4E38E592308B2F500C698C1 /* Settings.bundle */; };
 		D4E7423E2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */; };
 		D4EE6C882304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		D4011BD72309E93A00C0803D /* Copy Localizable For Settings Bundle */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Settings.bundle;
+			dstSubfolderSpec = 1;
+			files = (
+				D4011BD82309E95300C0803D /* Localizable.strings in Copy Localizable For Settings Bundle */,
+			);
+			name = "Copy Localizable For Settings Bundle";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D44481F1230858BE00C8E526 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D4011BD52309DD7700C0803D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D40915092304A7F2008AF085 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		D4162B3823085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_PersistentPrefs_iOS_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4162B3A23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,7 +151,6 @@
 		D4940F50230865C700F1B8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4940F52230865C700F1B8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RVS_PersistentPrefs_macOS_TestHarness.entitlements; sourceTree = "<group>"; };
-		D4E38E592308B2F500C698C1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Thread_Tests.swift; sourceTree = "<group>"; };
 		D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_MixedType_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,9 +187,9 @@
 				D4162B3C23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift */,
 				D4162B3E23085321000F4845 /* Main.storyboard */,
 				D4162B4123085322000F4845 /* Assets.xcassets */,
-				D4E38E592308B2F500C698C1 /* Settings.bundle */,
 				D4162B4323085322000F4845 /* LaunchScreen.storyboard */,
 				D4162B4623085322000F4845 /* Info.plist */,
+				D4011BD52309DD7700C0803D /* Settings.bundle */,
 			);
 			path = RVS_PersistentPrefs_iOS_TestHarness;
 			sourceTree = "<group>";
@@ -300,6 +312,7 @@
 				D44481CC230856B500C8E526 /* SwiftLint */,
 				D4162B3423085321000F4845 /* Sources */,
 				D4162B3623085321000F4845 /* Resources */,
+				D4011BD72309E93A00C0803D /* Copy Localizable For Settings Bundle */,
 				D44481F5230858BE00C8E526 /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -479,7 +492,7 @@
 				D4162B4523085322000F4845 /* LaunchScreen.storyboard in Resources */,
 				D44481CB2308552700C8E526 /* Warnings.xcconfig in Resources */,
 				D4162B4223085322000F4845 /* Assets.xcassets in Resources */,
-				D4E38E5A2308B2F500C698C1 /* Settings.bundle in Resources */,
+				D4011BD62309DD7700C0803D /* Settings.bundle in Resources */,
 				D4162B4023085321000F4845 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

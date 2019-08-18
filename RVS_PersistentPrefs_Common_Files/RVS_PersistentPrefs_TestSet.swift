@@ -66,18 +66,6 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     }
     
     /* ############################################################################################################################## */
-    // MARK: Public Class Methods
-    /* ############################################################################################################################## */
-    /* ################################################################## */
-    /**
-     This registers the defaults for our prefs, and makes them available to the settings bundle.
-     */
-    public class func registerDefaults() {
-        NSKeyedArchiver.setClassName("RVS_PersistentPrefs_TestSet", for: self)
-        UserDefaults.standard.register(defaults: _myValues)
-    }
-    
-    /* ############################################################################################################################## */
     // MARK: - Public Calculated Properties (Override)
     /* ############################################################################################################################## */
     /* ################################################################## */
@@ -97,7 +85,14 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      */
     @objc dynamic public var int: Int {
         get {
-            return values[keys[_Indexes.int.rawValue]] as? Int ?? 0
+            if let ret = values[keys[_Indexes.int.rawValue]] as? Int {
+                return ret
+            } else {
+                #if DEBUG
+                    print("No legal variant of Integer Value")
+                #endif
+                return 0
+            }
         }
         
         set {
@@ -202,7 +197,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     }
     
     /* ############################################################################################################################## */
-    // MARK: - Public Methods
+    // MARK: - Public Instance Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
@@ -210,6 +205,9 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      */
     public func reset() {
         values = type(of: self)._myValues
+        if let appDomain: String = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: appDomain)
+        }
     }
 
     /* ############################################################################################################################## */
