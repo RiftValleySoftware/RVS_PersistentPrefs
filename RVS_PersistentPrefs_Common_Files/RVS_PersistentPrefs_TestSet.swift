@@ -52,7 +52,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
     /**
      These are indexes, into the main keys Array. They represent different types of stored properties.
      */
-    enum ValueIndexes: Int {
+    private enum _ValueIndexes: Int {
         /// Simple arbitrary Integer value
         case int
         /// Simple arbitrary String value
@@ -85,7 +85,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      */
     @objc dynamic public var int: Int {
         get {
-            if let ret = values[keys[ValueIndexes.int.rawValue]] as? Int {
+            if let ret = values[keys[_ValueIndexes.int.rawValue]] as? Int {
                 return ret
             } else {
                 #if DEBUG
@@ -96,7 +96,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
         }
         
         set {
-            return values[keys[ValueIndexes.int.rawValue]] = newValue
+            return values[keys[_ValueIndexes.int.rawValue]] = newValue
         }
     }
     
@@ -105,7 +105,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      The Key (the Label) for the Integer Value. READ-ONLY
      */
     @objc dynamic public var intKey: String {
-        return keys[ValueIndexes.int.rawValue]
+        return keys[_ValueIndexes.int.rawValue]
     }
     
     /* ################################################################## */
@@ -114,11 +114,11 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      */
     @objc dynamic public var string: String {
         get {
-            return values[keys[ValueIndexes.string.rawValue]] as? String ?? ""
+            return values[keys[_ValueIndexes.string.rawValue]] as? String ?? ""
         }
         
         set {
-            return values[keys[ValueIndexes.string.rawValue]] = newValue
+            return values[keys[_ValueIndexes.string.rawValue]] = newValue
         }
     }
     
@@ -127,7 +127,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      The Key (the Label) for the String Value. READ-ONLY
      */
     @objc dynamic public var stringKey: String {
-        return keys[ValueIndexes.string.rawValue]
+        return keys[_ValueIndexes.string.rawValue]
     }
 
     /* ################################################################## */
@@ -136,11 +136,11 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      */
     @objc dynamic public var array: [String] {
         get {
-            return values[keys[ValueIndexes.array.rawValue]] as? [String] ?? []
+            return values[keys[_ValueIndexes.array.rawValue]] as? [String] ?? []
         }
         
         set {
-            return values[keys[ValueIndexes.array.rawValue]] = newValue
+            return values[keys[_ValueIndexes.array.rawValue]] = newValue
         }
     }
     
@@ -149,7 +149,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      The Key (the Label) for the Array Value. READ-ONLY
      */
     @objc dynamic public var arrayKey: String {
-        return keys[ValueIndexes.array.rawValue]
+        return keys[_ValueIndexes.array.rawValue]
     }
 
     /* ################################################################## */
@@ -158,11 +158,11 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      */
     @objc dynamic public var dictionary: [String: String] {
         get {
-            return values[keys[ValueIndexes.dictionary.rawValue]] as? [String: String] ?? [:]
+            return values[keys[_ValueIndexes.dictionary.rawValue]] as? [String: String] ?? [:]
         }
         
         set {
-            return values[keys[ValueIndexes.dictionary.rawValue]] = newValue
+            return values[keys[_ValueIndexes.dictionary.rawValue]] = newValue
         }
     }
     
@@ -171,7 +171,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      The Key (the Label) for the Dictionary Value. READ-ONLY
      */
     @objc dynamic public var dictionaryKey: String {
-        return keys[ValueIndexes.dictionary.rawValue]
+        return keys[_ValueIndexes.dictionary.rawValue]
     }
 
     /* ################################################################## */
@@ -180,11 +180,11 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      */
     @objc dynamic public var date: Date {
         get {
-            return values[keys[ValueIndexes.date.rawValue]] as? Date ?? Date()
+            return values[keys[_ValueIndexes.date.rawValue]] as? Date ?? Date()
         }
         
         set {
-            return values[keys[ValueIndexes.date.rawValue]] = newValue
+            return values[keys[_ValueIndexes.date.rawValue]] = newValue
         }
     }
     
@@ -193,7 +193,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      The Key (the Label) for the Date Value. READ-ONLY
      */
     @objc dynamic public var dateKey: String {
-        return keys[ValueIndexes.date.rawValue]
+        return keys[_ValueIndexes.date.rawValue]
     }
     
     /* ############################################################################################################################## */
