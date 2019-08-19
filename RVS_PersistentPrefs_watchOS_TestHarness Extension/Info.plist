@@ -31,6 +31,6 @@
 		<string>com.apple.watchkit</string>
 	</dict>
 	<key>WKExtensionDelegateClassName</key>
-	<string>$(PRODUCT_MODULE_NAME).ExtensionDelegate</string>
+	<string>$(PRODUCT_MODULE_NAME).RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate</string>
 </dict>
 </plist>

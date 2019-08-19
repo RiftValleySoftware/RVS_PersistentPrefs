@@ -38,6 +38,39 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     private var _mySession: WCSession! = nil
 
     /* ############################################################################################################################## */
+    // MARK: - Private Instance Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    private func _activateSession() {
+        if WCSession.isSupported() && (self.session.activationState != .activated) {
+            self._mySession.delegate = self
+            self.session.activate()
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     */
+    private func _sendCurrentProfileToWatch() {
+        do {
+            let prefs = RVS_PersistentPrefs_TestSet(key: type(of: self).prefsKey)
+            try self.session.updateApplicationContext(prefs.values)
+        } catch {
+            #if DEBUG
+            print("Communication Error With Watch: \(error)")
+            #endif
+        }
+    }
+
+    /* ############################################################################################################################## */
+    // MARK: - Static Constants
+    /* ############################################################################################################################## */
+    /// The main prefs key.
+    static let prefsKey = "RVS_PersistentPrefs_iOS_TestHarness_Prefs"
+    
+    /* ############################################################################################################################## */
     // MARK: - Instance Properties
     /* ############################################################################################################################## */
     /// The app window.
@@ -56,19 +89,6 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
         
         return self._mySession
     }
-
-    /* ############################################################################################################################## */
-    // MARK: - Internal Instance Methods
-    /* ############################################################################################################################## */
-    /* ################################################################## */
-    /**
-     */
-    func activateSession() {
-        if WCSession.isSupported() && (self.session.activationState != .activated) {
-            self._mySession.delegate = self
-            self.session.activate()
-        }
-    }
     
     /* ############################################################################################################################## */
     // MARK: - UIApplicationDelegate Methods
@@ -77,28 +97,10 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     /**
      */
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        self.activateSession()
+        _activateSession()
         return true
     }
 
-    /* ############################################################################################################################## */
-    // MARK: - WCSession Sender Methods
-    /* ############################################################################################################################## */
-    /* ################################################################## */
-    /**
-     */
-    func sendCurrentProfileToWatch() {
-        let appContext: [String: Any] = [:]
-        
-        do {
-            try self.session.updateApplicationContext(appContext)
-        } catch {
-            #if DEBUG
-                print("Communication Error With Watch: \(error)")
-            #endif
-        }
-    }
-    
     /* ############################################################################################################################## */
     // MARK: - WCSessionDelegate Protocol Methods
     /* ############################################################################################################################## */
@@ -110,7 +112,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
             #if DEBUG
                 print("Watch session is active.")
             #endif
-            self.sendCurrentProfileToWatch()
+            _sendCurrentProfileToWatch()
         }
     }
     

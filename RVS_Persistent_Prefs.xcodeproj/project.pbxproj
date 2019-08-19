@@ -207,8 +207,8 @@
 		D44481E0230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D44481E1230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */,
 				D44481E3230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */,
+				D44481E1230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */,
 				D44481E5230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift */,
 				D44481E7230858BE00C8E526 /* Assets.xcassets */,
 				D44481E9230858BE00C8E526 /* Info.plist */,
@@ -235,8 +235,8 @@
 				D48833F9230334E9003080E8 /* RVS_Persistent_Prefs_Tests */,
 				D468766B230883A3004958D0 /* RVS_PersistentPrefs_Common_Files */,
 				D4162B3923085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
-				D44481D1230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D44481E0230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
+				D44481D1230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D4940F33230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
 				D4940F48230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */,
 				D48833BB230332C4003080E8 /* Products */,
@@ -475,8 +475,8 @@
 				D48833E023033303003080E8 /* RVS_Persistent_Prefs */,
 				D48833F7230334E8003080E8 /* RVS_Persistent_Prefs_Tests */,
 				D4162B3723085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
-				D44481CF230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
+				D44481CF230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D4940F31230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
 				D4940F46230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */,
 			);
@@ -803,7 +803,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.3;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Debug;
 		};
@@ -825,7 +825,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 5.3;
+				WATCHOS_DEPLOYMENT_TARGET = 5.0;
 			};
 			name = Release;
 		};

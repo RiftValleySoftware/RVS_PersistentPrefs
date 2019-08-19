@@ -33,7 +33,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     // MARK: - Instance Properties
     /* ############################################################################################################################## */
     /// This is the preferences object. It is instantiated at runtime, and left on its own.
-    var prefs = RVS_PersistentPrefs_TestSet(key: "RVS_PersistentPrefs_iOS_TestHarness_Prefs")
+    var prefs = RVS_PersistentPrefs_TestSet(key: RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.prefsKey)
     /// The Label for the Integer Text Entry.
     @IBOutlet weak var intLabel: UILabel!
     /// The Integer Text Entry.
