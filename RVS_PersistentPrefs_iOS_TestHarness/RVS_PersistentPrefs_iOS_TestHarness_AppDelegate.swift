@@ -21,6 +21,7 @@
  */
 
 import UIKit
+import WatchConnectivity
 
 /* ################################################################################################################################## */
 // MARK: - Main Application Delegate Class
@@ -29,10 +30,116 @@ import UIKit
  The main application delegate class. It simply give the window a place to hang its hat, and registers the app defaults.
  */
 @UIApplicationMain
-class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicationDelegate {
+class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
+    /* ############################################################################################################################## */
+    // MARK: - Private Instance Properties
+    /* ############################################################################################################################## */
+    /// This is the Watch connectivity session.
+    private var _mySession: WCSession! = nil
+
     /* ############################################################################################################################## */
     // MARK: - Instance Properties
     /* ############################################################################################################################## */
     /// The app window.
     var window: UIWindow?
+
+    /* ############################################################################################################################## */
+    // MARK: - Internal Instance Calculated Properties
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    var session: WCSession! {
+        if nil == self._mySession {
+            self._mySession = WCSession.default
+        }
+        
+        return self._mySession
+    }
+
+    /* ############################################################################################################################## */
+    // MARK: - Internal Instance Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    func activateSession() {
+        if WCSession.isSupported() && (self.session.activationState != .activated) {
+            self._mySession.delegate = self
+            self.session.activate()
+        }
+    }
+    
+    /* ############################################################################################################################## */
+    // MARK: - UIApplicationDelegate Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        self.activateSession()
+        return true
+    }
+
+    /* ############################################################################################################################## */
+    // MARK: - WCSession Sender Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    func sendCurrentProfileToWatch() {
+        let appContext: [String: Any] = [:]
+        
+        do {
+            try self.session.updateApplicationContext(appContext)
+        } catch {
+            #if DEBUG
+                print("Communication Error With Watch: \(error)")
+            #endif
+        }
+    }
+    
+    /* ############################################################################################################################## */
+    // MARK: - WCSessionDelegate Protocol Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        if .activated == activationState {
+            #if DEBUG
+                print("Watch session is active.")
+            #endif
+            self.sendCurrentProfileToWatch()
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        #if DEBUG
+            print("Watch session is inactive.")
+        #endif
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    func sessionDidDeactivate(_ session: WCSession) {
+        #if DEBUG
+            print("Watch session deactivated.")
+        #endif
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    func session(_ session: WCSession, didReceiveMessage message: [String: Any]) {
+        DispatchQueue.main.async {
+            #if DEBUG
+                print("Phone Received Message: " + String(describing: message))
+            #endif
+        }
+    }
 }
