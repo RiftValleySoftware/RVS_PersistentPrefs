@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           RVS_PersistentPrefs_watchOS_TestHarnessExtension Docs
         </a>
-         (88% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -71,14 +71,14 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.html">RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController</a>
               </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Classes/RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.html">RVS_PersistentPrefs_watchOS_TestHarness_NotificationController</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a class="nav-group-name-link" href="Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Global Variables.html#/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension02s_D17PhoneMessageHitMeSSvp">s_watchPhoneMessageHitMe</a>
+              </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Global Variables.html#/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension02s_D20PhoneReplySuccessKeySSvp">s_watchPhoneReplySuccessKey</a>
               </li>
@@ -147,6 +147,13 @@ It is designed to be KVO, so it can be accessed without coding.</p>
               </ul>
             </div>
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Main%20Extension%20Delegate%20Class."></a>
+                <a name="//apple_ref/swift/Section/Main Extension Delegate Class." class="dashAnchor"></a>
+                <a href="#/Main%20Extension%20Delegate%20Class.">
+                  <h3 class="section-name">Main Extension Delegate Class.</h3>
+                </a>
+              </div>
               <ul class="item-container">
                 <li class="item">
                   <div>
@@ -161,7 +168,16 @@ It is designed to be KVO, so it can be accessed without coding.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>This is the extension delegate for an extremely simple WatchKit app.</p>
+
+<p>Its only purpose in life is to display a couple of values from a Dictionary of values sent from the phone.</p>
+
+<p>It maintains an instance of RVS_PersistentPrefs_TestSet locally, and updates the _values with the ones sent from the phone.</p>
+
+<p>It does not allow changes to the values, and does not send them back to the phone. It is completely one-way.</p>
+
+<p>The prefs object is managed in this instance.</p>
+
                         <a href="Classes/RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
@@ -179,10 +195,10 @@ It is designed to be KVO, so it can be accessed without coding.</p>
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/"></a>
-                <a name="//apple_ref/swift/Section/" class="dashAnchor"></a>
-                <a href="#/">
-                  <h3 class="section-name"></h3>
+                <a name="/Main%20Interface%20Controller%20Class."></a>
+                <a name="//apple_ref/swift/Section/Main Interface Controller Class." class="dashAnchor"></a>
+                <a href="#/Main%20Interface%20Controller%20Class.">
+                  <h3 class="section-name">Main Interface Controller Class.</h3>
                 </a>
               </div>
               <ul class="item-container">
@@ -199,7 +215,8 @@ It is designed to be KVO, so it can be accessed without coding.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>This is an interface controller for a super-simple display. It merely has two items, in a vertical stack: The Integer Value and the String Value.</p>
+
                         <a href="Classes/RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
@@ -207,37 +224,6 @@ It is designed to be KVO, so it can be accessed without coding.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController</span> <span class="p">:</span> <span class="kt">WKInterfaceController</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@RVS_PersistentPrefs_watchOS_TestHarnessExtension@objc(cs)RVS_PersistentPrefs_watchOS_TestHarness_NotificationController"></a>
-                    <a name="//apple_ref/swift/Class/RVS_PersistentPrefs_watchOS_TestHarness_NotificationController" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_watchOS_TestHarnessExtension@objc(cs)RVS_PersistentPrefs_watchOS_TestHarness_NotificationController">RVS_PersistentPrefs_watchOS_TestHarness_NotificationController</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                        <a href="Classes/RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">RVS_PersistentPrefs_watchOS_TestHarness_NotificationController</span> <span class="p">:</span> <span class="kt">WKUserNotificationInterfaceController</span></code></pre>
 
                         </div>
                       </div>

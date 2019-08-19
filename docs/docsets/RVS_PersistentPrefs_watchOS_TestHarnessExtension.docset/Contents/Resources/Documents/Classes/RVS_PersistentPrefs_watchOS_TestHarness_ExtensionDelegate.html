@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           RVS_PersistentPrefs_watchOS_TestHarnessExtension Docs
         </a>
-         (88% documented)
+         (100% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -71,14 +71,14 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.html">RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController</a>
               </li>
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Classes/RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.html">RVS_PersistentPrefs_watchOS_TestHarness_NotificationController</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
             <a class="nav-group-name-link" href="../Global Variables.html">Global Variables</a>
             <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Global Variables.html#/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension02s_D17PhoneMessageHitMeSSvp">s_watchPhoneMessageHitMe</a>
+              </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Global Variables.html#/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension02s_D20PhoneReplySuccessKeySSvp">s_watchPhoneReplySuccessKey</a>
               </li>
@@ -105,50 +105,21 @@
 
                 </div>
               </div>
-            
+            <p>This is the extension delegate for an extremely simple WatchKit app.</p>
+
+<p>Its only purpose in life is to display a couple of values from a Dictionary of values sent from the phone.</p>
+
+<p>It maintains an instance of RVS_PersistentPrefs_TestSet locally, and updates the _values with the ones sent from the phone.</p>
+
+<p>It does not allow changes to the values, and does not send them back to the phone. It is completely one-way.</p>
+
+<p>The prefs object is managed in this instance.</p>
+
           </div>
         </section>
 
         <section class="section">
           <div class="section-content">
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Private%20Instance%20Properties"></a>
-                <a name="//apple_ref/swift/Section/Private Instance Properties" class="dashAnchor"></a>
-                <a href="#/Private%20Instance%20Properties">
-                  <h3 class="section-name">Private Instance Properties</h3>
-                </a>
-              </div>
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension0a1_bc1_de1_fg1_H8DelegateC21_sendingUpdateToPhone33_76FC359D2F9EC0C693F541B01F447341LLSbvp"></a>
-                    <a name="//apple_ref/swift/Property/_sendingUpdateToPhone" class="dashAnchor"></a>
-                    <a class="token" href="#/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension0a1_bc1_de1_fg1_H8DelegateC21_sendingUpdateToPhone33_76FC359D2F9EC0C693F541B01F447341LLSbvp">_sendingUpdateToPhone</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>This is a semaphore (ick) that indicates we are currently sending an update to the Watch.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="k">var</span> <span class="nv">_sendingUpdateToPhone</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
             <div class="task-group">
               <div class="task-name-container">
                 <a name="/Private%20Methods"></a>
@@ -171,40 +142,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>We simply call this to activate our session.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">_activateSession</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension0a1_bc1_de1_fg1_H8DelegateC27_sendCurrentSettingsToPhone33_76FC359D2F9EC0C693F541B01F447341LLyyF"></a>
-                    <a name="//apple_ref/swift/Method/_sendCurrentSettingsToPhone()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension0a1_bc1_de1_fg1_H8DelegateC27_sendCurrentSettingsToPhone33_76FC359D2F9EC0C693F541B01F447341LLyyF">_sendCurrentSettingsToPhone()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">private</span> <span class="kd">func</span> <span class="nf">_sendCurrentSettingsToPhone</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -257,6 +202,33 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">_errorHandler</span><span class="p">(</span><span class="n">_</span> <span class="nv">inError</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension0a1_bc1_de1_fg1_H8DelegateC17_askPhoneForState33_76FC359D2F9EC0C693F541B01F447341LLyyF"></a>
+                    <a name="//apple_ref/swift/Method/_askPhoneForState()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension0a1_bc1_de1_fg1_H8DelegateC17_askPhoneForState33_76FC359D2F9EC0C693F541B01F447341LLyyF">_askPhoneForState()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to ask the phone to send us its state.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">_askPhoneForState</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>
@@ -419,6 +391,44 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
+                <a name="/Instance%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Instance Methods" class="dashAnchor"></a>
+                <a href="#/Instance%20Methods">
+                  <h3 class="section-name">Instance Methods</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension0a1_bc1_de1_fg1_H8DelegateC26sendCurrentSettingsToPhoneyyF"></a>
+                    <a name="//apple_ref/swift/Method/sendCurrentSettingsToPhone()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:48RVS_PersistentPrefs_watchOS_TestHarnessExtension0a1_bc1_de1_fg1_H8DelegateC26sendCurrentSettingsToPhoneyyF">sendCurrentSettingsToPhone()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Called to send our current state to the phone.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">sendCurrentSettingsToPhone</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
                 <a name="/WKExtensionDelegate%20Methods"></a>
                 <a name="//apple_ref/swift/Section/WKExtensionDelegate Methods" class="dashAnchor"></a>
                 <a href="#/WKExtensionDelegate%20Methods">
@@ -439,7 +449,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Called when the WatchKit application has completed launching.</p>
+
+<p>We simply activate our session here.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -465,65 +478,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Called when the WatchKit application has become active.</p>
+
+<p>We ask the phone (if any) for an update.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationDidBecomeActive</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@RVS_PersistentPrefs_watchOS_TestHarnessExtension@objc(cs)RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate(im)applicationWillResignActive"></a>
-                    <a name="//apple_ref/swift/Method/applicationWillResignActive()" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_watchOS_TestHarnessExtension@objc(cs)RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate(im)applicationWillResignActive">applicationWillResignActive()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">applicationWillResignActive</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@M@RVS_PersistentPrefs_watchOS_TestHarnessExtension@objc(cs)RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate(im)handleBackgroundTasks:"></a>
-                    <a name="//apple_ref/swift/Method/handle(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@RVS_PersistentPrefs_watchOS_TestHarnessExtension@objc(cs)RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate(im)handleBackgroundTasks:">handle(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">handle</span><span class="p">(</span><span class="n">_</span> <span class="nv">backgroundTasks</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt">WKRefreshBackgroundTask</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -554,7 +518,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>This is called when the session activation is complete (not necessarily connected to anything).</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -563,6 +528,49 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">inSession</span><span class="p">:</span> <span class="kt">WCSession</span><span class="p">,</span> <span class="n">activationDidCompleteWith</span> <span class="nv">inActivationState</span><span class="p">:</span> <span class="kt">WCSessionActivationState</span><span class="p">,</span> <span class="n">error</span> <span class="nv">inError</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inSession</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The WCSession that is being used to send this message.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>activationDidCompleteWith</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An enum, with the current state of the activation.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>error</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An optional error, if there were any errors.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -580,7 +588,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>This is called when the phone sends us a message.</p>
+
+<p>There&rsquo;s only one message it can send: A new set of values.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -589,6 +600,49 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">session</span><span class="p">(</span><span class="n">_</span> <span class="nv">inSession</span><span class="p">:</span> <span class="kt">WCSession</span><span class="p">,</span> <span class="n">didReceiveMessage</span> <span class="nv">inMessage</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">],</span> <span class="n">replyHandler</span> <span class="nv">inReplyHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">([</span><span class="kt">String</span><span class="p">:</span> <span class="kt">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>inSession</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The WCSession that is being used to send this message.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>didReceiveMessage</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The message that the phone sent us.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>replyHandler</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure that we are supposed to call, when we have digested what the phone sent us. It will be sent back to the phone.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
