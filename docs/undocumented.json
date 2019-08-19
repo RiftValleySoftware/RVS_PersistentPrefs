@@ -1,6 +1,61 @@
 {
   "warnings": [
-
+    {
+      "file": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift",
+      "line": 26,
+      "symbol": "s_watchPhoneReplySuccessKey",
+      "symbol_kind": "source.lang.swift.decl.var.global",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs/RVS_PersistentPrefs_watchOS_TestHarness Extension/RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift",
+      "line": 33,
+      "symbol": "RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.awake(withContext:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs/RVS_PersistentPrefs_watchOS_TestHarness Extension/RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift",
+      "line": 39,
+      "symbol": "RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.willActivate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs/RVS_PersistentPrefs_watchOS_TestHarness Extension/RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift",
+      "line": 44,
+      "symbol": "RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.didDeactivate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs/RVS_PersistentPrefs_watchOS_TestHarness Extension/RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift",
+      "line": 34,
+      "symbol": "RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs/RVS_PersistentPrefs_watchOS_TestHarness Extension/RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift",
+      "line": 41,
+      "symbol": "RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.willActivate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs/RVS_PersistentPrefs_watchOS_TestHarness Extension/RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift",
+      "line": 46,
+      "symbol": "RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.didDeactivate()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs/RVS_PersistentPrefs_watchOS_TestHarness Extension/RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift",
+      "line": 51,
+      "symbol": "RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.didReceive(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Volumes/Development/RiftValley/RVS_Persistent_Prefs"
 }

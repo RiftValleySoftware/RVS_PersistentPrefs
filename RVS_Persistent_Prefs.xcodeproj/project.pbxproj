@@ -19,7 +19,7 @@
 		D44481CD230856FB00C8E526 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D44481D4230858BC00C8E526 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44481D2230858BC00C8E526 /* Interface.storyboard */; };
 		D44481D6230858BD00C8E526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44481D5230858BD00C8E526 /* Assets.xcassets */; };
-		D44481DD230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D44481DD230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D44481E2230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44481E1230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */; };
 		D44481E4230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44481E3230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */; };
 		D44481E6230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44481E5230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift */; };
@@ -51,6 +51,8 @@
 		D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */; };
 		D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4D230865C700F1B8E4 /* Assets.xcassets */; };
 		D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4F230865C700F1B8E4 /* Main.storyboard */; };
+		D4D94DFB230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */; };
+		D4D94DFC230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */; };
 		D4E7423E2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */; };
 		D4EE6C882304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */; };
 /* End PBXBuildFile section */
@@ -90,7 +92,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D44481DD230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension.appex in Embed App Extensions */,
+				D44481DD230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,7 +124,7 @@
 		D44481D3230858BC00C8E526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D44481D5230858BD00C8E526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D44481D7230858BD00C8E526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RVS_PersistentPrefs_watchOS_TestHarness Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D44481E1230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift; sourceTree = "<group>"; };
 		D44481E3230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D44481E5230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		D4940F50230865C700F1B8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4940F52230865C700F1B8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RVS_PersistentPrefs_macOS_TestHarness.entitlements; sourceTree = "<group>"; };
+		D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift; sourceTree = "<group>"; };
 		D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Thread_Tests.swift; sourceTree = "<group>"; };
 		D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_MixedType_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,6 +226,7 @@
 				D468768623088A61004958D0 /* Localizable.strings */,
 				D468768723089A3D004958D0 /* RVS_String_Extensions.swift */,
 				D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */,
+				D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */,
 			);
 			path = RVS_PersistentPrefs_Common_Files;
 			sourceTree = "<group>";
@@ -250,7 +254,7 @@
 				D48833F8230334E8003080E8 /* RVS_Persistent_Prefs_Tests.xctest */,
 				D4162B3823085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness.app */,
 				D44481D0230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app */,
-				D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension.appex */,
+				D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */,
 				D4940F32230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness.app */,
 				D4940F47230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.app */,
 			);
@@ -342,9 +346,9 @@
 			productReference = D44481D0230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */ = {
+		D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D44481EE230858BE00C8E526 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_watchOS_TestHarness Extension" */;
+			buildConfigurationList = D44481EE230858BE00C8E526 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_watchOS_TestHarnessExtension" */;
 			buildPhases = (
 				D44481F72308604300C8E526 /* SwiftLint */,
 				D44481D8230858BD00C8E526 /* Sources */,
@@ -355,9 +359,9 @@
 			);
 			dependencies = (
 			);
-			name = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
+			name = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
 			productName = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
-			productReference = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension.appex */;
+			productReference = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		D48833E023033303003080E8 /* RVS_Persistent_Prefs */ = {
@@ -475,7 +479,7 @@
 				D48833E023033303003080E8 /* RVS_Persistent_Prefs */,
 				D48833F7230334E8003080E8 /* RVS_Persistent_Prefs_Tests */,
 				D4162B3723085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
-				D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
+				D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension */,
 				D44481CF230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D4940F31230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
 				D4940F46230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */,
@@ -621,6 +625,7 @@
 				D44481CD230856FB00C8E526 /* RVS_PersistentPrefs.swift in Sources */,
 				D4162B3D23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift in Sources */,
 				D468766D230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
+				D4D94DFB230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */,
 				D468768823089A3D004958D0 /* RVS_String_Extensions.swift in Sources */,
 				D4162B3B23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift in Sources */,
 			);
@@ -635,6 +640,7 @@
 				D44481E6230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_NotificationController.swift in Sources */,
 				D44481E4230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */,
 				D44481E2230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */,
+				D4D94DFC230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */,
 				D4940F2D2308647C00F1B8E4 /* RVS_PersistentPrefs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,7 +693,7 @@
 /* Begin PBXTargetDependency section */
 		D44481DF230858BD00C8E526 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */;
+			target = D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension */;
 			targetProxy = D44481DE230858BD00C8E526 /* PBXContainerItemProxy */;
 		};
 		D44481EC230858BE00C8E526 /* PBXTargetDependency */ = {
@@ -1154,7 +1160,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D44481EE230858BE00C8E526 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_watchOS_TestHarness Extension" */ = {
+		D44481EE230858BE00C8E526 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_watchOS_TestHarnessExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D44481EF230858BE00C8E526 /* Debug */,

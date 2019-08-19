@@ -30,18 +30,62 @@ import WatchConnectivity
  */
 class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
     /* ############################################################################################################################## */
+    // MARK: - Private Instance Properties
+    /* ############################################################################################################################## */
+    /// This is a semaphore (ick) that indicates we are currently sending an update to the Watch.
+    private var _sendingUpdateToPhone = false
+
+    /* ############################################################################################################################## */
     // MARK: - Private Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
      */
     private func _activateSession() {
-        if WCSession.isSupported() && (session.activationState != .activated) {
+        if  WCSession.isSupported(),
+            .activated != session.activationState {
             session.delegate = self
             session.activate()
         }
     }
     
+    /* ################################################################## */
+    /**
+     */
+    @objc private func _sendCurrentSettingsToPhone() {
+        if  !_sendingUpdateToPhone,
+            .activated == session.activationState {
+            let values = prefs.values
+            #if DEBUG
+                print("Sending Prefs to Phone: " + String(describing: values))
+            #endif
+            _sendingUpdateToPhone = true
+            self.session.sendMessage(values, replyHandler: _replyHandler, errorHandler: _errorHandler)
+        } else {
+            
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    private func _replyHandler(_ inReply: [String: Any]) {
+        #if DEBUG
+            print("Reply From Phone: " + String(describing: inReply))
+        #endif
+        _sendingUpdateToPhone = false
+    }
+    
+    /* ################################################################## */
+    /**
+     */
+    private func _errorHandler(_ inError: Error) {
+        #if DEBUG
+            print("Error From Phone: " + String(describing: inError))
+        #endif
+        _sendingUpdateToPhone = false
+    }
+
     /* ############################################################################################################################## */
     // MARK: - Static Constants
     /* ############################################################################################################################## */
@@ -65,6 +109,9 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
         return WCSession.default
     }
 
+    /* ############################################################################################################################## */
+    // MARK: - WKExtensionDelegate Methods
+    /* ############################################################################################################################## */
     /* ################################################################## */
     /**
      */
@@ -130,15 +177,20 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
         #if DEBUG
             print("Watch Activation Complete: " + String(describing: inActivationState))
         #endif
+        _sendCurrentSettingsToPhone()
     }
     
     /* ################################################################## */
     /**
      */
-    func session(_ inSession: WCSession, didReceiveApplicationContext inContext: [String: Any]) {
-        prefs.values = inContext
+    func session(_ inSession: WCSession, didReceiveMessage inMessage: [String: Any], replyHandler inReplyHandler: @escaping ([String: Any]) -> Void) {
         #if DEBUG
-            print("Watch Received Application Context: " + String(describing: inContext))
+            print("\n###\nBEGIN Watch Received Message: " + String(describing: inMessage))
+        #endif
+        prefs.values = inMessage
+        inReplyHandler([s_watchPhoneReplySuccessKey: true])
+        #if DEBUG
+            print("###\nEND Watch Received Message\n")
         #endif
     }
 }

@@ -126,3 +126,7 @@ It presents [Key-Value Observable](https://developer.apple.com/documentation/swi
 [The iOS Test Harness App](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness) is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a [Settings Bundle](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html) to show a "Preferences Pane" in the Settings App.
 
 The iOS test harness also integrates a watchOS test harness that shares the preferences instance with the device app.
+
+**The watchOS Test Harness**
+
+The watchOS Test Harness is actually a part of the iOS Test Harness app. It shares a RVS_PersistentPrefs state with the iOS Test Harness app instance.

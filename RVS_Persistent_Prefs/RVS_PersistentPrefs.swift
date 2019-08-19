@@ -128,7 +128,7 @@ public class RVS_PersistentPrefs: NSObject {
      This is any error that was thrown during a save or a load.
      */
     public var lastError: PrefsError!
-    
+
     /* ############################################################################################################################## */
     // MARK: - Public Calculated Properties
     /* ############################################################################################################################## */
