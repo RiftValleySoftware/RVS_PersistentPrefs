@@ -24,3 +24,4 @@
 // MARK: - Shared Constants
 /* ############################################################################################################################## */
 let s_watchPhoneReplySuccessKey = "SUCCESS"
+let s_watchPhoneMessageHitMe = "HITME"

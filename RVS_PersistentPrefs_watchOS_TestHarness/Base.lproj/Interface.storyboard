@@ -31,6 +31,12 @@
                                             <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                         </label>
                                         <label width="1" alignment="center" text="Label" textAlignment="center" id="7pm-34-WdJ"/>
+                                        <button width="1" alignment="center" verticalAlignment="bottom" title="RESET" id="n3E-Nq-WRR">
+                                            <color key="titleColor" red="1" green="0.055564177690000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="resetButtonHit" destination="AgC-eL-Hgc" id="w0p-a3-W1h"/>
+                                            </connections>
+                                        </button>
                                     </items>
                                 </group>
                             </items>
@@ -39,6 +45,7 @@
                     <connections>
                         <outlet property="integerKeyLabel" destination="dgt-WQ-Vrx" id="w2n-oI-B3I"/>
                         <outlet property="integerValueLabel" destination="XIC-f8-59n" id="kWg-DH-tHm"/>
+                        <outlet property="resetButton" destination="n3E-Nq-WRR" id="fCo-il-sMJ"/>
                         <outlet property="stringKeyLabel" destination="iVP-M2-YKO" id="3v5-cj-ahF"/>
                         <outlet property="stringValueLabel" destination="7pm-34-WdJ" id="nTZ-tQ-Agk"/>
                     </connections>

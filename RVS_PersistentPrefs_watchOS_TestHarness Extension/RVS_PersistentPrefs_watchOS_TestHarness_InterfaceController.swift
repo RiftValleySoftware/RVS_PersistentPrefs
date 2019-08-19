@@ -24,9 +24,10 @@ import WatchKit
 import Foundation
 
 /* ################################################################################################################################## */
-// MARK: - 
+// MARK: - Main Interface Controller Class.
 /* ################################################################################################################################## */
 /**
+ This is an interface controller for a super-simple display. It merely has two items, in a vertical stack: The Integer Value and the String Value.
  */
 class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceController {
     /* ############################################################################################################################## */
@@ -34,6 +35,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     This is an accessor for the prefs instance. It fetches a reference to it from the extension delegate.
      */
     var prefs: RVS_PersistentPrefs_TestSet! {
         return RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.delegateObject?.prefs
@@ -42,16 +44,36 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
     /* ############################################################################################################################## */
     // MARK: - @IBOutlet Instance Properties
     /* ############################################################################################################################## */
+    /// The label for the Integer Value display.
     @IBOutlet weak var integerKeyLabel: WKInterfaceLabel!
+    /// The actual display for the Integer Value.
     @IBOutlet weak var integerValueLabel: WKInterfaceLabel!
+    /// The label for the String Value display.
     @IBOutlet weak var stringKeyLabel: WKInterfaceLabel!
+    /// The actual String Value display.
     @IBOutlet weak var stringValueLabel: WKInterfaceLabel!
+    /// The RESET button.
+    @IBOutlet weak var resetButton: WKInterfaceButton!
 
+    /* ############################################################################################################################## */
+    // MARK: - @IBAction Instance Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     Called when the RESET button is hit. We reset the prefs, and send an update to the phone.
+     */
+    @IBAction func resetButtonHit() {
+        resetButton.setEnabled(false)   // Disable the button until we hear back from the phone.
+        prefs.reset()
+        RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.delegateObject?.sendCurrentSettingsToPhone()
+    }
+    
     /* ############################################################################################################################## */
     // MARK: - Instance Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     Called to set up our labels to reflect the current values.
      */
     func setUpLabels() {
         DispatchQueue.main.async {
@@ -80,30 +102,25 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
         }
     }
     
+    /* ################################################################## */
+    /**
+     Called by the extension delegate to re-enable the disabled RESET button.
+     */
+    func reEnableButton() {
+        resetButton.setEnabled(true)
+    }
+    
     /* ############################################################################################################################## */
     // MARK: - Base Class Override Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     Called when the app awakens, creaks out of its coffin, and demands blood.
+     
+     - parameter withContext: Any context passed in from the caller.
      */
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
+    override func awake(withContext inContext: Any?) {
+        super.awake(withContext: inContext)
         setUpLabels()
-    }
-    
-    /* ################################################################## */
-    /**
-     */
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
-    }
-    
-    /* ################################################################## */
-    /**
-     */
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
     }
 }

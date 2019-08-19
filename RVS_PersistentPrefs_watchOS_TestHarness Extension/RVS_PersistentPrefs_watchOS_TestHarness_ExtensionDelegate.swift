@@ -24,22 +24,26 @@ import WatchKit
 import WatchConnectivity
 
 /* ################################################################################################################################## */
-// MARK: -
+// MARK: - Main Extension Delegate Class.
 /* ################################################################################################################################## */
 /**
+ This is the extension delegate for an extremely simple WatchKit app.
+ 
+ Its only purpose in life is to display a couple of values from a Dictionary of values sent from the phone.
+ 
+ It maintains an instance of RVS_PersistentPrefs_TestSet locally, and updates the _values with the ones sent from the phone.
+ 
+ It does not allow changes to the values, and does not send them back to the phone. It is completely one-way.
+ 
+ The prefs object is managed in this instance.
  */
 class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
-    /* ############################################################################################################################## */
-    // MARK: - Private Instance Properties
-    /* ############################################################################################################################## */
-    /// This is a semaphore (ick) that indicates we are currently sending an update to the Watch.
-    private var _sendingUpdateToPhone = false
-
     /* ############################################################################################################################## */
     // MARK: - Private Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     We simply call this to activate our session.
      */
     private func _activateSession() {
         if  WCSession.isSupported(),
@@ -52,28 +56,13 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
     /* ################################################################## */
     /**
      */
-    @objc private func _sendCurrentSettingsToPhone() {
-        if  !_sendingUpdateToPhone,
-            .activated == session.activationState {
-            let values = prefs.values
-            #if DEBUG
-                print("Sending Prefs to Phone: " + String(describing: values))
-            #endif
-            _sendingUpdateToPhone = true
-            self.session.sendMessage(values, replyHandler: _replyHandler, errorHandler: _errorHandler)
-        } else {
-            
-        }
-    }
-    
-    /* ################################################################## */
-    /**
-     */
     private func _replyHandler(_ inReply: [String: Any]) {
         #if DEBUG
             print("Reply From Phone: " + String(describing: inReply))
         #endif
-        _sendingUpdateToPhone = false
+        if let controller = WKExtension.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
+            controller.reEnableButton()
+        }
     }
     
     /* ################################################################## */
@@ -83,7 +72,27 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
         #if DEBUG
             print("Error From Phone: " + String(describing: inError))
         #endif
-        _sendingUpdateToPhone = false
+        if let controller = WKExtension.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
+            controller.reEnableButton()
+        }
+    }
+    
+    /* ################################################################## */
+    /**
+     Called to ask the phone to send us its state.
+     */
+    private func _askPhoneForState() {
+        if  .activated == session.activationState {
+            let values = prefs.values
+            #if DEBUG
+            print("Sending Prefs to Phone: " + String(describing: values))
+            #endif
+            self.session.sendMessage([s_watchPhoneMessageHitMe: ""], replyHandler: _replyHandler, errorHandler: _errorHandler)   // No extra data necessary.
+        } else {
+            #if DEBUG
+            print("ERROR! Session not active!")
+            #endif
+        }
     }
 
     /* ############################################################################################################################## */
@@ -116,63 +125,49 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
     var session: WCSession {
         return WCSession.default
     }
-
+    
+    /* ############################################################################################################################## */
+    // MARK: - Instance Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     Called to send our current state to the phone.
+     */
+    func sendCurrentSettingsToPhone() {
+        if  .activated == session.activationState {
+            let values = prefs.values
+            #if DEBUG
+                print("Sending Prefs to Phone: " + String(describing: values))
+            #endif
+            self.session.sendMessage(values, replyHandler: _replyHandler, errorHandler: _errorHandler)
+        } else {
+            #if DEBUG
+                print("ERROR! Session not active!")
+            #endif
+        }
+    }
+    
     /* ############################################################################################################################## */
     // MARK: - WKExtensionDelegate Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     Called when the WatchKit application has completed launching.
+     
+     We simply activate our session here.
      */
     func applicationDidFinishLaunching() {
         _activateSession()
     }
-
+    
     /* ################################################################## */
     /**
+     Called when the WatchKit application has become active.
+     
+     We ask the phone (if any) for an update.
      */
     func applicationDidBecomeActive() {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    /* ################################################################## */
-    /**
-     */
-    func applicationWillResignActive() {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, etc.
-    }
-
-    /* ################################################################## */
-    /**
-     */
-    func handle(_ backgroundTasks: Set<WKRefreshBackgroundTask>) {
-        // Sent when the system needs to launch the application in the background to process tasks. Tasks arrive in a set, so loop through and process each one.
-        for task in backgroundTasks {
-            // Use a switch statement to check the task type
-            switch task {
-            case let backgroundTask as WKApplicationRefreshBackgroundTask:
-                // Be sure to complete the background task once you’re done.
-                backgroundTask.setTaskCompletedWithSnapshot(false)
-            case let snapshotTask as WKSnapshotRefreshBackgroundTask:
-                // Snapshot tasks have a unique completion call, make sure to set your expiration date
-                snapshotTask.setTaskCompleted(restoredDefaultState: true, estimatedSnapshotExpiration: Date.distantFuture, userInfo: nil)
-            case let connectivityTask as WKWatchConnectivityRefreshBackgroundTask:
-                // Be sure to complete the connectivity task once you’re done.
-                connectivityTask.setTaskCompletedWithSnapshot(false)
-            case let urlSessionTask as WKURLSessionRefreshBackgroundTask:
-                // Be sure to complete the URL session task once you’re done.
-                urlSessionTask.setTaskCompletedWithSnapshot(false)
-            case let relevantShortcutTask as WKRelevantShortcutRefreshBackgroundTask:
-                // Be sure to complete the relevant-shortcut task once you're done.
-                relevantShortcutTask.setTaskCompletedWithSnapshot(false)
-            case let intentDidRunTask as WKIntentDidRunRefreshBackgroundTask:
-                // Be sure to complete the intent-did-run task once you're done.
-                intentDidRunTask.setTaskCompletedWithSnapshot(false)
-            default:
-                // make sure to complete unhandled task types
-                task.setTaskCompletedWithSnapshot(false)
-            }
-        }
+        _askPhoneForState()
     }
     
     /* ############################################################################################################################## */
@@ -180,23 +175,36 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     This is called when the session activation is complete (not necessarily connected to anything).
+     
+     - parameter inSession: The WCSession that is being used to send this message.
+     - parameter activationDidCompleteWith: An enum, with the current state of the activation.
+     - parameter error: An optional error, if there were any errors.
      */
     func session(_ inSession: WCSession, activationDidCompleteWith inActivationState: WCSessionActivationState, error inError: Error?) {
         #if DEBUG
-            print("Watch Activation Complete: " + String(describing: inActivationState))
+            print("Watch Activation Complete")
         #endif
-        _sendCurrentSettingsToPhone()
+        _askPhoneForState()
     }
     
     /* ################################################################## */
     /**
+     This is called when the phone sends us a message.
+     
+     There's only one message it can send: A new set of values.
+     
+     - parameter inSession: The WCSession that is being used to send this message.
+     - parameter didReceiveMessage: The message that the phone sent us.
+     - parameter replyHandler: A closure that we are supposed to call, when we have digested what the phone sent us. It will be sent back to the phone.
      */
     func session(_ inSession: WCSession, didReceiveMessage inMessage: [String: Any], replyHandler inReplyHandler: @escaping ([String: Any]) -> Void) {
         #if DEBUG
             print("\n###\nBEGIN Watch Received Message: " + String(describing: inMessage))
         #endif
         prefs.values = inMessage
-        inReplyHandler([s_watchPhoneReplySuccessKey: true])
+        inReplyHandler([s_watchPhoneReplySuccessKey: true]) // Let the phone know we got the message.
+        // Tel our controller to update the state display with whatever the phone sent us.
         if let controller = WKExtension.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
             controller.setUpLabels()
         }

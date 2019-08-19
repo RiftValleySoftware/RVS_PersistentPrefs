@@ -32,14 +32,11 @@ import WatchConnectivity
 @UIApplicationMain
 class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     /* ############################################################################################################################## */
-    // MARK: - Private Instance Properties
-    /* ############################################################################################################################## */
-
-    /* ############################################################################################################################## */
     // MARK: - Private Instance Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     Called to activate our session.
      */
     private func _activateSession() {
         if  WCSession.isSupported(),
@@ -51,6 +48,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     
     /* ################################################################## */
     /**
+     Called to send our current settings to the watch.
      */
     @objc private func _sendCurrentSettingsToWatch() {
         DispatchQueue.main.async {  // Must happen in the main thread, as we access the View Controller.
@@ -69,6 +67,9 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     
     /* ################################################################## */
     /**
+     The reply from the watch.
+     
+     - parameter inReply: The reply Dictionary. It can only be succsessful.
      */
     private func _replyHandler(_ inReply: [String: Any]) {
         #if DEBUG
@@ -78,6 +79,9 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     
     /* ################################################################## */
     /**
+     Any error from the watch.
+     
+     - parameter inError: The error that happened.
      */
     private func _errorHandler(_ inError: Error) {
         #if DEBUG
@@ -102,6 +106,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     This is the WCSession. It is the default session.
      */
     var session: WCSession! {
         return WCSession.default
@@ -112,8 +117,15 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     This is called when the app has completed launching.
+     
+     We just use this to start the session with the Watch,.
+     
+     - parameter inApplication: The application object.
+     - parameter didFinishLaunchingWithOptions: Any options that the app launched with.
+     - returns: True, if we want the app to complete launching. If false, the launch will abort.
      */
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    func application(_ inApplication: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         _activateSession()
         return true
     }
@@ -123,6 +135,11 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     This is called when the session activation is complete (not necessarily connected to anything).
+     
+     - parameter inSession: The WCSession that is being used to send this message.
+     - parameter activationDidCompleteWith: An enum, with the current state of the activation.
+     - parameter error: An optional error, if there were any errors.
      */
     func session(_ inSession: WCSession, activationDidCompleteWith inActivationState: WCSessionActivationState, error inError: Error?) {
         if .activated == inActivationState {
@@ -137,39 +154,61 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
     
     /* ################################################################## */
     /**
-     */
-    func sessionDidBecomeInactive(_ inSession: WCSession) {
-        #if DEBUG
-            print("Watch session is inactive.")
-        #endif
-    }
-    
-    /* ################################################################## */
-    /**
-     */
-    func sessionDidDeactivate(_ inSession: WCSession) {
-        #if DEBUG
-            print("Watch session deactivated.")
-        #endif
-    }
-    
-    /* ################################################################## */
-    /**
+     This is called when the watch sends us a message.
+     
+     There's only one message it can send: A new set of values.
+     
+     - parameter inSession: The WCSession that is being used to send this message.
+     - parameter didReceiveMessage: The message that the watch sent us.
+     - parameter replyHandler: A closure that we are supposed to call, when we have digested what the watch sent us. It will be sent back to the watch.
      */
     func session(_ inSession: WCSession, didReceiveMessage inMessage: [String: Any], replyHandler inReplyHandler: @escaping ([String: Any]) -> Void) {
         #if DEBUG
             print("\n###\nBEGIN Phone Received Message: " + String(describing: inMessage))
         #endif
         
-        if let mainController = window?.rootViewController as? RVS_PersistentPrefs_iOS_TestHarness_ViewController {
-            mainController.prefs.values = inMessage
+        // If they are asking us to update them, then that's what we do.
+        if nil != inMessage[s_watchPhoneMessageHitMe] {
             inReplyHandler([s_watchPhoneReplySuccessKey: true])
+            _sendCurrentSettingsToWatch()
         } else {
-            inReplyHandler([s_watchPhoneReplySuccessKey: false])
+            DispatchQueue.main.async {  // Must happen in the main thread, as we access the View Controller.
+                if let mainController = self.window?.rootViewController as? RVS_PersistentPrefs_iOS_TestHarness_ViewController {
+                    inReplyHandler([s_watchPhoneReplySuccessKey: true])
+                    mainController.prefs.values = inMessage
+                    mainController.view.setNeedsLayout()
+                } else {
+                    inReplyHandler([s_watchPhoneReplySuccessKey: false])
+                }
+            }
         }
-
+        
         #if DEBUG
             print("###\nEND Phone Received Message\n")
+        #endif
+    }
+    
+    /* ################################################################## */
+    /**
+     This is called when the session becomes inactive.
+     
+     - parameter inSession: The WCSession that is being used to send this message.
+     */
+    func sessionDidBecomeInactive(_ inSession: WCSession) {
+        #if DEBUG
+            print("Session Became Inactive")
+        #endif
+    }
+    
+    /* ################################################################## */
+    /**
+     This is called when the session deactivates.
+     
+     - parameter inSession: The WCSession that is being used to send this message.
+     */
+    func sessionDidDeactivate(_ inSession: WCSession) {
+        #if DEBUG
+            print("Session Did Deactivate")
         #endif
     }
 }
