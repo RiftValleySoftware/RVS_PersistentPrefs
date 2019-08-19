@@ -9,9 +9,8 @@ jazzy   --github_url https://github.com/RiftValleySoftware/RVS_PersistentPrefs\
         --author The\ Great\ Rift\ Valley\ Software\ Company \
         --author_url https://riftvalleysoftware.com \
         --module RVS_Persistent_Prefs \
-        --module RVS_Persistent_Prefs_Tests \
         --module RVS_PersistentPrefs_iOS_TestHarness \
-        --module "RVS_PersistentPrefs_watchOS_TestHarnessExtension" \
+        --module RVS_PersistentPrefs_watchOS_TestHarnessExtension \
         --min-acl private
 cp icon.png docs/icon.png
 cd "${CWD}"

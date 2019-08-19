@@ -93,6 +93,14 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
     static let prefsKey = "RVS_PersistentPrefs_iOS_TestHarness_Prefs"
     
     /* ############################################################################################################################## */
+    // MARK: - Class Variables
+    /* ############################################################################################################################## */
+    /// The delegate object (quick accessor).
+    class var delegateObject: RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate! {
+        return WKExtension.shared().delegate as? RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate
+    }
+    
+    /* ############################################################################################################################## */
     // MARK: - Instance Properties
     /* ############################################################################################################################## */
     /// This is the preferences object.
@@ -189,6 +197,9 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
         #endif
         prefs.values = inMessage
         inReplyHandler([s_watchPhoneReplySuccessKey: true])
+        if let controller = WKExtension.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
+            controller.setUpLabels()
+        }
         #if DEBUG
             print("###\nEND Watch Received Message\n")
         #endif

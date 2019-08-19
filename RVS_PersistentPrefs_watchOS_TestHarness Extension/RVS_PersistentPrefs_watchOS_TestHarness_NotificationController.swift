@@ -30,7 +30,6 @@ import UserNotifications
 /**
  */
 class RVS_PersistentPrefs_watchOS_TestHarness_NotificationController: WKUserNotificationInterfaceController {
-
     override init() {
         // Initialize variables here.
         super.init()

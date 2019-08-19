@@ -29,21 +29,81 @@ import Foundation
 /**
  */
 class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceController {
-
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
-        
-        // Configure interface objects here.
+    /* ############################################################################################################################## */
+    // MARK: - Instance Properties
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    var prefs: RVS_PersistentPrefs_TestSet! {
+        return RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.delegateObject?.prefs
     }
     
+    /* ############################################################################################################################## */
+    // MARK: - @IBOutlet Instance Properties
+    /* ############################################################################################################################## */
+    @IBOutlet weak var integerKeyLabel: WKInterfaceLabel!
+    @IBOutlet weak var integerValueLabel: WKInterfaceLabel!
+    @IBOutlet weak var stringKeyLabel: WKInterfaceLabel!
+    @IBOutlet weak var stringValueLabel: WKInterfaceLabel!
+
+    /* ############################################################################################################################## */
+    // MARK: - Instance Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    func setUpLabels() {
+        DispatchQueue.main.async {
+            self.prefs?.keys.forEach { key in
+                switch key {
+                case "Integer Value":
+                    if let value = self.prefs[key] as? Int {
+                        self.integerKeyLabel?.setText(key.localizedVariant)
+                        self.integerValueLabel?.setText(String(value))
+                    } else {
+                        self.integerKeyLabel?.setText("ERROR!")
+                        self.integerValueLabel?.setText("ERROR!")
+                    }
+                case "String Value":
+                    if let value = self.prefs[key] as? String {
+                        self.stringKeyLabel?.setText(key.localizedVariant)
+                        self.stringValueLabel?.setText(String(value))
+                    } else {
+                        self.stringKeyLabel?.setText("ERROR!")
+                        self.stringValueLabel?.setText("ERROR!")
+                    }
+                default:
+                    ()
+                }
+            }
+        }
+    }
+    
+    /* ############################################################################################################################## */
+    // MARK: - Base Class Override Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
+        setUpLabels()
+    }
+    
+    /* ################################################################## */
+    /**
+     */
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
     }
     
+    /* ################################################################## */
+    /**
+     */
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
 }
