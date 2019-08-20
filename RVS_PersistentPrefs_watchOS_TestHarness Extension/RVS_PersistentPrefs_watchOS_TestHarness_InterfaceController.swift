@@ -64,8 +64,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
      */
     @IBAction func resetButtonHit() {
         resetButton.setEnabled(false)   // Disable the button until we hear back from the phone.
-        prefs.reset()
-        RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.delegateObject?.sendCurrentSettingsToPhone()
+        RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.delegateObject?.sendResetToPhone()
     }
     
     /* ############################################################################################################################## */

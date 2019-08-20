@@ -114,7 +114,8 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      */
     @objc dynamic public var string: String {
         get {
-            return values[keys[_ValueIndexes.string.rawValue]] as? String ?? ""
+            let value = values[keys[_ValueIndexes.string.rawValue]] as? String ?? ""
+            return value
         }
         
         set {

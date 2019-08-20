@@ -133,13 +133,12 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
     /**
      Called to send our current state to the phone.
      */
-    func sendCurrentSettingsToPhone() {
+    func sendResetToPhone() {
         if  .activated == session.activationState {
-            let values = prefs.values
             #if DEBUG
-                print("Sending Prefs to Phone: " + String(describing: values))
+                print("Sending Reset to Phone")
             #endif
-            self.session.sendMessage(values, replyHandler: _replyHandler, errorHandler: _errorHandler)
+            self.session.sendMessage([s_watchPhoneMessageReset: ""], replyHandler: _replyHandler, errorHandler: _errorHandler)
         } else {
             #if DEBUG
                 print("ERROR! Session not active!")

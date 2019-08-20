@@ -208,6 +208,23 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         }
     }
     
+    /* ################################################################## */
+    /**
+     This resets all the values to whatever the prefs have in store for us.
+     */
+    func setValues() {
+        // Set up the initial state of the Integer text entry value.
+        intTextEntry?.text = String(prefs.int)
+        
+        // Set up the initial state of the String text entry value.
+        stringTextEntry?.text = prefs.string
+        
+        // Set up the initial state of the Date label and picker.
+        datePicker?.date = prefs.date
+        arrayPickerView.reloadAllComponents()
+        dictionaryPickerView.reloadAllComponents()
+    }
+    
     /* ############################################################################################################################## */
     // MARK: - Base Class Override Methods
     /* ############################################################################################################################## */
@@ -236,19 +253,6 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         
         // Set up the localized title of the reset button.
         resetButton?.setTitle(resetButton?.title(for: .normal), for: .normal)
-    }
-    
-    /* ################################################################## */
-    /**
-     Called when the view will lay out its subviews.
-     */
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        // Set up the initial state of the Integer text entry value.
-        intTextEntry?.text = String(prefs.int)
-        
-        // Set up the initial state of the String text entry value.
-        stringTextEntry?.text = prefs.string
         
         // Select the first row of each.
         arrayPickerView?.selectRow(0, inComponent: 0, animated: false)
@@ -257,9 +261,15 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         // Make sure the text field gets updated.
         pickerView(arrayPickerView, didSelectRow: 0, inComponent: 0)
         pickerView(dictionaryPickerView, didSelectRow: 0, inComponent: 0)
-        
-        // Set up the initial state of the Date label and picker.
-        datePicker?.date = prefs.date
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when the view will lay out its subviews.
+     */
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        setValues()
     }
     
     /* ############################################################################################################################## */

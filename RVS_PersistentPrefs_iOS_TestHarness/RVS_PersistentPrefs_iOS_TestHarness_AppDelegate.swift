@@ -172,15 +172,13 @@ class RVS_PersistentPrefs_iOS_TestHarness_AppDelegate: UIResponder, UIApplicatio
             inReplyHandler([s_watchPhoneReplySuccessKey: true])
             _sendCurrentSettingsToWatch()
         } else {
-            DispatchQueue.main.async {  // Must happen in the main thread, as we access the View Controller.
+            DispatchQueue.main.sync {  // Must happen in the main thread, as we access the View Controller.
                 if let mainController = self.window?.rootViewController as? RVS_PersistentPrefs_iOS_TestHarness_ViewController {
-                    inReplyHandler([s_watchPhoneReplySuccessKey: true])
-                    mainController.prefs.values = inMessage
-                    mainController.view.setNeedsLayout()
-                } else {
-                    inReplyHandler([s_watchPhoneReplySuccessKey: false])
+                    mainController.prefs.reset()
+                    mainController.setValues()
                 }
             }
+            inReplyHandler([s_watchPhoneReplySuccessKey: true])
         }
         
         #if DEBUG
