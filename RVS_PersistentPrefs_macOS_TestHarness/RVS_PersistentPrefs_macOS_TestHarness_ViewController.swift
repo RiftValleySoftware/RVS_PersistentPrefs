@@ -29,6 +29,49 @@ import Cocoa
  */
 class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
     /* ############################################################################################################################## */
+    // MARK: - Static Constants
+    /* ############################################################################################################################## */
+    /// The main prefs key.
+    static let prefsKey = "RVS_PersistentPrefs_macOS_TestHarness_Prefs"
+    
+    /* ############################################################################################################################## */
+    // MARK: - Instance Properties
+    /* ############################################################################################################################## */
+    /// This is the preferences object. It is instantiated at runtime, and left on its own.
+    private var _prefs: RVS_PersistentPrefs_TestSet!
+    
+    /* ################################################################## */
+    /**
+     This is a direct accessor to the prefs object for this controller.
+     */
+    @objc dynamic var prefs: RVS_PersistentPrefs_TestSet {
+        return nil == _prefs ? RVS_PersistentPrefs_TestSet(key: RVS_PersistentPrefs_macOS_TestHarness_ViewController.prefsKey) : _prefs
+    }
+
+    /* ############################################################################################################################## */
+    // MARK: - Instance @IBOutlet Properties
+    /* ############################################################################################################################## */
+    /// The label for the Integer Value.
+    @IBOutlet weak var integerValueLabel: NSTextField!
+
+    /* ############################################################################################################################## */
+    // MARK: - Instance Calculated Properties
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     The keys for the Dictionary, as a sorted Array of String
+     */
+    var dictionaryKeys: [String] {
+        return prefs.dictionary.keys.compactMap { $0 }.sorted {
+            let desiredOrder = ["One".localizedVariant, "Two".localizedVariant, "Three".localizedVariant, "Four".localizedVariant, "Five".localizedVariant]
+            let indexofA = desiredOrder.firstIndex(of: $0.localizedVariant) ?? 0
+            let indexofB = desiredOrder.firstIndex(of: $1.localizedVariant) ?? 0
+            
+            return indexofA < indexofB
+        }
+    }
+
+    /* ############################################################################################################################## */
     // MARK: -
     /* ############################################################################################################################## */
     /* ################################################################## */
@@ -36,16 +79,6 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    /* ################################################################## */
-    /**
-     */
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
+        integerValueLabel.stringValue = prefs.keys[0].localizedVariant
     }
 }

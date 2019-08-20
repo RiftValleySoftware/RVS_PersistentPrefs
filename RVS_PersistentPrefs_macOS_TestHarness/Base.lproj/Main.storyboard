@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,11 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
+                                            <connections>
+                                                <segue destination="B8D-0N-5wS" kind="show" id="hJ7-0M-rlP"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                                         <menuItem title="Services" id="NMo-om-nkz">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -674,11 +678,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="RVS_PersistentPrefs_macOS_TestHarness_AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="RVS_PersistentPrefs_macOS_TestHarness_AppDelegate" customModule="RVS_PersistentPrefs_macOS_TestHarness" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="75" y="-243"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -687,7 +691,7 @@
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="89" y="699" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
@@ -699,20 +703,71 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="75" y="88"/>
         </scene>
-        <!--Persistent Prefs macOS Test Harness View Controller-->
+        <!--Prefs-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="RVS_PersistentPrefs_macOS_TestHarness_ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Prefs" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="RVS_PersistentPrefs_macOS_TestHarness_ViewController" customModule="RVS_PersistentPrefs_macOS_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="x3q-jT-wwb">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="320"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="background-gradient" id="q4R-KX-xhp"/>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cat-Ju-YFd">
+                                <rect key="frame" x="18" y="283" width="134" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="Tqg-e9-mWX"/>
+                                    <constraint firstAttribute="width" constant="130" placeholder="YES" id="uRU-z9-aDT"/>
+                                </constraints>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Integer" id="3l4-YJ-KeO">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1RX-yH-Mo9">
+                                <rect key="frame" x="158" y="280" width="302" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="C4Q-88-QEH"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="fjR-aB-x0J">
+                                    <numberFormatter key="formatter" formatterBehavior="default10_4" usesGroupingSeparator="NO" groupingSize="0" minimumIntegerDigits="0" maximumIntegerDigits="42" id="GwR-bg-Lm1"/>
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="self.prefs.int" id="4F0-6r-Mo8"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="1RX-yH-Mo9" secondAttribute="trailing" constant="20" id="0jD-Wt-0R0"/>
+                            <constraint firstAttribute="bottom" secondItem="x3q-jT-wwb" secondAttribute="bottom" id="1D1-kO-MJ5"/>
+                            <constraint firstItem="x3q-jT-wwb" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="FON-Hm-jZK"/>
+                            <constraint firstItem="1RX-yH-Mo9" firstAttribute="leading" secondItem="Cat-Ju-YFd" secondAttribute="trailing" constant="8" id="HZ4-i5-sWW"/>
+                            <constraint firstItem="Cat-Ju-YFd" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="J2d-k4-9Ug"/>
+                            <constraint firstItem="Cat-Ju-YFd" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="YoR-k6-ADO"/>
+                            <constraint firstItem="1RX-yH-Mo9" firstAttribute="firstBaseline" secondItem="Cat-Ju-YFd" secondAttribute="firstBaseline" id="b46-kR-B2k"/>
+                            <constraint firstItem="x3q-jT-wwb" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="ni6-jn-haP"/>
+                            <constraint firstAttribute="trailing" secondItem="x3q-jT-wwb" secondAttribute="trailing" id="wrf-lB-cc1"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="integerValueLabel" destination="Cat-Ju-YFd" id="Ipm-Ta-N02"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="7QZ-ER-Pnk"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="548"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-gradient" width="1" height="1000"/>
+    </resources>
 </document>
