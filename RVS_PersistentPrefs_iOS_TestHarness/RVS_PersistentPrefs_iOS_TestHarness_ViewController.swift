@@ -60,7 +60,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     @IBOutlet weak var datePicker: UIDatePicker!
     /// The Reset Button
     @IBOutlet weak var resetButton: UIButton!
-
+    
     /* ############################################################################################################################## */
     // MARK: - Instance Calculated Properties
     /* ############################################################################################################################## */
@@ -70,9 +70,9 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
      */
     var dictionaryKeys: [String] {
         return prefs.dictionary.keys.compactMap { $0 }.sorted {
-            let desiredOrder = ["One".localizedVariant, "Two".localizedVariant, "Three".localizedVariant, "Four".localizedVariant, "Five".localizedVariant]
-            let indexofA = desiredOrder.firstIndex(of: $0.localizedVariant) ?? 0
-            let indexofB = desiredOrder.firstIndex(of: $1.localizedVariant) ?? 0
+            let desiredOrder = ["One", "Two", "Three", "Four", "Five"]
+            let indexofA = desiredOrder.firstIndex(of: $0) ?? 0
+            let indexofB = desiredOrder.firstIndex(of: $1) ?? 0
             
             return indexofA < indexofB
         }
@@ -90,7 +90,15 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     @IBAction func resetButtonHit(_: UIButton! = nil) {
         prefs.reset()
         saveDefaultsToSettings()
-        view.setNeedsLayout()
+        setValues()
+        
+        // Select the first row of each.
+        arrayPickerView?.selectRow(0, inComponent: 0, animated: false)
+        dictionaryPickerView?.selectRow(0, inComponent: 0, animated: false)
+        
+        // Make sure the text field gets updated.
+        pickerView(arrayPickerView, didSelectRow: 0, inComponent: 0)
+        pickerView(dictionaryPickerView, didSelectRow: 0, inComponent: 0)
     }
     
     /* ################################################################## */
@@ -258,6 +266,8 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         arrayPickerView?.selectRow(0, inComponent: 0, animated: false)
         dictionaryPickerView?.selectRow(0, inComponent: 0, animated: false)
         
+        setValues()
+
         // Make sure the text field gets updated.
         pickerView(arrayPickerView, didSelectRow: 0, inComponent: 0)
         pickerView(dictionaryPickerView, didSelectRow: 0, inComponent: 0)
@@ -317,7 +327,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         if inPickerView == arrayPickerView {
             return String(inRow + 1)
         } else {
-            return dictionaryKeys[inRow]
+            return dictionaryKeys[inRow].localizedVariant
         }
     }
     

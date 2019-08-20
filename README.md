@@ -135,4 +135,4 @@ It is a tiny app that mereley demonstrates transferring the prefs to the Watch, 
 
 **The macOS Test Harness**
 
-
+The macOS test harness app uses [KVO]((https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)) for some of its UI, so there are "codeless" connections between some user entry fields and the persistent prefs.

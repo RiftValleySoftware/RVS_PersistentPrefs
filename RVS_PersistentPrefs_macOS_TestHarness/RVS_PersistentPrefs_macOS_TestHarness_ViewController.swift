@@ -26,6 +26,7 @@ import Cocoa
 // MARK: - Main View Controller Class
 /* ################################################################################################################################## */
 /**
+ This controls the basic preferences-setting dialog.
  */
 class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
     /* ############################################################################################################################## */
@@ -53,7 +54,23 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
     /* ############################################################################################################################## */
     /// The label for the Integer Value.
     @IBOutlet weak var integerValueLabel: NSTextField!
-
+    /// The label for the String Value.
+    @IBOutlet weak var stringValueLabel: NSTextField!
+    /// The label for the Array Value.
+    @IBOutlet weak var arrayViewLabel: NSTextField!
+    /// The popup menu to select Array elements.
+    @IBOutlet weak var arraySelectorPopup: NSPopUpButton!
+    /// The text edit field to change values stored in the Array.
+    @IBOutlet weak var arrayEditorTextField: NSTextField!
+    /// This is the label for the Dictionary Editor.
+    @IBOutlet weak var dictionaryValueLabel: NSTextField!
+    /// The popup for selecting a Dictionary value.
+    @IBOutlet weak var dictionarySelectorPopup: NSPopUpButton!
+    ///The Text Field for editing Dictionary Values.
+    @IBOutlet weak var dictionaryEditorTextField: NSTextField!
+    /// The label for the date picker.
+    @IBOutlet weak var dateValueLabel: NSTextField!
+    
     /* ############################################################################################################################## */
     // MARK: - Instance Calculated Properties
     /* ############################################################################################################################## */
@@ -63,22 +80,89 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
      */
     var dictionaryKeys: [String] {
         return prefs.dictionary.keys.compactMap { $0 }.sorted {
-            let desiredOrder = ["One".localizedVariant, "Two".localizedVariant, "Three".localizedVariant, "Four".localizedVariant, "Five".localizedVariant]
-            let indexofA = desiredOrder.firstIndex(of: $0.localizedVariant) ?? 0
-            let indexofB = desiredOrder.firstIndex(of: $1.localizedVariant) ?? 0
+            let desiredOrder = ["One", "Two", "Three", "Four", "Five"]
+            let indexofA = desiredOrder.firstIndex(of: $0) ?? 0
+            let indexofB = desiredOrder.firstIndex(of: $1) ?? 0
             
             return indexofA < indexofB
         }
     }
-
+    
     /* ############################################################################################################################## */
-    // MARK: -
+    // MARK: - @IBAction Handler Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     Called when the Array popup is changed.
+     
+     - parameter inPopup: The popup control.
+     */
+    @IBAction func arraySelectorPopupChanged(_ inPopup: NSPopUpButton) {
+        arrayEditorTextField.stringValue = prefs.array[inPopup.indexOfSelectedItem]
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when the text is changed in the Array editor.
+     
+     - parameter inEditableTextField: The editable text field.
+     */
+    @IBAction func arraValueTextChanged(_ inEditableTextField: NSTextField) {
+        prefs.array[arraySelectorPopup.indexOfSelectedItem] = inEditableTextField.stringValue
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when the Dictionary popup is changed.
+     
+     - parameter inPopup: The popup control.
+     */
+    @IBAction func dictionarySelectorPopupChanged(_ inPopup: NSPopUpButton) {
+        dictionaryEditorTextField.stringValue = prefs.dictionary[dictionaryKeys[inPopup.indexOfSelectedItem]] ?? "ERROR"
+    }
+    
+    /* ################################################################## */
+    /**
+     Called when the text is changed in the Dictionary editor.
+     
+     - parameter inEditableTextField: The editable text field.
+     */
+    @IBAction func dictionaryValueTextChanged(_ inEditableTextField: NSTextField) {
+        prefs.dictionary[dictionaryKeys[dictionarySelectorPopup.indexOfSelectedItem]] = inEditableTextField.stringValue
+    }
+    
+    /* ############################################################################################################################## */
+    // MARK: - Base Class Override Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     Called when the view has loaded.
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        integerValueLabel.stringValue = prefs.keys[0].localizedVariant
+        
+        integerValueLabel.stringValue = prefs.intKey.localizedVariant
+        
+        stringValueLabel.stringValue = prefs.stringKey.localizedVariant
+        
+        arrayViewLabel.stringValue = prefs.arrayKey.localizedVariant
+        
+        dateValueLabel.stringValue = prefs.dateKey.localizedVariant
+
+        arraySelectorPopup.removeAllItems()
+        for i in prefs.array.enumerated() {
+            arraySelectorPopup.addItem(withTitle: String(i.offset + 1))
+        }
+        arraySelectorPopup.selectItem(at: 0)
+        arraySelectorPopupChanged(arraySelectorPopup)
+        
+        dictionaryValueLabel.stringValue = prefs.dictionaryKey.localizedVariant
+        dictionarySelectorPopup.removeAllItems()
+        dictionaryKeys.forEach {
+            dictionarySelectorPopup.addItem(withTitle: $0.localizedVariant)
+        }
+        
+        dictionarySelectorPopup.selectItem(at: 0)
+        dictionarySelectorPopupChanged(dictionarySelectorPopup)
     }
 }
