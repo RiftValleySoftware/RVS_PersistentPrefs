@@ -29,10 +29,19 @@ import Cocoa
  */
 @NSApplicationMain
 class RVS_PersistentPrefs_macOS_TestHarness_AppDelegate: NSObject, NSApplicationDelegate {
+    /* ############################################################################################################################## */
+    // MARK: -
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
 
+    /* ################################################################## */
+    /**
+     */
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }

@@ -28,12 +28,21 @@ import Cocoa
 /**
  */
 class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
+    /* ############################################################################################################################## */
+    // MARK: -
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    /* ################################################################## */
+    /**
+     */
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.

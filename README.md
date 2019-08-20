@@ -131,4 +131,8 @@ The iOS test harness also integrates a watchOS test harness that shares the pref
 
 The watchOS Test Harness is actually a part of the iOS Test Harness app. It shares a RVS_PersistentPrefs state with the iOS Test Harness app instance.
 
-It is a tiny app that mereley demonstrates transferring the prefs to the Watch, and displays only a couple of values (and updates them in response to them being changed on the phone). Its main reason for existence is to show that the class works as well in watchOS, as it does in iOS.
+It is a tiny app that mereley demonstrates transferring the prefs to the Watch, and displays only a couple of values (and updates them in response to them being changed on the phone). Its main reason for existence is to show that the class works as well in watchOS, as it does in iOS. The only thing that you can do with the Watch app to affect the data, is send a reset command to the phone. Otherwise, it is display-only.
+
+**The macOS Test Harness**
+
+

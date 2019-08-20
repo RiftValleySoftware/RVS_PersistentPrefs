@@ -52,6 +52,7 @@
 		D4E2E8F2230B1F93008BE1CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E2E8ED230B1F93008BE1CD /* Assets.xcassets */; };
 		D4E2E8F3230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2E8EE230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */; };
 		D4E2E8F4230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2E8EF230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */; };
+		D4E574AB230C20A800BB0A29 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D4E7423E2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */; };
 		D4EE6C882304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */; };
 /* End PBXBuildFile section */
@@ -236,8 +237,8 @@
 				D4162B3923085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
 				D44481E0230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
 				D44481D1230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
-				D4940F33230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
 				D4940F48230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */,
+				D4940F33230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
 				D48833BB230332C4003080E8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -676,6 +677,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */,
+				D4E574AB230C20A800BB0A29 /* RVS_PersistentPrefs.swift in Sources */,
 				D4940F4A230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift in Sources */,
 				D468768B23089A3D004958D0 /* RVS_String_Extensions.swift in Sources */,
 				D4687670230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
