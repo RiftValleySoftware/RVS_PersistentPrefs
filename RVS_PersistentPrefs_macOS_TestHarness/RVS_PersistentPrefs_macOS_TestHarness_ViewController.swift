@@ -179,7 +179,7 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
         
         dateValueLabel.stringValue = prefs.dateKey.localizedVariant
         
-        resetButton.stringValue = resetButton.stringValue.localizedVariant
+        resetButton.title = resetButton.title.localizedVariant
         
         arraySelectorPopup.removeAllItems()
         for i in prefs.array.enumerated() {
