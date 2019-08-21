@@ -70,6 +70,8 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
     @IBOutlet weak var dictionaryEditorTextField: NSTextField!
     /// The label for the date picker.
     @IBOutlet weak var dateValueLabel: NSTextField!
+    /// The RESET button
+    @IBOutlet weak var resetButton: NSButton!
     
     /* ############################################################################################################################## */
     // MARK: - Instance Calculated Properties
@@ -131,6 +133,34 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
         prefs.dictionary[dictionaryKeys[dictionarySelectorPopup.indexOfSelectedItem]] = inEditableTextField.stringValue
     }
     
+    /* ################################################################## */
+    /**
+     Called when the RESET button is hit.
+     
+     - parameter ignored.
+     */
+    @IBAction func resetButtonHit(_: Any) {
+        prefs.reset()
+        setValues()
+    }
+    
+    /* ############################################################################################################################## */
+    // MARK: - Instance Methods
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     Sets the values of the various items.
+     */
+    func setValues() {
+        arraySelectorPopup.selectItem(at: 0)
+        arraySelectorPopupChanged(arraySelectorPopup)
+        
+        dictionaryValueLabel.stringValue = prefs.dictionaryKey.localizedVariant
+        
+        dictionarySelectorPopup.selectItem(at: 0)
+        dictionarySelectorPopupChanged(dictionarySelectorPopup)
+    }
+    
     /* ############################################################################################################################## */
     // MARK: - Base Class Override Methods
     /* ############################################################################################################################## */
@@ -148,21 +178,19 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
         arrayViewLabel.stringValue = prefs.arrayKey.localizedVariant
         
         dateValueLabel.stringValue = prefs.dateKey.localizedVariant
-
+        
+        resetButton.stringValue = resetButton.stringValue.localizedVariant
+        
         arraySelectorPopup.removeAllItems()
         for i in prefs.array.enumerated() {
             arraySelectorPopup.addItem(withTitle: String(i.offset + 1))
         }
-        arraySelectorPopup.selectItem(at: 0)
-        arraySelectorPopupChanged(arraySelectorPopup)
         
-        dictionaryValueLabel.stringValue = prefs.dictionaryKey.localizedVariant
         dictionarySelectorPopup.removeAllItems()
         dictionaryKeys.forEach {
             dictionarySelectorPopup.addItem(withTitle: $0.localizedVariant)
         }
         
-        dictionarySelectorPopup.selectItem(at: 0)
-        dictionarySelectorPopupChanged(dictionarySelectorPopup)
+        setValues()
     }
 }

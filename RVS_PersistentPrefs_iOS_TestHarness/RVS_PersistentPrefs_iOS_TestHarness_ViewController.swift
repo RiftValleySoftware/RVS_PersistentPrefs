@@ -34,6 +34,10 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /* ############################################################################################################################## */
     /// This is the preferences object. It is instantiated at runtime, and left on its own.
     var prefs = RVS_PersistentPrefs_TestSet(key: RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.prefsKey)
+    
+    /* ############################################################################################################################## */
+    // MARK: - @IBOutlet Instance Properties
+    /* ############################################################################################################################## */
     /// The Label for the Integer Text Entry.
     @IBOutlet weak var intLabel: UILabel!
     /// The Integer Text Entry.
@@ -79,7 +83,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     }
 
     /* ############################################################################################################################## */
-    // MARK: - IBAction Methods
+    // MARK: - IBAction Instance Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
@@ -260,7 +264,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         dateLabel?.text = prefs.dateKey.localizedVariant
         
         // Set up the localized title of the reset button.
-        resetButton?.setTitle(resetButton?.title(for: .normal), for: .normal)
+        resetButton?.setTitle(resetButton?.title(for: .normal)?.localizedVariant, for: .normal)
         
         // Select the first row of each.
         arrayPickerView?.selectRow(0, inComponent: 0, animated: false)

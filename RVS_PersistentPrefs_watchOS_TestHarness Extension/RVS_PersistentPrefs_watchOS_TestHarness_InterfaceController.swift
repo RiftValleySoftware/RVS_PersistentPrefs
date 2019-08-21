@@ -76,6 +76,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
      */
     func setUpLabels() {
         DispatchQueue.main.async {
+            resetButton.setTitle("RESET TO DEFAULT".localizedVariant)
             self.prefs?.keys.forEach { key in
                 switch key {
                 case "Integer Value":

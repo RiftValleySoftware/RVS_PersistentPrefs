@@ -710,18 +710,18 @@
             <objects>
                 <viewController title="Prefs" showSeguePresentationStyle="single" id="XfG-lQ-9wD" customClass="RVS_PersistentPrefs_macOS_TestHarness_ViewController" customModule="RVS_PersistentPrefs_macOS_TestHarness" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="685" height="209"/>
+                        <rect key="frame" x="0.0" y="0.0" width="685" height="238"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="x3q-jT-wwb">
-                                <rect key="frame" x="0.0" y="0.0" width="685" height="209"/>
+                                <rect key="frame" x="0.0" y="0.0" width="685" height="238"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="background-gradient" id="q4R-KX-xhp"/>
                             </imageView>
                             <stackView distribution="equalSpacing" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0UR-IF-o2V">
-                                <rect key="frame" x="20" y="8" width="645" height="193"/>
+                                <rect key="frame" x="20" y="8" width="645" height="222"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f28-7D-4Cr" userLabel="Integer">
-                                        <rect key="frame" x="0.0" y="171" width="645" height="22"/>
+                                        <rect key="frame" x="0.0" y="200" width="645" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Cat-Ju-YFd">
                                                 <rect key="frame" x="-2" y="5" width="76" height="17"/>
@@ -757,7 +757,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KnW-1a-pwf" userLabel="String">
-                                        <rect key="frame" x="0.0" y="141" width="645" height="22"/>
+                                        <rect key="frame" x="0.0" y="170" width="645" height="22"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="W3E-mF-kQg">
                                                 <rect key="frame" x="-2" y="5" width="76" height="17"/>
@@ -792,7 +792,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2wD-V7-loj" userLabel="Array &amp; Dictionary">
-                                        <rect key="frame" x="0.0" y="31" width="645" height="102"/>
+                                        <rect key="frame" x="0.0" y="60" width="645" height="102"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BQC-KT-jbj">
                                                 <rect key="frame" x="-2" y="85" width="649" height="17"/>
@@ -919,7 +919,7 @@
                                         </customSpacing>
                                     </stackView>
                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wk5-gd-8CB" userLabel="Date">
-                                        <rect key="frame" x="0.0" y="0.0" width="645" height="23"/>
+                                        <rect key="frame" x="0.0" y="29" width="645" height="23"/>
                                         <subviews>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jB6-UU-6DF">
                                                 <rect key="frame" x="-2" y="6" width="76" height="17"/>
@@ -957,6 +957,16 @@
                                             <real value="3.4028234663852886e+38"/>
                                         </customSpacing>
                                     </stackView>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Ko4-LU-alM">
+                                        <rect key="frame" x="242" y="-7" width="162" height="32"/>
+                                        <buttonCell key="cell" type="push" title="RESET TO DEFAULT" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VgK-Uz-LJm">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="resetButtonHit:" target="XfG-lQ-9wD" id="nu3-2M-XI2"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="wk5-gd-8CB" secondAttribute="trailing" id="3NP-vB-SUF"/>
@@ -977,8 +987,10 @@
                                     <integer value="1000"/>
                                     <integer value="1000"/>
                                     <integer value="1000"/>
+                                    <integer value="1000"/>
                                 </visibilityPriorities>
                                 <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
                                     <real value="3.4028234663852886e+38"/>
@@ -1009,6 +1021,7 @@
                         <outlet property="dictionarySelectorPopup" destination="XhO-Jh-OC4" id="2yv-Zk-ep8"/>
                         <outlet property="dictionaryValueLabel" destination="0fa-ZX-yVD" id="iFi-iS-ZnQ"/>
                         <outlet property="integerValueLabel" destination="Cat-Ju-YFd" id="Ipm-Ta-N02"/>
+                        <outlet property="resetButton" destination="Ko4-LU-alM" id="aTe-ia-tbZ"/>
                         <outlet property="stringValueLabel" destination="W3E-mF-kQg" id="nkA-jQ-IKb"/>
                     </connections>
                 </viewController>
