@@ -6,7 +6,7 @@ A general-purpose [Swift](https://apple.com/swift) class for making storing pers
 
 [Here is the technical documentation for this class.](https://riftvalleysoftware.github.io/RVS_PersistentPrefs/)
 
-[Here is the  GitHub repo for this class.](https://github.com/RiftValleySoftware/RVS_PersistentPrefs).
+[Here is the  GitHub repo for this class.](https://github.com/RiftValleySoftware/RVS_PersistentPrefs)
 
 OVERVIEW
 -
