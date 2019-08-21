@@ -23,6 +23,32 @@
 import UIKit
 
 /* ################################################################################################################################## */
+// MARK: - Extension of UIView
+/* ################################################################################################################################## */
+/**
+ This returns whatever the first responder is (if any).
+ */
+extension UIView {
+    /* ################################################################## */
+    /**
+     - returns: the first responder view. Nil, if no view is a first responder.
+     */
+    var currentFirstResponder: UIResponder! {
+        if isFirstResponder {
+            return self
+        }
+        
+        for view in subviews {
+            if let responder = view.currentFirstResponder {
+                return responder
+            }
+        }
+        
+        return nil
+    }
+}
+
+/* ################################################################################################################################## */
 // MARK: - Main View Controller Class
 /* ################################################################################################################################## */
 /**
@@ -89,7 +115,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /**
      Called when the reset button is hit.
      
-     - parameter: Ignored
+     - parameter: Ignored (also, optional)
      */
     @IBAction func resetButtonHit(_: UIButton! = nil) {
         prefs.reset()
@@ -109,7 +135,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /**
      Called when text changes in the Integer Text Entry Text Field.
      
-     - parameter: Ignored
+     - parameter: Ignored (also, optional)
      */
     @IBAction func integerTextEntryChanged(_: UITextField! = nil) {
         prefs.int = Int(intTextEntry?.text ?? "0") ?? 0
@@ -120,7 +146,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /**
      Called when text changes in the String Text Entry Text Field.
      
-     - parameter: Ignored
+     - parameter: Ignored (also, optional)
      */
     @IBAction func stringTextEntryChanged(_: UITextField! = nil) {
         prefs.string = stringTextEntry?.text ?? ""
@@ -131,7 +157,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /**
      Called when text changes in the Selected Array Element Text Entry Text Field.
      
-     - parameter: Ignored
+     - parameter: Ignored (also, optional)
      */
     @IBAction func arrayTextEntryChanged(_: UITextField! = nil) {
         let selectedElement = arrayPickerView.selectedRow(inComponent: 0)
@@ -143,7 +169,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /**
      Called when text changes in the Selected Dictionary Element Text Entry Text Field.
      
-     - parameter: Ignored
+     - parameter: Ignored (also, optional)
      */
     @IBAction func dictionaryTextEntryChanged(_: UITextField! = nil) {
         prefs.dictionary[dictionaryKeys[dictionaryPickerView.selectedRow(inComponent: 0)]] = dictionaryTextEntry.text ?? ""
@@ -154,13 +180,23 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     /**
      Called when the Date Picker changes.
      
-     - parameter: Ignored
+     - parameter: Ignored (also, optional)
      */
     @IBAction func dateChanged(_: UIDatePicker! = nil) {
         prefs.date = datePicker.date
         saveDefaultsToSettings()
     }
-
+    
+    /* ################################################################## */
+    /**
+     Called when the user taps in the main view. We close the keyboard.
+     
+     - parameter: Ignored (also, optional)
+     */
+    @IBAction func closeKeyboard(_: Any! = nil) {
+        view.currentFirstResponder?.resignFirstResponder()
+    }
+    
     /* ############################################################################################################################## */
     // MARK: - Instance Methods
     /* ############################################################################################################################## */

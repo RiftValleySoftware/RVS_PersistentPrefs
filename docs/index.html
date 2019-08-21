@@ -254,6 +254,8 @@ override public var keys: [String] {
 
 <p>Other than these two things, there&rsquo;s very little that you need to do in order to use the class. You can provide a distinct String key, so you can store multiple sets of preferences. Remember that this is slightly different from the way that <code>UserDefaults</code> is traditionally used, where each data item is given a separate key. Using <code><a href="Classes/RVS_PersistentPrefs.html">RVS_PersistentPrefs</a></code>, each <em>set</em> of parameters has a <q>root key.</q> If, for example, you are using <a href="https://developer.apple.com/documentation/uikit/creating_a_mac_version_of_your_ipad_app/displaying_a_preferences_window">the iOS Settings.bundle to display a preferences screen in the Settings app</a>, you can&rsquo;t easily access the <code><a href="Classes/RVS_PersistentPrefs.html">RVS_PersistentPrefs</a></code> preferences directly. It&rsquo;s usually a good idea to manage a set of <code>UserDefaults</code> separately, in order to provide a suitable user experience. <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_PersistentPrefs_iOS_TestHarness/RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift#L167">We demonstrate this in the iOS Test Harness app</a>.</p>
 
+<p><strong>You CAN Add Your Own Initializer[s]</strong></p>
+
 <p>You may also want to set up a custom <code>init()</code>. In our case, we set one up <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift#L221">to allow us to set a key</a>:</p>
 <pre class="highlight plaintext"><code>•
 •
@@ -311,6 +313,8 @@ public init(key inKey: String) {
 <p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_macOS_TestHarness"><strong>The macOS Test Harness</strong></a></p>
 
 <p>The macOS test harness app uses <a href="(https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)">KVO</a> for some of its UI, so there are <q>codeless</q> connections between some user entry fields and the persistent prefs.</p>
+
+<p>Upon startup, there is no window displayed. You need to go into the app menu, and select <q>Preferences&hellip;</q>. That will bring up the window.</p>
 
 <p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_tvOS_TestHarness"><strong>The tvOS Test Harness</strong></a></p>
 
