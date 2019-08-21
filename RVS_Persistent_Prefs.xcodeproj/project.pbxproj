@@ -15,7 +15,6 @@
 		D4162B4023085321000F4845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4162B3E23085321000F4845 /* Main.storyboard */; };
 		D4162B4223085322000F4845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4162B4123085322000F4845 /* Assets.xcassets */; };
 		D4162B4523085322000F4845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4162B4323085322000F4845 /* LaunchScreen.storyboard */; };
-		D44481CB2308552700C8E526 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D40915092304A7F2008AF085 /* Warnings.xcconfig */; };
 		D44481CD230856FB00C8E526 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D44481D4230858BC00C8E526 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44481D2230858BC00C8E526 /* Interface.storyboard */; };
 		D44481D6230858BD00C8E526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44481D5230858BD00C8E526 /* Assets.xcassets */; };
@@ -436,7 +435,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D4162B3723085321000F4845 = {
@@ -493,7 +492,6 @@
 			files = (
 				D468768023088A61004958D0 /* Localizable.strings in Resources */,
 				D4162B4523085322000F4845 /* LaunchScreen.storyboard in Resources */,
-				D44481CB2308552700C8E526 /* Warnings.xcconfig in Resources */,
 				D4162B4223085322000F4845 /* Assets.xcassets in Resources */,
 				D4011BD62309DD7700C0803D /* Settings.bundle in Resources */,
 				D4162B4023085321000F4845 /* Main.storyboard in Resources */,
@@ -999,6 +997,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1013,6 +1012,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				ENABLE_HARDENED_RUNTIME = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1113,6 +1113,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = RVS_PersistentPrefs_macOS_TestHarness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1135,6 +1136,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = RVS_PersistentPrefs_macOS_TestHarness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

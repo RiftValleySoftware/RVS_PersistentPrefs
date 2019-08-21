@@ -149,6 +149,18 @@ class RVS_PersistentPrefs_tvOS_TestHarness_ViewController: UIViewController {
      - parameter: Ignored.
      */
     @IBAction func dateValueTextFieldChanged(_: Any) {
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .medium
+        dateFormatter.isLenient = true
+        
+        if  let dateString = dateValueTextField.text,
+            let date = dateFormatter.date(from: dateString) {
+            prefs.date = date
+            if !dateValueTextField.isEditing {  // Tie it up in a neat bow.
+                dateValueTextField.text = dateFormatter.string(from: prefs.date)
+            }
+        }
     }
 
     /* ################################################################## */
@@ -188,6 +200,12 @@ class RVS_PersistentPrefs_tvOS_TestHarness_ViewController: UIViewController {
         
         // Forces the Dictionary Text to set to the selected value (0, usually).
         dictionarySelectionSegmentedControlChanged()
+        
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateStyle = .medium
+        
+        dateValueTextField.text = dateFormatter.string(from: prefs.date)
     }
 
     /* ############################################################################################################################## */

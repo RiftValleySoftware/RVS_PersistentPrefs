@@ -194,6 +194,8 @@ You should provide accessors to the stored data that enforces type. Again the fo
 Note also, that the two accessors above are declared [`@objc dynamic`](https://developer.apple.com/documentation/swift/using_objective-c_runtime_features_in_swift). That makes them eligible for [Key-Value Observation](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift). In Mac OS, this makes it quite simple to have a "codeless" connection between user interface elements and the persistent prefs (indeed, in [the macOS Test Harness project](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_macOS_TestHarness), we demonstrate this).
 
 Other than these two things, there's very little that you need to do in order to use the class. You can provide a distinct String key, so you can store multiple sets of preferences. Remember that this is slightly different from the way that `UserDefaults` is traditionally used, where each data item is given a separate key. Using `RVS_PersistentPrefs`, each *set* of parameters has a "root key." If, for example, you are using [the iOS Settings.bundle to display a preferences screen in the Settings app](https://developer.apple.com/documentation/uikit/creating_a_mac_version_of_your_ipad_app/displaying_a_preferences_window), you can't easily access the `RVS_PersistentPrefs` preferences directly. It's usually a good idea to manage a set of `UserDefaults` separately, in order to provide a suitable user experience. [We demonstrate this in the iOS Test Harness app](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_PersistentPrefs_iOS_TestHarness/RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift#L167).
+    
+**You CAN Add Your Own Initializer[s]**
 
 You may also want to set up a custom `init()`. In our case, we set one up [to allow us to set a key](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift#L221):
 
@@ -256,6 +258,8 @@ It is a tiny app that mereley demonstrates transferring the prefs to the Watch, 
 [**The macOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_macOS_TestHarness)
 
 The macOS test harness app uses [KVO]((https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)) for some of its UI, so there are "codeless" connections between some user entry fields and the persistent prefs.
+
+Upon startup, there is no window displayed. You need to go into the app menu, and select "Preferences...". That will bring up the window.
 
 [**The tvOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_tvOS_TestHarness)
 
