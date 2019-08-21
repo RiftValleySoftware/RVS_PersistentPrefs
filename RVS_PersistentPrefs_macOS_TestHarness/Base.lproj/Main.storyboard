@@ -1016,12 +1016,15 @@
                         <outlet property="arrayEditorTextField" destination="1YE-Yr-ZdT" id="ZXy-TM-h41"/>
                         <outlet property="arraySelectorPopup" destination="sPU-EW-Qoa" id="FNy-Zl-XvD"/>
                         <outlet property="arrayViewLabel" destination="BQC-KT-jbj" id="NpY-9u-guy"/>
+                        <outlet property="dateEntry" destination="49b-fd-95y" id="SkR-6e-cUz"/>
                         <outlet property="dateValueLabel" destination="jB6-UU-6DF" id="iRs-Fl-vgz"/>
                         <outlet property="dictionaryEditorTextField" destination="ll9-H4-YLb" id="JIK-pr-e01"/>
                         <outlet property="dictionarySelectorPopup" destination="XhO-Jh-OC4" id="2yv-Zk-ep8"/>
                         <outlet property="dictionaryValueLabel" destination="0fa-ZX-yVD" id="iFi-iS-ZnQ"/>
+                        <outlet property="integerTextField" destination="1RX-yH-Mo9" id="DIF-tC-Sg9"/>
                         <outlet property="integerValueLabel" destination="Cat-Ju-YFd" id="Ipm-Ta-N02"/>
                         <outlet property="resetButton" destination="Ko4-LU-alM" id="aTe-ia-tbZ"/>
+                        <outlet property="stringTextField" destination="0X0-V5-ka7" id="xuu-02-K8R"/>
                         <outlet property="stringValueLabel" destination="W3E-mF-kQg" id="nkA-jQ-IKb"/>
                     </connections>
                 </viewController>

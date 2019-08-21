@@ -73,6 +73,14 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
     /// The RESET button
     @IBOutlet weak var resetButton: NSButton!
     
+    // Unfortunately, in order to make sure that the fields get updated when I reset, I will need to specifically reference them.
+    /// This is the text field for Integer entry.
+    @IBOutlet weak var integerTextField: NSTextField!
+    /// This is the text field for String entry
+    @IBOutlet weak var stringTextField: NSTextField!
+    /// This is the date picker for the date.
+    @IBOutlet weak var dateEntry: NSDatePicker!
+    
     /* ############################################################################################################################## */
     // MARK: - Instance Calculated Properties
     /* ############################################################################################################################## */
@@ -152,6 +160,10 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
      Sets the values of the various items.
      */
     func setValues() {
+        integerTextField.stringValue = String(prefs.int)
+        stringTextField.stringValue = prefs.string
+        dateEntry.dateValue = prefs.date
+        
         arraySelectorPopup.selectItem(at: 0)
         arraySelectorPopupChanged(arraySelectorPopup)
         
