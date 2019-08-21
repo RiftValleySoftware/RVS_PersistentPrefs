@@ -256,3 +256,7 @@ It is a tiny app that mereley demonstrates transferring the prefs to the Watch, 
 [**The macOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_macOS_TestHarness)
 
 The macOS test harness app uses [KVO]((https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)) for some of its UI, so there are "codeless" connections between some user entry fields and the persistent prefs.
+
+[**The tvOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_tvOS_TestHarness)
+
+The tvOS test harness displays a very similar layout to all the others, and allows demonstration of the class working in tvOS.
