@@ -85,12 +85,12 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
         if  .activated == session.activationState {
             let values = prefs.values
             #if DEBUG
-            print("Sending Prefs to Phone: " + String(describing: values))
+                print("Sending Prefs to Phone: " + String(describing: values))
             #endif
             self.session.sendMessage([s_watchPhoneMessageHitMe: ""], replyHandler: _replyHandler, errorHandler: _errorHandler)   // No extra data necessary.
         } else {
             #if DEBUG
-            print("ERROR! Session not active!")
+                print("ERROR! Session not active!")
             #endif
         }
     }
