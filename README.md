@@ -1,4 +1,4 @@
-![Icon](./icon.png)
+![Icon](https://open-source-docs.riftvalleysoftware.com/docs/RVS_PersistentPrefs/icon.png)
 
 RVS_PersistentPrefs
 =
