@@ -42,7 +42,7 @@ REQUIREMENTS
 -
 `RVS_PersistentPrefs` is an [Apple Foundation](https://developer.apple.com/documentation/foundation)-based resource. It will work equally well on all Apple development platforms ([iOS](https://www.apple.com/ios), [iPadOS](https://www.apple.com/ipados), [macOS](https://www.apple.com/macos), [tvOS](https://www.apple.com/tvos), [watchOS](https://www.apple.com/watchos)). It will not work on non-Apple platforms, and is not designed to support anything other than native [Swift](https://apple.com/swift) development.
 
-This requires Swift 4.0 or above, and has been tested with Swift 5.1 (prerelease, at the time of writing).)
+This requires Swift 4.0 or above, and has been tested with Swift 5.1 (prerelease, at the time of writing).
 
 INSTALLATION
 -
