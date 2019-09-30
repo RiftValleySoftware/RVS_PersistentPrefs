@@ -175,5 +175,13 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
         XCTAssertEqual("HELO", testClass4.next)
         XCTAssertEqual(true, testClass4.test)
         XCTAssertEqual(4.5, testClass4.last)
+        
+        // This should delete all of our data
+        testClass4.values = [:]
+        XCTAssertEqual(0, testClass4.count)
+        
+        // Create a fifth one, and make sure the data was deleted
+        let testClass5 = TestClass()
+        XCTAssertEqual(0, testClass5.count)
     }
 }
