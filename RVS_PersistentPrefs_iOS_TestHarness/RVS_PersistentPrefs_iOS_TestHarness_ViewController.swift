@@ -366,8 +366,10 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
     func pickerView(_ inPickerView: UIPickerView, titleForRow inRow: Int, forComponent inComponent: Int) -> String? {
         if inPickerView == arrayPickerView {
             return String(inRow + 1)
-        } else {
+        } else if 0 < dictionaryKeys.count {
             return dictionaryKeys[inRow].localizedVariant
+        } else {
+            return nil
         }
     }
     
@@ -380,9 +382,9 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
      - parameter inComponent: The Selected Component (ignored).
      */
     func pickerView(_ inPickerView: UIPickerView, didSelectRow inRow: Int, inComponent: Int) {
-        if inPickerView == arrayPickerView {
+        if inPickerView == arrayPickerView, 0 < prefs.array.count {
             arrayTextEntry?.text = String(prefs.array[inRow])
-        } else {
+        } else if 0 < dictionaryKeys.count {
             dictionaryTextEntry?.text = prefs.dictionary[dictionaryKeys[inRow]]
         }
     }
