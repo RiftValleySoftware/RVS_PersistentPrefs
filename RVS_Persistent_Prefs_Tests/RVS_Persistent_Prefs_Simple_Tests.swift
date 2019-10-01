@@ -133,7 +133,7 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
         // We first create a default instance, and load it with some values.
         let testClass = TestClass()
         testClass.values = ["First": 1, "Next": "HELO", "Test": true, "Last": 4.5]
-        
+
         // Make sure the values are reflected in the access variables.
         XCTAssertEqual(1, testClass.first)
         XCTAssertEqual("HELO", testClass.next)
@@ -142,7 +142,7 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
 
         // Next, create a whole new instance of the default class, but this time, we use a key.
         let testClass2 = TestClass(key: "TestInstance-2")
-        
+
         // Make sure the values are NOT reflected in the access variables.
         XCTAssertNotEqual(1, testClass2.first)
         XCTAssertNotEqual("HELO", testClass2.next)
@@ -151,7 +151,7 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
 
         // Change the values, using the new instance.
         testClass2.values = ["First": 12, "Next": "HIHOWAYA", "Test": false, "Last": 26.2]
-        
+
         // Make sure the values are NOT sent to the original default instance.
         XCTAssertEqual(1, testClass.first)
         XCTAssertEqual("HELO", testClass.next)
@@ -160,28 +160,49 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
 
         // Next, create a new instance, but use the same key that we used for the second instance.
         let testClass3 = TestClass(key: "TestInstance-2")
-        
+
         // Make sure that it got the correct values.
         XCTAssertEqual(12, testClass3.first)
         XCTAssertEqual("HIHOWAYA", testClass3.next)
         XCTAssertEqual(false, testClass3.test)
         XCTAssertEqual(26.2, testClass3.last)
-        
+
         // Create a fourth one, with the default key.
         let testClass4 = TestClass()
-        
+
         // Make sure it got the values from the first (default) instance.
         XCTAssertEqual(1, testClass4.first)
         XCTAssertEqual("HELO", testClass4.next)
         XCTAssertEqual(true, testClass4.test)
         XCTAssertEqual(4.5, testClass4.last)
-        
+
         // This should delete all of our data
         testClass4.values = [:]
         XCTAssertEqual(0, testClass4.count)
-        
+
         // Create a fifth one, and make sure the data was deleted
         let testClass5 = TestClass()
         XCTAssertEqual(0, testClass5.count)
+        
+        // Put the values back.
+        testClass5.values = ["First": 1, "Next": "HELO", "Test": true, "Last": 4.5]
+        
+        // Make sure they made it.
+        XCTAssertEqual(1, testClass4.first)
+        XCTAssertEqual("HELO", testClass4.next)
+        XCTAssertEqual(true, testClass4.test)
+        XCTAssertEqual(4.5, testClass4.last)
+        
+        XCTAssertEqual(1, testClass5.first)
+        XCTAssertEqual("HELO", testClass5.next)
+        XCTAssertEqual(true, testClass5.test)
+        XCTAssertEqual(4.5, testClass5.last)
+        
+        // Clear the values. This time, use the method.
+        testClass5.clear()
+        
+        // Make sure it cleared everything.
+        XCTAssertEqual(0, testClass5.count)
+        XCTAssertEqual(0, testClass4.count)
     }
 }

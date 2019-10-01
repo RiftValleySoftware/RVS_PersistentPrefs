@@ -1,5 +1,6 @@
-*Version 1.0.2* **September 30, 2019**
+*Version 1.0.2* **October 1, 2019**
 - Added support for deletion of the prefs, if the values Array is empty.
+- Fixed an issue, where the values array was not being cleared before a load().
 
 *Version 1.0.1* **September 1, 2019**
 - Made the values Dictionary KVO-observable.
