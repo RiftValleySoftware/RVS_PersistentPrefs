@@ -1,3 +1,6 @@
+*Version 1.0.3* **November 4, 2019**
+- No operational changes. Only the project was updated, and the documentation was updated to include a section on using Carthage.
+
 *Version 1.0.2* **October 1, 2019**
 - Added support for deletion of the prefs, if the values Array is empty.
 - Fixed an issue, where the values array was not being cleared before a load().

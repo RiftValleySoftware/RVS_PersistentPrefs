@@ -102,6 +102,22 @@ USAGE
 -
 **Start by Including the Main Source File in Your Project**
 
+**Using [Carthage](https://github.com/Carthage/Carthage):**
+
+To use this from [Carthage](https://github.com/Carthage/Carthage), simply add the following to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
+
+    github "RiftValleySoftware/RVS_PersistentPrefs"
+
+You then `cd` to the project directory, and execute `carthage update` on the command line.
+
+This will result in a directory called "Carthage."
+
+You then need to include the file found at:
+
+    Carthage/Checkouts/RVS_PersistentPrefs/RVS_PersistentPrefs/RVS_PersistentPrefs.swift
+    
+into your project. There is no library or framework. You need to directly reference and include the Swift source file.
+
 In order to use `RVS_PersistentPrefs`, you should include the [RVS_PersistentPrefs.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift) general-purpose source file into your target, and then create a subclass of the `RVS_PersistentPrefs` class, specific to your implementation.
 
 **You MUST Subclass [the `RVS_PersistentPrefs` Class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift)**
