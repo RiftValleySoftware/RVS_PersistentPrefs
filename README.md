@@ -231,7 +231,7 @@ You may also want to set up a custom `init()`. In our case, we set one up [to al
      The keyed initializer. It sends in our default values, if there were no previous ones. Bit primitive, but this is for test harnesses.
      */
     public init(key inKey: String) {
-        super.init(key: inKey)  // Start by initializing with the key. This will load any asved values.
+        super.init(key: inKey)  // Start by initializing with the key. This will load any saved values.
         if values.isEmpty { // If we didn't already have something, we send in our defaults.
             values = type(of: self)._myValues
         }
