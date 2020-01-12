@@ -1,3 +1,6 @@
+*Version 1.0.4* **January 12, 2020**
+- No operational changes. Added some extra documentation, and tweaked the README a bit.
+
 *Version 1.0.3* **November 4, 2019**
 - No operational changes. Only the project was updated, and the documentation was updated to include a section on using Carthage.
 

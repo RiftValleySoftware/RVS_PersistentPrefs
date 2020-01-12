@@ -52,11 +52,15 @@ The class consists of [one single Swift source file](https://github.com/RiftVall
 
 Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift) into your project, and add it to your current [Swift](https://apple.com/swift) native target.
 
+This does not need any dependency manager. It's a 300-line file. Definitely not worth even writing a podfile for. It uses [CocoaPods](https://cocoapods.org) to get [SwiftLint](https://cocoapods.org/pods/SwiftLint) (for development), but that's it. Its only import is the [Apple Foundation Library](https://developer.apple.com/documentation/foundation). It will work on all Apple operating systems without any other dependencies.
+
+It really is that easy to use. Include a very small file, write a short subclass, and everything's sorted.
+
 IMPORTANT IMPLEMENTATION NOTES
 -
 **Thread Safety**
 
-There is none. Deal with it and move on. I'll be looking to fix that (if I can) in the future, but it isn't a critical enough requirement at the moment to justify preventing release of the utility.
+There is none. Deal with it and move on.
 
 Because of the nature of the utility (a "quick and dirty" persistent save for small amounts of -usually- user-interface-linked data), thread safety is not a critical need. I am making a point of mentioning it, though, so you don't spend too much time searching under the cushions, if you come across inconsistent dealloc crashes. There is a commented-out test in the [RVS_Persistent_Prefs_Thread_Tests.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/RVS_Persistent_Prefs_Tests/RVS_Persistent_Prefs_Thread_Tests.swift#L158) file. If you uncomment it, and run it repeatedly, you will eventually run into the issue. You can also jack up the number of tests to increase the likelihood of running into the issue.
 

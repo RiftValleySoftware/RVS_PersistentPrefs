@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.0.3
+ Version 1.0.4
  */
 
 import Foundation
@@ -28,9 +28,9 @@ import Foundation
 // MARK: - Main Preferences Base Class
 /* ################################################################################################################################## */
 /**
- This class is designed to act as an "abstract" base class, providing a simple `Dictionary` datastore that is stored in the [`UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults) in the Application Bundle. It is designed to be reliable, and extremely simple to use.
+ This class is meant to act as an "abstract" base class, providing a simple `Dictionary` datastore that is stored in the [`UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults) in the Application Bundle. It is designed to be reliable, and extremely simple to use.
  The stored `Dictionary` would be a String-keyed Dictionary of `Any` (flexible types). It s up to subclasses to specialize the typeless data.
- THIS IS NOT EFFICIENT OR ROBUST!
+ **THIS IS NOT EFFICIENT OR ROBUST!**
  It is meant as a simple "bucket" for things like application preferences. It is not an industrial data storage solution. You have been warned.
  Subclasses could declare their accessors as [`KVO`](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)-style, thus, providing a direct way to influence persistent state.
  You can also directly observe the .values property. It will change when ANY pref is changed (so might not be suitable for "pick and choose" observation).

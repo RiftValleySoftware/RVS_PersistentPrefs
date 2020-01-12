@@ -35,6 +35,7 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
     // This is a non-Codable class.
     /* ############################################################################################################################## */
     /**
+     This is a very simple derived class that we use for testing.
      */
     class SuperSimpleTypeTestClass: RVS_PersistentPrefs {
         /* ################################################################## */
@@ -164,7 +165,7 @@ class RVS_Persistent_Prefs_Thread_Tests: XCTestCase {
      This class IS NOT THREAD-SAFE.
      */
 //    func testOperationThreading() {
-//        let taskCount = 7
+//        let taskCount = 30
 //        let testKey = "testOperationThreading-0"   // The prefs key that we'll be using for this test.
 //
 //        // What we do here, is create a throwaway instance that exists only to make sure that some defaults are set.
