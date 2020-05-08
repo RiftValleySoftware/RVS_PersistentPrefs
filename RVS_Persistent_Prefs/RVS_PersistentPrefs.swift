@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.0.4
+ Version 1.0.5
  */
 
 import Foundation
@@ -245,7 +245,7 @@ public class RVS_PersistentPrefs: NSObject {
      */
     public override init() {
         super.init()
-        key = String(describing: type(of: self).self)  // This gives us a simple classname as our key.
+        key = String(describing: Self.self)  // This gives us a simple classname as our key.
         do {
             try _load()
         } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
@@ -269,7 +269,7 @@ public class RVS_PersistentPrefs: NSObject {
      */
     public init(key inKey: String! = nil, values inValues: [String: Any]! = [:]) {
         super.init()
-        key = inKey ?? String(describing: type(of: self).self)  // This gives us a simple classname as our key.
+        key = inKey ?? String(describing: Self.self)  // This gives us a simple classname as our key.
         
         // First, we load any currently stored prefs. This makes sure that we have a solid starting place.
         do {

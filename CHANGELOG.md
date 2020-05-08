@@ -1,3 +1,7 @@
+*Version 1.0.5* **May 8, 2020**
+- Very minor change to replace an antiquated self reference.
+- The Mac test harness needed to have its window set as the initial controller.
+
 *Version 1.0.4* **January 12, 2020**
 - No operational changes. Added some extra documentation, and tweaked the README a bit.
 
