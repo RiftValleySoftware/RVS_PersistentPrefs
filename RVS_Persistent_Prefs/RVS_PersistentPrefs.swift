@@ -69,11 +69,11 @@ public class RVS_PersistentPrefs: NSObject {
             _values.forEach {
                 if PropertyListSerialization.propertyList($0.value, isValidFor: .xml) {
                     #if DEBUG
-                    print("\($0.key) is OK")
+                        print("\($0.key) is OK")
                     #endif
                 } else {
                     #if DEBUG
-                    print("\($0.key) is not plist-compliant")
+                        print("\($0.key) is not plist-compliant")
                     #endif
                     valueElementList.append($0.key)
                 }
@@ -139,9 +139,7 @@ public class RVS_PersistentPrefs: NSObject {
     /**
      The number of stored values.
      */
-    var count: Int {
-        return values.count
-    }
+    var count: Int { values.count }
 
     /* ############################################################################################################################## */
     // MARK: - Public Calculated Properties
@@ -227,13 +225,8 @@ public class RVS_PersistentPrefs: NSObject {
      This is a direct-access subscript that allows you to use the prefs object to reach its stored properties.
      */
     subscript(_ inKey: String) -> Any? {
-        get {
-            return values[inKey]
-        }
-        
-        set {
-            values[inKey] = newValue
-        }
+        get { values[inKey] }
+        set { values[inKey] = newValue }
     }
     
     /* ############################################################################################################################## */
