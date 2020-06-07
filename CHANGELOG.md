@@ -1,3 +1,6 @@
+*Version 1.0.6* **TBD**
+- Changed a silly typo in a test variable name.
+
 *Version 1.0.5* **May 8, 2020**
 - Very minor change to replace an antiquated self reference.
 - The Mac test harness needed to have its window set as the initial controller.
