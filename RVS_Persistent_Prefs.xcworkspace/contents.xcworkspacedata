@@ -22,9 +22,6 @@
       <FileRef
          location = "group:Cartfile">
       </FileRef>
-      <FileRef
-         location = "group:Project-Meta/Warnings.xcconfig">
-      </FileRef>
    </Group>
    <FileRef
       location = "group:RVS_Persistent_Prefs.xcodeproj">

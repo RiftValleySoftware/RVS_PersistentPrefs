@@ -49,6 +49,10 @@
 		D4D4FB28230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D4FB27230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */; };
 		D4D94DFB230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */; };
 		D4D94DFC230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */; };
+		D4E0FF71248D27AC0064570B /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4E0FF70248D27AC0064570B /* Warnings.xcconfig */; };
+		D4E0FF72248D27AC0064570B /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4E0FF70248D27AC0064570B /* Warnings.xcconfig */; };
+		D4E0FF73248D27AC0064570B /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4E0FF70248D27AC0064570B /* Warnings.xcconfig */; };
+		D4E0FF74248D27AC0064570B /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4E0FF70248D27AC0064570B /* Warnings.xcconfig */; };
 		D4E2E8F2230B1F93008BE1CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E2E8ED230B1F93008BE1CD /* Assets.xcassets */; };
 		D4E2E8F3230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2E8EE230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */; };
 		D4E2E8F4230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2E8EF230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */; };
@@ -148,6 +152,7 @@
 		D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RVS_PersistentPrefs_macOS_TestHarness.entitlements; sourceTree = "<group>"; };
 		D4D4FB27230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift; sourceTree = "<group>"; };
 		D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift; sourceTree = "<group>"; };
+		D4E0FF70248D27AC0064570B /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		D4E2E8ED230B1F93008BE1CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4E2E8EE230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D4E2E8EF230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift; sourceTree = "<group>"; };
@@ -271,6 +276,7 @@
 			children = (
 				D48833E223033303003080E8 /* src */,
 				D442BDB3248C8B2E00B82300 /* test */,
+				D4E0FF75248D27BF0064570B /* Project-Meta */,
 				D48833BB230332C4003080E8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -332,6 +338,14 @@
 				D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */,
 			);
 			path = RVS_PersistentPrefs_macOS_TestHarness;
+			sourceTree = "<group>";
+		};
+		D4E0FF75248D27BF0064570B /* Project-Meta */ = {
+			isa = PBXGroup;
+			children = (
+				D4E0FF70248D27AC0064570B /* Warnings.xcconfig */,
+			);
+			name = "Project-Meta";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +537,7 @@
 				D468768023088A61004958D0 /* Localizable.strings in Resources */,
 				D4162B4523085322000F4845 /* LaunchScreen.storyboard in Resources */,
 				D4162B4223085322000F4845 /* Assets.xcassets in Resources */,
+				D4E0FF71248D27AC0064570B /* Warnings.xcconfig in Resources */,
 				D4011BD62309DD7700C0803D /* Settings.bundle in Resources */,
 				D4162B4023085321000F4845 /* Main.storyboard in Resources */,
 			);
@@ -542,6 +557,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E0FF72248D27AC0064570B /* Warnings.xcconfig in Resources */,
 				D468768223088A61004958D0 /* Localizable.strings in Resources */,
 				D4E2E8F2230B1F93008BE1CD /* Assets.xcassets in Resources */,
 			);
@@ -552,6 +568,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4940F3C230864AC00F1B8E4 /* Assets.xcassets in Resources */,
+				D4E0FF73248D27AC0064570B /* Warnings.xcconfig in Resources */,
 				D468768323088A61004958D0 /* Localizable.strings in Resources */,
 				D4940F3A230864AB00F1B8E4 /* Main.storyboard in Resources */,
 			);
@@ -562,6 +579,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */,
+				D4E0FF74248D27AC0064570B /* Warnings.xcconfig in Resources */,
 				D468768423088A61004958D0 /* Localizable.strings in Resources */,
 				D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */,
 			);
@@ -1061,7 +1079,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = Testing/RVS_Persistent_Prefs_Tests/Info.plist;
+				INFOPLIST_FILE = test/RVS_Persistent_Prefs_Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1082,7 +1100,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = Testing/RVS_Persistent_Prefs_Tests/Info.plist;
+				INFOPLIST_FILE = test/RVS_Persistent_Prefs_Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
