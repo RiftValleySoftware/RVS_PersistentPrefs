@@ -19,7 +19,6 @@
 		D44481D4230858BC00C8E526 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44481D2230858BC00C8E526 /* Interface.storyboard */; };
 		D44481D6230858BD00C8E526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44481D5230858BD00C8E526 /* Assets.xcassets */; };
 		D44481DD230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D44481ED230858BE00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D44481D0230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app */; };
 		D468766D230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
 		D468766E230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
 		D468766F230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
@@ -30,14 +29,6 @@
 		D468768323088A61004958D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
 		D468768423088A61004958D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
 		D475650A249D465D00EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D4756509249D465D00EEFCF8 /* RVS_Generic_Swift_Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D475650F249D468800EEFCF8 /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D475650E249D468800EEFCF8 /* RVS_Generic_Swift_Toolbox */; };
-		D4756511249D468800EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D475650E249D468800EEFCF8 /* RVS_Generic_Swift_Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D4756513249D469100EEFCF8 /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4756512249D469100EEFCF8 /* RVS_Generic_Swift_Toolbox */; };
-		D4756515249D469100EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D4756512249D469100EEFCF8 /* RVS_Generic_Swift_Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D4756517249D46A300EEFCF8 /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4756516249D46A300EEFCF8 /* RVS_Generic_Swift_Toolbox */; };
-		D4756519249D46A300EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D4756516249D46A300EEFCF8 /* RVS_Generic_Swift_Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D475651B249D46A900EEFCF8 /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D475651A249D46A900EEFCF8 /* RVS_Generic_Swift_Toolbox */; };
-		D475651D249D46A900EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D475651A249D46A900EEFCF8 /* RVS_Generic_Swift_Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D48833E423033303003080E8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E323033303003080E8 /* main.swift */; };
 		D48833ED230333A8003080E8 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */; };
@@ -51,6 +42,19 @@
 		D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */; };
 		D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4D230865C700F1B8E4 /* Assets.xcassets */; };
 		D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4F230865C700F1B8E4 /* Main.storyboard */; };
+		D4BA8940249D6C93001231F8 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4BA893F249D6C93001231F8 /* RVS-Generic-Swift-Toolbox */; };
+		D4BA8941249D6C93001231F8 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D4BA893F249D6C93001231F8 /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D4BA8942249D6CC8001231F8 /* RVS_PersistentPrefs_watchOS_TestHarness.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D44481D0230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D4BA8947249D6CD6001231F8 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4BA8946249D6CD6001231F8 /* RVS-Generic-Swift-Toolbox */; };
+		D4BA8948249D6CD6001231F8 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D4BA8946249D6CD6001231F8 /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D4BA894A249D6CDE001231F8 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4BA8949249D6CDE001231F8 /* RVS-Generic-Swift-Toolbox */; };
+		D4BA894B249D6CDE001231F8 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D4BA8949249D6CDE001231F8 /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D4BA894D249D6CE3001231F8 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D4BA894C249D6CE3001231F8 /* RVS-Generic-Swift-Toolbox */; };
+		D4BA894E249D6CE3001231F8 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D4BA894C249D6CE3001231F8 /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D4CAF09D249D6AE500041665 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4CAF09C249D6AE500041665 /* Warnings.xcconfig */; };
+		D4CAF09E249D6AE500041665 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4CAF09C249D6AE500041665 /* Warnings.xcconfig */; };
+		D4CAF09F249D6AE500041665 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4CAF09C249D6AE500041665 /* Warnings.xcconfig */; };
+		D4CAF0A0249D6AE500041665 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4CAF09C249D6AE500041665 /* Warnings.xcconfig */; };
 		D4D4FB28230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D4FB27230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */; };
 		D4D94DFB230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */; };
 		D4D94DFC230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */; };
@@ -70,7 +74,7 @@
 			remoteGlobalIDString = D44481DB230858BD00C8E526;
 			remoteInfo = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
 		};
-		D44481EB230858BE00C8E526 /* PBXContainerItemProxy */ = {
+		D4BA8943249D6CC8001231F8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D48833B2230332C4003080E8 /* Project object */;
 			proxyType = 1;
@@ -102,17 +106,6 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D44481F5230858BE00C8E526 /* Embed Watch Content */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
-			dstSubfolderSpec = 16;
-			files = (
-				D44481ED230858BE00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app in Embed Watch Content */,
-			);
-			name = "Embed Watch Content";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D475650B249D465D00EEFCF8 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,7 +123,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D4756511249D468800EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */,
+				D4BA8941249D6C93001231F8 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,7 +134,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D4756515249D469100EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */,
+				D4BA8948249D6CD6001231F8 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +145,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D4756519249D46A300EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */,
+				D4BA894B249D6CDE001231F8 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,9 +156,20 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D475651D249D46A900EEFCF8 /* RVS_Generic_Swift_Toolbox in Embed Frameworks */,
+				D4BA894E249D6CE3001231F8 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4BA8945249D6CC8001231F8 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				D4BA8942249D6CC8001231F8 /* RVS_PersistentPrefs_watchOS_TestHarness.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -205,9 +209,9 @@
 		D4940F50230865C700F1B8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D4940F52230865C700F1B8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RVS_PersistentPrefs_macOS_TestHarness.entitlements; sourceTree = "<group>"; };
+		D4CAF09C249D6AE500041665 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4D4FB27230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift; sourceTree = "<group>"; };
 		D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift; sourceTree = "<group>"; };
-		D4E0FF70248D27AC0064570B /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Warnings.xcconfig; sourceTree = "<group>"; };
 		D4E2E8ED230B1F93008BE1CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4E2E8EE230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D4E2E8EF230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift; sourceTree = "<group>"; };
@@ -221,7 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4756513249D469100EEFCF8 /* RVS_Generic_Swift_Toolbox in Frameworks */,
+				D4BA8947249D6CD6001231F8 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D475650F249D468800EEFCF8 /* RVS_Generic_Swift_Toolbox in Frameworks */,
+				D4BA8940249D6C93001231F8 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,7 +241,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4756517249D46A300EEFCF8 /* RVS_Generic_Swift_Toolbox in Frameworks */,
+				D4BA894A249D6CDE001231F8 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +249,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D475651B249D46A900EEFCF8 /* RVS_Generic_Swift_Toolbox in Frameworks */,
+				D4BA894D249D6CE3001231F8 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +412,7 @@
 		D4E0FF75248D27BF0064570B /* Project-Meta */ = {
 			isa = PBXGroup;
 			children = (
-				D4E0FF70248D27AC0064570B /* Warnings.xcconfig */,
+				D4CAF09C249D6AE500041665 /* Warnings.xcconfig */,
 			);
 			name = "Project-Meta";
 			sourceTree = "<group>";
@@ -424,18 +428,18 @@
 				D4162B3423085321000F4845 /* Sources */,
 				D4162B3623085321000F4845 /* Resources */,
 				D4011BD72309E93A00C0803D /* Copy Localizable For Settings Bundle */,
-				D44481F5230858BE00C8E526 /* Embed Watch Content */,
 				D475650C249D468200EEFCF8 /* Frameworks */,
 				D4756510249D468800EEFCF8 /* Embed Frameworks */,
+				D4BA8945249D6CC8001231F8 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D44481EC230858BE00C8E526 /* PBXTargetDependency */,
+				D4BA8944249D6CC8001231F8 /* PBXTargetDependency */,
 			);
 			name = RVS_PersistentPrefs_iOS_TestHarness;
 			packageProductDependencies = (
-				D475650E249D468800EEFCF8 /* RVS_Generic_Swift_Toolbox */,
+				D4BA893F249D6C93001231F8 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_iOS_TestHarness;
 			productReference = D4162B3823085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness.app */;
@@ -474,7 +478,7 @@
 			);
 			name = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
 			packageProductDependencies = (
-				D4756512249D469100EEFCF8 /* RVS_Generic_Swift_Toolbox */,
+				D4BA8946249D6CD6001231F8 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
 			productReference = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */;
@@ -494,7 +498,6 @@
 			);
 			name = RVS_Persistent_Prefs;
 			packageProductDependencies = (
-				D4756509249D465D00EEFCF8 /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = RVS_Persistent_Prefs;
 			productReference = D48833E123033303003080E8 /* RVS_Persistent_Prefs */;
@@ -531,7 +534,7 @@
 			);
 			name = RVS_PersistentPrefs_tvOS_TestHarness;
 			packageProductDependencies = (
-				D4756516249D46A300EEFCF8 /* RVS_Generic_Swift_Toolbox */,
+				D4BA8949249D6CDE001231F8 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_tvOS_TestHarness;
 			productReference = D4940F32230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness.app */;
@@ -552,7 +555,7 @@
 			);
 			name = RVS_PersistentPrefs_macOS_TestHarness;
 			packageProductDependencies = (
-				D475651A249D46A900EEFCF8 /* RVS_Generic_Swift_Toolbox */,
+				D4BA894C249D6CE3001231F8 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_macOS_TestHarness;
 			productReference = D4940F47230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.app */;
@@ -601,7 +604,7 @@
 			);
 			mainGroup = D48833B1230332C4003080E8;
 			packageReferences = (
-				D4756508249D465D00EEFCF8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
+				D4BA893E249D6C93001231F8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
 			);
 			productRefGroup = D48833BB230332C4003080E8 /* Products */;
 			projectDirPath = "";
@@ -626,6 +629,7 @@
 				D468768023088A61004958D0 /* Localizable.strings in Resources */,
 				D4162B4523085322000F4845 /* LaunchScreen.storyboard in Resources */,
 				D4162B4223085322000F4845 /* Assets.xcassets in Resources */,
+				D4CAF09D249D6AE500041665 /* Warnings.xcconfig in Resources */,
 				D4011BD62309DD7700C0803D /* Settings.bundle in Resources */,
 				D4162B4023085321000F4845 /* Main.storyboard in Resources */,
 			);
@@ -645,6 +649,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4CAF09E249D6AE500041665 /* Warnings.xcconfig in Resources */,
 				D468768223088A61004958D0 /* Localizable.strings in Resources */,
 				D4E2E8F2230B1F93008BE1CD /* Assets.xcassets in Resources */,
 			);
@@ -655,6 +660,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4940F3C230864AC00F1B8E4 /* Assets.xcassets in Resources */,
+				D4CAF09F249D6AE500041665 /* Warnings.xcconfig in Resources */,
 				D468768323088A61004958D0 /* Localizable.strings in Resources */,
 				D4940F3A230864AB00F1B8E4 /* Main.storyboard in Resources */,
 			);
@@ -665,6 +671,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */,
+				D4CAF0A0249D6AE500041665 /* Warnings.xcconfig in Resources */,
 				D468768423088A61004958D0 /* Localizable.strings in Resources */,
 				D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */,
 			);
@@ -823,10 +830,10 @@
 			target = D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension */;
 			targetProxy = D44481DE230858BD00C8E526 /* PBXContainerItemProxy */;
 		};
-		D44481EC230858BE00C8E526 /* PBXTargetDependency */ = {
+		D4BA8944249D6CC8001231F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D44481CF230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */;
-			targetProxy = D44481EB230858BE00C8E526 /* PBXContainerItemProxy */;
+			targetProxy = D4BA8943249D6CC8001231F8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1373,6 +1380,14 @@
 				kind = branch;
 			};
 		};
+		D4BA893E249D6C93001231F8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1381,25 +1396,25 @@
 			package = D4756508249D465D00EEFCF8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = RVS_Generic_Swift_Toolbox;
 		};
-		D475650E249D468800EEFCF8 /* RVS_Generic_Swift_Toolbox */ = {
+		D4BA893F249D6C93001231F8 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D4756508249D465D00EEFCF8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = RVS_Generic_Swift_Toolbox;
+			package = D4BA893E249D6C93001231F8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
 		};
-		D4756512249D469100EEFCF8 /* RVS_Generic_Swift_Toolbox */ = {
+		D4BA8946249D6CD6001231F8 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D4756508249D465D00EEFCF8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = RVS_Generic_Swift_Toolbox;
+			package = D4BA893E249D6C93001231F8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
 		};
-		D4756516249D46A300EEFCF8 /* RVS_Generic_Swift_Toolbox */ = {
+		D4BA8949249D6CDE001231F8 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D4756508249D465D00EEFCF8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = RVS_Generic_Swift_Toolbox;
+			package = D4BA893E249D6C93001231F8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
 		};
-		D475651A249D46A900EEFCF8 /* RVS_Generic_Swift_Toolbox */ = {
+		D4BA894C249D6CE3001231F8 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D4756508249D465D00EEFCF8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = RVS_Generic_Swift_Toolbox;
+			package = D4BA893E249D6C93001231F8 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			productName = "RVS-Generic-Swift-Toolbox";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
