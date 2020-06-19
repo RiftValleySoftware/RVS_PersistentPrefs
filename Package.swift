@@ -6,7 +6,7 @@ let package = Package(
     name: "RVS_Persistent_Prefs",
     products: [
         .library(
-            name: "RVS-Persistent_Prefs",
+            name: "RVS-Persistent-Prefs",
             type: .dynamic,
             targets: ["RVS_Persistent_Prefs"])
     ],
