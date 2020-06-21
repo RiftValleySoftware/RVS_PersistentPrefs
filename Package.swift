@@ -16,6 +16,13 @@ let package = Package(
             type: .dynamic,
             targets: ["RVS_Persistent_Prefs"])
     ],
+    dependencies: [
+        .package(
+            name: "RVS-Generic-Swift-Toolbox",
+            url: "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git",
+            .branch("master")
+        )
+    ],
     targets: [
         .target(
             name: "RVS_Persistent_Prefs",
