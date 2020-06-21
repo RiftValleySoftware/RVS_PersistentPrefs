@@ -1,5 +1,8 @@
 *Version 1.1.0* **June 19, 2020**
 - Switched over to use SPM.
+- Made the main class "open."
+- made a couple of properties open, as well.
+- Made the `count` property public. It was not specified as such, and should have been.
 
 *Version 1.0.6* **June 7, 2020**
 - Changed a silly typo in a test variable name.

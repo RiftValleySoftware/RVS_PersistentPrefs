@@ -127,7 +127,7 @@ open class RVS_PersistentPrefs: NSObject {
     /**
      This is the key that is used to store and fetch the collection of data to be used to populate the _values Dictionary.
      */
-    public var key: String = ""
+    open var key: String = ""
     
     /* ################################################################## */
     /**
@@ -139,7 +139,7 @@ open class RVS_PersistentPrefs: NSObject {
     /**
      The number of stored values.
      */
-    var count: Int { values.count }
+    public var count: Int { values.count }
 
     /* ############################################################################################################################## */
     // MARK: - Public Calculated Properties
@@ -149,7 +149,7 @@ open class RVS_PersistentPrefs: NSObject {
      This calculated property MUST be overridden by subclasses.
      It is an Array of String, containing the keys used to store and retrieve the values from persistent storage.
      */
-    public var keys: [String] {
+    open var keys: [String] {
         preconditionFailure("YOU MUST OVERRIDE THIS METHOD")
     }
     
