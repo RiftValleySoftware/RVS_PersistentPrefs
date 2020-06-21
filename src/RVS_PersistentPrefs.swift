@@ -35,7 +35,7 @@ import Foundation
  Subclasses could declare their accessors as [`KVO`](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)-style, thus, providing a direct way to influence persistent state.
  You can also directly observe the .values property. It will change when ANY pref is changed (so might not be suitable for "pick and choose" observation).
  */
-public class RVS_PersistentPrefs: NSObject {
+open class RVS_PersistentPrefs: NSObject {
     /* ############################################################################################################################## */
     // MARK: - Private Properties
     /* ############################################################################################################################## */
