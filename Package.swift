@@ -13,7 +13,6 @@ let package = Package(
     products: [
         .library(
             name: "RVS-Persistent-Prefs",
-            type: .dynamic,
             targets: ["RVS_Persistent_Prefs"])
     ],
     dependencies: [
