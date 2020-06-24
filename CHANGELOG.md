@@ -1,3 +1,6 @@
+*Version 1.1.1* **June 24, 2020**
+- Switched SPM to use specific dependency versions.
+
 *Version 1.1.0* **June 19, 2020**
 - Switched over to use SPM.
 - Made the main class "open."
