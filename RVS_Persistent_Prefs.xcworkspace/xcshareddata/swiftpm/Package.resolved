@@ -5,9 +5,9 @@
         "package": "RVS_Generic_Swift_Toolbox",
         "repositoryURL": "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git",
         "state": {
-          "branch": "master",
-          "revision": "3a1afbdd08127abc784f9d429c1306da5fec03ef",
-          "version": null
+          "branch": null,
+          "revision": "b7b34ce4a032d1e6a00c549c198b2ef575b14488",
+          "version": "1.2.1"
         }
       }
     ]
