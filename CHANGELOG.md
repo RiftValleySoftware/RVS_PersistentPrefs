@@ -1,3 +1,6 @@
+*Version 1.1.2* **June 25, 2020**
+- Removed the toolbox dependency, as it is only used in the test harness.
+
 *Version 1.1.1* **June 24, 2020**
 - Switched SPM to use specific dependency versions.
 

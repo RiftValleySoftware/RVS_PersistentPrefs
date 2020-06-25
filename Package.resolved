@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "RVS_Generic_Swift_Toolbox",
+        "repositoryURL": "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git",
+        "state": {
+          "branch": null,
+          "revision": "b7b34ce4a032d1e6a00c549c198b2ef575b14488",
+          "version": "1.2.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

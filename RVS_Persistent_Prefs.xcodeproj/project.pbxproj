@@ -21,14 +21,14 @@
 		D44481D4230858BC00C8E526 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44481D2230858BC00C8E526 /* Interface.storyboard */; };
 		D44481D6230858BD00C8E526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44481D5230858BD00C8E526 /* Assets.xcassets */; };
 		D44481DD230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D463C7EF24A37CEC00E46AFE /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D463C7EE24A37CEC00E46AFE /* RVS-Generic-Swift-Toolbox */; };
-		D463C7F024A37CEC00E46AFE /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D463C7EE24A37CEC00E46AFE /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D463C7F224A37D1100E46AFE /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D463C7F124A37D1100E46AFE /* RVS-Generic-Swift-Toolbox */; };
-		D463C7F324A37D1100E46AFE /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D463C7F124A37D1100E46AFE /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D463C7F524A37D1900E46AFE /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D463C7F424A37D1900E46AFE /* RVS-Generic-Swift-Toolbox */; };
-		D463C7F624A37D1900E46AFE /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D463C7F424A37D1900E46AFE /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		D463C7F824A37D2000E46AFE /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D463C7F724A37D2000E46AFE /* RVS-Generic-Swift-Toolbox */; };
-		D463C7F924A37D2000E46AFE /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D463C7F724A37D2000E46AFE /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D44AB4C824A511AB00054236 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44AB4C724A511AB00054236 /* RVS-Generic-Swift-Toolbox */; };
+		D44AB4C924A511AB00054236 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D44AB4C724A511AB00054236 /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D44AB4CB24A511BE00054236 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44AB4CA24A511BE00054236 /* RVS-Generic-Swift-Toolbox */; };
+		D44AB4CC24A511BE00054236 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D44AB4CA24A511BE00054236 /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D44AB4CE24A511C400054236 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44AB4CD24A511C400054236 /* RVS-Generic-Swift-Toolbox */; };
+		D44AB4CF24A511C400054236 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D44AB4CD24A511C400054236 /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		D44AB4D124A511CC00054236 /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44AB4D024A511CC00054236 /* RVS-Generic-Swift-Toolbox */; };
+		D44AB4D224A511CC00054236 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */ = {isa = PBXBuildFile; productRef = D44AB4D024A511CC00054236 /* RVS-Generic-Swift-Toolbox */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		D468766D230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
 		D468766E230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
 		D468766F230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
@@ -121,7 +121,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D463C7F024A37CEC00E46AFE /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
+				D44AB4C924A511AB00054236 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,7 +132,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D463C7F324A37D1100E46AFE /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
+				D44AB4D224A511CC00054236 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,7 +143,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D463C7F624A37D1900E46AFE /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
+				D44AB4CC24A511BE00054236 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,7 +154,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D463C7F924A37D2000E46AFE /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
+				D44AB4CF24A511C400054236 /* RVS-Generic-Swift-Toolbox in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,7 +230,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D463C7F224A37D1100E46AFE /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D44AB4D124A511CC00054236 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,7 +238,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D463C7EF24A37CEC00E46AFE /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D44AB4C824A511AB00054236 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,7 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D463C7F524A37D1900E46AFE /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D44AB4CB24A511BE00054236 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,7 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D463C7F824A37D2000E46AFE /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D44AB4CE24A511C400054236 /* RVS-Generic-Swift-Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,7 +444,7 @@
 			);
 			name = RVS_PersistentPrefs_iOS_TestHarness;
 			packageProductDependencies = (
-				D463C7EE24A37CEC00E46AFE /* RVS-Generic-Swift-Toolbox */,
+				D44AB4C724A511AB00054236 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_iOS_TestHarness;
 			productReference = D4162B3823085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness.app */;
@@ -483,7 +483,7 @@
 			);
 			name = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
 			packageProductDependencies = (
-				D463C7F124A37D1100E46AFE /* RVS-Generic-Swift-Toolbox */,
+				D44AB4D024A511CC00054236 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
 			productReference = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */;
@@ -540,7 +540,7 @@
 			);
 			name = RVS_PersistentPrefs_tvOS_TestHarness;
 			packageProductDependencies = (
-				D463C7F424A37D1900E46AFE /* RVS-Generic-Swift-Toolbox */,
+				D44AB4CA24A511BE00054236 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_tvOS_TestHarness;
 			productReference = D4940F32230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness.app */;
@@ -561,7 +561,7 @@
 			);
 			name = RVS_PersistentPrefs_macOS_TestHarness;
 			packageProductDependencies = (
-				D463C7F724A37D2000E46AFE /* RVS-Generic-Swift-Toolbox */,
+				D44AB4CD24A511C400054236 /* RVS-Generic-Swift-Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_macOS_TestHarness;
 			productReference = D4940F47230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.app */;
@@ -610,7 +610,7 @@
 			);
 			mainGroup = D48833B1230332C4003080E8;
 			packageReferences = (
-				D463C7ED24A37CEC00E46AFE /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
+				D44AB4C624A511AB00054236 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */,
 			);
 			productRefGroup = D48833BB230332C4003080E8 /* Products */;
 			projectDirPath = "";
@@ -1378,7 +1378,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D463C7ED24A37CEC00E46AFE /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
+		D44AB4C624A511AB00054236 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
 			requirement = {
@@ -1389,24 +1389,24 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D463C7EE24A37CEC00E46AFE /* RVS-Generic-Swift-Toolbox */ = {
+		D44AB4C724A511AB00054236 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D463C7ED24A37CEC00E46AFE /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			package = D44AB4C624A511AB00054236 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = "RVS-Generic-Swift-Toolbox";
 		};
-		D463C7F124A37D1100E46AFE /* RVS-Generic-Swift-Toolbox */ = {
+		D44AB4CA24A511BE00054236 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D463C7ED24A37CEC00E46AFE /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			package = D44AB4C624A511AB00054236 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = "RVS-Generic-Swift-Toolbox";
 		};
-		D463C7F424A37D1900E46AFE /* RVS-Generic-Swift-Toolbox */ = {
+		D44AB4CD24A511C400054236 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D463C7ED24A37CEC00E46AFE /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			package = D44AB4C624A511AB00054236 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = "RVS-Generic-Swift-Toolbox";
 		};
-		D463C7F724A37D2000E46AFE /* RVS-Generic-Swift-Toolbox */ = {
+		D44AB4D024A511CC00054236 /* RVS-Generic-Swift-Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D463C7ED24A37CEC00E46AFE /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
+			package = D44AB4C624A511AB00054236 /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
 			productName = "RVS-Generic-Swift-Toolbox";
 		};
 /* End XCSwiftPackageProductDependency section */
