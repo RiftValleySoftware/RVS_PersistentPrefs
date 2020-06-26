@@ -42,10 +42,21 @@ REQUIREMENTS
 -
 `RVS_PersistentPrefs` is an [Apple Foundation](https://developer.apple.com/documentation/foundation)-based resource. It will work equally well on all Apple development platforms ([iOS](https://www.apple.com/ios), [iPadOS](https://www.apple.com/ipados), [macOS](https://www.apple.com/macos), [tvOS](https://www.apple.com/tvos), [watchOS](https://www.apple.com/watchos)). It will not work on non-Apple platforms, and is not designed to support anything other than native [Swift](https://apple.com/swift) development.
 
-This requires Swift 4.0 or above, and has been tested with Swift 5.1 (prerelease, at the time of writing).
+This requires Swift 4.0 or above.
 
 INSTALLATION
 -
+
+- [**Swift Package Manager (SPM)**](https://swift.org/package-manager/)
+
+You can use SPM to load the project as a dependency, by referencing its [GitHub Repo](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/) URI (SSH: [git@github.com:RiftValleySoftware/RVS_PersistentPrefs.git](git@github.com:RiftValleySoftware/RVS_PersistentPrefs.git), or HTTPS: [https://github.com/RiftValleySoftware/RVS_PersistentPrefs.git](https://github.com/RiftValleySoftware/RVS_PersistentPrefs.git)).
+
+Once you have the dependency attached, you reference it by adding an import to the files that consume the package:
+    
+    import RVS_PersistentPrefs
+
+- **Simple Direct File Download And Installation**
+
 You can fetch the latest version of `RVS_PersistentPrefs` from [its GitHub repo](https://github.com/RiftValleySoftware/RVS_PersistentPrefs).
 
 The class consists of [one single Swift source file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift). All the other stuff in the project is for project support and testing.
