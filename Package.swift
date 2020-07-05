@@ -1,6 +1,6 @@
 // swift-tools-version:5.2
 
-/**
+/*
 © Copyright 2019, The Great Rift Valley Software Company
 
 LICENSE:
@@ -35,7 +35,6 @@ let package = Package(
     products: [
         .library(
             name: "RVS-Persistent-Prefs",
-            type: .dynamic,
             targets: ["RVS_Persistent_Prefs"])
     ],
     targets: [
