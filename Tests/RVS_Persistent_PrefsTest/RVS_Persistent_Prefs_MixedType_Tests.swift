@@ -23,6 +23,7 @@
  */
 
 import XCTest
+@testable import RVS_Persistent_Prefs
 
 /* ################################################################################################################################## */
 // MARK: - Tests for the Persistent Prefs.

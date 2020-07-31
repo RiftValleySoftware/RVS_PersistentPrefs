@@ -38,8 +38,8 @@ let package = Package(
             targets: ["RVS_Persistent_Prefs"])
     ],
     targets: [
-        .target(
-            name: "RVS_Persistent_Prefs",
-            path: "./src")
+        .target(name: "RVS_Persistent_Prefs"),
+        .testTarget(name: "RVS_Persistent_PrefsTest",
+                    dependencies: ["RVS_Persistent_Prefs"])
     ]
 )

@@ -7,19 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D4011BD62309DD7700C0803D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4011BD52309DD7700C0803D /* Settings.bundle */; };
 		D4011BD82309E95300C0803D /* Localizable.strings in Copy Localizable For Settings Bundle */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
 		D414DF9A249FBE0F0004736B /* RVS_Persistent_Prefs_MixedType_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */; };
 		D414DF9B249FBE0F0004736B /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */; };
 		D414DF9C249FBE330004736B /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
-		D4162B3B23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4162B3A23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */; };
-		D4162B3D23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4162B3C23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift */; };
-		D4162B4023085321000F4845 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4162B3E23085321000F4845 /* Main.storyboard */; };
-		D4162B4223085322000F4845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4162B4123085322000F4845 /* Assets.xcassets */; };
-		D4162B4523085322000F4845 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4162B4323085322000F4845 /* LaunchScreen.storyboard */; };
 		D44481CD230856FB00C8E526 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
-		D44481D4230858BC00C8E526 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44481D2230858BC00C8E526 /* Interface.storyboard */; };
-		D44481D6230858BD00C8E526 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44481D5230858BD00C8E526 /* Assets.xcassets */; };
 		D44481DD230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D468766D230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
 		D468766E230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
@@ -35,30 +27,34 @@
 		D48206FB24B220140003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48206FA24B220140003F8AA /* RVS-Generic-Swift-Toolbox */; };
 		D48206FD24B2201A0003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48206FC24B2201A0003F8AA /* RVS-Generic-Swift-Toolbox */; };
 		D48206FF24B2201F0003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48206FE24B2201F0003F8AA /* RVS-Generic-Swift-Toolbox */; };
-		D48833E423033303003080E8 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E323033303003080E8 /* main.swift */; };
 		D48833ED230333A8003080E8 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */; };
+		D48D699424D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D698B24D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */; };
+		D48D699524D4A0BA002DC1F1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D48D698C24D4A0BA002DC1F1 /* Settings.bundle */; };
+		D48D699624D4A0BA002DC1F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48D698D24D4A0BA002DC1F1 /* Assets.xcassets */; };
+		D48D699724D4A0BA002DC1F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48D698E24D4A0BA002DC1F1 /* LaunchScreen.storyboard */; };
+		D48D699824D4A0BA002DC1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48D699024D4A0BA002DC1F1 /* Main.storyboard */; };
+		D48D699924D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D699224D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift */; };
+		D48D69A424D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D699C24D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */; };
+		D48D69A524D4A0CD002DC1F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48D699D24D4A0CD002DC1F1 /* Assets.xcassets */; };
+		D48D69A624D4A0CD002DC1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48D699E24D4A0CD002DC1F1 /* Main.storyboard */; };
+		D48D69A724D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D69A124D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */; };
+		D48D69A824D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D69A224D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */; };
+		D48D69B124D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D69AB24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */; };
+		D48D69B224D4A0D7002DC1F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48D69AC24D4A0D7002DC1F1 /* Assets.xcassets */; };
+		D48D69B324D4A0D7002DC1F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48D69AD24D4A0D7002DC1F1 /* Main.storyboard */; };
+		D48D69B424D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D69AF24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */; };
+		D48D69BB24D4A0E4002DC1F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48D69B724D4A0E4002DC1F1 /* Assets.xcassets */; };
+		D48D69BC24D4A0E4002DC1F1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D48D69B824D4A0E4002DC1F1 /* Interface.storyboard */; };
+		D48D69C324D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D69BF24D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */; };
+		D48D69C424D4A0ED002DC1F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D48D69C024D4A0ED002DC1F1 /* Assets.xcassets */; };
+		D48D69C524D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D69C124D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */; };
+		D48D69C724D4A0F8002DC1F1 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E323033303003080E8 /* main.swift */; };
 		D4940F2D2308647C00F1B8E4 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
-		D4940F35230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F34230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */; };
-		D4940F37230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F36230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */; };
-		D4940F3A230864AB00F1B8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4940F38230864AB00F1B8E4 /* Main.storyboard */; };
-		D4940F3C230864AC00F1B8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4940F3B230864AC00F1B8E4 /* Assets.xcassets */; };
 		D4940F42230864D700F1B8E4 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
-		D4940F4A230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F49230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */; };
-		D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */; };
-		D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4D230865C700F1B8E4 /* Assets.xcassets */; };
-		D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4940F4F230865C700F1B8E4 /* Main.storyboard */; };
 		D4BA8942249D6CC8001231F8 /* RVS_PersistentPrefs_watchOS_TestHarness.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D44481D0230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D4CAF09D249D6AE500041665 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4CAF09C249D6AE500041665 /* Warnings.xcconfig */; };
-		D4CAF09E249D6AE500041665 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4CAF09C249D6AE500041665 /* Warnings.xcconfig */; };
-		D4CAF09F249D6AE500041665 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4CAF09C249D6AE500041665 /* Warnings.xcconfig */; };
-		D4CAF0A0249D6AE500041665 /* Warnings.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D4CAF09C249D6AE500041665 /* Warnings.xcconfig */; };
-		D4D4FB28230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D4FB27230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */; };
 		D4D94DFB230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */; };
 		D4D94DFC230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */; };
-		D4E2E8F2230B1F93008BE1CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4E2E8ED230B1F93008BE1CD /* Assets.xcassets */; };
-		D4E2E8F3230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2E8EE230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */; };
-		D4E2E8F4230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E2E8EF230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */; };
 		D4E574AB230C20A800BB0A29 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,46 +108,6 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4756510249D468800EEFCF8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4756514249D469100EEFCF8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D4756518249D46A300EEFCF8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D475651C249D46A900EEFCF8 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D4BA8945249D6CC8001231F8 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -166,18 +122,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D4011BD52309DD7700C0803D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D4162B3823085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_PersistentPrefs_iOS_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4162B3A23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
-		D4162B3C23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift; sourceTree = "<group>"; };
-		D4162B3F23085321000F4845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4162B4123085322000F4845 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D4162B4423085322000F4845 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D4162B4623085322000F4845 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D44481D0230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_PersistentPrefs_watchOS_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D44481D3230858BC00C8E526 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		D44481D5230858BD00C8E526 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D44481D7230858BD00C8E526 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_TestSet.swift; sourceTree = "<group>"; };
 		D468768523088A61004958D0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -187,26 +133,36 @@
 		D48833F8230334E8003080E8 /* RVS_Persistent_Prefs_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RVS_Persistent_Prefs_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Simple_Tests.swift; sourceTree = "<group>"; };
 		D48833FC230334E9003080E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48D698B24D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
+		D48D698C24D4A0BA002DC1F1 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		D48D698D24D4A0BA002DC1F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48D698F24D4A0BA002DC1F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D48D699124D4A0BA002DC1F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D48D699224D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift; sourceTree = "<group>"; };
+		D48D699324D4A0BA002DC1F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48D699C24D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift; sourceTree = "<group>"; };
+		D48D699D24D4A0CD002DC1F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48D699F24D4A0CD002DC1F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D48D69A024D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = RVS_PersistentPrefs_macOS_TestHarness.entitlements; sourceTree = "<group>"; };
+		D48D69A124D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift; sourceTree = "<group>"; };
+		D48D69A224D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
+		D48D69A324D4A0CD002DC1F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48D69AB24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
+		D48D69AC24D4A0D7002DC1F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48D69AE24D4A0D7002DC1F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D48D69AF24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift; sourceTree = "<group>"; };
+		D48D69B024D4A0D7002DC1F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48D69B724D4A0E4002DC1F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48D69B924D4A0E4002DC1F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		D48D69BA24D4A0E4002DC1F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D48D69BF24D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift; sourceTree = "<group>"; };
+		D48D69C024D4A0ED002DC1F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D48D69C124D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift; sourceTree = "<group>"; };
+		D48D69C224D4A0ED002DC1F1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4940F32230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_PersistentPrefs_tvOS_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4940F34230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
-		D4940F36230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift; sourceTree = "<group>"; };
-		D4940F39230864AB00F1B8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4940F3B230864AC00F1B8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D4940F3D230864AC00F1B8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4940F47230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RVS_PersistentPrefs_macOS_TestHarness.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D4940F49230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift; sourceTree = "<group>"; };
-		D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift; sourceTree = "<group>"; };
-		D4940F4D230865C700F1B8E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D4940F50230865C700F1B8E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D4940F52230865C700F1B8E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RVS_PersistentPrefs_macOS_TestHarness.entitlements; sourceTree = "<group>"; };
 		D4CAF09C249D6AE500041665 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
-		D4D4FB27230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift; sourceTree = "<group>"; };
 		D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift; sourceTree = "<group>"; };
-		D4E2E8ED230B1F93008BE1CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D4E2E8EE230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift; sourceTree = "<group>"; };
-		D4E2E8EF230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift; sourceTree = "<group>"; };
-		D4E2E8F6230B1FB5008BE1CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Thread_Tests.swift; sourceTree = "<group>"; };
 		D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_MixedType_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,70 +211,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D4162B3923085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */ = {
+		D442BDB3248C8B2E00B82300 /* RVS_Persistent_PrefsTest */ = {
 			isa = PBXGroup;
 			children = (
-				D4162B3A23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */,
-				D4162B3C23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift */,
-				D4162B3E23085321000F4845 /* Main.storyboard */,
-				D4162B4123085322000F4845 /* Assets.xcassets */,
-				D4162B4323085322000F4845 /* LaunchScreen.storyboard */,
-				D4162B4623085322000F4845 /* Info.plist */,
-				D4011BD52309DD7700C0803D /* Settings.bundle */,
+				D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */,
+				D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */,
+				D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */,
+				D48833FC230334E9003080E8 /* Info.plist */,
 			);
-			path = RVS_PersistentPrefs_iOS_TestHarness;
-			sourceTree = "<group>";
-		};
-		D442BDB3248C8B2E00B82300 /* test */ = {
-			isa = PBXGroup;
-			children = (
-				D48833E323033303003080E8 /* main.swift */,
-				D468766B230883A3004958D0 /* RVS_PersistentPrefs_Common_Files */,
-				D442BDBB248C8E6700B82300 /* Unit Tests */,
-				D442BDBA248C8E5800B82300 /* Test Harnesses */,
-			);
-			path = test;
-			sourceTree = "<group>";
-		};
-		D442BDBA248C8E5800B82300 /* Test Harnesses */ = {
-			isa = PBXGroup;
-			children = (
-				D4162B3923085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
-				D44481E0230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
-				D44481D1230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
-				D4940F48230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */,
-				D4940F33230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
-			);
-			name = "Test Harnesses";
-			sourceTree = "<group>";
-		};
-		D442BDBB248C8E6700B82300 /* Unit Tests */ = {
-			isa = PBXGroup;
-			children = (
-				D48833F9230334E9003080E8 /* RVS_Persistent_Prefs_Tests */,
-			);
-			name = "Unit Tests";
-			sourceTree = "<group>";
-		};
-		D44481D1230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */ = {
-			isa = PBXGroup;
-			children = (
-				D44481D2230858BC00C8E526 /* Interface.storyboard */,
-				D44481D5230858BD00C8E526 /* Assets.xcassets */,
-				D44481D7230858BD00C8E526 /* Info.plist */,
-			);
-			path = RVS_PersistentPrefs_watchOS_TestHarness;
-			sourceTree = "<group>";
-		};
-		D44481E0230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */ = {
-			isa = PBXGroup;
-			children = (
-				D4E2E8EE230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */,
-				D4E2E8EF230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */,
-				D4E2E8ED230B1F93008BE1CD /* Assets.xcassets */,
-				D4E2E8F6230B1FB5008BE1CD /* Info.plist */,
-			);
-			path = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
+			path = RVS_Persistent_PrefsTest;
 			sourceTree = "<group>";
 		};
 		D468766B230883A3004958D0 /* RVS_PersistentPrefs_Common_Files */ = {
@@ -341,8 +242,8 @@
 		D48833B1230332C4003080E8 = {
 			isa = PBXGroup;
 			children = (
-				D48833E223033303003080E8 /* src */,
-				D442BDB3248C8B2E00B82300 /* test */,
+				D48D698724D49F6F002DC1F1 /* Sources */,
+				D48D698824D49F80002DC1F1 /* Tests */,
 				D4E0FF75248D27BF0064570B /* Project-Meta */,
 				D48833BB230332C4003080E8 /* Products */,
 				D475650D249D468800EEFCF8 /* Frameworks */,
@@ -363,49 +264,96 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D48833E223033303003080E8 /* src */ = {
+		D48833E223033303003080E8 /* RVS_Persistent_Prefs */ = {
 			isa = PBXGroup;
 			children = (
 				D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */,
 			);
-			path = src;
+			path = RVS_Persistent_Prefs;
 			sourceTree = "<group>";
 		};
-		D48833F9230334E9003080E8 /* RVS_Persistent_Prefs_Tests */ = {
+		D48D698724D49F6F002DC1F1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */,
-				D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */,
-				D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */,
-				D48833FC230334E9003080E8 /* Info.plist */,
+				D48833E223033303003080E8 /* RVS_Persistent_Prefs */,
 			);
-			path = RVS_Persistent_Prefs_Tests;
+			path = Sources;
 			sourceTree = "<group>";
 		};
-		D4940F33230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */ = {
+		D48D698824D49F80002DC1F1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				D4940F34230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */,
-				D4940F36230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */,
-				D4940F38230864AB00F1B8E4 /* Main.storyboard */,
-				D4940F3B230864AC00F1B8E4 /* Assets.xcassets */,
-				D4940F3D230864AC00F1B8E4 /* Info.plist */,
+				D48833E323033303003080E8 /* main.swift */,
+				D468766B230883A3004958D0 /* RVS_PersistentPrefs_Common_Files */,
+				D48D698A24D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness */,
+				D48D69BE24D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
+				D48D69B624D4A0E4002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness */,
+				D48D69AA24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness */,
+				D48D699B24D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness */,
+				D442BDB3248C8B2E00B82300 /* RVS_Persistent_PrefsTest */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D48D698A24D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness */ = {
+			isa = PBXGroup;
+			children = (
+				D48D698B24D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */,
+				D48D699224D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift */,
+				D48D698C24D4A0BA002DC1F1 /* Settings.bundle */,
+				D48D698D24D4A0BA002DC1F1 /* Assets.xcassets */,
+				D48D698E24D4A0BA002DC1F1 /* LaunchScreen.storyboard */,
+				D48D699024D4A0BA002DC1F1 /* Main.storyboard */,
+				D48D699324D4A0BA002DC1F1 /* Info.plist */,
+			);
+			path = RVS_PersistentPrefs_iOS_TestHarness;
+			sourceTree = "<group>";
+		};
+		D48D699B24D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness */ = {
+			isa = PBXGroup;
+			children = (
+				D48D699C24D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */,
+				D48D699D24D4A0CD002DC1F1 /* Assets.xcassets */,
+				D48D699E24D4A0CD002DC1F1 /* Main.storyboard */,
+				D48D69A024D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */,
+				D48D69A124D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */,
+				D48D69A224D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */,
+				D48D69A324D4A0CD002DC1F1 /* Info.plist */,
+			);
+			path = RVS_PersistentPrefs_macOS_TestHarness;
+			sourceTree = "<group>";
+		};
+		D48D69AA24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness */ = {
+			isa = PBXGroup;
+			children = (
+				D48D69AB24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */,
+				D48D69AC24D4A0D7002DC1F1 /* Assets.xcassets */,
+				D48D69AD24D4A0D7002DC1F1 /* Main.storyboard */,
+				D48D69AF24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */,
+				D48D69B024D4A0D7002DC1F1 /* Info.plist */,
 			);
 			path = RVS_PersistentPrefs_tvOS_TestHarness;
 			sourceTree = "<group>";
 		};
-		D4940F48230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */ = {
+		D48D69B624D4A0E4002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness */ = {
 			isa = PBXGroup;
 			children = (
-				D4940F49230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift */,
-				D4940F4B230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift */,
-				D4D4FB27230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift */,
-				D4940F4D230865C700F1B8E4 /* Assets.xcassets */,
-				D4940F4F230865C700F1B8E4 /* Main.storyboard */,
-				D4940F52230865C700F1B8E4 /* Info.plist */,
-				D4940F53230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.entitlements */,
+				D48D69B724D4A0E4002DC1F1 /* Assets.xcassets */,
+				D48D69B824D4A0E4002DC1F1 /* Interface.storyboard */,
+				D48D69BA24D4A0E4002DC1F1 /* Info.plist */,
 			);
-			path = RVS_PersistentPrefs_macOS_TestHarness;
+			path = RVS_PersistentPrefs_watchOS_TestHarness;
+			sourceTree = "<group>";
+		};
+		D48D69BE24D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D48D69BF24D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */,
+				D48D69C024D4A0ED002DC1F1 /* Assets.xcassets */,
+				D48D69C124D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */,
+				D48D69C224D4A0ED002DC1F1 /* Info.plist */,
+			);
+			path = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
 			sourceTree = "<group>";
 		};
 		D4E0FF75248D27BF0064570B /* Project-Meta */ = {
@@ -428,7 +376,6 @@
 				D4162B3623085321000F4845 /* Resources */,
 				D4011BD72309E93A00C0803D /* Copy Localizable For Settings Bundle */,
 				D475650C249D468200EEFCF8 /* Frameworks */,
-				D4756510249D468800EEFCF8 /* Embed Frameworks */,
 				D4BA8945249D6CC8001231F8 /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -469,7 +416,6 @@
 				D44481D8230858BD00C8E526 /* Sources */,
 				D44481D9230858BD00C8E526 /* Frameworks */,
 				D44481DA230858BD00C8E526 /* Resources */,
-				D4756514249D469100EEFCF8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -527,7 +473,6 @@
 				D4940F2E230864AB00F1B8E4 /* Sources */,
 				D4940F2F230864AB00F1B8E4 /* Frameworks */,
 				D4940F30230864AB00F1B8E4 /* Resources */,
-				D4756518249D46A300EEFCF8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -548,7 +493,6 @@
 				D4940F43230865C600F1B8E4 /* Sources */,
 				D4940F44230865C600F1B8E4 /* Frameworks */,
 				D4940F45230865C600F1B8E4 /* Resources */,
-				D475651C249D46A900EEFCF8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -569,7 +513,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D4162B3723085321000F4845 = {
@@ -627,12 +571,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48D699524D4A0BA002DC1F1 /* Settings.bundle in Resources */,
+				D48D699824D4A0BA002DC1F1 /* Main.storyboard in Resources */,
+				D48D699724D4A0BA002DC1F1 /* LaunchScreen.storyboard in Resources */,
+				D48D699624D4A0BA002DC1F1 /* Assets.xcassets in Resources */,
 				D468768023088A61004958D0 /* Localizable.strings in Resources */,
-				D4162B4523085322000F4845 /* LaunchScreen.storyboard in Resources */,
-				D4162B4223085322000F4845 /* Assets.xcassets in Resources */,
-				D4CAF09D249D6AE500041665 /* Warnings.xcconfig in Resources */,
-				D4011BD62309DD7700C0803D /* Settings.bundle in Resources */,
-				D4162B4023085321000F4845 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,9 +583,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D44481D6230858BD00C8E526 /* Assets.xcassets in Resources */,
+				D48D69BB24D4A0E4002DC1F1 /* Assets.xcassets in Resources */,
+				D48D69BC24D4A0E4002DC1F1 /* Interface.storyboard in Resources */,
 				D468768123088A61004958D0 /* Localizable.strings in Resources */,
-				D44481D4230858BC00C8E526 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,9 +593,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4CAF09E249D6AE500041665 /* Warnings.xcconfig in Resources */,
+				D48D69C424D4A0ED002DC1F1 /* Assets.xcassets in Resources */,
 				D468768223088A61004958D0 /* Localizable.strings in Resources */,
-				D4E2E8F2230B1F93008BE1CD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,10 +602,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4940F3C230864AC00F1B8E4 /* Assets.xcassets in Resources */,
-				D4CAF09F249D6AE500041665 /* Warnings.xcconfig in Resources */,
+				D48D69B324D4A0D7002DC1F1 /* Main.storyboard in Resources */,
+				D48D69B224D4A0D7002DC1F1 /* Assets.xcassets in Resources */,
 				D468768323088A61004958D0 /* Localizable.strings in Resources */,
-				D4940F3A230864AB00F1B8E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,10 +612,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4940F4E230865C700F1B8E4 /* Assets.xcassets in Resources */,
-				D4CAF0A0249D6AE500041665 /* Warnings.xcconfig in Resources */,
+				D48D69A624D4A0CD002DC1F1 /* Main.storyboard in Resources */,
+				D48D69A524D4A0CD002DC1F1 /* Assets.xcassets in Resources */,
 				D468768423088A61004958D0 /* Localizable.strings in Resources */,
-				D4940F51230865C700F1B8E4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,11 +700,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48D699924D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift in Sources */,
 				D44481CD230856FB00C8E526 /* RVS_PersistentPrefs.swift in Sources */,
-				D4162B3D23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift in Sources */,
 				D468766D230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
 				D4D94DFB230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */,
-				D4162B3B23085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift in Sources */,
+				D48D699424D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,10 +712,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4E2E8F4230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */,
 				D468766E230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
 				D4D94DFC230AD45600B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift in Sources */,
-				D4E2E8F3230B1F93008BE1CD /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */,
+				D48D69C324D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift in Sources */,
+				D48D69C524D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift in Sources */,
 				D4940F2D2308647C00F1B8E4 /* RVS_PersistentPrefs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,8 +724,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48D69C724D4A0F8002DC1F1 /* main.swift in Sources */,
 				D48833ED230333A8003080E8 /* RVS_PersistentPrefs.swift in Sources */,
-				D48833E423033303003080E8 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,10 +744,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D48D69B124D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift in Sources */,
 				D4940F42230864D700F1B8E4 /* RVS_PersistentPrefs.swift in Sources */,
-				D4940F37230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift in Sources */,
 				D468766F230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
-				D4940F35230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift in Sources */,
+				D48D69B424D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -815,11 +755,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D4FB28230C867D007B35AD /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift in Sources */,
-				D4940F4C230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */,
+				D48D69A424D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_WindowController.swift in Sources */,
+				D48D69A824D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift in Sources */,
 				D4E574AB230C20A800BB0A29 /* RVS_PersistentPrefs.swift in Sources */,
-				D4940F4A230865C700F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness_AppDelegate.swift in Sources */,
 				D4687670230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */,
+				D48D69A724D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,30 +779,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D4162B3E23085321000F4845 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4162B3F23085321000F4845 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D4162B4323085322000F4845 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D4162B4423085322000F4845 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		D44481D2230858BC00C8E526 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D44481D3230858BC00C8E526 /* Base */,
-			);
-			name = Interface.storyboard;
-			sourceTree = "<group>";
-		};
 		D468768623088A61004958D0 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -871,20 +787,44 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		D4940F38230864AB00F1B8E4 /* Main.storyboard */ = {
+		D48D698E24D4A0BA002DC1F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4940F39230864AB00F1B8E4 /* Base */,
+				D48D698F24D4A0BA002DC1F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D48D699024D4A0BA002DC1F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D48D699124D4A0BA002DC1F1 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D4940F4F230865C700F1B8E4 /* Main.storyboard */ = {
+		D48D699E24D4A0CD002DC1F1 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D4940F50230865C700F1B8E4 /* Base */,
+				D48D699F24D4A0CD002DC1F1 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D48D69AD24D4A0D7002DC1F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D48D69AE24D4A0D7002DC1F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D48D69B824D4A0E4002DC1F1 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D48D69B924D4A0E4002DC1F1 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -897,7 +837,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/RVS_PersistentPrefs_iOS_TestHarness/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_iOS_TestHarness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -917,7 +857,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/RVS_PersistentPrefs_iOS_TestHarness/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_iOS_TestHarness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -937,7 +877,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = "test/RVS_PersistentPrefs_watchOS_TestHarness Extension/Info.plist";
+				INFOPLIST_FILE = "Tests/RVS_PersistentPrefs_watchOS_TestHarness Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -960,7 +900,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = "test/RVS_PersistentPrefs_watchOS_TestHarness Extension/Info.plist";
+				INFOPLIST_FILE = "Tests/RVS_PersistentPrefs_watchOS_TestHarness Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -985,7 +925,7 @@
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				IBSC_MODULE = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
-				INFOPLIST_FILE = test/RVS_PersistentPrefs_watchOS_TestHarness/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_watchOS_TestHarness/Info.plist;
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1005,7 +945,7 @@
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				IBSC_MODULE = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
-				INFOPLIST_FILE = test/RVS_PersistentPrefs_watchOS_TestHarness/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_watchOS_TestHarness/Info.plist;
 				MARKETING_VERSION = 1.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1168,7 +1108,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/RVS_Persistent_Prefs_Tests/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_Persistent_PrefsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1189,7 +1129,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/RVS_Persistent_Prefs_Tests/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_Persistent_PrefsTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1211,7 +1151,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/RVS_PersistentPrefs_tvOS_TestHarness/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_tvOS_TestHarness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1233,7 +1173,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
-				INFOPLIST_FILE = test/RVS_PersistentPrefs_tvOS_TestHarness/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_tvOS_TestHarness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1251,14 +1191,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = test/RVS_PersistentPrefs_macOS_TestHarness/RVS_PersistentPrefs_macOS_TestHarness.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tests/RVS_PersistentPrefs_macOS_TestHarness/RVS_PersistentPrefs_macOS_TestHarness.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = test/RVS_PersistentPrefs_macOS_TestHarness/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_macOS_TestHarness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1276,14 +1216,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = test/RVS_PersistentPrefs_macOS_TestHarness/RVS_PersistentPrefs_macOS_TestHarness.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Tests/RVS_PersistentPrefs_macOS_TestHarness/RVS_PersistentPrefs_macOS_TestHarness.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 0000;
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = test/RVS_PersistentPrefs_macOS_TestHarness/Info.plist;
+				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_macOS_TestHarness/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
