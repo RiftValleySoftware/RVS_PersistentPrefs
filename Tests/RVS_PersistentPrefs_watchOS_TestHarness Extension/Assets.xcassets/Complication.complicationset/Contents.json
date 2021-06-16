@@ -6,29 +6,9 @@
       "role" : "circular"
     },
     {
-      "filename" : "Modular.imageset",
-      "role" : "modular",
-      "idiom" : "watch"
-    },
-    {
-      "filename" : "Utilitarian.imageset",
-      "role" : "utilitarian",
-      "idiom" : "watch"
-    },
-    {
       "filename" : "Extra Large.imageset",
       "idiom" : "watch",
       "role" : "extra-large"
-    },
-    {
-      "filename" : "Graphic Corner.imageset",
-      "role" : "graphic-corner",
-      "idiom" : "watch"
-    },
-    {
-      "filename" : "Graphic Circular.imageset",
-      "idiom" : "watch",
-      "role" : "graphic-circular"
     },
     {
       "filename" : "Graphic Bezel.imageset",
@@ -36,9 +16,34 @@
       "role" : "graphic-bezel"
     },
     {
+      "filename" : "Graphic Circular.imageset",
+      "idiom" : "watch",
+      "role" : "graphic-circular"
+    },
+    {
+      "filename" : "Graphic Corner.imageset",
+      "idiom" : "watch",
+      "role" : "graphic-corner"
+    },
+    {
+      "filename" : "Graphic Extra Large.imageset",
+      "idiom" : "watch",
+      "role" : "graphic-extra-large"
+    },
+    {
       "filename" : "Graphic Large Rectangular.imageset",
-      "role" : "graphic-large-rectangular",
-      "idiom" : "watch"
+      "idiom" : "watch",
+      "role" : "graphic-large-rectangular"
+    },
+    {
+      "filename" : "Modular.imageset",
+      "idiom" : "watch",
+      "role" : "modular"
+    },
+    {
+      "filename" : "Utilitarian.imageset",
+      "idiom" : "watch",
+      "role" : "utilitarian"
     }
   ],
   "info" : {

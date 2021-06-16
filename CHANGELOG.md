@@ -1,3 +1,7 @@
+*Version 1.2.2* **June 16, 2021**
+- Latest build system
+- Updated to latest toolbox
+
 *Version 1.2.1* **July 31, 2020**
 - Switched structure to enable GitHub Swift Action
 
