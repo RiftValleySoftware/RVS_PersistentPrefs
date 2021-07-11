@@ -19,11 +19,11 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.2.0
+ Version: 1.2.3
  */
 
 import XCTest
-@testable import RVS_Persistent_Prefs
+import RVS_Persistent_Prefs
 
 /* ################################################################################################################################## */
 // MARK: - Tests for the Persistent Prefs.

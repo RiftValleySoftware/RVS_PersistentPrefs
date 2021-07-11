@@ -1,3 +1,8 @@
+*Version 1.2.3* **July 11, 2021**
+- Removed the command-line runner, and replaced it with a proper framework target.
+- Added code coverage to the tests.
+- Tweaked the code slightly to remove an unnecessary precondition.
+
 *Version 1.2.2* **June 16, 2021**
 - Latest build system
 - Updated to latest toolbox

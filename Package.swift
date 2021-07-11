@@ -1,4 +1,4 @@
-// swift-tools-version:5.2
+// swift-tools-version:5.4
 
 /*
 © Copyright 2019, The Great Rift Valley Software Company
@@ -37,14 +37,8 @@ let package = Package(
             name: "RVS-Persistent-Prefs",
             targets: ["RVS_Persistent_Prefs"])
     ],
-    dependencies: [
-        .package(name: "RVS_Generic_Swift_Toolbox", url: "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git", from: "1.6.2")
-    ],
     targets: [
         .target(name: "RVS_Persistent_Prefs"),
-        .testTarget(name: "RVS_Persistent_PrefsTest",
-                    dependencies: ["RVS_Persistent_Prefs",
-                                   .product(name: "RVS-Generic-Swift-Toolbox", package: "RVS_Generic_Swift_Toolbox")]
-        )
+        .testTarget(name: "RVS_Persistent_PrefsTest")
     ]
 )

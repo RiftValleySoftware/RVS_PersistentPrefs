@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.2.2
+ Version 1.2.3
  */
 
 import Foundation
@@ -149,9 +149,7 @@ open class RVS_PersistentPrefs: NSObject {
      This calculated property MUST be overridden by subclasses.
      It is an Array of String, containing the keys used to store and retrieve the values from persistent storage.
      */
-    open var keys: [String] {
-        preconditionFailure("YOU MUST OVERRIDE THIS METHOD")
-    }
+    open var keys: [String] { [] }
     
     /* ################################################################## */
     /**
@@ -224,7 +222,7 @@ open class RVS_PersistentPrefs: NSObject {
     /**
      This is a direct-access subscript that allows you to use the prefs object to reach its stored properties.
      */
-    subscript(_ inKey: String) -> Any? {
+    public subscript(_ inKey: String) -> Any? {
         get { values[inKey] }
         set { values[inKey] = newValue }
     }

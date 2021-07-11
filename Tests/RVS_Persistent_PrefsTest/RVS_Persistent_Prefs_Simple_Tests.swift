@@ -19,11 +19,11 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.2.0
+ Version: 1.2.3
  */
 
 import XCTest
-@testable import RVS_Persistent_Prefs
+import RVS_Persistent_Prefs
 
 /* ################################################################################################################################## */
 // MARK: - Simple Instantiation and Persistence Tests for the Persistent Prefs Class.
@@ -45,6 +45,7 @@ class RVS_Persistent_Prefs_Tests: XCTestCase {
          These are the keys for our saved data.
          */
         override public var keys: [String] {
+            _ = super.keys
             return ["First", "Next", "Test", "Last"]
         }
         
