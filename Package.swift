@@ -39,6 +39,8 @@ let package = Package(
     ],
     targets: [
         .target(name: "RVS_Persistent_Prefs"),
-        .testTarget(name: "RVS_Persistent_PrefsTest")
+        .testTarget(name: "RVS_Persistent_PrefsTest",
+                    dependencies: ["RVS_Persistent_Prefs"]
+        )
     ]
 )
