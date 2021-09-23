@@ -1,3 +1,6 @@
+*Version 1.2.4* **September 23, 2021**
+- Updated to work with the latest toolchains.
+
 *Version 1.2.3* **July 11, 2021**
 - Removed the command-line runner, and replaced it with a proper framework target.
 - Added code coverage to the tests.
