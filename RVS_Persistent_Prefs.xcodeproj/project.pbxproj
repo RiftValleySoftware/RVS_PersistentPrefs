@@ -264,11 +264,11 @@
 				D48833FC230334E9003080E8 /* Info.plist */,
 				D468766B230883A3004958D0 /* RVS_PersistentPrefs_Common_Files */,
 				D442BDB3248C8B2E00B82300 /* RVS_Persistent_PrefsTest */,
-				D48D698A24D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness */,
-				D48D69BE24D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
-				D48D69B624D4A0E4002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness */,
-				D48D69AA24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness */,
 				D48D699B24D4A0CD002DC1F1 /* RVS_PersistentPrefs_macOS_TestHarness */,
+				D48D698A24D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness */,
+				D48D69B624D4A0E4002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness */,
+				D48D69BE24D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness Extension */,
+				D48D69AA24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -327,8 +327,8 @@
 			isa = PBXGroup;
 			children = (
 				D48D69BF24D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController.swift */,
-				D48D69C024D4A0ED002DC1F1 /* Assets.xcassets */,
 				D48D69C124D4A0ED002DC1F1 /* RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.swift */,
+				D48D69C024D4A0ED002DC1F1 /* Assets.xcassets */,
 				D48D69C224D4A0ED002DC1F1 /* Info.plist */,
 			);
 			path = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
@@ -529,10 +529,10 @@
 			targets = (
 				D47CD5A7269B0AC000064553 /* RVS_Persistent_Prefs */,
 				D48833F7230334E8003080E8 /* RVS_Persistent_Prefs_Tests */,
-				D4162B3723085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
-				D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension */,
-				D44481CF230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
 				D4940F46230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness */,
+				D4162B3723085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness */,
+				D44481CF230858BC00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarness */,
+				D44481DB230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension */,
 				D4940F31230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness */,
 			);
 		};
