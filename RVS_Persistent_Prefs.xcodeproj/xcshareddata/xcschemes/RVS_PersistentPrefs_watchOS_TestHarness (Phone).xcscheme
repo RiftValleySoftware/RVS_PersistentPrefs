@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1320"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -80,8 +80,10 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.Carousel"
+         RemotePath = "/RVS_PersistentPrefs_iOS_TestHarness">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D44481CF230858BC00C8E526"
@@ -89,7 +91,16 @@
             BlueprintName = "RVS_PersistentPrefs_watchOS_TestHarness"
             ReferencedContainer = "container:RVS_Persistent_Prefs.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D44481CF230858BC00C8E526"
+            BuildableName = "RVS_PersistentPrefs_watchOS_TestHarness.app"
+            BlueprintName = "RVS_PersistentPrefs_watchOS_TestHarness"
+            ReferencedContainer = "container:RVS_Persistent_Prefs.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
