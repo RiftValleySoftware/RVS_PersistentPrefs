@@ -151,6 +151,7 @@
 		D4CAF09C249D6AE500041665 /* Warnings.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Warnings.xcconfig; path = "Project-Meta/Warnings.xcconfig"; sourceTree = "<group>"; };
 		D4D94DFA230AD45500B1CBC3 /* RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift; sourceTree = "<group>"; };
 		D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_Thread_Tests.swift; sourceTree = "<group>"; };
+		D4E769AD27A43AD800D93AB1 /* RVS_PersistentPrefs.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RVS_PersistentPrefs.docc; sourceTree = "<group>"; };
 		D4EE6C872304E8AE005F4DEF /* RVS_Persistent_Prefs_MixedType_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RVS_Persistent_Prefs_MixedType_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */,
+				D4E769AD27A43AD800D93AB1 /* RVS_PersistentPrefs.docc */,
 			);
 			path = RVS_Persistent_Prefs;
 			sourceTree = "<group>";
@@ -796,7 +798,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -817,7 +819,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -838,7 +840,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -862,7 +864,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -883,7 +885,7 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				IBSC_MODULE = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
 				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_watchOS_TestHarness/Info.plist;
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -904,7 +906,7 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				IBSC_MODULE = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
 				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_watchOS_TestHarness/Info.plist;
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -934,7 +936,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.recovrr.RVS-PersistentPrefs";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
@@ -965,7 +967,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.recovrr.RVS-PersistentPrefs";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
@@ -1154,7 +1156,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-tvOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1177,7 +1179,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-tvOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1204,7 +1206,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-macOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1229,7 +1231,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.5;
+				MARKETING_VERSION = 1.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-macOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1320,7 +1322,7 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.4;
+				minimumVersion = 1.6.5;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

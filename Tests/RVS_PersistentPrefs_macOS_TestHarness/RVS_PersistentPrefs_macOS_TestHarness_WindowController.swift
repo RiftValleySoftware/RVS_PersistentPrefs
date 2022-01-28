@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.2.5
+ Version: 1.2.6
  */
 
 import Cocoa
