@@ -59,9 +59,9 @@ Once you have the dependency attached, you reference it by adding an import to t
 
 You can fetch the latest version of `RVS_PersistentPrefs` from [its GitHub repo](https://github.com/RiftValleySoftware/RVS_PersistentPrefs).
 
-The class consists of [one single Swift source file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift). All the other stuff in the project is for project support and testing.
+The class consists of [one single Swift source file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift). All the other stuff in the project is for project support and testing.
 
-Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift) into your project, and add it to your current [Swift](https://apple.com/swift) native target.
+Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift) into your project, and add it to your current [Swift](https://apple.com/swift) native target.
 
 This does not need any dependency manager. It's a 300-line file. Definitely not worth even writing a podfile for. It will work on all Apple operating systems without any other dependencies.
 
@@ -79,7 +79,7 @@ It doesn't need to be on the main thread, but it shouldn't be called from differ
 
 **Must Be Subclassed**
 
-The implementation needs to be a concrete subclass of `RVS_PersistentPrefs`. At bare minimum, you need to override [the `keys: [String]` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift#L152) with a computed property, to return an `Array` of `String`, containing the internal keys. You might also override the `key` stored property, but it's probably easier to just set the base class one in an `init`.
+The implementation needs to be a concrete subclass of `RVS_PersistentPrefs`. At bare minimum, you need to override [the `keys: [String]` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152) with a computed property, to return an `Array` of `String`, containing the internal keys. You might also override the `key` stored property, but it's probably easier to just set the base class one in an `init`.
 
 **Data Stored Is Typeless**
 
@@ -97,7 +97,7 @@ The `RVS_PersistentPrefs` class will "vet" your data before attempting to save i
 
 **You Must Use the Keys Provided by the `keys: [String]` Computed Property**
 
-You cannot submit data using a key that is not listed in [the `keys: [String]` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift#L152). If you attempt to do so the `lastError` property will be set to `incorrectKeys`, which will have associated data. That data will be an `Array` of `String`, containing the incorrect top-level keys.
+You cannot submit data using a key that is not listed in [the `keys: [String]` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152). If you attempt to do so the `lastError` property will be set to `incorrectKeys`, which will have associated data. That data will be an `Array` of `String`, containing the incorrect top-level keys.
 
 **Does Not Throw**
 
@@ -133,13 +133,13 @@ You then need to include the file found at:
     
 into your project. There is no library or framework. You need to directly reference and include the Swift source file.
 
-In order to use `RVS_PersistentPrefs`, you should include the [RVS_PersistentPrefs.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift) general-purpose source file into your target, and then create a subclass of the `RVS_PersistentPrefs` class, specific to your implementation.
+In order to use `RVS_PersistentPrefs`, you should include the [RVS_PersistentPrefs.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift) general-purpose source file into your target, and then create a subclass of the `RVS_PersistentPrefs` class, specific to your implementation.
 
-**You MUST Subclass [the `RVS_PersistentPrefs` Class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift)**
+**You MUST Subclass [the `RVS_PersistentPrefs` Class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift)**
 
 It is not a protocol. It is a class. It is also not designed to be instantiated standalone. If you do that, it will deliberately crash upon first use.
 
-At minimum, you need to override [the `keys` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift#L152), to assign keys to the various stored properties. The following example is from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift):
+At minimum, you need to override [the `keys` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152), to assign keys to the various stored properties. The following example is from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift):
 
     
     •
@@ -170,7 +170,7 @@ At minimum, you need to override [the `keys` computed property](https://github.c
     
 **You SHOULD Provide Type-Enforcing Accessors**
 
-[The main storage](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift#L43) is typeless. It is a simple `Dictionary<String, Any>`, with no enforcement of type for the data.
+[The main storage](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L43) is typeless. It is a simple `Dictionary<String, Any>`, with no enforcement of type for the data.
 
 You should provide accessors to the stored data that enforces type. Again the following examples are from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift):
 
