@@ -172,7 +172,7 @@ At minimum, you need to override [the `keys` computed property](https://github.c
 
 [The main storage](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L43) is typeless. It is a simple `Dictionary<String, Any>`, with no enforcement of type for the data.
 
-You should provide accessors to the stored data that enforces type. Again the following examples are from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift:
+You should provide accessors to the stored data that enforces type. Again the following examples are from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift):
 
     
     •
