@@ -276,24 +276,24 @@ All the test harnesses will share [the same Preferences Subclass](https://github
 
 It presents [Key-Value Observable](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift) accessors for all of these values, which are directly used in the macOS test harness.
 
-[**The iOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness)
+[**The iOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_iOS_TestHarness)
 
-[The iOS Test Harness App](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness) is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a [Settings Bundle](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html) to show a "Preferences Pane" in the Settings App. We only access two values, in order to keep the demonstration as basic as possible, but it is possible to get fancier with this.
+[The iOS Test Harness App](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_iOS_TestHarness) is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a [Settings Bundle](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html) to show a "Preferences Pane" in the Settings App. We only access two values, in order to keep the demonstration as basic as possible, but it is possible to get fancier with this.
 
 The iOS test harness also integrates a watchOS test harness that shares the preferences instance with the device app.
 
-[**The watchOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_watchOS_TestHarness%20Extension)
+[**The watchOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_watchOS_TestHarness%20Extension)
 
 The watchOS Test Harness is actually a part of the iOS Test Harness app. It shares a `RVS_PersistentPrefs` state with the iOS Test Harness app instance.
 
 It is a tiny app that merely demonstrates transferring the prefs to the Watch, and displays only a couple of values (and updates them in response to them being changed on the phone). Its main reason for existence is to show that the class works as well in watchOS, as it does in iOS. The only thing that you can do with the Watch app to affect the data, is send a reset command to the phone. Otherwise, it is display-only.
 
-[**The macOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_macOS_TestHarness)
+[**The macOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_macOS_TestHarness)
 
 The macOS test harness app uses [KVO]((https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)) for some of its UI, so there are "codeless" connections between some user entry fields and the persistent prefs.
 
 Upon startup, there is no window displayed. You need to go into the app menu, and select "Preferences...". That will bring up the window.
 
-[**The tvOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_tvOS_TestHarness)
+[**The tvOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_tvOS_TestHarness)
 
 The tvOS test harness displays a very similar layout to all the others, and allows demonstration of the class working in tvOS.
