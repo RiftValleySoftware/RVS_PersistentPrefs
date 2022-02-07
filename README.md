@@ -139,7 +139,7 @@ In order to use `RVS_PersistentPrefs`, you should include the [RVS_PersistentPre
 
 It is not a protocol. It is a class. It is also not designed to be instantiated standalone. If you do that, it will deliberately crash upon first use.
 
-At minimum, you need to override [the `keys` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152), to assign keys to the various stored properties. The following example is from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift):
+At minimum, you need to override [the `keys` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152), to assign keys to the various stored properties. The following example is from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift):
 
     
     •
