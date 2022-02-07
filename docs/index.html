@@ -121,6 +121,24 @@
 </code></pre>
 
 <ul>
+<li><strong>Using <a href="https://github.com/Carthage/Carthage">Carthage</a>:</strong></li>
+</ul>
+
+<p>To use this from <a href="https://github.com/Carthage/Carthage">Carthage</a>, simply add the following to your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile">Cartfile</a>:</p>
+<pre class="highlight plaintext"><code>github "RiftValleySoftware/RVS_PersistentPrefs"
+</code></pre>
+
+<p>You then <code>cd</code> to the project directory, and execute <code>carthage update</code> on the command line.</p>
+
+<p>This will result in a directory called &ldquo;Carthage.&rdquo;</p>
+
+<p>You then need to include the file found at:</p>
+<pre class="highlight plaintext"><code>Carthage/Checkouts/RVS_PersistentPrefs/RVS_PersistentPrefs/RVS_PersistentPrefs.swift
+</code></pre>
+
+<p>into your project. There is no library or framework. You need to directly reference and include the Swift source file.</p>
+
+<ul>
 <li><strong>Simple Direct File Download And Installation</strong></li>
 </ul>
 
@@ -182,29 +200,13 @@
 
 <p><strong>Start by Including the Main Source File in Your Project</strong></p>
 
-<p><strong>Using <a href="https://github.com/Carthage/Carthage">Carthage</a>:</strong></p>
-
-<p>To use this from <a href="https://github.com/Carthage/Carthage">Carthage</a>, simply add the following to your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile">Cartfile</a>:</p>
-<pre class="highlight plaintext"><code>github "RiftValleySoftware/RVS_PersistentPrefs"
-</code></pre>
-
-<p>You then <code>cd</code> to the project directory, and execute <code>carthage update</code> on the command line.</p>
-
-<p>This will result in a directory called &ldquo;Carthage.&rdquo;</p>
-
-<p>You then need to include the file found at:</p>
-<pre class="highlight plaintext"><code>Carthage/Checkouts/RVS_PersistentPrefs/RVS_PersistentPrefs/RVS_PersistentPrefs.swift
-</code></pre>
-
-<p>into your project. There is no library or framework. You need to directly reference and include the Swift source file.</p>
-
 <p>In order to use <code><a href="Classes/RVS_PersistentPrefs.html">RVS_PersistentPrefs</a></code>, you should include the <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift">RVS_PersistentPrefs.swift</a> general-purpose source file into your target, and then create a subclass of the <code><a href="Classes/RVS_PersistentPrefs.html">RVS_PersistentPrefs</a></code> class, specific to your implementation.</p>
 
 <p><strong>You MUST Subclass <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift">the <code><a href="Classes/RVS_PersistentPrefs.html">RVS_PersistentPrefs</a></code> Class</a></strong></p>
 
 <p>It is not a protocol. It is a class. It is also not designed to be instantiated standalone. If you do that, it will deliberately crash upon first use.</p>
 
-<p>At minimum, you need to override <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152">the <code>keys</code> computed property</a>, to assign keys to the various stored properties. The following example is from <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift">the test harness shared class</a>:</p>
+<p>At minimum, you need to override <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152">the <code>keys</code> computed property</a>, to assign keys to the various stored properties. The following example is from <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift">the test harness shared class</a>:</p>
 <pre class="highlight plaintext"><code>•
 •
 •
@@ -236,7 +238,7 @@ override public var keys: [String] {
 
 <p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L43">The main storage</a> is typeless. It is a simple <code>Dictionary&lt;String, Any&gt;</code>, with no enforcement of type for the data.</p>
 
-<p>You should provide accessors to the stored data that enforces type. Again the following examples are from <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift">the test harness shared class</a>:</p>
+<p>You should provide accessors to the stored data that enforces type. Again the following examples are from <a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift">the test harness shared class</a>:</p>
 <pre class="highlight plaintext"><code>•
 •
 •
@@ -334,25 +336,25 @@ public init(key inKey: String) {
 
 <p>It presents <a href="https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift">Key-Value Observable</a> accessors for all of these values, which are directly used in the macOS test harness.</p>
 
-<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness"><strong>The iOS Test Harness</strong></a></p>
+<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_iOS_TestHarness"><strong>The iOS Test Harness</strong></a></p>
 
-<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness">The iOS Test Harness App</a> is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html">Settings Bundle</a> to show a &ldquo;Preferences Pane&rdquo; in the Settings App. We only access two values, in order to keep the demonstration as basic as possible, but it is possible to get fancier with this.</p>
+<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_iOS_TestHarness">The iOS Test Harness App</a> is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a <a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html">Settings Bundle</a> to show a &ldquo;Preferences Pane&rdquo; in the Settings App. We only access two values, in order to keep the demonstration as basic as possible, but it is possible to get fancier with this.</p>
 
 <p>The iOS test harness also integrates a watchOS test harness that shares the preferences instance with the device app.</p>
 
-<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_watchOS_TestHarness%20Extension"><strong>The watchOS Test Harness</strong></a></p>
+<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_watchOS_TestHarness%20Extension"><strong>The watchOS Test Harness</strong></a></p>
 
 <p>The watchOS Test Harness is actually a part of the iOS Test Harness app. It shares a <code><a href="Classes/RVS_PersistentPrefs.html">RVS_PersistentPrefs</a></code> state with the iOS Test Harness app instance.</p>
 
 <p>It is a tiny app that merely demonstrates transferring the prefs to the Watch, and displays only a couple of values (and updates them in response to them being changed on the phone). Its main reason for existence is to show that the class works as well in watchOS, as it does in iOS. The only thing that you can do with the Watch app to affect the data, is send a reset command to the phone. Otherwise, it is display-only.</p>
 
-<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_macOS_TestHarness"><strong>The macOS Test Harness</strong></a></p>
+<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_macOS_TestHarness"><strong>The macOS Test Harness</strong></a></p>
 
 <p>The macOS test harness app uses <a href="(https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)">KVO</a> for some of its UI, so there are &ldquo;codeless&rdquo; connections between some user entry fields and the persistent prefs.</p>
 
 <p>Upon startup, there is no window displayed. You need to go into the app menu, and select &ldquo;Preferences&hellip;&rdquo;. That will bring up the window.</p>
 
-<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_tvOS_TestHarness"><strong>The tvOS Test Harness</strong></a></p>
+<p><a href="https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_tvOS_TestHarness"><strong>The tvOS Test Harness</strong></a></p>
 
 <p>The tvOS test harness displays a very similar layout to all the others, and allows demonstration of the class working in tvOS.</p>
 
@@ -363,7 +365,7 @@ public init(key inKey: String) {
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2022 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2022-02-06)</p>
+      <p>&copy; 2022 <a class="link" href="https://riftvalleysoftware.com" target="_blank" rel="external">The Great Rift Valley Software Company</a>. All rights reserved. (Last updated: 2022-02-07)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
