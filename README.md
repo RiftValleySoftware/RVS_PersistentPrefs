@@ -268,7 +268,7 @@ All the test harnesses will share [the same Preferences Subclass](https://github
 
 * A String *(key: "String Value")*.
 
-* An Arry of String *(key: "Array Value")*.
+* An Array of String *(key: "Array Value")*.
 
 * A Dictionary of String-keyed Any *(key: "Dictionary Value")*.
 
