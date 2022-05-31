@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version: 1.2.7
+ Version: 1.3.1
  */
 
 import Cocoa
@@ -30,21 +30,4 @@ import Cocoa
 /**
  */
 @NSApplicationMain
-class RVS_PersistentPrefs_macOS_TestHarness_AppDelegate: NSObject, NSApplicationDelegate {
-    /* ############################################################################################################################## */
-    // MARK: -
-    /* ############################################################################################################################## */
-    /* ################################################################## */
-    /**
-     */
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-    }
-
-    /* ################################################################## */
-    /**
-     */
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
-    }
-}
+class RVS_PersistentPrefs_macOS_TestHarness_AppDelegate: NSObject, NSApplicationDelegate { }

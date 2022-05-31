@@ -1,3 +1,6 @@
+*Version 1.3.1* **May 31, 2022**
+- Updated the testing dependency.
+
 *Version 1.3.0* **May 31, 2022**
 - Renamed, so the vestigial "dash" notation has been replaced (vestigial from when it was a dylib).
 
