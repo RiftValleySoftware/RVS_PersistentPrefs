@@ -12,6 +12,10 @@
 		D414DF9B249FBE0F0004736B /* RVS_Persistent_Prefs_Thread_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E7423D2306F34000B5CE29 /* RVS_Persistent_Prefs_Thread_Tests.swift */; };
 		D44481CD230856FB00C8E526 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D44481DD230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D44C584E28469910005E87BE /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44C584D28469910005E87BE /* RVS_Generic_Swift_Toolbox */; };
+		D44C585028469919005E87BE /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44C584F28469919005E87BE /* RVS_Generic_Swift_Toolbox */; };
+		D44C585228469926005E87BE /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44C585128469926005E87BE /* RVS_Generic_Swift_Toolbox */; };
+		D44C58542846992E005E87BE /* RVS_Generic_Swift_Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D44C58532846992E005E87BE /* RVS_Generic_Swift_Toolbox */; };
 		D468766D230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
 		D468766E230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
 		D468766F230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468766C230883CC004958D0 /* RVS_PersistentPrefs_TestSet.swift */; };
@@ -23,10 +27,6 @@
 		D468768423088A61004958D0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D468768623088A61004958D0 /* Localizable.strings */; };
 		D47CD5B0269B0ADC00064553 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
 		D47CD5B9269B13E000064553 /* RVS_PersistentPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833E9230333A8003080E8 /* RVS_PersistentPrefs.swift */; };
-		D48206F924B220060003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48206F824B220060003F8AA /* RVS-Generic-Swift-Toolbox */; };
-		D48206FB24B220140003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48206FA24B220140003F8AA /* RVS-Generic-Swift-Toolbox */; };
-		D48206FD24B2201A0003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48206FC24B2201A0003F8AA /* RVS-Generic-Swift-Toolbox */; };
-		D48206FF24B2201F0003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */ = {isa = PBXBuildFile; productRef = D48206FE24B2201F0003F8AA /* RVS-Generic-Swift-Toolbox */; };
 		D48833FB230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48833FA230334E9003080E8 /* RVS_Persistent_Prefs_Simple_Tests.swift */; };
 		D48D699424D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48D698B24D4A0BA002DC1F1 /* RVS_PersistentPrefs_iOS_TestHarness_AppDelegate.swift */; };
 		D48D699524D4A0BA002DC1F1 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D48D698C24D4A0BA002DC1F1 /* Settings.bundle */; };
@@ -160,7 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48206FB24B220140003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D44C584E28469910005E87BE /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48206F924B220060003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D44C585228469926005E87BE /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +176,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48206FF24B2201F0003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D44C585028469919005E87BE /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D48206FD24B2201A0003F8AA /* RVS-Generic-Swift-Toolbox in Frameworks */,
+				D44C58542846992E005E87BE /* RVS_Generic_Swift_Toolbox in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +365,7 @@
 			);
 			name = RVS_PersistentPrefs_iOS_TestHarness;
 			packageProductDependencies = (
-				D48206F824B220060003F8AA /* RVS-Generic-Swift-Toolbox */,
+				D44C585128469926005E87BE /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_iOS_TestHarness;
 			productReference = D4162B3823085321000F4845 /* RVS_PersistentPrefs_iOS_TestHarness.app */;
@@ -403,7 +403,7 @@
 			);
 			name = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
 			packageProductDependencies = (
-				D48206FA24B220140003F8AA /* RVS-Generic-Swift-Toolbox */,
+				D44C584D28469910005E87BE /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = "RVS_PersistentPrefs_watchOS_TestHarness Extension";
 			productReference = D44481DC230858BD00C8E526 /* RVS_PersistentPrefs_watchOS_TestHarnessExtension.appex */;
@@ -454,7 +454,7 @@
 			);
 			name = RVS_PersistentPrefs_tvOS_TestHarness;
 			packageProductDependencies = (
-				D48206FE24B2201F0003F8AA /* RVS-Generic-Swift-Toolbox */,
+				D44C584F28469919005E87BE /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_tvOS_TestHarness;
 			productReference = D4940F32230864AB00F1B8E4 /* RVS_PersistentPrefs_tvOS_TestHarness.app */;
@@ -474,7 +474,7 @@
 			);
 			name = RVS_PersistentPrefs_macOS_TestHarness;
 			packageProductDependencies = (
-				D48206FC24B2201A0003F8AA /* RVS-Generic-Swift-Toolbox */,
+				D44C58532846992E005E87BE /* RVS_Generic_Swift_Toolbox */,
 			);
 			productName = RVS_PersistentPrefs_macOS_TestHarness;
 			productReference = D4940F47230865C600F1B8E4 /* RVS_PersistentPrefs_macOS_TestHarness.app */;
@@ -487,7 +487,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				ORGANIZATIONNAME = "The Great Rift Valley Software Company";
 				TargetAttributes = {
 					D4162B3723085321000F4845 = {
@@ -798,7 +798,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -819,7 +819,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -840,7 +840,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -864,7 +864,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -885,7 +885,7 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				IBSC_MODULE = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
 				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_watchOS_TestHarness/Info.plist;
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -906,7 +906,7 @@
 				DEVELOPMENT_TEAM = KSAUGZFWP2;
 				IBSC_MODULE = RVS_PersistentPrefs_watchOS_TestHarnessExtension;
 				INFOPLIST_FILE = Tests/RVS_PersistentPrefs_watchOS_TestHarness/Info.plist;
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-iOS-TestHarness.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -936,7 +936,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.recovrr.RVS-PersistentPrefs";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				RUN_DOCUMENTATION_COMPILER = YES;
@@ -968,7 +968,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.recovrr.RVS-PersistentPrefs";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				RUN_DOCUMENTATION_COMPILER = YES;
@@ -1158,7 +1158,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-tvOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1181,7 +1181,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-tvOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
@@ -1208,7 +1208,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-macOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1233,7 +1233,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 1.2.8;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.riftvalleysoftware.RVS-PersistentPrefs-macOS-TestHarness";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1324,31 +1324,31 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.7.2;
+				minimumVersion = 1.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		D48206F824B220060003F8AA /* RVS-Generic-Swift-Toolbox */ = {
+		D44C584D28469910005E87BE /* RVS_Generic_Swift_Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D48206F524B21FFA0003F8AA /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
+			productName = RVS_Generic_Swift_Toolbox;
 		};
-		D48206FA24B220140003F8AA /* RVS-Generic-Swift-Toolbox */ = {
+		D44C584F28469919005E87BE /* RVS_Generic_Swift_Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D48206F524B21FFA0003F8AA /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
+			productName = RVS_Generic_Swift_Toolbox;
 		};
-		D48206FC24B2201A0003F8AA /* RVS-Generic-Swift-Toolbox */ = {
+		D44C585128469926005E87BE /* RVS_Generic_Swift_Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D48206F524B21FFA0003F8AA /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
+			productName = RVS_Generic_Swift_Toolbox;
 		};
-		D48206FE24B2201F0003F8AA /* RVS-Generic-Swift-Toolbox */ = {
+		D44C58532846992E005E87BE /* RVS_Generic_Swift_Toolbox */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D48206F524B21FFA0003F8AA /* XCRemoteSwiftPackageReference "RVS_Generic_Swift_Toolbox" */;
-			productName = "RVS-Generic-Swift-Toolbox";
+			productName = RVS_Generic_Swift_Toolbox;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

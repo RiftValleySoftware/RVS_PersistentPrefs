@@ -34,12 +34,12 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "RVS-Persistent-Prefs",
+            name: "RVS_Persistent_Prefs",
             targets: ["RVS_Persistent_Prefs"])
     ],
     targets: [
         .target(name: "RVS_Persistent_Prefs"),
-        .testTarget(name: "RVS-Persistent-PrefsTest",
+        .testTarget(name: "RVS_Persistent_PrefsTest",
                     dependencies: ["RVS_Persistent_Prefs"],
                     path: "Tests/RVS_Persistent_PrefsTest"
         )

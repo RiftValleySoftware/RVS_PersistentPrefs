@@ -1,3 +1,6 @@
+*Version 1.3.0* **May 31, 2022**
+- Renamed, so the vestigial "dash" notation has been replaced (vestigial from when it was a dylib).
+
 *Version 1.2.8* **May 13, 2022**
 - Upped the version of the `RVS_Generic_Swift_Toolbox` test harness dependency. No changes to the module.
 
