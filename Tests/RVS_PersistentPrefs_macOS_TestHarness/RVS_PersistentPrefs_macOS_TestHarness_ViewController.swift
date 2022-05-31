@@ -69,7 +69,7 @@ class RVS_PersistentPrefs_macOS_TestHarness_ViewController: NSViewController {
     @IBOutlet weak var dictionaryValueLabel: NSTextField!
     /// The popup for selecting a Dictionary value.
     @IBOutlet weak var dictionarySelectorPopup: NSPopUpButton!
-    ///The Text Field for editing Dictionary Values.
+    /// The Text Field for editing Dictionary Values.
     @IBOutlet weak var dictionaryEditorTextField: NSTextField!
     /// The label for the date picker.
     @IBOutlet weak var dateValueLabel: NSTextField!
