@@ -1,3 +1,6 @@
+*Version 1.3.3* **September 16, 2022**
+- Updated tools and dependencies. No other API changes.
+
 *Version 1.3.2* **July 10, 2022**
 - Updated a dependency. No other API changes.
 

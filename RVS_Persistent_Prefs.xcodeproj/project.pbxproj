@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -307,9 +307,9 @@
 			isa = PBXGroup;
 			children = (
 				D48D69AB24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_AppDelegate.swift */,
+				D48D69AF24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */,
 				D48D69AC24D4A0D7002DC1F1 /* Assets.xcassets */,
 				D48D69AD24D4A0D7002DC1F1 /* Main.storyboard */,
-				D48D69AF24D4A0D7002DC1F1 /* RVS_PersistentPrefs_tvOS_TestHarness_ViewController.swift */,
 				D48D69B024D4A0D7002DC1F1 /* Info.plist */,
 			);
 			path = RVS_PersistentPrefs_tvOS_TestHarness;
@@ -413,6 +413,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D47CD5AD269B0AC000064553 /* Build configuration list for PBXNativeTarget "RVS_Persistent_Prefs" */;
 			buildPhases = (
+				D46730E628D502E50098BD43 /* SwiftLint */,
 				D47CD5A4269B0AC000064553 /* Sources */,
 			);
 			buildRules = (
@@ -464,6 +465,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4940F54230865C700F1B8E4 /* Build configuration list for PBXNativeTarget "RVS_PersistentPrefs_macOS_TestHarness" */;
 			buildPhases = (
+				D46730E528D502D20098BD43 /* SwiftLint */,
 				D4940F43230865C600F1B8E4 /* Sources */,
 				D4940F44230865C600F1B8E4 /* Frameworks */,
 				D4940F45230865C600F1B8E4 /* Resources */,
@@ -597,6 +599,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		D44481CC230856B500C8E526 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -611,10 +614,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n\"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
 		D44481F72308604300C8E526 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -629,10 +633,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n\"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
+		};
+		D46730E528D502D20098BD43 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
+		};
+		D46730E628D502E50098BD43 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
 		D4940F41230864BE00F1B8E4 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -647,7 +690,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if test -f \"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"; then\n\"${PROJECT_DIR}/Pods/SwiftLint/swiftlint\"\nfi\n";
+			shellScript = "if command -v swiftlint\nthen\n    swiftlint\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1324,7 +1367,7 @@
 			repositoryURL = "git@github.com:RiftValleySoftware/RVS_Generic_Swift_Toolbox.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.10.1;
+				minimumVersion = 1.10.2;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
