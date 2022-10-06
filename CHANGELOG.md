@@ -1,3 +1,6 @@
+*Version 1.3.4* **October 6, 2022**
+- Updated a test harness dependency. No API changes.
+
 *Version 1.3.3* **September 16, 2022**
 - Updated tools and dependencies. No other API changes.
 
