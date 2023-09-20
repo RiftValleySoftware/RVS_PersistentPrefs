@@ -1,3 +1,7 @@
+*Version 1.3.5* **September 20, 2023**
+- Updated some Xcode settings. No API changes.
+- Sigh... Looks like SwiftLint and Xcode 15 don't get along. I have to remove it...
+
 *Version 1.3.4* **October 6, 2022**
 - Updated a test harness dependency. No API changes.
 
