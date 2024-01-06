@@ -1,3 +1,7 @@
+*Version 1.3.6* **January 6, 2024**
+- I didn't completely get rid of SwiftLint. It's all gone, now.
+- Added privacy declarations.
+
 *Version 1.3.5* **September 20, 2023**
 - Updated some Xcode settings. No API changes.
 - Sigh... Looks like SwiftLint and Xcode 15 don't get along. I have to remove it...
