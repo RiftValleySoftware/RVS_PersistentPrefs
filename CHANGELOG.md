@@ -1,4 +1,4 @@
-*Version 1.3.6* **January 6, 2024**
+*Version 1.3.7* **January 6, 2024**
 - I didn't completely get rid of SwiftLint. It's all gone, now.
 - Added privacy declarations.
 
