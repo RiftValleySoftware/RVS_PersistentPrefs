@@ -1,3 +1,6 @@
+*Version 1.3.9* **March 15, 2024**
+- The privacy manifest wasn't quite right. It needed one more item.
+
 *Version 1.3.8* **March 15, 2024**
 - Updated the privacy manifest to indicate that user preferences are being accessed.
 - Updated to the latest tools.
