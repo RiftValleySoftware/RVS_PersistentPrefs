@@ -1,3 +1,7 @@
+*Version 1.3.8* **March 15, 2024**
+- Updated the privacy manifest to indicate that user preferences are being accessed.
+- Updated to the latest tools.
+
 *Version 1.3.7* **January 6, 2024**
 - I didn't completely get rid of SwiftLint. It's all gone, now.
 - Added privacy declarations.
