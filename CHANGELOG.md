@@ -1,3 +1,6 @@
+*Version 1.3.10* **July 25, 2024**
+- Added a cache, to reduce the number of times the defaults are loaded (It's a memory-intensive operation).
+
 *Version 1.3.9* **March 15, 2024**
 - The privacy manifest wasn't quite right. It needed one more item.
 

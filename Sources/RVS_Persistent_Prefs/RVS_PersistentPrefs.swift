@@ -41,6 +41,13 @@ open class RVS_PersistentPrefs: NSObject {
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
+     This is a class cache. The reason for this, is to reduce the number of times the prefs are loaded in. It's a memory-intensive process.
+     The first key is the general prefs key, and the second key is each prefs key.
+     */
+    private static var _cache: [String: [String: Any]] = [:]
+    
+    /* ################################################################## */
+    /**
      This is the Dictionary. It's private, and shouldn't need to be accessed outside this base class.
      */
     private var _values: [String: Any] = [:]
@@ -57,9 +64,13 @@ open class RVS_PersistentPrefs: NSObject {
     private func _save() throws {
         if _values.isEmpty {    // Remove ourselves if we are empty.
             UserDefaults.standard.removeObject(forKey: key)
+            Self._cache.removeValue(forKey: key)
         } else if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
             UserDefaults.standard.set(_values, forKey: key)
+            Self._cache[key] = _values
         } else {
+            Self._cache.removeValue(forKey: key)
+
             #if DEBUG
                 print("Attempt to set non-plist values!")
             #endif
@@ -89,11 +100,18 @@ open class RVS_PersistentPrefs: NSObject {
      - throws: An error, if there were no stored prefs for the given key.
      */
     private func _load() throws {
+        guard nil == Self._cache[key] || (Self._cache[key]?.isEmpty ?? true) else {
+            _values = Self._cache[key] ?? [:]
+            return
+        }
+        
+        Self._cache.removeValue(forKey: key)    // Belt and suspenders.
         let standardDefaultsObject = UserDefaults.standard
         _values = [:]   // Start clean.
 
         if let loadedPrefs = standardDefaultsObject.object(forKey: key) as? [String: Any] {
             _values = loadedPrefs
+            Self._cache[key] = loadedPrefs
         } else {
             #if DEBUG
                 print("Unable to Load Prefs for \"\(key)\"")
