@@ -1,3 +1,7 @@
+*Version 1.4.2* **January 19, 2025**
+
+- I added some code to force creation of new defaults, in some cases.
+
 *Version 1.4.1* **January 19, 2025**
 - The new property needs to be static, not instance.
 

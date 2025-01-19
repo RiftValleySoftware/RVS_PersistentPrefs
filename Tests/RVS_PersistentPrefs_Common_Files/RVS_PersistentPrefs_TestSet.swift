@@ -219,6 +219,7 @@ public class RVS_PersistentPrefs_TestSet: RVS_PersistentPrefs {
      The keyed initializer. It sends in our default values, if there were no previous ones. Bit primitive, but this is for test harnesses.
      */
     public init(key inKey: String) {
+        Self.groupID = g_GroupID
         super.init(key: inKey)  // Start by initializing with the key. This will load any saved values.
         if values.isEmpty { // If we didn't already have something, we send in our defaults.
             values = type(of: self)._myValues
