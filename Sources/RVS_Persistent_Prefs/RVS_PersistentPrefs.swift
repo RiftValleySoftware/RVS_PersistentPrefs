@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.3.7
+ Version 1.4.0
  */
 
 import Foundation
@@ -63,10 +63,10 @@ open class RVS_PersistentPrefs: NSObject {
      */
     private func _save() throws {
         if _values.isEmpty {    // Remove ourselves if we are empty.
-            UserDefaults.standard.removeObject(forKey: key)
+            userDefaults?.removeObject(forKey: key)
             Self._cache.removeValue(forKey: key)
         } else if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
-            UserDefaults.standard.set(_values, forKey: key)
+            userDefaults?.set(_values, forKey: key)
             Self._cache[key] = _values
         } else {
             Self._cache.removeValue(forKey: key)
@@ -106,10 +106,9 @@ open class RVS_PersistentPrefs: NSObject {
         }
         
         Self._cache.removeValue(forKey: key)    // Belt and suspenders.
-        let standardDefaultsObject = UserDefaults.standard
         _values = [:]   // Start clean.
 
-        if let loadedPrefs = standardDefaultsObject.object(forKey: key) as? [String: Any] {
+        if let loadedPrefs = userDefaults?.object(forKey: key) as? [String: Any] {
             _values = loadedPrefs
             Self._cache[key] = loadedPrefs
         } else {
@@ -139,6 +138,18 @@ open class RVS_PersistentPrefs: NSObject {
     }
     
     /* ############################################################################################################################## */
+    // MARK: - Public Static Properties
+    /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This is used to specify an [App Group ID](https://developer.apple.com/documentation/xcode/configuring-app-groups), if the prefs are shared within an app.
+     
+     By default, this is nil, so the [standard `UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults/1416603-standard) are used.
+     However, if there is a Group ID, the [`UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults/) for that group are used.
+     */
+    open var groupID: String?
+    
+    /* ############################################################################################################################## */
     // MARK: - Public Properties
     /* ############################################################################################################################## */
     /* ################################################################## */
@@ -146,22 +157,35 @@ open class RVS_PersistentPrefs: NSObject {
      This is the key that is used to store and fetch the collection of data to be used to populate the _values Dictionary.
      */
     open var key: String = ""
-    
+
     /* ################################################################## */
     /**
-     This is any error that was thrown during a save or a load.
+     This is any error that was thrown during a save or a load. May be nil.
      */
-    public var lastError: PrefsError!
-    
-    /* ################################################################## */
-    /**
-     The number of stored values.
-     */
-    public var count: Int { values.count }
+    open var lastError: PrefsError?
 
     /* ############################################################################################################################## */
     // MARK: - Public Calculated Properties
     /* ############################################################################################################################## */
+    /* ################################################################## */
+    /**
+     This returns whichever [`UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults/) we are using.
+     It will return nil, if there are no UserDefaults for the Group ID.
+     */
+    open var userDefaults: UserDefaults? {
+        if let groupID = groupID {
+            return UserDefaults(suiteName: groupID)
+        } else {
+            return UserDefaults.standard
+        }
+    }
+
+    /* ################################################################## */
+    /**
+     The number of stored values.
+     */
+    open var count: Int { values.count }
+
     /* ################################################################## */
     /**
      This calculated property MUST be overridden by subclasses.

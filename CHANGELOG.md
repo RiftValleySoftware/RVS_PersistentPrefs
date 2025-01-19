@@ -1,3 +1,9 @@
+*Version 1.4.0* **January 19, 2025**
+- Added the ability to specify group IDs to the preferences.
+- Updated to the latest settings.
+- Updated the required Xcode to 12
+- Re-introduced SwiftLint.
+
 *Version 1.3.10* **July 25, 2024**
 - Added a cache, to reduce the number of times the defaults are loaded (It's a memory-intensive operation).
 
