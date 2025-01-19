@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.4.0
+ Version 1.4.1
  */
 
 import Foundation
@@ -147,7 +147,7 @@ open class RVS_PersistentPrefs: NSObject {
      By default, this is nil, so the [standard `UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults/1416603-standard) are used.
      However, if there is a Group ID, the [`UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults/) for that group are used.
      */
-    open var groupID: String?
+    public static var groupID: String?
     
     /* ############################################################################################################################## */
     // MARK: - Public Properties
@@ -173,7 +173,7 @@ open class RVS_PersistentPrefs: NSObject {
      It will return nil, if there are no UserDefaults for the Group ID.
      */
     open var userDefaults: UserDefaults? {
-        if let groupID = groupID {
+        if let groupID = Self.groupID {
             return UserDefaults(suiteName: groupID)
         } else {
             return UserDefaults.standard

@@ -1,3 +1,6 @@
+*Version 1.4.1* **January 19, 2025**
+- The new property needs to be static, not instance.
+
 *Version 1.4.0* **January 19, 2025**
 - Added the ability to specify group IDs to the preferences.
 - Updated to the latest settings.
