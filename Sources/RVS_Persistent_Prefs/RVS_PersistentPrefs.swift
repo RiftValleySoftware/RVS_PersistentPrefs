@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.4.2
+ Version 1.4.3
  */
 
 import Foundation
@@ -62,10 +62,12 @@ open class RVS_PersistentPrefs: NSObject {
      - throws: An error, if the values are not all codable.
      */
     private func _save() throws {
+        defer { userDefaults?.synchronize() }
+
         if _values.isEmpty {    // Remove ourselves if we are empty.
             userDefaults?.removeObject(forKey: key)
             Self._cache.removeValue(forKey: key)
-        } else if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
+       } else if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
             userDefaults?.set(_values, forKey: key)
             Self._cache[key] = _values
         } else {
