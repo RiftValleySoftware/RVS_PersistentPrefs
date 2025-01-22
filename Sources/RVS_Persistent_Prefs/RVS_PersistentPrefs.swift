@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.4.3
+ Version 1.4.4
  */
 
 import Foundation
@@ -62,17 +62,17 @@ open class RVS_PersistentPrefs: NSObject {
      - throws: An error, if the values are not all codable.
      */
     private func _save() throws {
-        defer { userDefaults?.synchronize() }
-
-        if _values.isEmpty {    // Remove ourselves if we are empty.
-            userDefaults?.removeObject(forKey: key)
-            Self._cache.removeValue(forKey: key)
-       } else if PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
+        Self._cache.removeValue(forKey: key)
+        userDefaults?.removeObject(forKey: key)
+        if !_values.isEmpty,
+           PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
+            #if DEBUG
+                print("Saving New User Defaults: \(_values)")
+            #endif
             userDefaults?.set(_values, forKey: key)
             Self._cache[key] = _values
-        } else {
-            Self._cache.removeValue(forKey: key)
-
+            userDefaults?.register(defaults: _values)
+        } else if !_values.isEmpty {
             #if DEBUG
                 print("Attempt to set non-plist values!")
             #endif
@@ -109,8 +109,10 @@ open class RVS_PersistentPrefs: NSObject {
         
         Self._cache.removeValue(forKey: key)    // Belt and suspenders.
         _values = [:]   // Start clean.
-
         if let loadedPrefs = userDefaults?.object(forKey: key) as? [String: Any] {
+            #if DEBUG
+                print("LoadedPrefs for \"\(key)\": \(loadedPrefs)")
+            #endif
             _values = loadedPrefs
             Self._cache[key] = loadedPrefs
         } else {
@@ -172,22 +174,15 @@ open class RVS_PersistentPrefs: NSObject {
     /* ################################################################## */
     /**
      This returns whichever [`UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults/) we are using.
-     It will return standard, if there are no UserDefaults for the Group ID.
+     It will return [`standard`](https://developer.apple.com/documentation/foundation/userdefaults/1416603-standard), if there are no UserDefaults for the Group ID.
      */
     open var userDefaults: UserDefaults? {
-        if let groupID = Self.groupID {
-            if let current = UserDefaults(suiteName: groupID) {
-                return current
-            } else {
-                UserDefaults(suiteName: groupID)?.set(_values, forKey: key)
-                
-                if let new = UserDefaults(suiteName: groupID) {
-                    return new
-                }
-            }
-        }
+        guard let groupID = Self.groupID,
+              !groupID.isEmpty,
+              let current = UserDefaults(suiteName: groupID)
+        else { return UserDefaults.standard }
         
-        return UserDefaults.standard
+        return current
     }
 
     /* ################################################################## */
@@ -339,9 +334,20 @@ open class RVS_PersistentPrefs: NSObject {
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
-     This clears the values, and deletes the pref from the UserDefaults.
+     This clears the values, and flushes the cache. It then reloads the values.
+     */
+    public func flush() {
+        Self._cache = [:]
+        _values = [:]
+        try? _load()
+    }
+    
+    /* ################################################################## */
+    /**
+     This clears the values, and flushes the cache, but does not load.
      */
     public func clear() {
         values = [:]
+        Self._cache = [:]
     }
 }

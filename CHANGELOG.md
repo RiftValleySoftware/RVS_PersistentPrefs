@@ -1,3 +1,6 @@
+*Version 1.4.4* **January 22, 2025**
+- Tweaked the `clear()` method, and added a new `flush()` method.
+
 *Version 1.4.3* **January 21, 2025**
 - I now make sure to synchronize the userdefaults, after writing.
 
