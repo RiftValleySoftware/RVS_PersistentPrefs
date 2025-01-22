@@ -10,6 +10,7 @@ jazzy   --github_url https://github.com/RiftValleySoftware/RVS_PersistentPrefs \
         --author_url https://riftvalleysoftware.com \
         --module RVS_Persistent_Prefs \
         --output docs \
-        --min-acl private
+        --min-acl private \
+        --build-tool-arguments -workspace,"RVS_Persistent_Prefs.xcworkspace",-scheme,"RVS_Persistent_Prefs"
 cp icon.png docs/icon.png
 cd "${CWD}"
