@@ -1,3 +1,6 @@
+*Version 1.5.0* **March 19, 2025**
+- Added the `deleteAll()` method.
+
 *Version 1.4.4* **January 22, 2025**
 - Tweaked the `clear()` method, and added a new `flush()` method.
 

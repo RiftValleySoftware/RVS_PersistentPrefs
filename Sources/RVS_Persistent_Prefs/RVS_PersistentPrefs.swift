@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.4.4
+ Version 1.5.0
  */
 
 import Foundation
@@ -349,5 +349,14 @@ open class RVS_PersistentPrefs: NSObject {
     public func clear() {
         values = [:]
         Self._cache = [:]
+    }
+    
+    /* ################################################################## */
+    /**
+     This deletes all prefs, including saved ones.
+     */
+    public func deleteAll() {
+        clear()
+        userDefaults?.removeObject(forKey: key)
     }
 }
