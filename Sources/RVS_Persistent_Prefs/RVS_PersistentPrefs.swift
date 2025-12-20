@@ -19,7 +19,7 @@
  
  The Great Rift Valley Software Company: https://riftvalleysoftware.com
  
- Version 1.5.0
+ Version 1.5.1
  */
 
 import Foundation
@@ -41,13 +41,6 @@ open class RVS_PersistentPrefs: NSObject {
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
-     This is a class cache. The reason for this, is to reduce the number of times the prefs are loaded in. It's a memory-intensive process.
-     The first key is the general prefs key, and the second key is each prefs key.
-     */
-    private static var _cache: [String: [String: Any]] = [:]
-    
-    /* ################################################################## */
-    /**
      This is the Dictionary. It's private, and shouldn't need to be accessed outside this base class.
      */
     private var _values: [String: Any] = [:]
@@ -62,16 +55,12 @@ open class RVS_PersistentPrefs: NSObject {
      - throws: An error, if the values are not all codable.
      */
     private func _save() throws {
-        Self._cache.removeValue(forKey: key)
-        userDefaults?.removeObject(forKey: key)
         if !_values.isEmpty,
            PropertyListSerialization.propertyList(_values, isValidFor: .xml) {
             #if DEBUG
                 print("Saving New User Defaults: \(_values)")
             #endif
             userDefaults?.set(_values, forKey: key)
-            Self._cache[key] = _values
-            userDefaults?.register(defaults: _values)
         } else if !_values.isEmpty {
             #if DEBUG
                 print("Attempt to set non-plist values!")
@@ -92,6 +81,8 @@ open class RVS_PersistentPrefs: NSObject {
                 }
             }
             throw PrefsError.valuesNotPlistCompatible(invalidElements: valueElementList)
+        } else {
+            userDefaults?.removeObject(forKey: key)
         }
     }
     
@@ -102,25 +93,7 @@ open class RVS_PersistentPrefs: NSObject {
      - throws: An error, if there were no stored prefs for the given key.
      */
     private func _load() throws {
-        guard nil == Self._cache[key] || (Self._cache[key]?.isEmpty ?? true) else {
-            _values = Self._cache[key] ?? [:]
-            return
-        }
-        
-        Self._cache.removeValue(forKey: key)    // Belt and suspenders.
-        _values = [:]   // Start clean.
-        if let loadedPrefs = userDefaults?.object(forKey: key) as? [String: Any] {
-            #if DEBUG
-                print("LoadedPrefs for \"\(key)\": \(loadedPrefs)")
-            #endif
-            _values = loadedPrefs
-            Self._cache[key] = loadedPrefs
-        } else {
-            #if DEBUG
-                print("Unable to Load Prefs for \"\(key)\"")
-            #endif
-            throw PrefsError.noStoredPrefsForKey(key: key)
-        }
+        _values = (userDefaults?.object(forKey: key) as? [String: Any]) ?? [:]
     }
     
     /* ############################################################################################################################## */
@@ -283,7 +256,7 @@ open class RVS_PersistentPrefs: NSObject {
      */
     public override init() {
         super.init()
-        key = String(describing: Self.self)  // This gives us a simple classname as our key.
+        key = String(describing: Self.self).split(separator: ".").last.map(String.init) ?? "Prefs"  // This gives us a simple classname as our key.
         do {
             try _load()
         } catch PrefsError.noStoredPrefsForKey(_) { // We ignore this error for initialization.
@@ -299,16 +272,17 @@ open class RVS_PersistentPrefs: NSObject {
     /**
      You can initialize instances with a key and some initial data values.
      
-     - parameter key: Optional (default is nil). A String, with a key to be used to associate the persistent state of this object to storage in the bundle.
+     - parameter inKey: Optional (default is nil). A String, with a key to be used to associate the persistent state of this object to storage in the bundle.
      If not provided, the subclass classname is used as the key.
-     - parameter values: Optional (default is nil). A Dictionary<String, Any>, with the values to be stored.
+     - parameter inValues: Optional (default is nil). A Dictionary<String, Any>, with the values to be stored.
      If not provided, then the instance is populated by any persistent prefs.
      If provided, then the persistent prefs are updated with the new values.
      */
     public init(key inKey: String! = nil, values inValues: [String: Any]! = [:]) {
         super.init()
-        key = inKey ?? String(describing: Self.self)  // This gives us a simple classname as our key.
-        
+        let defaultKey = String(describing: Self.self).split(separator: ".").last.map(String.init) ?? "Prefs"
+        key = inKey ?? defaultKey
+
         // First, we load any currently stored prefs. This makes sure that we have a solid starting place.
         do {
             try _load()
@@ -337,7 +311,6 @@ open class RVS_PersistentPrefs: NSObject {
      This clears the values, and flushes the cache. It then reloads the values.
      */
     public func flush() {
-        Self._cache = [:]
         _values = [:]
         try? _load()
     }
@@ -348,7 +321,6 @@ open class RVS_PersistentPrefs: NSObject {
      */
     public func clear() {
         values = [:]
-        Self._cache = [:]
     }
     
     /* ################################################################## */

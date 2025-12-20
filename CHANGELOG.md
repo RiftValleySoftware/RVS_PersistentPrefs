@@ -1,3 +1,8 @@
+*Version 1.5.1* **December 20, 2025**
+- Fixed a couple of minor issues that could cause sync problems.
+- Removed caching. It wasn't worth it, and could cause sync problems.
+- Updated to the latest tools.
+
 *Version 1.5.0* **March 19, 2025**
 - Added the `deleteAll()` method.
 
