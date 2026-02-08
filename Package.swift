@@ -25,7 +25,7 @@ The Great Rift Valley Software Company: https://riftvalleysoftware.com
 import PackageDescription
 
 let package = Package(
-    name: "RVS_Persistent_Prefs",
+    name: "RVS_PersistentPrefs",
     platforms: [
         .iOS(.v11),
         .tvOS(.v11),
@@ -34,14 +34,14 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "RVS_Persistent_Prefs",
-            targets: ["RVS_Persistent_Prefs"])
+            name: "RVS_PersistentPrefs",
+            targets: ["RVS_PersistentPrefs"])
     ],
     targets: [
-        .target(name: "RVS_Persistent_Prefs"),
-        .testTarget(name: "RVS_Persistent_PrefsTest",
-                    dependencies: ["RVS_Persistent_Prefs"],
-                    path: "Tests/RVS_Persistent_PrefsTest"
+        .target(name: "RVS_PersistentPrefs"),
+        .testTarget(name: "RVS_PersistentPrefs_Test",
+                    dependencies: ["RVS_PersistentPrefs"],
+                    path: "Tests/RVS_PersistentPrefs_Test"
         )
     ]
 )

@@ -1,15 +1,11 @@
-![Icon](icon.png)
+# ``RVS_PersistentPrefs``
 
-RVS_PersistentPrefs
-=
-A general-purpose [Swift](https://apple.com/swift) class for making storing persistent preferences incredibly easy and transparent.
+![](icon.png)
 
-[Here is the technical documentation for this class.](https://riftvalleysoftware.github.io/RVS_PersistentPrefs/)
+A general-purpose Swift class for making storing persistent preferences incredibly easy and transparent.
 
-[Here is the  GitHub repo for this class.](https://github.com/RiftValleySoftware/RVS_PersistentPrefs)
+## Overview
 
-OVERVIEW
--
 `RVS_PersistentPrefs` is an "abstract" base class, designed to be subclassed *(Yes, I know. There's no such thing as an "abstract" class in Swift, but the class is designed to crash, if you instantiate it standalone)*.
 
 Instances based on the class will have a simple, flexible [`Dictionary<String, Any>`](https://developer.apple.com/documentation/swift/dictionary) property. This will contain a set of values, stored on behalf of the derived subclass.
@@ -22,8 +18,8 @@ This means that multiple instances of subclasses, based on `RVS_PersistentPrefs`
 
 `RVS_PersistentPrefs` is designed for ease of use and reliability. It is **NOT** a class that is meant to store mission-critical, or large volumes, of data. It is merely a convenient way to maintain small amounts of persistent data, such as app preferences.
 
-WHAT PROBLEM DOES THIS SOLVE?
--
+## What Problem Does This Solve?
+
 Storing persistent data (data that survives an app being started and stopped, or even, in some cases, transfers between apps) has always been a somewhat fraught process in app development.
 
 Luckily, Apple has provided an excellent mechanism for this, called [`UserDefaults`](https://developer.apple.com/documentation/foundation/userdefaults), which is part of the [Foundation](https://developer.apple.com/documentation/foundation) framework; meaning that it is supported by ALL Apple operating systems.
@@ -38,14 +34,13 @@ Subclasses will also establish "allowed" keys, and can do things like translate 
 
 This class allows you to have an "implicit" global state that is accessed by simply instantiating a subclass, and you can associate "top-level keys" to instances, to maintain multiple sets of persistent preferences.
 
-REQUIREMENTS
--
+## Requirements
+
 `RVS_PersistentPrefs` is an [Apple Foundation](https://developer.apple.com/documentation/foundation)-based resource. It will work equally well on all Apple development platforms ([iOS](https://www.apple.com/ios), [iPadOS](https://www.apple.com/ipados), [macOS](https://www.apple.com/macos), [tvOS](https://www.apple.com/tvos), [watchOS](https://www.apple.com/watchos)). It will not work on non-Apple platforms, and is not designed to support anything other than native [Swift](https://apple.com/swift) development.
 
 This requires Swift 4.0 or above.
 
-INSTALLATION
--
+## Installation
 
 - [**Swift Package Manager (SPM)**](https://swift.org/package-manager/)
 
@@ -55,47 +50,31 @@ Once you have the dependency attached, you reference it by adding an import to t
     
     import RVS_PersistentPrefs
 
-- **Using [Carthage](https://github.com/Carthage/Carthage):**
-
-To use this from [Carthage](https://github.com/Carthage/Carthage), simply add the following to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
-
-    github "RiftValleySoftware/RVS_PersistentPrefs"
-
-You then `cd` to the project directory, and execute `carthage update` on the command line.
-
-This will result in a directory called "Carthage."
-
-You then need to include the file found at:
-
-    Carthage/Checkouts/RVS_PersistentPrefs/RVS_PersistentPrefs/RVS_PersistentPrefs.swift
-    
-into your project. There is no library or framework. You need to directly reference and include the Swift source file.
-
 - **Simple Direct File Download And Installation**
 
 You can fetch the latest version of `RVS_PersistentPrefs` from [its GitHub repo](https://github.com/RiftValleySoftware/RVS_PersistentPrefs).
 
-The class consists of [one single Swift source file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift). All the other stuff in the project is for project support and testing.
+The class consists of [one single Swift source file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift). All the other stuff in the project is for project support and testing.
 
-Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift) into your project, and add it to your current [Swift](https://apple.com/swift) native target.
+Simply copy [this file](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift) into your project, and add it to your current [Swift](https://apple.com/swift) native target.
 
 This does not need any dependency manager. It's a 300-line file. Definitely not worth even writing a podfile for. It will work on all Apple operating systems without any other dependencies.
 
 It really is that easy to use. Include a very small file, write a short subclass, and everything's sorted.
 
-IMPORTANT IMPLEMENTATION NOTES
--
+## Important Implementation Notes
+
 **Thread Safety**
 
 There is none. Deal with it and move on.
 
-Because of the nature of the utility (a "quick and dirty" persistent save for small amounts of -usually- user-interface-linked data), thread safety is not a critical need. I am making a point of mentioning it, though, so you don't spend too much time searching under the cushions, if you come across inconsistent dealloc crashes. There is a commented-out test in the [RVS_Persistent_Prefs_Thread_Tests.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_Persistent_PrefsTest/RVS_Persistent_Prefs_Thread_Tests.swift#L162) file. If you uncomment it, and run it repeatedly, you will eventually run into the issue. You can also jack up the number of tests to increase the likelihood of running into the issue.
+Because of the nature of the utility (a "quick and dirty" persistent save for small amounts of -usually- user-interface-linked data), thread safety is not a critical need. I am making a point of mentioning it, though, so you don't spend too much time searching under the cushions, if you come across inconsistent dealloc crashes. There is a commented-out test in the [RVS_Persistent_Prefs_Thread_Tests.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_Persistent_Prefs_Tests/RVS_Persistent_Prefs_Thread_Tests.swift#L158) file. If you uncomment it, and run it repeatedly, you will eventually run into the issue. You can also jack up the number of tests to increase the likelihood of running into the issue.
 
 It doesn't need to be on the main thread, but it shouldn't be called from different threads.
 
 **Must Be Subclassed**
 
-The implementation needs to be a concrete subclass of `RVS_PersistentPrefs`. At bare minimum, you need to override [the `keys: [String]` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152) with a computed property, to return an `Array` of `String`, containing the internal keys. You might also override the `key` stored property, but it's probably easier to just set the base class one in an `init`.
+The implementation needs to be a concrete subclass of `RVS_PersistentPrefs`. At bare minimum, you need to override [the `keys: [String]` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift#L152) with a computed property, to return an `Array` of `String`, containing the internal keys. You might also override the `key` stored property, but it's probably easier to just set the base class one in an `init`.
 
 **Data Stored Is Typeless**
 
@@ -113,7 +92,7 @@ The `RVS_PersistentPrefs` class will "vet" your data before attempting to save i
 
 **You Must Use the Keys Provided by the `keys: [String]` Computed Property**
 
-You cannot submit data using a key that is not listed in [the `keys: [String]` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152). If you attempt to do so the `lastError` property will be set to `incorrectKeys`, which will have associated data. That data will be an `Array` of `String`, containing the incorrect top-level keys.
+You cannot submit data using a key that is not listed in [the `keys: [String]` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift#L152). If you attempt to do so the `lastError` property will be set to `incorrectKeys`, which will have associated data. That data will be an `Array` of `String`, containing the incorrect top-level keys.
 
 **Does Not Throw**
 
@@ -129,17 +108,33 @@ You can also directly observe the `RVS_PersistentPrefs.values` property. It will
 
 In some of the included test harness apps, we will use KVO.
 
-USAGE
--
+## Usage
+
 **Start by Including the Main Source File in Your Project**
 
-In order to use `RVS_PersistentPrefs`, you should include the [RVS_PersistentPrefs.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift) general-purpose source file into your target, and then create a subclass of the `RVS_PersistentPrefs` class, specific to your implementation.
+**Using [Carthage](https://github.com/Carthage/Carthage):**
 
-**You MUST Subclass [the `RVS_PersistentPrefs` Class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift)**
+To use this from [Carthage](https://github.com/Carthage/Carthage), simply add the following to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
+
+    github "RiftValleySoftware/RVS_PersistentPrefs"
+
+You then `cd` to the project directory, and execute `carthage update` on the command line.
+
+This will result in a directory called "Carthage."
+
+You then need to include the file found at:
+
+    Carthage/Checkouts/RVS_PersistentPrefs/RVS_PersistentPrefs/RVS_PersistentPrefs.swift
+    
+into your project. There is no library or framework. You need to directly reference and include the Swift source file.
+
+In order to use `RVS_PersistentPrefs`, you should include the [RVS_PersistentPrefs.swift](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift) general-purpose source file into your target, and then create a subclass of the `RVS_PersistentPrefs` class, specific to your implementation.
+
+**You MUST Subclass [the `RVS_PersistentPrefs` Class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift)**
 
 It is not a protocol. It is a class. It is also not designed to be instantiated standalone. If you do that, it will deliberately crash upon first use.
 
-At minimum, you need to override [the `keys` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L152), to assign keys to the various stored properties. The following example is from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift):
+At minimum, you need to override [the `keys` computed property](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift#L152), to assign keys to the various stored properties. The following example is from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift):
 
     
     •
@@ -170,9 +165,9 @@ At minimum, you need to override [the `keys` computed property](https://github.c
     
 **You SHOULD Provide Type-Enforcing Accessors**
 
-[The main storage](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Sources/RVS_Persistent_Prefs/RVS_PersistentPrefs.swift#L43) is typeless. It is a simple `Dictionary<String, Any>`, with no enforcement of type for the data.
+[The main storage](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/src/RVS_PersistentPrefs.swift#L43) is typeless. It is a simple `Dictionary<String, Any>`, with no enforcement of type for the data.
 
-You should provide accessors to the stored data that enforces type. Again the following examples are from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift):
+You should provide accessors to the stored data that enforces type. Again the following examples are from [the test harness shared class](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift):
 
     
     •
@@ -224,13 +219,13 @@ You should provide accessors to the stored data that enforces type. Again the fo
     •
     
 
-Note also, that the two accessors above are declared [`@objc dynamic`](https://developer.apple.com/documentation/swift/using_objective-c_runtime_features_in_swift). That makes them eligible for [Key-Value Observation](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift). In Mac OS, this makes it quite simple to have a "codeless" connection between user interface elements and the persistent prefs (indeed, in [the macOS Test Harness project](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_macOS_TestHarness), we demonstrate this).
+Note also, that the two accessors above are declared [`@objc dynamic`](https://developer.apple.com/documentation/swift/using_objective-c_runtime_features_in_swift). That makes them eligible for [Key-Value Observation](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift). In Mac OS, this makes it quite simple to have a "codeless" connection between user interface elements and the persistent prefs (indeed, in [the macOS Test Harness project](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_macOS_TestHarness), we demonstrate this).
 
-Other than these two things, there's very little that you need to do in order to use the class. You can provide a distinct String key, so you can store multiple sets of preferences. Remember that this is slightly different from the way that `UserDefaults` is traditionally used, where each data item is given a separate key. Using `RVS_PersistentPrefs`, each *set* of parameters has a "root key." If, for example, you are using [the iOS Settings.bundle to display a preferences screen in the Settings app](https://developer.apple.com/documentation/uikit/creating_a_mac_version_of_your_ipad_app/displaying_a_preferences_window), you can't easily access the `RVS_PersistentPrefs` preferences directly. It's usually a good idea to manage a set of `UserDefaults` separately, in order to provide a suitable user experience. [We demonstrate this in the iOS Test Harness app](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_iOS_TestHarness/RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift#L167).
+Other than these two things, there's very little that you need to do in order to use the class. You can provide a distinct String key, so you can store multiple sets of preferences. Remember that this is slightly different from the way that `UserDefaults` is traditionally used, where each data item is given a separate key. Using `RVS_PersistentPrefs`, each *set* of parameters has a "root key." If, for example, you are using [the iOS Settings.bundle to display a preferences screen in the Settings app](https://developer.apple.com/documentation/uikit/creating_a_mac_version_of_your_ipad_app/displaying_a_preferences_window), you can't easily access the `RVS_PersistentPrefs` preferences directly. It's usually a good idea to manage a set of `UserDefaults` separately, in order to provide a suitable user experience. [We demonstrate this in the iOS Test Harness app](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_iOS_TestHarness/RVS_PersistentPrefs_iOS_TestHarness_ViewController.swift#L167).
     
 **You CAN Add Your Own Initializer[s]**
 
-You may also want to set up a custom `init()`. In our case, we set one up [to allow us to set a key](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift#L223):
+You may also want to set up a custom `init()`. In our case, we set one up [to allow us to set a key](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift#L221):
 
     
     •
@@ -252,8 +247,8 @@ Once all this is set up, usage is incredibly simple. You just read and write via
 
 Needless to say, this favors robustness over efficiency. It's not recommended to use individual keys for data that may be composed of many parts. It's usually better to have it as an `Array` or `Dictionary` that is stored or fetched at once, under one key.
 
-TEST HARNESS PROJECTS
--
+## The Test Harness Projects
+
 There are a number of included test harness applications. These cover iOS/iPadOS, macOS, watchOS and tvOS.
 
 **All Apps Are Localizable**
@@ -262,13 +257,13 @@ The test harness apps are all complete, production-quality apps, designed to dem
 
 **Common Preferences File**
 
-All the test harnesses will share [the same Preferences Subclass](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/Tests/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_iOS_watchOS_TestHarness_Shared.swift). This is a fairly simple variant that has the following data types:
+All the test harnesses will share [the same Preferences Subclass](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/blob/master/test/RVS_PersistentPrefs_Common_Files/RVS_PersistentPrefs_TestSet.swift). This is a fairly simple variant that has the following data types:
 
 * An Integer *(key: "Integer Value")*.
 
 * A String *(key: "String Value")*.
 
-* An Array of String *(key: "Array Value")*.
+* An Arry of String *(key: "Array Value")*.
 
 * A Dictionary of String-keyed Any *(key: "Dictionary Value")*.
 
@@ -276,24 +271,24 @@ All the test harnesses will share [the same Preferences Subclass](https://github
 
 It presents [Key-Value Observable](https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift) accessors for all of these values, which are directly used in the macOS test harness.
 
-[**The iOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_iOS_TestHarness)
+[**The iOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness)
 
-[The iOS Test Harness App](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_iOS_TestHarness) is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a [Settings Bundle](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html) to show a "Preferences Pane" in the Settings App. We only access two values, in order to keep the demonstration as basic as possible, but it is possible to get fancier with this.
+[The iOS Test Harness App](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_iOS_TestHarness) is a very simple one-screen app that presents direct interface to edit and view the values in the common prefs instance. Additionally, it gives a simple demo of using a [Settings Bundle](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/UserDefaults/Preferences/Preferences.html) to show a "Preferences Pane" in the Settings App. We only access two values, in order to keep the demonstration as basic as possible, but it is possible to get fancier with this.
 
 The iOS test harness also integrates a watchOS test harness that shares the preferences instance with the device app.
 
-[**The watchOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_watchOS_TestHarness%20Extension)
+[**The watchOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_watchOS_TestHarness%20Extension)
 
 The watchOS Test Harness is actually a part of the iOS Test Harness app. It shares a `RVS_PersistentPrefs` state with the iOS Test Harness app instance.
 
 It is a tiny app that merely demonstrates transferring the prefs to the Watch, and displays only a couple of values (and updates them in response to them being changed on the phone). Its main reason for existence is to show that the class works as well in watchOS, as it does in iOS. The only thing that you can do with the Watch app to affect the data, is send a reset command to the phone. Otherwise, it is display-only.
 
-[**The macOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_macOS_TestHarness)
+[**The macOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_macOS_TestHarness)
 
 The macOS test harness app uses [KVO]((https://developer.apple.com/documentation/swift/cocoa_design_patterns/using_key-value_observing_in_swift)) for some of its UI, so there are "codeless" connections between some user entry fields and the persistent prefs.
 
 Upon startup, there is no window displayed. You need to go into the app menu, and select "Preferences...". That will bring up the window.
 
-[**The tvOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/Tests/RVS_PersistentPrefs_tvOS_TestHarness)
+[**The tvOS Test Harness**](https://github.com/RiftValleySoftware/RVS_PersistentPrefs/tree/master/RVS_PersistentPrefs_tvOS_TestHarness)
 
 The tvOS test harness displays a very similar layout to all the others, and allows demonstration of the class working in tvOS.

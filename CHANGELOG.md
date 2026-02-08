@@ -1,3 +1,7 @@
+*Version 1.6.0* **January 8, 2026**
+- Minor documentation improvement. No functionality or API changes.
+- API CHANGE: The Module is now correctly named "RVS_PersistentPrefs" (not "RVS_Persistent_Prefs").
+
 *Version 1.5.1* **December 20, 2025**
 - Fixed a couple of minor issues that could cause sync problems.
 - Removed caching. It wasn't worth it, and could cause sync problems.
