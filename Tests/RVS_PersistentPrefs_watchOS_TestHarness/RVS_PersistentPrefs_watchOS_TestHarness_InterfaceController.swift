@@ -1,5 +1,5 @@
 /**
- © Copyright 2019, The Great Rift Valley Software Company
+ © Copyright 2019-2026, The Great Rift Valley Software Company
  
  LICENSE:
  
@@ -22,7 +22,6 @@
 
 import WatchKit
 import Foundation
-import RVS_Generic_Swift_Toolbox
 
 /* ################################################################################################################################## */
 // MARK: - Main Interface Controller Class.
@@ -39,7 +38,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
      This is an accessor for the prefs instance. It fetches a reference to it from the extension delegate.
      */
     var prefs: RVS_PersistentPrefs_TestSet! {
-        return RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.delegateObject?.prefs
+        return RVS_PersistentPrefs_watchOS_TestHarness_AppDelegate.delegateObject?.prefs
     }
     
     /* ############################################################################################################################## */
@@ -65,7 +64,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
      */
     @IBAction func resetButtonHit() {
         resetButton.setEnabled(false)   // Disable the button until we hear back from the phone.
-        RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate.delegateObject?.sendResetToPhone()
+        RVS_PersistentPrefs_watchOS_TestHarness_AppDelegate.delegateObject?.sendResetToPhone()
     }
     
     /* ############################################################################################################################## */
@@ -77,12 +76,12 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
      */
     func setUpLabels() {
         DispatchQueue.main.async {
-            self.resetButton.setTitle("RESET TO DEFAULT".localizedVariant)
+            self.resetButton.setTitle(NSLocalizedString("RESET TO DEFAULT", comment: "Reset preferences on the phone"))
             self.prefs?.keys.forEach { key in
                 switch key {
                 case "Integer Value":
                     if let value = self.prefs[key] as? Int {
-                        self.integerKeyLabel?.setText(key.localizedVariant)
+                        self.integerKeyLabel?.setText(NSLocalizedString(key, comment: "Integer preference label"))
                         self.integerValueLabel?.setText(String(value))
                     } else {
                         self.integerKeyLabel?.setText("ERROR!")
@@ -90,7 +89,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController: WKInterfaceCo
                     }
                 case "String Value":
                     if let value = self.prefs[key] as? String {
-                        self.stringKeyLabel?.setText(key.localizedVariant)
+                        self.stringKeyLabel?.setText(NSLocalizedString(key, comment: "String preference label"))
                         self.stringValueLabel?.setText(String(value))
                     } else {
                         self.stringKeyLabel?.setText("ERROR!")

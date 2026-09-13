@@ -1,3 +1,22 @@
+*Version 1.7.0* **September 13, 2026**
+- Raised minimum iOS/iPadOS support to 15; other Swift package platform minimums are unchanged.
+- Updated the Xcode macOS targets to macOS 12 for Xcode 27 compatibility; the Swift package still declares macOS 10.14. Removed an obsolete SwiftLint rule from the configuration.
+- Fixed a crash when explicitly passing `nil` as the initializer's values argument.
+- Removed debug logging of preference contents and entry names.
+- Added `userDefaultsUnavailable` and `invalidStoredValue(key:)` errors. Configured suites no longer silently fall back to standard defaults if creation fails.
+- Prevented initializer merges, subscript updates, and in-place Swift dictionary mutations from overwriting malformed storage after a failed read. Explicit dictionary replacement or clearing can repair it.
+- Validate complete writes before changing internal state or storage, and report invalid entry names in sorted order.
+- Fixed KVO notifications for rejected writes, which could erase `lastError`. Successful writes retain KVO through explicit notifications; `values` remains `@objc` and uses native Swift dispatch so in-place mutations can preserve read failures.
+- Made `flush()` report reload errors consistently and removed the duplicate deletion in `deleteAll()`.
+- Rewrote DocC, Quick Help comments, and the README with examples and precise guidance on merging versus replacing, supported types, error recovery, observation, concurrency, defaults search domains, asynchronous persistence, and security.
+- Moved the privacy manifest into the library target, included it in Swift package and framework products, and declared App Group preference access alongside app-local access.
+- Migrated the watchOS test harness to a single app target, with `WKApplicationDelegate`, `WKApplication`, and an explicit `@main` entry point. Updated storyboard module references, removed duplicate localization resources, and included the preferences privacy manifest.
+- Removed the iOS and watch harnesses’ unnecessary `RVS_Generic_Swift_Toolbox` dependencies; their labels use Foundation localization directly, eliminating the missing-module import errors.
+- Consolidated the watch harness sources under the app folder and renamed its application delegate. Removed obsolete extension files, duplicate entitlements, unused complication artwork and build settings, and the unused legacy String helper.
+- Added regression coverage for initialization, validation, failed reads and writes, removal, registered defaults, and KVO.
+- Added the Xcode test target's explicit dependency on and linkage to the preferences framework, and removed its duplicate compilation of the library source so tests exercise the built framework.
+- Enabled development signing for the framework using the test host's team, fixing signed macOS test runs that failed to load the test bundle before executing any tests.
+
 *Version 1.6.0* **January 8, 2026**
 - Minor documentation improvement. No functionality or API changes.
 - API CHANGE: The Module is now correctly named "RVS_PersistentPrefs" (not "RVS_Persistent_Prefs").

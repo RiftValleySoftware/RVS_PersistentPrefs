@@ -17,7 +17,7 @@
          location = "group:PRIVACY.md">
       </FileRef>
       <FileRef
-         location = "group:PrivacyInfo.xcprivacy">
+         location = "group:Sources/RVS_PersistentPrefs/PrivacyInfo.xcprivacy">
       </FileRef>
       <FileRef
          location = "group:jazzy.command">

@@ -1,5 +1,5 @@
 /**
- © Copyright 2019, The Great Rift Valley Software Company
+ © Copyright 2019-2026, The Great Rift Valley Software Company
  
  LICENSE:
  
@@ -24,20 +24,21 @@ import WatchKit
 import WatchConnectivity
 
 /* ################################################################################################################################## */
-// MARK: - Main Extension Delegate Class.
+// MARK: - Main Application Delegate Class.
 /* ################################################################################################################################## */
 /**
- This is the extension delegate for an extremely simple WatchKit app.
+ This is the application delegate and entry point for the single-target watchOS harness.
  
  Its only purpose in life is to display a couple of values from a Dictionary of values sent from the phone.
  
  It maintains an instance of RVS_PersistentPrefs_TestSet locally, and updates the _values with the ones sent from the phone.
  
- It does not allow changes to the values, and does not send them back to the phone. It is completely one-way.
+ It displays preferences received from the phone and can ask the phone to reset them to their defaults.
  
  The prefs object is managed in this instance.
  */
-class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExtensionDelegate, WCSessionDelegate {
+@main
+class RVS_PersistentPrefs_watchOS_TestHarness_AppDelegate: NSObject, WKApplicationDelegate, WCSessionDelegate {
     /* ############################################################################################################################## */
     // MARK: - Private Methods
     /* ############################################################################################################################## */
@@ -60,7 +61,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
         #if DEBUG
             print("Reply From Phone: " + String(describing: inReply))
         #endif
-        if let controller = WKExtension.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
+        if let controller = WKApplication.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
             controller.reEnableButton()
         }
     }
@@ -72,7 +73,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
         #if DEBUG
             print("Error From Phone: " + String(describing: inError))
         #endif
-        if let controller = WKExtension.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
+        if let controller = WKApplication.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
             controller.reEnableButton()
         }
     }
@@ -105,8 +106,8 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
     // MARK: - Class Variables
     /* ############################################################################################################################## */
     /// The delegate object (quick accessor).
-    class var delegateObject: RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate! {
-        return WKExtension.shared().delegate as? RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate
+    class var delegateObject: RVS_PersistentPrefs_watchOS_TestHarness_AppDelegate! {
+        return WKApplication.shared().delegate as? RVS_PersistentPrefs_watchOS_TestHarness_AppDelegate
     }
     
     /* ############################################################################################################################## */
@@ -147,7 +148,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
     }
     
     /* ############################################################################################################################## */
-    // MARK: - WKExtensionDelegate Methods
+    // MARK: - WKApplicationDelegate Methods
     /* ############################################################################################################################## */
     /* ################################################################## */
     /**
@@ -204,7 +205,7 @@ class RVS_PersistentPrefs_watchOS_TestHarness_ExtensionDelegate: NSObject, WKExt
         prefs.values = inMessage
         inReplyHandler([s_watchPhoneReplySuccessKey: true]) // Let the phone know we got the message.
         // Tel our controller to update the state display with whatever the phone sent us.
-        if let controller = WKExtension.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
+        if let controller = WKApplication.shared().rootInterfaceController as? RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController {
             controller.setUpLabels()
         }
         #if DEBUG

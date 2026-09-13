@@ -11,7 +11,7 @@
         <!--Persistent Prefs watchOS Test Harness Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController" customModule="RVS_PersistentPrefs_watchOS_TestHarnessExtension">
+                <controller id="AgC-eL-Hgc" customClass="RVS_PersistentPrefs_watchOS_TestHarness_InterfaceController" customModule="RVS_PersistentPrefs_watchOS_TestHarness">
                     <items>
                         <group width="1" height="1" alignment="center" verticalAlignment="center" layout="overlap" id="zCR-QX-DvM">
                             <items>

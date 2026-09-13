@@ -1,7 +1,7 @@
 // swift-tools-version:5.5
 
 /*
-© Copyright 2019, The Great Rift Valley Software Company
+© Copyright 2019-2026, The Great Rift Valley Software Company
 
 LICENSE:
 
@@ -27,7 +27,7 @@ import PackageDescription
 let package = Package(
     name: "RVS_PersistentPrefs",
     platforms: [
-        .iOS(.v11),
+        .iOS(.v15),
         .tvOS(.v11),
         .macOS(.v10_14),
         .watchOS(.v5)
@@ -38,7 +38,8 @@ let package = Package(
             targets: ["RVS_PersistentPrefs"])
     ],
     targets: [
-        .target(name: "RVS_PersistentPrefs"),
+        .target(name: "RVS_PersistentPrefs",
+                resources: [.copy("PrivacyInfo.xcprivacy")]),
         .testTarget(name: "RVS_PersistentPrefs_Test",
                     dependencies: ["RVS_PersistentPrefs"],
                     path: "Tests/RVS_PersistentPrefs_Test"

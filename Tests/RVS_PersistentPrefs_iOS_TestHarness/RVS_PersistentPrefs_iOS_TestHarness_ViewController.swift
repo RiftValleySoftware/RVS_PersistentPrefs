@@ -1,5 +1,5 @@
 /**
- © Copyright 2019, The Great Rift Valley Software Company
+ © Copyright 2019-2026, The Great Rift Valley Software Company
  
  LICENSE:
  
@@ -21,7 +21,6 @@
  */
 
 import UIKit
-import RVS_Generic_Swift_Toolbox
 
 /* ################################################################################################################################## */
 // MARK: - Extension of UIView
@@ -286,22 +285,24 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         // Get whatever is in settings, in case the user changed them while we were out.
         loadDefaultsFromSettings()
         // Set up the initial state of the Integer label and text entry value.
-        intLabel?.text = prefs.intKey.localizedVariant
+        intLabel?.text = NSLocalizedString(prefs.intKey, comment: "Integer preference label")
         
         // Set up the initial state of the String label and text entry value.
-        stringLabel?.text = prefs.stringKey.localizedVariant
+        stringLabel?.text = NSLocalizedString(prefs.stringKey, comment: "String preference label")
         
         // Set up the initial state of the Array label.
-        arrayLabel?.text = prefs.arrayKey.localizedVariant
+        arrayLabel?.text = NSLocalizedString(prefs.arrayKey, comment: "Array preference label")
         
         // Set up the initial state of the Dictionary label.
-        dictionaryLabel?.text = prefs.dictionaryKey.localizedVariant
+        dictionaryLabel?.text = NSLocalizedString(prefs.dictionaryKey, comment: "Dictionary preference label")
         
         // Set up the initial state of the Date label and picker.
-        dateLabel?.text = prefs.dateKey.localizedVariant
+        dateLabel?.text = NSLocalizedString(prefs.dateKey, comment: "Date preference label")
         
         // Set up the localized title of the reset button.
-        resetButton?.setTitle(resetButton?.title(for: .normal)?.localizedVariant, for: .normal)
+        if let title = resetButton?.title(for: .normal) {
+            resetButton?.setTitle(NSLocalizedString(title, comment: "Reset preferences"), for: .normal)
+        }
         
         // Select the first row of each.
         arrayPickerView?.selectRow(0, inComponent: 0, animated: false)
@@ -368,7 +369,7 @@ class RVS_PersistentPrefs_iOS_TestHarness_ViewController: UIViewController, UIPi
         if inPickerView == arrayPickerView {
             return String(inRow + 1)
         } else if 0 < dictionaryKeys.count {
-            return dictionaryKeys[inRow].localizedVariant
+            return NSLocalizedString(dictionaryKeys[inRow], comment: "Dictionary entry label")
         } else {
             return nil
         }
